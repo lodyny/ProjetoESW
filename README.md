@@ -2,20 +2,23 @@
 ## 2018-2019
 
 ### TODO:
-Para Terça:
-Sprint planning metting -> Back qualquercoisa
-Burndown chart (para 2º terça) ->
-Acabar o Documento para entregar com recomendações.
+- ATA 3 ✓
+- Incluir icons na arquitetura geral ✓
+- Arquitetura Logica/Diagrama de pacotes, utilizar "uses" em vez de "imports"
+- Diagrama de instalação não está em MVC
 
-Trello Dividir em Sprints e Tarefas
+- Preparar o Trello para o sprint a decorrer
+- Estruturar o projecto
+- Implementar Requisitos funcionais desta fase
+- Elaborar documento do moodle Sprint
+- Verificar como funciona o DOCFX / Vsdocman
+- Verificar https://seleniumhq.org/ de modo a fazer testes automaticos
+- Fazer BPD's (Obrigatorios e substituiem diagramas de atividades)
+- Ver do template do Sprint planning metting - Backlog?
+- Criacao do Manual de utilização e Tecnico
+- Ver o template do Sprint Planning Metting
 
-Implementar Requisitos funcionais
-Testes Unitários
-Testes de Integração
-Testes de Sistemas
-Testes de Aceitação
-Criação Manual de utilização e Tecnico
-DOCFX ou Vsdocman
-
-https://www.seleniumhq.org/	
-BPD's obrigatorios , substituem diagramas de atividades
+### Entregar terça 20
+- Burndown chart da sprint
+- Documento da sprint
+- Projecto com Módulos Autenticações/Perfis
