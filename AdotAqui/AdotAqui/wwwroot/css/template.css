@@ -1,0 +1,29 @@
+﻿#navicon {
+    height:40px;
+}
+
+#navtitle {
+    color: white;
+}
+
+.navbutton {
+    background-color: transparent;
+    margin-right: 5px;
+    color: white;
+    border: 1px solid #FC6600;
+    border-radius: 5px;
+    font-weight: 450;
+}
+
+.navbutton:hover {
+    background-color: #FC6600;
+    border: 1px solid #FC6600;
+}
+
+.navbutton:focus {
+    box-shadow: 0 0 0 0.2rem rgba(252,102,0, 0.5);
+}
+
+.navbutton:active {
+    background-color: #FC6600;
+}
