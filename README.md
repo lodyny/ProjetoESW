@@ -17,6 +17,7 @@
 - Ver do template do Sprint planning metting - Backlog? ✓
 - Criacao do Manual de utilização e Tecnico
 - Ver o template do Sprint Planning Metting ✓
+- Diagrama Geral de Navegação (Colocar cores)
 
 ### Entregar terça 20
 - Burndown chart da sprint
