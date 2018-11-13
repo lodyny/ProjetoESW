@@ -10,13 +10,13 @@
 - Preparar o Trello para o sprint a decorrer
 - Estruturar o projecto
 - Implementar Requisitos funcionais desta fase
-- Elaborar documento do moodle Sprint
+- Elaborar documento do moodle Sprint ✓
 - Verificar como funciona o DOCFX / Vsdocman
 - Verificar https://seleniumhq.org/ de modo a fazer testes automaticos
 - Fazer BPD's (Obrigatorios e substituiem diagramas de atividades)
-- Ver do template do Sprint planning metting - Backlog?
+- Ver do template do Sprint planning metting - Backlog? ✓
 - Criacao do Manual de utilização e Tecnico
-- Ver o template do Sprint Planning Metting
+- Ver o template do Sprint Planning Metting ✓
 
 ### Entregar terça 20
 - Burndown chart da sprint
