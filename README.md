@@ -4,8 +4,8 @@
 ### TODO:
 - ATA 3 ✓
 - Incluir icons na arquitetura geral ✓
-- Arquitetura Logica/Diagrama de pacotes, utilizar "uses" em vez de "imports"
-- Diagrama de instalação não está em MVC
+- Arquitetura Logica/Diagrama de pacotes, utilizar "uses" em vez de "imports" ✓
+- Diagrama de instalação não está em MVC ✓
 
 - Preparar o Trello para o sprint a decorrer
 - Estruturar o projecto
