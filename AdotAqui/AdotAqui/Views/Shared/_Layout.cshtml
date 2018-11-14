@@ -18,55 +18,31 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-controller="Home" asp-action="About">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-controller="Home" asp-action="Contact">Pricing</a>
-                </li>
+    <!--<li class="nav-item active">
+        <a class="nav-link" asp-controller="Home" asp-action="Index">Animais</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Home" asp-action="About">Animais</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Home" asp-action="Contact">Consultas</a>
+    </li>-->
             </ul>
             <button class="btn my-2 my-sm-0 navbutton">Registar</button>
             <button class="btn my-2 my-sm-0 navbutton">Entrar</button>
-            @*<span class="navbar-text">
-            Navbar text with an inline element
-        </span>*@
         </div>
     </nav>
 
-    <!--<nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">AdotAqui</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>-->
-
-    <partial name="_CookieConsentPartial" />
+    <!--<partial name="_CookieConsentPartial" />-->
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - AdotAqui</p>
-        </footer>
     </div>
-
+    <footer class="footer">
+        <div class="container border-top">
+            <span class="text-muted">Engenharia de Software - IPS 2018/2019</span>
+        </div>
+    </footer>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
