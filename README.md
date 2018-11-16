@@ -2,24 +2,23 @@
 ## 2018-2019
 
 ### TODO:
-- ATA 3 ✓
-- Incluir icons na arquitetura geral ✓
-- Arquitetura Logica/Diagrama de pacotes, utilizar "uses" em vez de "imports" ✓
-- Diagrama de instalação não está em MVC ✓
-
+- ATA 4 
+- Arquitetura geral -> incluir Github
 - Preparar o Trello para o sprint a decorrer
 - Estruturar o projecto
 - Implementar Requisitos funcionais desta fase
-- Elaborar documento do moodle Sprint ✓
 - Verificar como funciona o DOCFX / Vsdocman
-- Verificar https://seleniumhq.org/ de modo a fazer testes automaticos
 - Fazer BPD's (Obrigatorios e substituiem diagramas de atividades)
-- Ver do template do Sprint planning metting - Backlog? ✓
 - Criacao do Manual de utilização e Tecnico
-- Ver o template do Sprint Planning Metting ✓
 - Diagrama Geral de Navegação (Colocar cores)
+- Incluir BurnDown chart na Sprint meeting planning
+- Testes de browser (https://seleniumhq.org/)
+- Incluir na app manual utilizador help
+- Adicionar aos requisitos a necessidade de existir ajuda na pagina
+- Adicionar aos requisitos as linguagens que estão disponiveis (Globalização)
+- Colocar na BD os Erros / Ajuda (Não gosto)
 
 ### Entregar terça 20
-- Burndown chart da sprint
-- Documento da sprint
+- Sprint Meeting Planning
+- Diagramas de Estados / Sequencias / BPD's
 - Projecto com Módulos Autenticações/Perfis
