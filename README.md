@@ -12,7 +12,7 @@
 - Criacao do Manual de utilização e Tecnico
 - Diagrama Geral de Navegação (Colocar cores)
 - Incluir BurnDown chart na Sprint meeting planning
-- Testes de browser (https://seleniumhq.org/)
+- Testes de browser (https://www.seleniumhq.org/)
 - Incluir na app manual utilizador help
 - Adicionar aos requisitos a necessidade de existir ajuda na pagina
 - Adicionar aos requisitos as linguagens que estão disponiveis (Globalização)
