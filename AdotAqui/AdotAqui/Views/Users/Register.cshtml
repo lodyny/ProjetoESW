@@ -1,0 +1,44 @@
+﻿@model AdotAqui.Models.User
+
+@{
+    ViewData["Title"] = "Registar";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/auth.css" />
+}
+
+<div class="text-center">
+    <img class="logo" src="~/images/iconblack.png" /><br />
+    <span class="logo-text">AdotAqui</span>
+    <form asp-action="Register" class="form">
+        <div class="form-group">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="Email" class="form-control" placeholder="E-mail" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Password" class="form-control" placeholder="Palavra-chave" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <hr class="form-dividor" />
+            <div class="form-group">
+                <input asp-for="Name" class="form-control" placeholder="Nome" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Phone" class="form-control" placeholder="Telefone" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Birthday" class="form-control" placeholder="Data Nascimento" />
+                <span asp-validation-for="Birthday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Registar" class="form-control form-submit btn btn-primary mb-2" />
+            </div>
+        </div>
+    </form>
+</div>
+
