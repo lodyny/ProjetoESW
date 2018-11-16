@@ -6,9 +6,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AdotAqui.Models;
+using SendGrid;
+using SendGrid.Helpers.Mail;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace AdotAqui.Controllers
 {
+    /// <summary>
+    ///  Controller Users
+    /// </summary>
     public class UsersController : Controller
     {
         private readonly AdotAquiContext _context;
@@ -18,12 +25,11 @@ namespace AdotAqui.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Register is a method used to return the RegisterView
+        /// </summary>
+        /// <returns>View Register</returns>
         public IActionResult Register()
-        {
-            return View();
-        }
-
-        public IActionResult Login()
         {
             return View();
         }
@@ -63,15 +69,21 @@ namespace AdotAqui.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserID,Email,Password,Name,Birthday,Phone,Gender,Image")] User user)
+        public async Task<IActionResult> Create([Bind("UserID,Email,Password,ConfirmPassword,Name,Birthday,Phone")] UserViewModel user)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(user);
                 await _context.SaveChangesAsync();
+                // Remover - Envia Emails
+                //await SendEmail(user.Email, user.Name);
+                string activationKey = CreateActivationKey(user.Email);
+                UserValidation userValidation = new UserValidation { UserID = user.UserID, ActivationKey = activationKey };
+                _context.Add(userValidation);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(user);
+            return View("Register", user);
         }
 
         // GET: Users/Edit/5
@@ -95,7 +107,7 @@ namespace AdotAqui.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UserID,Email,Password,Name,Birthday,Phone,Gender,Image,UserType")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("UserID,Email,Password,Name,Birthday,Phone")] User user)
         {
             if (id != user.UserID)
             {
@@ -157,6 +169,32 @@ namespace AdotAqui.Controllers
         private bool UserExists(int id)
         {
             return _context.Users.Any(e => e.UserID == id);
+        }
+
+        static async Task SendEmail(string email, string name, string activationKey)
+        {
+            var apiKey = "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";
+            var client = new SendGridClient(apiKey);
+            var from = new EmailAddress("noreply@adotaqui.com", "AdotAqui");
+            var subject = "Account Activation";
+            var to = new EmailAddress(email, name);
+            var plainTextContent = "Dear " + name + Environment.NewLine + Environment.NewLine + "Welcome!!!!!";
+            var htmlContent = "Dear" + name + "<br><br>Welcome!!!!!";
+            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+            var response = await client.SendEmailAsync(msg);
+        }
+
+        static private string CreateActivationKey(string email)
+        {
+            byte[] bytes = Encoding.UTF8.GetBytes(email);
+            SHA256Managed hashstring = new SHA256Managed();
+            byte[] hash = hashstring.ComputeHash(bytes);
+            string hashString = string.Empty;
+            foreach (byte x in hash)
+            {
+                hashString += String.Format("{0:x2}", x);
+            }
+            return hashString;
         }
     }
 }
