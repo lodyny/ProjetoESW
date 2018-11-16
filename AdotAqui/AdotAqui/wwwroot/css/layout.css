@@ -21,6 +21,7 @@
 }
 
 .navbutton:hover {
+    color: white;
     background-color: #FC6600;
     border: 1px solid #FC6600;
 }

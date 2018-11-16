@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/auth.css" />
+}
+
+<div class="text-center">
+    <img class="logo" src="~/images/iconblack.png" /><br />
+    <span class="logo-text">AdotAqui</span>
+    <form class="form">
+        <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail">
+            <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Palavra-Passe">
+            <button type="submit" class="form-control form-submit btn btn-primary mb-2">Entrar</button>
+            <span class="form-gray">Esqueceu-se da palavra-passe?</span>
+            <hr class="form-dividor" />
+            <a class="form-control btn btn-primary mb-2">Ainda não tem conta? Registe-se!</a>
+        </div>
+    </form>
+</div>
