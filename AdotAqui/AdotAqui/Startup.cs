@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using AdotAqui.Models;
+using AdotAqui.Models.Services;
 
 namespace AdotAqui
 {
@@ -33,11 +34,11 @@ namespace AdotAqui
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<AdotAquiContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("AdotAquiContext")));
+            services.AddDbContext<AdotAquiContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AdotAquiContext")));
+            services.AddTransient<IEmailService, EmailService>();
+            services.AddTransient<ISignUpService, SignUpService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

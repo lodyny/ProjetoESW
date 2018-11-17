@@ -13,6 +13,7 @@ namespace AdotAqui.Models
         public int UserID { get; set; }
 
         [Required]
+        [EmailAddress]
         [Display(Prompt = "E-mail")]
         public string Email { get; set; }
 
@@ -25,9 +26,11 @@ namespace AdotAqui.Models
         [Display(Prompt = "Nome")]
         public string Name { get; set; }
 
+        [DataType(DataType.DateTime)]
         [Display(Prompt = "Data de nascimento")]
         public string Birthday { get; set; }
 
+        [DataType(DataType.PhoneNumber)]
         [Display(Prompt = "Telefone")]
         public string Phone { get; set; }
     }
