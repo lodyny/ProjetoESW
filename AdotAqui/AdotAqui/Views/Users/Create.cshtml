@@ -33,9 +33,10 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Birthday" class="control-label"></label>
-                <input asp-for="Birthday" class="form-control" />
-                <span asp-validation-for="Birthday" class="text-danger"></span>
+
+
+                
+
             </div>
             <div class="form-group">
                 <label asp-for="Phone" class="control-label"></label>
@@ -55,4 +56,6 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/lib/jquery/bootstrap-datepicker.js"></script>
+    <script src="~/lib/css/bootstrap-datepicker.css"></script>
 }

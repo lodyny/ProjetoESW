@@ -5,6 +5,7 @@
 }
 
 @section Styles {
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap-datepicker.css"/>
     <link rel="stylesheet" href="~/css/auth.css" />
 }
 
@@ -31,8 +32,10 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input asp-for="Birthday" class="form-control" />
-                <span asp-validation-for="Birthday" class="text-danger"></span>
+                <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+                    <input asp-for="Birthday" class="form-control" data-provide="datepicker" type="text" readonly />
+                    <span asp-validation-for="Birthday" class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                </div>
             </div>
             <div class="form-group">
                 <input asp-for="Phone" class="form-control" />
@@ -45,3 +48,6 @@
     </form>
 </div>
 
+@section Scripts {
+    <script src="~/lib/bootstrap/js/bootstrap-datepicker.js"></script>
+}
