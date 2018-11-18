@@ -35,7 +35,7 @@ namespace AdotAqui
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddDbContext<AdotAquiContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AdotAquiContext")));
             services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<ISignUpService, SignUpService>();
