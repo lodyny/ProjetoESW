@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AdotAqui</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/layout.css" />
+    <script src="~/lib/jquery/jquery-3.3.1.min.js"></script>
+    <script src="~/lib/popper/popper.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    @RenderSection("Scripts", required: false)
+    @RenderSection("Styles", false)
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a id="navtitle" class="navbar-brand" asp-controller="Home" asp-action="Index"><img id="navicon" src="~/images/iconwhite.png" />AdotAqui</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <!--<li class="nav-item active">
+                <a class="nav-link" asp-controller="Home" asp-action="Index">Animais</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="About">Animais</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="Contact">Consultas</a>
+                </li>-->
+            </ul>
+            <partial name="_LoginPartial" />
+        </div>
+    </nav>
+
+    <!--<partial name="_CookieConsentPartial" />-->
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <footer class="footer">
+        <div class="container border-top">
+            <span class="text-muted">Engenharia de Software - IPS 2018/2019</span>
+        </div>
+    </footer>
+</body>
+</html>
