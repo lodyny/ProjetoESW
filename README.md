@@ -5,6 +5,7 @@
 - ATA 4 
 
 ✘✘✘
+
 Extreme
 - Projecto com Módulos Autenticações/Perfis
 
@@ -21,6 +22,7 @@ Low Priority
 - Implementar Requisitos funcionais desta fase:
    Adicionar aos requisitos a necessidade de existir ajuda na pagina
    Adicionar aos requisitos as linguagens que estão disponiveis (Globalização)
+   
 ✘✘✘
 
 - Arquitetura geral -> incluir Github ✔
