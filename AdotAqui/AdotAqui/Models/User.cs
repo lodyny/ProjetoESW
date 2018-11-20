@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace AdotAqui.Models
 {
+    /// <summary>
+    /// Class used to represent the User
+    /// </summary>
     public class User : IdentityUser<int>
     {
         [Required(ErrorMessage ="Email em falta")]

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AdotAqui.Models.Services
 {
+    /// <summary>
+    /// Email Service Interface with generic funcionality
+    /// </summary>
     public interface IEmailService : IEmailSender
     {
         Task SendAsync(Email email);

@@ -8,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AdotAqui.Data
 {
+    /// <summary>
+    /// Database context
+    /// </summary>
     public class AdotAquiDbContext : IdentityDbContext<User, IdentityRole<int>, int, IdentityUserClaim<int>,
         IdentityUserRole<int>, IdentityUserLogin<int>, IdentityRoleClaim<int>, IdentityUserToken<int>>
     {
@@ -15,6 +18,12 @@ namespace AdotAqui.Data
             : base(options)
         {
         }
+
+        /// <summary>
+        /// Method responsable for overwriting the OnModelCreating
+        /// Used to replace some of the default tables of ASP.NET Identity
+        /// </summary>
+        /// <param name="builder"></param>
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
