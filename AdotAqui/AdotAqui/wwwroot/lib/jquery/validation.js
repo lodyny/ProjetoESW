@@ -29,15 +29,15 @@ function isvalidpw(pw){
 	}
 	else {
 		if(/^[a-zA-Z0-9]+$/.test(pw)){
-			message = 'Passwords must have at least one non alphanumeric character.';
+			message = 'É necessário pelo menos um caracter não alfanumérico';
 		}else if (!/\d/.test(pw)){
-			message = 'Passwords must have at least one digit (0-9).';
+			message = 'É necessário pelo menos um número (0-9).';
 		}else if (!/[a-z]/.test(pw)){
-			message = 'Passwords must have at least one lowercase (a-z).';
+			message = 'É necessário pelo menos uma letra minúscula (a-z).';
 		}else if (!/[A-Z]/.test(pw)){
-			message = 'Passwords must have at least one uppercase (A-Z).';
+			message = 'É necessário pelo menos uma letra maiúscula (A-Z).';
 		}else if (!pw.length < 6){
-			message = 'Passwords must be at least 6 characters.';
+			message = 'É necessário pelo menos 6 caracteres.';
 		}
 		$(".result_pw").text( "✘" );
 		$(".result_pw").css({"margin-top" : "-32px", "margin-right" : "5px", "color" : "red", "float" : "right" });
@@ -106,9 +106,11 @@ $(function(){
     });
 	
 	$("#Password").focusout(function(){
-		isvalidpw($("#Password").val());
+		if ($("#Password").val().length > 0){
+			isvalidpw($("#Password").val());
+		}
 		if ($("#ConfirmPassword").val().length > 0){
-        validatepw();
+			validatepw();
 		}
     });
 	

@@ -9,17 +9,18 @@ namespace AdotAqui.Models
 {
     public class User : IdentityUser<int>
     {
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage ="Email em falta")]
+        [EmailAddress(ErrorMessage = "Email inválido")]
         [Display(Prompt = "E-mail")]
         public override string Email { get; set; }
 
-        [Required(ErrorMessage = "Please Enter the password")]
+        [Required(ErrorMessage = "Password obrigatória")]
         [DataType(DataType.Password)]
         [Display(Prompt = "Palavra-chave")]
         public override string PasswordHash { get; set; }
 
         [Required]
+        [StringLength(10, MinimumLength = 3, ErrorMessage = "Mínimo de 3 caracteres")]
         [Display(Prompt = "Nome")]
         public string Name { get; set; }
 
