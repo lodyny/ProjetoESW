@@ -31,6 +31,7 @@ namespace AdotAqui.Areas.Identity.Pages.Account
         {
             [Required]
             [EmailAddress]
+            [Display(Prompt = "E-mail")]
             public string Email { get; set; }
         }
 
