@@ -3,22 +3,34 @@
 
 ### TODO:
 - ATA 4 
-- Arquitetura geral -> incluir Github
-- Preparar o Trello para o sprint a decorrer
-- Estruturar o projecto
-- Implementar Requisitos funcionais desta fase
-- Verificar como funciona o DOCFX / Vsdocman
-- Fazer BPD's (Obrigatorios e substituiem diagramas de atividades)
+
+✘✘✘
+
+Extreme
+- Projecto com Módulos Autenticações/Perfis
+
+High Priority
+- Incluir BurnDown chart na Sprint meeting planning 
 - Criacao do Manual de utilização e Tecnico
-- Diagrama Geral de Navegação (Colocar cores)
-- Incluir BurnDown chart na Sprint meeting planning
-- Testes de browser (https://www.seleniumhq.org/)
 - Incluir na app manual utilizador help
-- Adicionar aos requisitos a necessidade de existir ajuda na pagina
-- Adicionar aos requisitos as linguagens que estão disponiveis (Globalização)
+- Testes de browser (https://www.seleniumhq.org/)
 - Colocar na BD os Erros / Ajuda (Não gosto)
 
+Low Priority
+- Diagrama Geral de Navegação (Colocar cores) 
+- Estruturar o projecto
+- Implementar Requisitos funcionais desta fase:
+   Adicionar aos requisitos a necessidade de existir ajuda na pagina
+   Adicionar aos requisitos as linguagens que estão disponiveis (Globalização)
+   
+✘✘✘
+
+- Arquitetura geral -> incluir Github ✔
+- Preparar o Trello para o sprint a decorrer ✔
+- Verificar como funciona o DOCFX / Vsdocman ✔ (falta comentar)
+- Fazer BPD's (Obrigatorios e substituiem diagramas de atividades) ✔
+
 ### Entregar terça 20
-- Sprint Meeting Planning
+- Sprint Meeting Planning ✔
 - Diagramas de Estados / Sequencias / BPD's
 - Projecto com Módulos Autenticações/Perfis
