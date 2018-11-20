@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace AdotAqui.Models.Services
 {
+    /// <summary>
+    /// Class used to represent the authentication of sendgrid
+    /// </summary>
     public class AuthMessageSenderOptions
     {
         public string SendGridUser { get; set; }
