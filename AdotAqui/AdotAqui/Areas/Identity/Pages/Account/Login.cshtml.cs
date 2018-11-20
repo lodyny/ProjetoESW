@@ -39,13 +39,15 @@ namespace AdotAqui.Areas.Identity.Pages.Account
         {
             [Required]
             [EmailAddress]
+            [Display(Prompt = "E-mail")]
             public string Email { get; set; }
 
             [Required]
             [DataType(DataType.Password)]
+            [Display(Prompt = "Palavra-chave")]
             public string Password { get; set; }
 
-            [Display(Name = "Remember me?")]
+            [Display(Name = "Lembrar dados?")]
             public bool RememberMe { get; set; }
         }
 

@@ -50,3 +50,7 @@
 .form-dividor {
     border-color: gray;
 }
+
+.form-inlinecontrol {
+    bottom: 50px;
+}

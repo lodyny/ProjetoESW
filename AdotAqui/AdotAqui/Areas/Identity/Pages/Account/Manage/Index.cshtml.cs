@@ -47,6 +47,12 @@ namespace AdotAqui.Areas.Identity.Pages.Account.Manage
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+
+            [Display(Name = "Nome")]
+            public string Name { get; set; }
+
+            [Display(Name = "Data Nascimento")]
+            public string Birthday { get; set; }
         }
 
         public async Task<IActionResult> OnGetAsync()
@@ -60,13 +66,17 @@ namespace AdotAqui.Areas.Identity.Pages.Account.Manage
             var userName = await _userManager.GetUserNameAsync(user);
             var email = await _userManager.GetEmailAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
+            var name = user.Name;
+            var birthday = user.Birthday;
 
             Username = userName;
 
             Input = new InputModel
             {
                 Email = email,
-                PhoneNumber = phoneNumber
+                PhoneNumber = phoneNumber,
+                Birthday = birthday,
+                Name = name
             };
 
             IsEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user);
@@ -109,8 +119,20 @@ namespace AdotAqui.Areas.Identity.Pages.Account.Manage
                 }
             }
 
+            if (Input.Name != user.Name || Input.Birthday != user.Birthday)
+            {
+                user.Birthday = Input.Birthday;
+                user.Name = Input.Name;
+                var result = await _userManager.UpdateAsync(user);
+                if (!result.Succeeded)
+                {
+                    var userId = await _userManager.GetUserIdAsync(user);
+                    throw new InvalidOperationException($"Unexpected error occurred setting phone number for user with ID '{userId}'.");
+                }
+            }
+
             await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "Your profile has been updated";
+            StatusMessage = "Perfil foi actualizado com sucesso!";
             return RedirectToPage();
         }
 
