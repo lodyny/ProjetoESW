@@ -6,17 +6,17 @@
 
 ✘✘✘
 
-Extreme
+Extreme :collision:
 - Projecto com Módulos Autenticações/Perfis
 
-High Priority
+High Priority :fire:
 - Incluir BurnDown chart na Sprint meeting planning 
 - Criacao do Manual de utilização e Tecnico
 - Incluir na app manual utilizador help
 - Testes de browser (https://www.seleniumhq.org/)
 - Colocar na BD os Erros / Ajuda (Não gosto)
 
-Low Priority
+Low Priority :sparkles:
 - Diagrama Geral de Navegação (Colocar cores) 
 - Estruturar o projecto
 - Implementar Requisitos funcionais desta fase:
