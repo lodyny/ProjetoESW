@@ -16,17 +16,24 @@
 
 .form {
     margin: 0 auto;
-    width: 290px;
+    width: 370px;
     text-align: center;
 }
 
 .form-control {
-    margin-top: 10px;
+	width: 290px !important;
+	display: inline !important;
 }
 
 .form-submit {
     border: 0;
     background-color: #FC6600;
+	margin-left: -27px;
+}
+
+.form-group {
+	margin-top: 10px;
+	padding-left: 12px;
 }
 
 .form-submit:hover {
@@ -54,3 +61,18 @@
 .form-inlinecontrol {
     bottom: 50px;
 }
+
+.helper{
+	margin-top: -6px;
+	margin-left: 2px;
+}
+
+#divtoshow {
+	background:pink;
+	padding: 10px;
+	-moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+

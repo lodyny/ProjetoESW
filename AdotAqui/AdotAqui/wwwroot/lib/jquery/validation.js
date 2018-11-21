@@ -84,9 +84,60 @@ function validatename() {
 	  }
 }
 
+function hoverdiv(e,divid){
 
+    var left  = 5 + e.clientX  + "px";
+    var top  = 5 + e.clientY  + "px";
+
+    var div = document.getElementById(divid);
+
+    div.style.left = left;
+    div.style.top = top;
+	
+	switch(e.target.id) {
+    case 'helper_mail':
+        message = 'É necessário um e-mail válido. Ex: mail@mail.com'
+        break;
+    case 'helper_pw':
+        message = 'test. <br/> teste'
+        break;
+	case 'helper_pw_c':
+        message = 'pass c'
+        break;
+	case 'helper_name':
+        message = 'name'
+        break;
+	case 'helper_bd':
+        message = 'bd'
+        break;
+	case 'helper_pn':
+        message = 'pn'
+        break;
+    default:
+        message = 'Help not avaliable'
+	} 
+	
+	$("#"+divid).html(message);
+    $("#"+divid).toggle();
+    return false;
+}
+
+function hoverdiv_hide(divid){
+
+    var div = document.getElementById(divid);
+    $("#"+divid).toggle();
+}
 
 $(function(){
+		
+	//HELPER CLASS
+	$('.helper').mouseover(function(event){
+		hoverdiv(event, 'divtoshow'); 
+	});
+	
+	$('.helper').mouseout(function(event){
+		hoverdiv_hide('divtoshow'); 
+	});
 		
 	// PASSWORD
     $("#ConfirmPassword").focusin(function(){
@@ -141,4 +192,6 @@ $(function(){
         validatename();
 		}
 	});
+	
+	
 });
