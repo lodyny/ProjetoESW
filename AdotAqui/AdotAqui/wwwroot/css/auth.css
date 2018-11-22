@@ -16,7 +16,7 @@
 
 .form {
     margin: 0 auto;
-    width: 370px;
+    width: 290px;
     text-align: center;
 }
 
@@ -33,7 +33,6 @@
 
 .form-group {
 	margin-top: 10px;
-	padding-left: 12px;
 }
 
 .form-submit:hover {
@@ -63,12 +62,22 @@
 }
 
 .helper{
-	margin-top: -6px;
-	margin-left: 2px;
+	position: relative;
+	margin-top : -32px;
+	margin-right : 5px;
+	color : red;
+	float : right;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #divtoshow {
-	background:pink;
+	text-align: left;
+	background: GhostWhite;
 	padding: 10px;
 	-moz-border-radius: 20px;
     -webkit-border-radius: 20px;

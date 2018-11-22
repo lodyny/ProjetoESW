@@ -28,23 +28,53 @@ function isvalidpw(pw){
 		return true;
 	}
 	else {
-		if(/^[a-zA-Z0-9]+$/.test(pw)){
-			message = 'É necessário pelo menos um caracter não alfanumérico';
-		}else if (!/\d/.test(pw)){
-			message = 'É necessário pelo menos um número (0-9).';
-		}else if (!/[a-z]/.test(pw)){
-			message = 'É necessário pelo menos uma letra minúscula (a-z).';
-		}else if (!/[A-Z]/.test(pw)){
-			message = 'É necessário pelo menos uma letra maiúscula (A-Z).';
-		}else if (!pw.length < 6){
-			message = 'É necessário pelo menos 6 caracteres.';
-		}
 		$(".result_pw").text( "✘" );
-		$(".result_pw").css({"margin-top" : "-32px", "margin-right" : "5px", "color" : "red", "float" : "right" });
+		$(".result_pw").css("color", "red");
 		$("#Password").css("border-color", "rgb(220, 53, 69)");
-		$("#Password").attr({'data-original-title': message, 'data-placement': 'right'})
-          .tooltip('show');
 	}
+}
+
+function pwmessagebuilder(pw){
+		message = '';
+		
+		if ((/^[a-zA-Z0-9]+$/.test(pw)) || !pw){
+			message += '<font color="red">✘</font>'
+		} else {
+			message += '<font color="green">✔</font>'
+		}
+		message += ' É necessário pelo menos um caracter não alfanumérico.<br/>';
+		
+		
+		if (!/\d/.test(pw)){
+			message += '<font color="red">✘</font>'
+		} else {
+			message += '<font color="green">✔</font>'
+		}
+		message += ' É necessário pelo menos um número (0-9).<br/>';
+		
+		
+		if (!/[a-z]/.test(pw)){
+			message += '<font color="red">✘</font>'
+		} else {
+			message += '<font color="green">✔</font>'
+		}
+		message += ' É necessário pelo menos uma letra minúscula (a-z).<br/>';
+		
+		if (!/[A-Z]/.test(pw)){
+			message += '<font color="red">✘</font>'
+		} else {
+			message += '<font color="green">✔</font>'
+		}
+		message += ' É necessário pelo menos uma letra maiúscula (A-Z).<br/>';
+		
+		if (!pw.length < 6){
+			message += '<font color="red">✘</font>'
+		} else {
+			message += '<font color="green">✔</font>'
+		}
+		message += ' É necessário pelo menos 6 caracteres.';
+		
+		return message;
 }
 
 function isEmail(email) {
@@ -61,10 +91,8 @@ function validatemail() {
 		$("#Email").attr('data-original-title', '');
 	  } else {
 		result.text( "✘" );
-		result.css({"margin-top" : "-32px", "margin-right" : "5px", "color" : "red", "float" : "right"});
+		result.css("color", "red");
 		$("#Email").css({"border-color": "rgb(220, 53, 69)"});
-		$("#Email").attr({'data-original-title': 'E-mail inválido', 'data-placement': 'right'})
-          .tooltip('show');
 	  }
 }
 
@@ -85,7 +113,9 @@ function validatename() {
 }
 
 function hoverdiv(e,divid){
-
+	
+	if(!($('#' + e.currentTarget.id).text() == '✔')){
+		
     var left  = 5 + e.clientX  + "px";
     var top  = 5 + e.clientY  + "px";
 
@@ -94,12 +124,13 @@ function hoverdiv(e,divid){
     div.style.left = left;
     div.style.top = top;
 	
-	switch(e.target.id) {
-    case 'helper_mail':
+	console.log(e.currentTarget.id);
+	switch(e.currentTarget.id) {
+    case 'result_mail':
         message = 'É necessário um e-mail válido. Ex: mail@mail.com'
         break;
-    case 'helper_pw':
-        message = 'test. <br/> teste'
+    case 'result_pw':
+        message = pwmessagebuilder($("#Password").val());
         break;
 	case 'helper_pw_c':
         message = 'pass c'
@@ -120,12 +151,15 @@ function hoverdiv(e,divid){
 	$("#"+divid).html(message);
     $("#"+divid).toggle();
     return false;
+	}
 }
 
-function hoverdiv_hide(divid){
-
-    var div = document.getElementById(divid);
+function hoverdiv_hide(e, divid){
+	
+	if(!($('#' + e.currentTarget.id).text() == '✔')){
+	var div = document.getElementById(divid);
     $("#"+divid).toggle();
+	}
 }
 
 $(function(){
@@ -136,7 +170,7 @@ $(function(){
 	});
 	
 	$('.helper').mouseout(function(event){
-		hoverdiv_hide('divtoshow'); 
+		hoverdiv_hide(event, 'divtoshow'); 
 	});
 		
 	// PASSWORD
@@ -156,7 +190,12 @@ $(function(){
 		}
     });
 	
+	$("#Password").focusin(function(){
+        $(".result_pw").html( '<font style="margin-right:5px; font-size: 18px; color: orange;"> <b>?</b> </font>' );
+    });
+	
 	$("#Password").focusout(function(){
+		$(".result_pw").html( '' );
 		if ($("#Password").val().length > 0){
 			isvalidpw($("#Password").val());
 		}
@@ -169,11 +208,11 @@ $(function(){
 	$("#Email").focusin(function(){
         $("#Email").css("border-color", "");
 		$("#Email").tooltip('dispose');
-		$(".result_mail").text( "" );
-		$("#Email").attr('data-original-title', '');
+		$(".result_mail").html( '<font style="margin-right:5px; font-size: 18px; color: orange;"> <b>?</b> </font>' );
     });
 	
 	$("#Email").focusout(function(){
+		$(".result_mail").html( '' );
 		if ($("#Email").val().length > 0){
         validatemail();
 		}
