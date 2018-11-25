@@ -1,0 +1,64 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Registar";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="~/css/auth.css" />
+}
+
+    <div class="text-center">
+        <!-- <img class="logo" src="~/images/iconblack.png" /><br /> -->
+        <div id="divtoshow" style="position: fixed;display:none;">test</div>
+        
+        <span class="logo-text">AdotAqui</span>
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form">
+            <div class="form-group">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <input asp-for="Input.Email" class="form-control" id="Email">
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    <div id="result_mail" class="result_mail helper"></div> 
+                </div>
+                <div class="form-group">
+                    <input asp-for="Input.PasswordHash" class="form-control" id="Password" />
+                    <span asp-validation-for="Input.PasswordHash" class="text-danger"></span>
+                    <div id="result_pw" class="result_pw helper"></div>
+                </div>
+                <div class="form-group">
+                    <input asp-for="Input.ConfirmPassword" class="form-control" id="ConfirmPassword" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    <div class="result_pw_c"></div>
+                </div>
+                <div class="form-group">
+                    <input asp-for="Input.Name" class="form-control" id="Name" />
+                    <span asp-validation-for="Input.Name" class="text-danger"></span>
+                    <div class="result_name"></div>
+                </div>
+                <div class="form-group">
+                    <div id="datepicker" class="date" data-date-format="mm-dd-yyyy">
+                        <input asp-for="Input.Birthday" class="form-control" data-provide="datepicker" data-date-autoclose="true" data-date-format="dd/mm/yyyy" type="text" readonly />
+                        <span asp-validation-for="Input.Birthday" class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        <div class="result_bd"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input asp-for="Input.PhoneNumber" class="form-control" id="Phone" />
+                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                    <div class="result_pn"></div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Registar" class="form-control form-submit btn btn-primary mb-2" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+        <script src="~/lib/bootstrap/js/bootstrap-datepicker.js"></script>
+        <script src="~/lib/jquery/validation.js"></script>
+    }

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<AdotAqui.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Utilizadores</h2>
+<form asp-controller="Users" asp-action="Index"><p>Pesquisar: <input type="text" name="SearchString" /> <input type="submit" value="Filter" /></p></form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Birthday)
+            </th>
+            <th>
+                Banido?
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Birthday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Banned)
+            </td>
+            <td>
+                @if (item.Banned)
+                {
+                    <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black">Desbanir</a>
+                }
+                else
+                {
+                    <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black">Banir</a>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

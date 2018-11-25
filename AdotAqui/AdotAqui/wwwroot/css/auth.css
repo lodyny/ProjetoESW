@@ -1,0 +1,87 @@
+﻿.logo {
+    margin-top: 15px;
+    width:10em;
+    height:10em;
+}
+
+.logo-text {
+    display: inline-block;
+    font-family: 'Arial';
+    color: black;
+    font-weight: bold;
+    font-size: 4em;
+    line-height: 20px;
+    margin: 20px;
+}
+
+.form {
+    margin: 0 auto;
+    width: 290px;
+    text-align: center;
+}
+
+.form-control {
+	width: 290px !important;
+	display: inline !important;
+}
+
+.form-submit {
+    border: 0;
+    background-color: #FC6600;
+	margin-left: -27px;
+}
+
+.form-group {
+	margin-top: 10px;
+}
+
+.form-submit:hover {
+    background-color: #D65600;
+    border: 1px solid #FC6600;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+    background-color: #FC6600;
+    border-color: #FC6600;
+}
+
+.btn-primary:focus {
+    box-shadow: 0;
+}
+
+.form-gray {
+    color: gray;
+}
+
+.form-dividor {
+    border-color: gray;
+}
+
+.form-inlinecontrol {
+    bottom: 50px;
+}
+
+.helper{
+	position: relative;
+	margin-top : -32px;
+	margin-right : 5px;
+	color : red;
+	float : right;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#divtoshow {
+	text-align: left;
+	background: GhostWhite;
+	padding: 10px;
+	-moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+
