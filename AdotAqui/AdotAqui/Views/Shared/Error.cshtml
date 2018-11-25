@@ -1,22 +1,31 @@
-﻿@model ErrorViewModel
+﻿@using AdotAqui.Models.ViewModels
+@model ErrorViewModel
 @{
-    ViewData["Title"] = "Error";
+    ViewData["Title"] = "Erro";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<h1 class="text-danger">Aconteceu alguma coisa de errado.</h1>
+<h2 class="text-danger">Ocorreu um erro enquanto o servidor processava o seu pedido.</h2>
 
 @if (Model.ShowRequestId)
 {
     <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        <strong>Código do Pedido:</strong> <code>@Model.RequestId</code>
     </p>
 }
 
-<h3>Development Mode</h3>
 <p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
+    <strong>Código do Erro:</strong> <code>@Model.ErrorId</code>
 </p>
+
+@if (Model.ShowDescription)
+{
+    <p>
+        <strong>Descrição do Erro:</strong> <code>@Model.Description</code>
+    </p>
+}
+
+<h3>Ajude-nos a corrigir o código do César, do Rúben e do David.</h3>
 <p>
-    <strong>Development environment should not be enabled in deployed applications</strong>, as it can result in sensitive information from exceptions being displayed to end users. For local debugging, development environment can be enabled by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>, and restarting the application.
+    Caso o erro que encontre não seja esperado, contacte-nos através de <a href="mailto:support@adotaqui.com">support@adotaqui.com</a> com os detalhes desta página.
 </p>

@@ -1,0 +1,16 @@
+﻿@using AdotAqui.Models.ViewModels
+@model StatusMessage
+@{ 
+    var statusMessageClass = "";
+    switch (Model.Type)
+    {
+        case MessageType.Error: statusMessageClass = "danger"; break;
+        case MessageType.Info: statusMessageClass = "info"; break;
+        case MessageType.Success: statusMessageClass = "success"; break;
+        case MessageType.Warning: statusMessageClass = "warning"; break;
+    }
+    <div class="alert alert-@statusMessageClass alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        @Model.Value
+    </div>
+}

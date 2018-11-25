@@ -2,9 +2,6 @@
 
 namespace AdotAqui.Models.Services
 {
-    /// <summary>
-    /// Class used to represent a generic email header/body
-    /// </summary>
     public class Email
     {
         public EmailAddress From { get; set; }

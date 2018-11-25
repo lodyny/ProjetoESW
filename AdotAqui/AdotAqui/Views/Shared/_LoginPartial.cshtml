@@ -5,16 +5,16 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm">
-        <a asp-controller="Users" asp-action="Index" class="btn my-2 my-sm-0 navbutton">Config</a>
-        <a asp-area="Identity" asp-page="/Account/Manage/Index" class="btn my-2 my-sm-0 navbutton">Meu Perfil</a>
-        <button type="submit" class="btn my-2 my-sm-0 navbutton">Logout</button>
-    </form>
+<form asp-area="Identity" asp-controller="Account" asp-action="LogOff" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm">
+    <a asp-controller="Users" asp-action="Index" class="btn my-2 my-sm-0 navbutton">Config</a>
+    <a asp-area="Identity" asp-page="/Identity/Manage" class="btn my-2 my-sm-0 navbutton">Meu Perfil</a>
+    <button type="submit" class="btn my-2 my-sm-0 navbutton">Logout</button>
+</form>
 }
 else
 {
-    <a class="btn my-2 my-sm-0 navbutton" asp-area="Identity" asp-page="/Account/Register">Registar</a>
-    <a class="btn my-2 my-sm-0 navbutton" asp-area="Identity" asp-page="/Account/Login">Entrar</a>
+    <a class="btn my-2 my-sm-0 navbutton" asp-area="Identity" asp-controller="Account" asp-action="Register">Registar</a>
+    <a class="btn my-2 my-sm-0 navbutton" asp-area="Identity" asp-controller="Account" asp-action="Login">Entrar</a>
 }
 
 
