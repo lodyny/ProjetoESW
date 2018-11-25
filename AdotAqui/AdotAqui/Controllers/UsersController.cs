@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AdotAqui.Data;
 using AdotAqui.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AdotAqui.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class UsersController : Controller
     {
         private readonly AdotAquiDbContext _context;
