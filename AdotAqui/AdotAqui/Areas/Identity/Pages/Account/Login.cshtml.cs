@@ -16,11 +16,13 @@ namespace AdotAqui.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class LoginModel : PageModel
     {
+        private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly ILogger<LoginModel> _logger;
 
-        public LoginModel(SignInManager<User> signInManager, ILogger<LoginModel> logger)
+        public LoginModel(UserManager<User> userManager, SignInManager<User> signInManager, ILogger<LoginModel> logger)
         {
+            _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
         }
@@ -70,7 +72,7 @@ namespace AdotAqui.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl = returnUrl ?? Url.Content("~/");
+            returnUrl = returnUrl ?? Url.Content("~/Identity/Account/Manage");
 
             if (ModelState.IsValid)
             {
@@ -79,6 +81,13 @@ namespace AdotAqui.Areas.Identity.Pages.Account
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: true);
                 if (result.Succeeded)
                 {
+                    var user = await _userManager.FindByEmailAsync(Input.Email);
+                    if (user.Banned)
+                    {
+                        await _signInManager.SignOutAsync();
+                        return Redirect("~/");
+                    }
+
                     _logger.LogInformation("User logged in.");
                     return LocalRedirect(returnUrl);
                 }

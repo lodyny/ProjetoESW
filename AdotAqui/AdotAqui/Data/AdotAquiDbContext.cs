@@ -36,5 +36,7 @@ namespace AdotAqui.Data
             builder.Entity<IdentityUserToken<int>>().ToTable("UserTokens");
             builder.Entity<IdentityUserLogin<int>>().ToTable("UserLogins");
         }
+
+        public DbSet<AdotAqui.Models.User> User { get; set; }
     }
 }

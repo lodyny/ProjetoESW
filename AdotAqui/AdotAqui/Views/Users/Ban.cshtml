@@ -1,0 +1,64 @@
+﻿@model AdotAqui.Models.User
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Detalhes de @Html.DisplayFor(model => model.Name)</h2>
+<h5>
+    Estado da conta:
+    @{
+        if (Model.Banned)
+        {
+            <span style="color:red">BANIDA</span>
+        }
+        else
+        {
+            <span style="color:green">ATIVA</span>
+        }
+    }
+</h5>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Birthday)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailConfirmed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmailConfirmed)
+        </dd>
+    </dl>
+    
+    <form asp-action="Banir">
+        <input type="hidden" asp-for="Id" />
+        @{
+            if (Model.Banned)
+            {
+                <input type="submit" value="Desbanir " class="btn my-2 my-sm-0 navbutton" style="color:black" />
+            }
+            else
+            {
+                <input type="submit" value="Banir " class="btn my-2 my-sm-0 navbutton" style="color:black" />
+            }
+        }
+        <a asp-action="Index" class="btn my-2 my-sm-0 navbutton" style="color:black">Voltar</a>
+    </form>
+</div>

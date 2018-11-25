@@ -23,7 +23,7 @@ namespace AdotAqui.Models
         public override string PasswordHash { get; set; }
 
         [Required]
-        [StringLength(10, MinimumLength = 3, ErrorMessage = "Mínimo de 3 caracteres")]
+        [StringLength(25, MinimumLength = 3, ErrorMessage = "Mínimo de 3 caracteres")]
         [Display(Prompt = "Nome")]
         public string Name { get; set; }
 
@@ -34,5 +34,7 @@ namespace AdotAqui.Models
         [DataType(DataType.PhoneNumber)]
         [Display(Prompt = "Telefone")]
         public override string PhoneNumber { get; set; }
+
+        public bool Banned { get; set; }
     }
 }
