@@ -28,7 +28,6 @@
 .form-submit {
     border: 0;
     background-color: #FC6600;
-	margin-left: -27px;
 }
 
 .form-group {
@@ -75,13 +74,17 @@
     user-select: none;
 }
 
-#divtoshow {
+.tooltip-inner {
 	text-align: left;
-	background: GhostWhite;
-	padding: 10px;
-	-moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -khtml-border-radius: 20px;
-    border-radius: 20px;
+	color: black;
+	background: GhostWhite;	
+	border: 1px solid #ccc !important;
+    max-width: 390px;
+    /* If max-width does not work, try using width instead */
+    width: 390px; 
+	border-radius: 10px;
 }
 
+.tooltip.right  {
+  margin-left: 20px;
+}
