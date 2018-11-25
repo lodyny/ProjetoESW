@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using AdotAqui.Models;
+using AdotAqui.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AdotAqui.Controllers
 {
     /// <summary>
     /// Controller used to manage the anonymous pages
     /// </summary>
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         /// <summary>

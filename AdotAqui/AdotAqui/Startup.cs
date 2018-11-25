@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +10,8 @@ using AdotAqui.Models;
 using AdotAqui.Models.Services;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Identity;
+using AdotAqui.Models.Authorization;
+using System.Threading.Tasks;
 
 namespace AdotAqui
 {
@@ -43,23 +41,22 @@ namespace AdotAqui
                 .AddEntityFrameworkStores<AdotAquiDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.Configure<AuthMessageSenderOptions>(Configuration);
-
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1) .AddRazorPagesOptions(options =>
-        {
-            options.AllowAreas = true;
-            options.Conventions.AuthorizeAreaFolder("Identity", "/Account/Manage");
-            options.Conventions.AuthorizeAreaPage("Identity", "/Account/Logout");
-        });
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddRazorPagesOptions(options =>
+            {
+                options.AllowAreas = true;
+                options.Conventions.AuthorizeAreaFolder("Identity", "/Account/Manage");
+                options.Conventions.AuthorizeAreaPage("Identity", "/Account/Logout");
+            });
 
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = $"/Identity/Account/Login";
-                options.LogoutPath = $"/Identity/Account/Logout";
+                options.LogoutPath = $"/Identity/Account/LogOff";
                 options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
             });
-
+            services.AddAuthorization(options => { options.AddPolicy("AnonymousOnly", policy => policy.Requirements.Add(new AnonymousOnly())); });
             services.AddSingleton<IEmailSender, EmailService>();
+            services.AddSingleton<ISmsSender, SmsSender>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -84,6 +81,10 @@ namespace AdotAqui
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "areaRoute",
+                    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
