@@ -148,16 +148,16 @@ function hoverdiv(e){
     case 'result_pw':	
         message = pwmessagebuilder($("#Password").val());
         break;
-	case 'helper_pw_c':
+	case 'result_pw_c':
         message = 'As passwords precisam de ser iguais';
         break;
-	case 'helper_name':
+	case 'result_name':
         message = 'O nome precisa de ter pelo menos 3 caracteres';
         break;
-	case 'helper_bd':
+	case 'result_bd':
         message = 'bd';
         break;
-	case 'helper_pn':
+	case 'result_pn':
         message = 'O número precisa de 9 digitos';
         break;
     default:
