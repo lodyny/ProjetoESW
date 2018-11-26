@@ -1,0 +1,50 @@
+#profile_photo{
+	float: left;
+	margin-top: 40px;
+}
+
+#profile-form{
+	margin-right: 30px;
+}
+
+#profile_group{
+	width:700px;
+	margin: auto;
+}
+
+.form-group{
+	text-align: left;
+}
+
+.helper{
+	position: relative;
+	margin-top : -32px;
+	margin-right : 5px;
+	color : red;
+	float : right;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.tooltip-inner {
+	text-align: left;
+	color: black;
+	background: GhostWhite;	
+	border: 1px solid #ccc !important;
+    max-width: 390px;
+    width: 390px; 
+	border-radius: 10px;
+}
+
+.tooltip.right  {
+  margin-left: 20px;
+}
+
+#email-verification{
+	background: #FC6600;
+	color:#fff;
+}
