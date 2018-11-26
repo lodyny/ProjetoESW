@@ -12,6 +12,10 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Identity;
 using AdotAqui.Models.Authorization;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Razor;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using System.Collections.Generic;
 
 namespace AdotAqui
 {
@@ -41,11 +45,20 @@ namespace AdotAqui
                 .AddEntityFrameworkStores<AdotAquiDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddRazorPagesOptions(options =>
             {
                 options.AllowAreas = true;
                 options.Conventions.AuthorizeAreaFolder("Identity", "/Account/Manage");
                 options.Conventions.AuthorizeAreaPage("Identity", "/Account/Logout");
+            }).AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDataAnnotationsLocalization(o =>
+            {
+                o.DataAnnotationLocalizerProvider = (type, factory) =>
+                {
+                    return factory.Create(typeof(SharedResources));
+                };
             });
 
             services.ConfigureApplicationCookie(options =>
@@ -57,6 +70,19 @@ namespace AdotAqui
             services.AddAuthorization(options => { options.AddPolicy("AnonymousOnly", policy => policy.Requirements.Add(new AnonymousOnly())); });
             services.AddSingleton<IEmailSender, EmailService>();
             services.AddSingleton<ISmsSender, SmsSender>();
+
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                var supportedCultures = new List<CultureInfo>
+                    {
+                        new CultureInfo("pt-PT"),
+                        new CultureInfo("en-US")
+                    };
+
+                options.DefaultRequestCulture = new RequestCulture("pt-PT");
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,6 +98,19 @@ namespace AdotAqui
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+
+            var supportedCultures = new[]
+           {
+                new CultureInfo("pt-PT"),
+                new CultureInfo("en-US"),
+            };
+
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("pt-PT"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            });
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

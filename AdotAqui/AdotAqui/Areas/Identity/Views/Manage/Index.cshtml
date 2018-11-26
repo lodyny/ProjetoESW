@@ -1,4 +1,7 @@
 ﻿@using AdotAqui.Areas.Identity.Models.ManageViewModels
+@using Microsoft.Extensions.Localization;
+
+@inject IStringLocalizer<SharedResources> SharedLocalizer
 @model IndexViewModel
 @{
     ViewData["Title"] = "Profile";
@@ -6,56 +9,40 @@
 @section Styles {
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap-datepicker.css" />
     <link rel="stylesheet" href="~/css/auth.css" />
-    <link rel="stylesheet" href="~/css/perfil.css" />
 }
-
 @if (Model.StatusMessage != null)
 {
     <partial name="_StatusMessage" model="Model.StatusMessage" />
 }
-
-<div class="text-center">
-
-    <div id="profile_group">
-        <div><img id="profile_photo" src="https://via.placeholder.com/250x250" /></div>
-
+<div>
+    <div style="float:left;"><img src="https://via.placeholder.com/250x250" style="margin-top:50px" /></div>
+</div>
+<div class="row">
+    <div class="col-md-6">
         <form id="profile-form" method="post" class="form">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Input.Email" class="label_text"></label>
-                <input asp-for="Input.Email" class="form-control" id="Email" />
-                @if (Model.IsEmailConfirmed)
-                {
-                    <button id="email-verification" type="submit" asp-page-handler="SendVerificationEmail" class="btn my-2 my-sm-0 navbutton">Reenviar pedido confirmação</button>
-                }
-                <div id="result_mail" class="result_mail helper"></div>
+                Email<input asp-for="Input.Email" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Input.Name" class="label_text"></label>
-                <input asp-for="Input.Name" class="form-control" id="Name" />
+                <label asp-for="Input.Name"></label>
+                <input asp-for="Input.Name" class="form-control" />
                 <span asp-validation-for="Input.Name" class="text-danger"></span>
-                <div id="result_name" class="result_name helper"></div>
             </div>
             <div class="form-group">
-                <label asp-for="Input.PhoneNumber" class="label_text"></label>
-                <input asp-for="Input.PhoneNumber" class="form-control" id="Phone" />
+                <label asp-for="Input.PhoneNumber"></label>
+                <input asp-for="Input.PhoneNumber" class="form-control" />
                 <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
-                <div id="result_pn" class="result_pn helper"></div>
             </div>
             <div class="form-group">
-                <label asp-for="Input.Birthday" class="label_text"></label>
-                <div id="datepicker" class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">
-                    <input asp-for="Input.Birthday" class="form-control" type="text" readonly />
-                    <span asp-validation-for="Input.Birthday" class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                    <div id="result_bd" class="result_bd"></div>
-                </div>
+                <label asp-for="Input.Birthday"></label>
+                <input asp-for="Input.Birthday" class="form-control" />
+                <span asp-validation-for="Input.Birthday" class="text-danger"></span>
             </div>
-            <button type="submit" class="form-control form-submit btn btn-primary mb-2">Gravar Alterações</button>
+            <button type="submit" class="form-control form-submit btn btn-primary mb-2">@SharedLocalizer["Label_SaveChanges"]</button>
         </form>
     </div>
 </div>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-    <script src="~/lib/bootstrap/js/bootstrap-datepicker.js"></script>
-    <script src="~/lib/jquery/validation.js"></script>
 }

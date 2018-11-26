@@ -23,13 +23,13 @@ namespace AdotAqui.Areas.Identity.Models.ManageViewModels
         public string Email { get; set; }
 
         [Phone]
-        [Display(Name = "Phone number")]
+        [Display(Name = "Label_Phone")]
         public string PhoneNumber { get; set; }
 
-        [Display(Name = "Nome")]
+        [Display(Name = "Label_Name")]
         public string Name { get; set; }
 
-        [Display(Name = "Data Nascimento")]
+        [Display(Name = "Label_Birthday")]
         public string Birthday { get; set; }
     }
 }

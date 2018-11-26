@@ -8,20 +8,22 @@ namespace AdotAqui.Areas.Identity.Models.ManageViewModels
 {
     public class ChangePasswordViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Error_PasswordRequired")]
+        [StringLength(100, ErrorMessage = "Error_PasswordLengthInvalid", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Current password")]
         public string OldPassword { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessage = "Error_PasswordRequired")]
+        [StringLength(100, ErrorMessage = "Error_PasswordLengthInvalid", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "Label_NewPassword")]
         public string NewPassword { get; set; }
 
+        [Required(ErrorMessage = "Error_ConfirmPasswordRequired")]
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Compare("NewPassword")]
+        [Display(Prompt = "Label_ConfirmPassword")]
         public string ConfirmPassword { get; set; }
     }
 }

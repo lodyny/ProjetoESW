@@ -11,10 +11,10 @@ namespace AdotAqui.Areas.Identity.Models.AccountViewModels
     public class UserViewModel : User
     {
         [NotMapped]
-        [Required(ErrorMessage = "Confirm required")]
+        [Required(ErrorMessage = "Error_ConfirmPasswordRequired")]
         [DataType(DataType.Password)]
         [Compare("PasswordHash")]
-        [Display(Prompt = "Confirmar Palavra-chave")]
+        [Display(Prompt = "Label_ConfirmPassword")]
         public string ConfirmPassword { get; set; }
     }
 }
