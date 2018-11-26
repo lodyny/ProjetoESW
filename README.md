@@ -4,7 +4,6 @@
 ## TODO (26/11/2018)
 
 ### PROJECTO
-- Adicionar requisito role às páginas
 - Acabar ajuda dentro das páginas
 - Adicionar/Utilizar ficheiro de erros
 - Adicionar os testes Selenium dentro da aplicação
@@ -13,11 +12,8 @@
 ### DOCUMENTAÇÃO:
 - ATA 5
 - Manual Técnico : Comentar código e gerar pelo VSDocMan => Hospedar
-- Requisitos Funcionais Implementados
-- Diagramas de Use Cases
 - Diagramas de Classes de Desenho Detalhado
 - Diagramas de Navegação
-- Diagramas de Estados
 - Diagramas de Sequencias
 - Testes Unitários
 - Testes de Integração
