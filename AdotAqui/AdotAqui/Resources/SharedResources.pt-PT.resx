@@ -210,4 +210,10 @@
   <data name="Label_SaveChanges" xml:space="preserve">
     <value>Gravar Alterações</value>
   </data>
+  <data name="Label_ResendMail" xml:space="preserve">
+    <value>Reenviar pedido confirmação</value>
+  </data>
+  <data name="Label_ForgotPassword" xml:space="preserve">
+    <value>Esqueceu a sua palavra-chave?</value>
+  </data>
 </root>

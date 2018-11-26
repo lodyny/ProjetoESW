@@ -31,6 +31,7 @@
 }
 
 .form-group {
+	text-align:left;
 	margin-top: 10px;
 }
 
@@ -80,7 +81,6 @@
 	background: GhostWhite;	
 	border: 1px solid #ccc !important;
     max-width: 390px;
-    /* If max-width does not work, try using width instead */
     width: 390px; 
 	border-radius: 10px;
 }
