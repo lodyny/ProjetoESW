@@ -13,7 +13,6 @@
 - ATA 5
 - Manual Técnico : Comentar código e gerar pelo VSDocMan => Hospedar
 - Diagramas de Classes de Desenho Detalhado
-- Diagramas de Navegação
 - Diagramas de Sequencias
 - Testes Unitários
 - Testes de Integração
