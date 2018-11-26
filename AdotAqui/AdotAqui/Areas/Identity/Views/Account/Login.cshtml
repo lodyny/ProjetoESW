@@ -1,13 +1,14 @@
 @using Microsoft.AspNetCore.Identity
 @using AdotAqui.Areas.Identity.Models.AccountViewModels
+@using Microsoft.Extensions.Localization;
 @using AdotAqui.Models
 @model LoginViewModel
 @inject SignInManager<User> SignInManager
+@inject IStringLocalizer<SharedResources> SharedLocalizer
 @{
     ViewData["Title"] = "Login";
 }
 @section Styles {
-    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap-datepicker.css" />
     <link rel="stylesheet" href="~/css/auth.css" />
 }
 <div class="text-center">
@@ -32,11 +33,11 @@
             </div>
         </div>
         <div class="form-group">
-            <button type="submit" class="form-control form-submit btn btn-primary mb-2">Entrar</button>
+            <button type="submit" class="form-control form-submit btn btn-primary mb-2">@SharedLocalizer["Label_SignIn"]</button>
         </div>
         <div class="form-group">
             <p>
-                <a asp-action="ForgotPassword">Esqueceu a sua palavra-chave?</a>
+                <a asp-action="ForgotPassword">@SharedLocalizer["Label_ForgotPassword"]</a>
             </p>
         </div>
     </form>

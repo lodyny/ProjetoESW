@@ -8,8 +8,9 @@ namespace AdotAqui.Areas.Identity.Models.AccountViewModels
 {
     public class ExternalLoginConfirmationViewModel
     {
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "Error_EmailRequired")]
+        [EmailAddress(ErrorMessage = "Error_EmailInvalid")]
+        [Display(Prompt = "Label_Email")]
         public string Email { get; set; }
     }
 }

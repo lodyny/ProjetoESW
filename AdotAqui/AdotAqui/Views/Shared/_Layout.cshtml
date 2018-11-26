@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - AdotAqui</title>
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/layout.css" />
+    <link href="~/lib/fontawesome/css/all.css" rel="stylesheet">
     <script src="~/lib/jquery/jquery-3.3.1.min.js"></script>
     <script src="~/lib/popper/popper.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
@@ -40,9 +41,19 @@
         @RenderBody()
     </div>
     <footer class="footer">
+
         <div class="container border-top">
-            <span class="text-muted">Engenharia de Software - IPS 2018/2019</span>
+            <div class="pt-3 row">
+                <div class="col-md-6">
+                    <span class="text-muted">Engenharia de Software - IPS @System.DateTime.Now.Year</span>
+                </div>
+                <div class="col-md-6 text-right">
+                    @await Html.PartialAsync("_SelectLanguagePartial")
+                </div>
+            </div>
         </div>
+
+
     </footer>
 </body>
 </html>

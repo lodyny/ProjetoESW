@@ -1,20 +1,25 @@
-@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.Extensions.Localization;
+
+
+@inject IStringLocalizer<SharedResources> SharedLocalizer
 
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
-
 @if (SignInManager.IsSignedIn(User))
 {
-<form asp-area="Identity" asp-controller="Account" asp-action="LogOff" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm">
-    <a asp-controller="Users" asp-action="Index" class="btn my-2 my-sm-0 navbutton">Config</a>
-    <a asp-area="Identity" asp-page="/Identity/Manage" class="btn my-2 my-sm-0 navbutton">Meu Perfil</a>
-    <button type="submit" class="btn my-2 my-sm-0 navbutton">Logout</button>
-</form>
+    <form asp-area="Identity" asp-controller="Account" asp-action="LogOff" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm">
+        @if (this.User.IsInRole("Administrator"))
+        {
+        <a asp-area="" asp-controller="Users" asp-action="Index" class="btn my-2 my-sm-0 navbutton"><i class="fas fa-cogs"></i> @SharedLocalizer["Label_Admin"]</a>
+        }
+        <a asp-area="Identity" asp-controller="Manage" asp-action="Index" class="btn my-2 my-sm-0 navbutton"><i class="fas fa-user"></i> @SharedLocalizer["Label_Profile"]</a>
+        <button type="submit" class="btn my-2 my-sm-0 navbutton"><i class="fas fa-sign-out-alt"></i> @SharedLocalizer["Label_SignOut"]</button>
+    </form>
 }
 else
 {
-    <a class="btn my-2 my-sm-0 navbutton" asp-area="Identity" asp-controller="Account" asp-action="Register">Registar</a>
-    <a class="btn my-2 my-sm-0 navbutton" asp-area="Identity" asp-controller="Account" asp-action="Login">Entrar</a>
+    <a class="btn my-2 my-sm-0 navbutton" asp-area="Identity" asp-controller="Account" asp-action="Register"><i class="fas fa-user-edit"></i> @SharedLocalizer["Label_SignUp"]</a>
+    <a class="btn my-2 my-sm-0 navbutton" asp-area="Identity" asp-controller="Account" asp-action="Login"><i class="fas fa-sign-in-alt"></i> @SharedLocalizer["Label_SignIn"]</a>
 }
-
 

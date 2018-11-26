@@ -8,17 +8,17 @@ namespace AdotAqui.Areas.Identity.Models.AccountViewModels
 {
     public class LoginViewModel
     {
-        [Required]
-        [EmailAddress]
-        [Display(Prompt = "E-mail")]
+        [Required(ErrorMessage = "Error_EmailRequired")]
+        [EmailAddress(ErrorMessage = "Error_EmailInvalid")]
+        [Display(Prompt = "Label_Email")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Error_PasswordRequired")]
         [DataType(DataType.Password)]
-        [Display(Prompt = "Palavra-chave")]
+        [Display(Prompt = "Label_Password")]
         public string Password { get; set; }
 
-        [Display(Name = "Lembrar dados?")]
+        [Display(Name = "Label_RememberMe")]
         public bool RememberMe { get; set; }
     }
 }
