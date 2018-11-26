@@ -119,7 +119,7 @@ function validatename() {
 	result = $(".result_name");	
 	vname = $("#Name");
 	
-	if (namekk.val().length > 2){
+	if (vname.val().length > 2){
 		textboxapprove(vname, result);
 	  } else {
 		textboxdisapprove(vname, result);
@@ -164,7 +164,7 @@ function hoverdiv(e){
         message = 'Help not avaliable'
 	} 
 	
-	$('#' + e.currentTarget.id).attr({'data-original-title': message, 'data-placement': 'right', 'data-html' : 'true'})
+	$('#' + e.currentTarget.id).attr({'data-original-title': message, 'data-placement': 'top', 'data-html' : 'true'})
           .tooltip('show');
 	
     return false;
@@ -179,12 +179,23 @@ $(document).ready(function() {
 
 	//DATE PICKER
 	$(function () {
+		
 		$("#datepicker").datepicker({ 
 			format: 'dd/mm/yyyy',
 			startDate: '-90y',
 			endDate: '-16y',
 			autoclose: true
-		}).datepicker('update', new Date());
+		}).datepicker('setDate',  $( "#Input_Birthday" ).val());
+		
+		if($("#Email").val().length > 0){
+			validatemail();
+		}
+		if($("#Name").val().length > 0){
+			validatename();
+		}
+		if($("#Phone").val().length > 0){
+			validatephone();
+		}
 		});
 
 	//HELPER CLASS

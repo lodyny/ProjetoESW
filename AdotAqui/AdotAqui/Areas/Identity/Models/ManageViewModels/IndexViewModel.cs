@@ -18,17 +18,21 @@ namespace AdotAqui.Areas.Identity.Models.ManageViewModels
     }
     public class InputModel
     {
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "Error_EmailRequired")]
+        [EmailAddress(ErrorMessage = "Error_EmailInvalid")]
         public string Email { get; set; }
 
-        [Phone]
+        [DataType(DataType.PhoneNumber)]
         [Display(Name = "Label_Phone")]
         public string PhoneNumber { get; set; }
 
+        [Required(ErrorMessage = "Error_NameRequired")]
+        [StringLength(25, MinimumLength = 3, ErrorMessage = "Error_NameLengthInvalid")]
         [Display(Name = "Label_Name")]
         public string Name { get; set; }
 
+        [Required(ErrorMessage = "Error_BirthdateRequired")]
+        [DataType(DataType.DateTime)]
         [Display(Name = "Label_Birthday")]
         public string Birthday { get; set; }
     }
