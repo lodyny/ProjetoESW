@@ -34,7 +34,7 @@ namespace AdotAqui
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
+                options.CheckConsentNeeded = context => false; //Mudar esta linha em production
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
@@ -114,7 +114,8 @@ namespace AdotAqui
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
+            //Mudar esta linha em production
+            //app.UseCookiePolicy(); 
 
             app.UseAuthentication();
 
