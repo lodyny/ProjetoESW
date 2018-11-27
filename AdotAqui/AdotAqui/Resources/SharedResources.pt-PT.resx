@@ -258,4 +258,34 @@
   <data name="User_AccStatusUnban" xml:space="preserve">
     <value>Activa</value>
   </data>
+  <data name="Email_ActivateAcc" xml:space="preserve">
+    <value>Ativar Conta</value>
+  </data>
+  <data name="Email_Farewell" xml:space="preserve">
+    <value>Caso não tenha conhecimento do registo neste website ignore o email.</value>
+  </data>
+  <data name="Email_Greeting" xml:space="preserve">
+    <value>Olá</value>
+  </data>
+  <data name="Email_Header" xml:space="preserve">
+    <value>Confirmação da conta</value>
+  </data>
+  <data name="Email_Welcome" xml:space="preserve">
+    <value>Seja bem-vindo(a) ao AdotAqui. Para finalizar o registo aceda através do link disponibilizado abaixo:</value>
+  </data>
+  <data name="Label_ConfirmedEmailLogin" xml:space="preserve">
+    <value>Pode fazer login aqui.</value>
+  </data>
+  <data name="Label_ConfirmedEmailTitle" xml:space="preserve">
+    <value>Email Confirmado</value>
+  </data>
+  <data name="Label_ConfirmedEmailWelcome" xml:space="preserve">
+    <value>Bem vindo(a) ao AdotAqui!</value>
+  </data>
+  <data name="Label_EmailSent" xml:space="preserve">
+    <value>Email de Confirmação Enviado</value>
+  </data>
+  <data name="Label_EmailSentCheck" xml:space="preserve">
+    <value>Por favor confirme o seu email dentro de alguns instantes, haverá um email para ativar a sua conta!</value>
+  </data>
 </root>

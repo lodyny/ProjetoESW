@@ -88,3 +88,10 @@
 .tooltip.right  {
   margin-left: 20px;
 }
+
+.center{
+	text-align:center !important;
+}
+
+.form-control:disabled, .form-control[readonly]{
+background-color: #fff!important;}

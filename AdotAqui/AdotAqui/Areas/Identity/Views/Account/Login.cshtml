@@ -11,6 +11,8 @@
 @section Styles {
     <link rel="stylesheet" href="~/css/auth.css" />
 }
+
+
 <div class="text-center">
     <img class="logo" src="~/images/iconblack.png" /><br />
     <span class="logo-text">AdotAqui</span>
@@ -25,7 +27,7 @@
             <span asp-validation-for="Password" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <div class="checkbox">
+            <div class="checkbox center">
                 <label asp-for="RememberMe">
                     <input asp-for="RememberMe" />
                     @Html.DisplayNameFor(m => m.RememberMe)
@@ -36,7 +38,7 @@
             <button type="submit" class="form-control form-submit btn btn-primary mb-2">@SharedLocalizer["Label_SignIn"]</button>
         </div>
         <div class="form-group">
-            <p>
+            <p class="center">
                 <a asp-action="ForgotPassword">@SharedLocalizer["Label_ForgotPassword"]</a>
             </p>
         </div>

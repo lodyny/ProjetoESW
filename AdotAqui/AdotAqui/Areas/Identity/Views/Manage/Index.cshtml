@@ -15,6 +15,19 @@
 {
     <partial name="_StatusMessage" model="Model.StatusMessage" />
 }
+
+<script>
+ToolTip_mail = "@SharedLocalizer["Error_EmailInvalid"]";
+ToolTip_nonalpha = "@SharedLocalizer["Error_NonAlphaNumericRequired"]";
+ToolTip_numreq = "@SharedLocalizer["Error_NumberRequired"]";
+ToolTip_lowreq = "@SharedLocalizer["Error_LowerRequired"]";
+ToolTip_upreq = "@SharedLocalizer["Error_UpperRequired"]";
+ToolTip_pwlng = "@SharedLocalizer["Error_PasswordLengthInvalid"]";
+ToolTip_pw_c = "@SharedLocalizer["Error_PasswordMismatch"]";
+ToolTip_name = "@SharedLocalizer["Error_NameLengthInvalid"]";
+ToolTip_phone = "@SharedLocalizer["Error_PhoneRequired"]";
+</script>
+
 <div class="text-center">
 
     <div id="profile_group">
@@ -25,10 +38,6 @@
             <div class="form-group">
                 <label asp-for="Input.Email" class="label_text"></label>
                 <input asp-for="Input.Email" class="form-control" id="Email" />
-                @if (Model.IsEmailConfirmed)
-                {
-                    <button id="email-verification" type="submit" asp-page-handler="SendVerificationEmail" class="btn my-2 my-sm-0 navbutton">@SharedLocalizer["Label_ResendMail"]</button>
-                }
                 <div id="result_mail" class="result_mail helper"></div>
                 <span asp-validation-for="Input.Email" class="text-danger" style="display: block;"></span>
             </div>
