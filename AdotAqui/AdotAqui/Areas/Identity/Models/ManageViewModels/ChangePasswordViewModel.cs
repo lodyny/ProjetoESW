@@ -15,14 +15,14 @@ namespace AdotAqui.Areas.Identity.Models.ManageViewModels
         public string OldPassword { get; set; }
 
         [Required(ErrorMessage = "Error_PasswordRequired")]
-        [StringLength(100, ErrorMessage = "Error_PasswordLengthInvalid", MinimumLength = 6)]
+        [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{6,100}$", ErrorMessage = "Error_PasswordInvalid")]
         [DataType(DataType.Password)]
         [Display(Name = "Label_NewPassword")]
         public string NewPassword { get; set; }
 
         [Required(ErrorMessage = "Error_ConfirmPasswordRequired")]
         [DataType(DataType.Password)]
-        [Compare("NewPassword")]
+        [Compare("NewPassword", ErrorMessage = "Error_PasswordMismatch")]
         [Display(Prompt = "Label_ConfirmPassword")]
         public string ConfirmPassword { get; set; }
     }

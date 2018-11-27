@@ -14,6 +14,9 @@ using Microsoft.Extensions.Logging;
 
 namespace AdotAqui.Areas.Identity.Controllers
 {
+    /// <summary>
+    /// Identity Controller responsable for the management of account information
+    /// </summary>
     [Area("Identity")]
     [Authorize]
     public class ManageController : Controller

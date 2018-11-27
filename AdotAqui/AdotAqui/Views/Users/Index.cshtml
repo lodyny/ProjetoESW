@@ -1,61 +1,94 @@
 ﻿@model IEnumerable<AdotAqui.Models.User>
-
+@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@using Microsoft.Extensions.Localization;
+@inject IStringLocalizer<SharedResources> SharedLocalizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Administração";
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
 }
 
-<h2>Utilizadores</h2>
-<form asp-controller="Users" asp-action="Index"><p>Pesquisar: <input type="text" name="SearchString" /> <input type="submit" value="Filter" /></p></form>
-<table class="table">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<form asp-controller="Users" asp-action="Index"></form>
+<table class="display compact" id="base">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @SharedLocalizer["User_Name"]
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                @SharedLocalizer["User_Email"]
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
+                @SharedLocalizer["User_Phone"]
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Birthday)
+                @SharedLocalizer["User_Birthday"]
             </th>
             <th>
-                Banido?
+                @SharedLocalizer["User_Ban"]
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Birthday)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Banned)
-            </td>
-            <td>
-                @if (item.Banned)
-                {
-                    <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black">Desbanir</a>
-                }
-                else
-                {
-                    <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black">Banir</a>
-                }
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Birthday)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Banned)
+                </td>
+                <td>
+                    @if (item.Banned)
+                    {
+                    <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black">@SharedLocalizer["Label_Unban"]</a>
+                    }
+                    else
+                    {
+                    <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black">@SharedLocalizer["Label_Ban"]</a>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+@if (requestCulture.RequestCulture.Culture.ToString().Equals("en-US"))
+{
+<script>
+    $(document).ready(function () {
+        $('#base').DataTable({
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json'
+            }
+        });
+    });
+</script>
+}
+else
+{
+<script>
+    $(document).ready(function () {
+        $('#base').DataTable({
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese.json'
+            }
+        });
+    });
+</script>
+}

@@ -13,10 +13,14 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 
 namespace AdotAqui.Areas.Identity.Controllers
 {
+    /// <summary>
+    /// Identity Controller responsable for Account CRUD Operations
+    /// </summary>
     [Area("Identity")]
     [Authorize]
     public class AccountController : Controller
@@ -26,19 +30,22 @@ namespace AdotAqui.Areas.Identity.Controllers
         private readonly IEmailSender _emailSender;
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
+        private readonly IStringLocalizer _localizer;
 
         public AccountController(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
             IEmailSender emailSender,
             ISmsSender smsSender,
-            ILoggerFactory loggerFactory)
+            ILoggerFactory loggerFactory,
+            IStringLocalizer<SharedResources> sharedLocalizer)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<AccountController>();
+            _localizer = sharedLocalizer;
         }
 
         //
@@ -97,6 +104,17 @@ namespace AdotAqui.Areas.Identity.Controllers
         }
 
         //
+        // GET: /Account/EmailSent
+        [HttpGet]
+        [AllowAnonymous]
+        [Authorize(Policy ="AnonymousOnly")]
+        public IActionResult EmailSent(string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
+
+        //
         // GET: /Account/Register
         [HttpGet]
         [AllowAnonymous]
@@ -120,19 +138,21 @@ namespace AdotAqui.Areas.Identity.Controllers
             {
                 var user = new User { UserName = model.Email, Email = model.Email, Birthday = model.Birthday, Name = model.Name, PhoneNumber = model.PhoneNumber };
                 var result = await _userManager.CreateAsync(user, model.PasswordHash);
-                var result2 = await _userManager.AddToRoleAsync(user, Role.User.ToString());
 
-                if (result.Succeeded && result2.Succeeded)
+                if (result.Succeeded)
                 {
-                    _logger.LogInformation(3, "User created a new account with password.");
-                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
-                    await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
-                        "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
-                    await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToLocal(returnUrl);
-                }
-                AddErrors(result);
+                    var result2 = await _userManager.AddToRoleAsync(user, Role.User.ToString());
+                    if (result2.Succeeded)
+                    {
+                        _logger.LogInformation(3, "User created a new account with password.");
+                        var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                        var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
+                        await _emailSender.SendEmailAsync(model.Email, _localizer["Email_Header"],
+                            _localizer["Email_Greeting"] + " " + model.Name + ",<br/>" + _localizer["Email_Welcome"] + "<br/><a href=\"" + callbackUrl + "\">" + _localizer["Email_ActivateAcc"] + " </a><br/><br/>" + _localizer["Email_Farewell"]);
+                        //await _signInManager.SignInAsync(user, isPersistent: false);
+                        return RedirectPermanent("EmailSent");
+                    } else { AddErrors(result2); }
+                } else { AddErrors(result); }
             }
 
             return View(model);

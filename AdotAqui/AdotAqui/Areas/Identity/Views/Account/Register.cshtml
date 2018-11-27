@@ -8,9 +8,23 @@
 }
 
 @section Styles {
+    <meta charset="utf-8">
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap-datepicker.css" />
     <link rel="stylesheet" href="~/css/auth.css" />
 }
+
+<script>
+    ToolTip_mail = "@SharedLocalizer["Error_EmailInvalid"]";
+    ToolTip_nonalpha = "@SharedLocalizer["Error_NonAlphaNumericRequired"]";
+    ToolTip_numreq = "@SharedLocalizer["Error_NumberRequired"]";
+    ToolTip_lowreq = "@SharedLocalizer["Error_LowerRequired"]";
+    ToolTip_upreq = "@SharedLocalizer["Error_UpperRequired"]";
+    ToolTip_pwlng = "@SharedLocalizer["Error_PasswordLengthInvalid"]";
+    ToolTip_pw_c = "@SharedLocalizer["Error_PasswordMismatch"]";
+    ToolTip_name = "@SharedLocalizer["Error_NameLengthInvalid"]";
+    ToolTip_phone = "@SharedLocalizer["Error_PhoneInvalid"]";
+</script>
+
 <div class="text-center">
     <span class="logo-text">AdotAqui</span>
     <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post" class="form">
@@ -31,7 +45,6 @@
                 <input asp-for="ConfirmPassword" class="form-control" id="ConfirmPassword" />
                 <div id="result_pw_c" class="result_pw_c helper"><font style="margin-right:5px; font-size: 18px; color: orange;"> <b>?</b> </font></div>
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-
             </div>
             <div class="form-group">
                 <input asp-for="Name" class="form-control" id="Name" />
@@ -47,7 +60,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <input asp-for="PhoneNumber" class="form-control" id="Phone" />
+                <input asp-for="PhoneNumber" class="form-control" id="Phone"  onchange='validate_num(event)' maxlength="9" />
                 <div id="result_pn" class="result_pn helper"><font style="margin-right:5px; font-size: 18px; color: orange;"> <b>?</b> </font></div>
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
 

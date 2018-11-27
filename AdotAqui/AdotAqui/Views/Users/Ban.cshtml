@@ -1,20 +1,21 @@
 ﻿@model AdotAqui.Models.User
-
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> SharedLocalizer
 @{
     ViewData["Title"] = "Delete";
 }
 
 <h2>Detalhes de @Html.DisplayFor(model => model.Name)</h2>
 <h5>
-    Estado da conta:
+    @SharedLocalizer["Label_AccStatus"]:
     @{
         if (Model.Banned)
         {
-            <span style="color:red">BANIDA</span>
+            <span style="color:red">@SharedLocalizer["User_AccStatusBan"]</span>
         }
         else
         {
-            <span style="color:green">ATIVA</span>
+            <span style="color:green">@SharedLocalizer["User_AccStatusUnban"]</span>
         }
     }
 </h5>
@@ -22,43 +23,43 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Email)
+            @SharedLocalizer["User_Email"]
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Email)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Birthday)
+            @SharedLocalizer["User_Birthday"]
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Birthday)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
+            @SharedLocalizer["User_Phone"]
         </dt>
         <dd>
             @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.EmailConfirmed)
+            @SharedLocalizer["Label_EmailValidated"]
         </dt>
         <dd>
             @Html.DisplayFor(model => model.EmailConfirmed)
         </dd>
     </dl>
-    
+
     <form asp-action="Banir">
         <input type="hidden" asp-for="Id" />
         @{
             if (Model.Banned)
             {
-                <input type="submit" value="Desbanir " class="btn my-2 my-sm-0 navbutton" style="color:black" />
+                <input type="submit" value="@SharedLocalizer["Label_Unban"]" class="btn my-2 my-sm-0 navbutton" style="color:black" />
             }
             else
             {
-                <input type="submit" value="Banir " class="btn my-2 my-sm-0 navbutton" style="color:black" />
+                <input type="submit" value="@SharedLocalizer["Label_Ban"]" class="btn my-2 my-sm-0 navbutton" style="color:black" />
             }
         }
-        <a asp-action="Index" class="btn my-2 my-sm-0 navbutton" style="color:black">Voltar</a>
+        <a asp-action="Index" class="btn my-2 my-sm-0 navbutton" style="color:black">@SharedLocalizer["Label_Return"]</a>
     </form>
 </div>

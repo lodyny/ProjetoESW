@@ -19,8 +19,8 @@ namespace AdotAqui.Models
 
         [Required(ErrorMessage = "Error_PasswordRequired")]
         [DataType(DataType.Password)]
-        [StringLength(100, ErrorMessage = "Error_PasswordLengthInvalid", MinimumLength = 6)]
         [Display(Prompt = "Label_Password")]
+        [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{6,100}$", ErrorMessage = "Error_PasswordInvalid")]
         public override string PasswordHash { get; set; }
 
         [Required(ErrorMessage = "Error_NameRequired")]
@@ -35,6 +35,7 @@ namespace AdotAqui.Models
 
         [DataType(DataType.PhoneNumber)]
         [Display(Prompt = "Label_Phone")]
+        [RegularExpression("^\\d{9}$", ErrorMessage = "Error_PhoneInvalid")]
         public override string PhoneNumber { get; set; }
 
         public bool Banned { get; set; }

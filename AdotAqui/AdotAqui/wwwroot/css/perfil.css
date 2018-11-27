@@ -48,3 +48,8 @@
 	background: #FC6600;
 	color:#fff;
 }
+
+#datepicker{
+	border-top-right-radius: 5px !important;	
+	border-bottom-right-radius: 5px !important;
+}

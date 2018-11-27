@@ -22,6 +22,7 @@ namespace AdotAqui.Areas.Identity.Models.ManageViewModels
         [EmailAddress(ErrorMessage = "Error_EmailInvalid")]
         public string Email { get; set; }
 
+        [RegularExpression("^\\d{9}$", ErrorMessage = "Error_PhoneInvalid")]
         [DataType(DataType.PhoneNumber)]
         [Display(Name = "Label_Phone")]
         public string PhoneNumber { get; set; }

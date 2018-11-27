@@ -1,4 +1,4 @@
-// ISVALID REGEX
+﻿// ISVALID REGEX
 
 function isvalidpw(pw){
 	if(!/^[a-zA-Z0-9]+$/.test(pw) && /\d/.test(pw) && /[a-z]/.test(pw) && /[A-Z]/.test(pw) && pw.length > 5)
@@ -69,7 +69,7 @@ function pwmessagebuilder(pw){
 		} else {
 			message += '<font color="green">✔</font>'
 		}
-		message += ' É necessário pelo menos um caracter não alfanumérico.<br/>';
+		message += ToolTip_nonalpha + ' <br/>';
 		
 		
 		if (!/\d/.test(pw)){
@@ -77,7 +77,7 @@ function pwmessagebuilder(pw){
 		} else {
 			message += '<font color="green">✔</font>'
 		}
-		message += ' É necessário pelo menos um número (0-9).<br/>';
+		message += ToolTip_numreq + ' <br/>';
 		
 		
 		if (!/[a-z]/.test(pw)){
@@ -85,21 +85,21 @@ function pwmessagebuilder(pw){
 		} else {
 			message += '<font color="green">✔</font>'
 		}
-		message += ' É necessário pelo menos uma letra minúscula (a-z).<br/>';
+		message += ToolTip_lowreq + ' <br/>';
 		
 		if (!/[A-Z]/.test(pw)){
 			message += '<font color="red">✘</font>'
 		} else {
 			message += '<font color="green">✔</font>'
 		}
-		message += ' É necessário pelo menos uma letra maiúscula (A-Z).<br/>';
+		message += ToolTip_upreq + ' <br/>';
 		
 		if (!pw.length < 6){
 			message += '<font color="red">✘</font>'
 		} else {
 			message += '<font color="green">✔</font>'
 		}
-		message += ' É necessário pelo menos 6 caracteres.';
+		message += ToolTip_pwlng;
 		
 		return message;
 }
@@ -143,22 +143,22 @@ function hoverdiv(e){
 		
 	switch(e.currentTarget.id) {
     case 'result_mail':
-        message = 'É necessário um e-mail válido. Ex: mail@mail.com';
+        message = ToolTip_mail;
         break;
     case 'result_pw':	
         message = pwmessagebuilder($("#Password").val());
         break;
 	case 'result_pw_c':
-        message = 'As passwords precisam de ser iguais';
+        message = ToolTip_pw_c;
         break;
 	case 'result_name':
-        message = 'O nome precisa de ter pelo menos 3 caracteres';
+        message = ToolTip_name;
         break;
 	case 'result_bd':
-        message = 'bd';
+        message = ToolTip_bday;
         break;
 	case 'result_pn':
-        message = 'O número precisa de 9 digitos';
+        message = ToolTip_phone;
         break;
     default:
         message = 'Help not avaliable'
@@ -173,7 +173,6 @@ function hoverdiv(e){
 		$("#"+ e.currentTarget.id).tooltip('dispose');
 	}
 }
-
 
 $(document).ready(function() {		
 
@@ -202,6 +201,7 @@ $(document).ready(function() {
 	$('.helper').mouseover(function(event){
 		hoverdiv(event); 
 	});
+		
 		
 	// PASSWORD
     $("#ConfirmPassword").focusin(function(){

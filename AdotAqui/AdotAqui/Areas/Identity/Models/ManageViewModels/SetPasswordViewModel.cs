@@ -9,7 +9,7 @@ namespace AdotAqui.Areas.Identity.Models.ManageViewModels
     public class SetPasswordViewModel
     {
         [Required(ErrorMessage = "Error_PasswordRequired")]
-        [StringLength(100, ErrorMessage = "Error_PasswordLengthInvalid", MinimumLength = 6)]
+        [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{6,100}$", ErrorMessage = "Error_PasswordInvalid")]
         [DataType(DataType.Password)]
         [Display(Name = "Label_NewPassword")]
         public string NewPassword { get; set; }

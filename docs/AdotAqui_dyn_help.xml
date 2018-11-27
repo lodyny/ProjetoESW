@@ -10,17 +10,55 @@
          <KItem Name="AdotAqui.Controllers.HomeController.About" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000CB.html" LinkGroup="AdotAqui">About Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000087.html" LinkGroup="AdotAqui">About Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.AccessDeniedModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000006F.html" LinkGroup="AdotAqui">AccessDeniedModel Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000001.html" LinkGroup="AdotAqui">AccountController Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.AccountController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000002.html" LinkGroup="AdotAqui">AccountController Constructor</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.AddPhoneNumber" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000020_overloads--.html" LinkGroup="AdotAqui">AddPhoneNumber Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.AddPhoneNumber" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000021_overloads--.html" LinkGroup="AdotAqui">AddPhoneNumber Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.AddPhoneNumberViewModel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000005E.html" LinkGroup="AdotAqui">AddPhoneNumberViewModel Class</LItem>
       </Links>
    </Context>
    
@@ -30,7 +68,7 @@
          <KItem Name="AdotAqui" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000F3.html" LinkGroup="AdotAqui">AdotAqui Namespace</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000D8.html" LinkGroup="AdotAqui">AdotAqui Namespace</LItem>
       </Links>
    </Context>
    
@@ -40,7 +78,7 @@
          <KItem Name="AdotAqui Reference" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000FC.html" LinkGroup="AdotAqui">AdotAqui Reference</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000E2.html" LinkGroup="AdotAqui">AdotAqui Reference</LItem>
       </Links>
    </Context>
    
@@ -50,37 +88,37 @@
          <KItem Name="AdotAqui.Areas.Identity" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C5.html" LinkGroup="AdotAqui">AdotAqui.Areas.Identity Namespace</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000081.html" LinkGroup="AdotAqui">AdotAqui.Areas.Identity Namespace</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C0.html" LinkGroup="AdotAqui">AdotAqui.Areas.Identity.Pages Namespace</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000000.html" LinkGroup="AdotAqui">AdotAqui.Areas.Identity.Controllers Namespace</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000006E.html" LinkGroup="AdotAqui">AdotAqui.Areas.Identity.Pages.Account Namespace</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000003A.html" LinkGroup="AdotAqui">AdotAqui.Areas.Identity.Models.AccountViewModels Namespace</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000000.html" LinkGroup="AdotAqui">AdotAqui.Areas.Identity.Pages.Account.Manage Namespace</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000005D.html" LinkGroup="AdotAqui">AdotAqui.Areas.Identity.Models.ManageViewModels Namespace</LItem>
       </Links>
    </Context>
    
@@ -90,7 +128,7 @@
          <KItem Name="AdotAqui.Controllers" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C8.html" LinkGroup="AdotAqui">AdotAqui.Controllers Namespace</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000084.html" LinkGroup="AdotAqui">AdotAqui.Controllers Namespace</LItem>
       </Links>
    </Context>
    
@@ -100,7 +138,7 @@
          <KItem Name="AdotAqui.Data" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000CF.html" LinkGroup="AdotAqui">AdotAqui.Data Namespace</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000096.html" LinkGroup="AdotAqui">AdotAqui.Data Namespace</LItem>
       </Links>
    </Context>
    
@@ -110,7 +148,7 @@
          <KItem Name="AdotAqui.Migrations" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000D3.html" LinkGroup="AdotAqui">AdotAqui.Migrations Namespace</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A2.html" LinkGroup="AdotAqui">AdotAqui.Migrations Namespace</LItem>
       </Links>
    </Context>
    
@@ -120,7 +158,17 @@
          <KItem Name="AdotAqui.Models" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000E9.html" LinkGroup="AdotAqui">AdotAqui.Models Namespace</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000AC.html" LinkGroup="AdotAqui">AdotAqui.Models Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Models.Authorization" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A9.html" LinkGroup="AdotAqui">AdotAqui.Models.Authorization Namespace</LItem>
       </Links>
    </Context>
    
@@ -130,7 +178,17 @@
          <KItem Name="AdotAqui.Models.Services" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000D7.html" LinkGroup="AdotAqui">AdotAqui.Models.Services Namespace</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B4.html" LinkGroup="AdotAqui">AdotAqui.Models.Services Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Models.ViewModels" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C9.html" LinkGroup="AdotAqui">AdotAqui.Models.ViewModels Namespace</LItem>
       </Links>
    </Context>
    
@@ -140,7 +198,7 @@
          <KItem Name="AdotAqui.Data.AdotAquiDbContext" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000D0.html" LinkGroup="AdotAqui">AdotAquiDbContext Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000097.html" LinkGroup="AdotAqui">AdotAquiDbContext Class</LItem>
       </Links>
    </Context>
    
@@ -150,7 +208,17 @@
          <KItem Name="AdotAqui.Data.AdotAquiDbContext.AdotAquiDbContext" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000D1.html" LinkGroup="AdotAqui">AdotAquiDbContext Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000098.html" LinkGroup="AdotAqui">AdotAquiDbContext Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Models.Authorization.AnonymousOnly" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000AA.html" LinkGroup="AdotAqui">AnonymousOnly Class</LItem>
       </Links>
    </Context>
    
@@ -160,27 +228,47 @@
          <KItem Name="AdotAqui.Models.Services.AuthMessageSenderOptions" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000D8.html" LinkGroup="AdotAqui">AuthMessageSenderOptions Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B5.html" LinkGroup="AdotAqui">AuthMessageSenderOptions Class</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.AuthenticatorUri" />
+         <KItem Name="AdotAqui.Controllers.UsersController.Ban" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000001E.html" LinkGroup="AdotAqui">AuthenticatorUri Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000094.html" LinkGroup="AdotAqui">Ban Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel.Birthday" />
+         <KItem Name="AdotAqui.Controllers.UsersController.BanConfirmed" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000040.html" LinkGroup="AdotAqui">Birthday Property {AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000095.html" LinkGroup="AdotAqui">BanConfirmed Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Models.User.Banned" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B3.html" LinkGroup="AdotAqui">Banned Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.InputModel.Birthday" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000074.html" LinkGroup="AdotAqui">Birthday Property {AdotAqui.Areas.Identity.Models.ManageViewModels.InputModel}</LItem>
       </Links>
    </Context>
    
@@ -190,67 +278,95 @@
          <KItem Name="AdotAqui.Models.User.Birthday" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000F1.html" LinkGroup="AdotAqui">Birthday Property {AdotAqui.Models.User}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B1.html" LinkGroup="AdotAqui">Birthday Property {AdotAqui.Models.User}</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.ChangePassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000029_overloads--.html" LinkGroup="AdotAqui">ChangePassword Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.ChangePassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000002A_overloads--.html" LinkGroup="AdotAqui">ChangePassword Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages.ChangePassword" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.ChangePasswordViewModel" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000046.html" LinkGroup="AdotAqui">ChangePassword Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000060.html" LinkGroup="AdotAqui">ChangePasswordViewModel Class</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.ResetPasswordViewModel.Code" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000001.html" LinkGroup="AdotAqui">ChangePasswordModel Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000047.html" LinkGroup="AdotAqui">Code Property {AdotAqui.Areas.Identity.Models.AccountViewModels.ResetPasswordViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.ChangePasswordModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.UseRecoveryCodeViewModel.Code" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000002.html" LinkGroup="AdotAqui">ChangePasswordModel Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000004E.html" LinkGroup="AdotAqui">Code Property {AdotAqui.Areas.Identity.Models.AccountViewModels.UseRecoveryCodeViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages.ChangePasswordNavClass" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyAuthenticatorCodeViewModel.Code" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000004D.html" LinkGroup="AdotAqui">ChangePasswordNavClass Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000053.html" LinkGroup="AdotAqui">Code Property {AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyAuthenticatorCodeViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.InputModel.Code" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyCodeViewModel.Code" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000023.html" LinkGroup="AdotAqui">Code Property {AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000059.html" LinkGroup="AdotAqui">Code Property {AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyCodeViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel.Code" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.VerifyPhoneNumberViewModel.Code" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000BB.html" LinkGroup="AdotAqui">Code Property {AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000007F.html" LinkGroup="AdotAqui">Code Property {AdotAqui.Areas.Identity.Models.ManageViewModels.VerifyPhoneNumberViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.DisplayRecoveryCodesViewModel.Codes" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000068.html" LinkGroup="AdotAqui">Codes Property</LItem>
       </Links>
    </Context>
    
@@ -260,7 +376,7 @@
          <KItem Name="AdotAqui.Startup.Configuration" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000F9.html" LinkGroup="AdotAqui">Configuration Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000DF.html" LinkGroup="AdotAqui">Configuration Property</LItem>
       </Links>
    </Context>
    
@@ -270,7 +386,7 @@
          <KItem Name="AdotAqui.Areas.Identity.IdentityHostingStartup.Configure" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C7.html" LinkGroup="AdotAqui">Configure Method {AdotAqui.Areas.Identity.IdentityHostingStartup}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000083.html" LinkGroup="AdotAqui">Configure Method {AdotAqui.Areas.Identity.IdentityHostingStartup}</LItem>
       </Links>
    </Context>
    
@@ -280,7 +396,7 @@
          <KItem Name="AdotAqui.Startup.Configure" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000FB.html" LinkGroup="AdotAqui">Configure Method {AdotAqui.Startup}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000E1.html" LinkGroup="AdotAqui">Configure Method {AdotAqui.Startup}</LItem>
       </Links>
    </Context>
    
@@ -290,67 +406,67 @@
          <KItem Name="AdotAqui.Startup.ConfigureServices" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000FA.html" LinkGroup="AdotAqui">ConfigureServices Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000E0.html" LinkGroup="AdotAqui">ConfigureServices Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ConfirmEmailModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.ConfigureTwoFactorViewModel" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000071.html" LinkGroup="AdotAqui">ConfirmEmailModel Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000064.html" LinkGroup="AdotAqui">ConfigureTwoFactorViewModel Class</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ConfirmEmailModel.ConfirmEmailModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.ConfirmEmail" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000072.html" LinkGroup="AdotAqui">ConfirmEmailModel Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000000C.html" LinkGroup="AdotAqui">ConfirmEmail Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.InputModel.ConfirmPassword" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.ResetPasswordViewModel.ConfirmPassword" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000008.html" LinkGroup="AdotAqui">ConfirmPassword Property {AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000046.html" LinkGroup="AdotAqui">ConfirmPassword Property {AdotAqui.Areas.Identity.Models.AccountViewModels.ResetPasswordViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.SetPasswordModel.InputModel.ConfirmPassword" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.UserViewModel.ConfirmPassword" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000062.html" LinkGroup="AdotAqui">ConfirmPassword Property {AdotAqui.Areas.Identity.Pages.Account.Manage.SetPasswordModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000051.html" LinkGroup="AdotAqui">ConfirmPassword Property {AdotAqui.Areas.Identity.Models.AccountViewModels.UserViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.RegisterModel.InputModel.ConfirmPassword" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.ChangePasswordViewModel.ConfirmPassword" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B1.html" LinkGroup="AdotAqui">ConfirmPassword Property {AdotAqui.Areas.Identity.Pages.Account.RegisterModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000063.html" LinkGroup="AdotAqui">ConfirmPassword Property {AdotAqui.Areas.Identity.Models.ManageViewModels.ChangePasswordViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel.ConfirmPassword" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.SetPasswordViewModel.ConfirmPassword" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000BA.html" LinkGroup="AdotAqui">ConfirmPassword Property {AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000007D.html" LinkGroup="AdotAqui">ConfirmPassword Property {AdotAqui.Areas.Identity.Models.ManageViewModels.SetPasswordViewModel}</LItem>
       </Links>
    </Context>
    
@@ -360,7 +476,25 @@
          <KItem Name="AdotAqui.Controllers.HomeController.Contact" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000CC.html" LinkGroup="AdotAqui">Contact Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000088.html" LinkGroup="AdotAqui">Contact Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Controllers.UsersController.Create" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000090_overloads--.html" LinkGroup="AdotAqui">Create Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Controllers.UsersController.Create" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000091_overloads--.html" LinkGroup="AdotAqui">Create Method</LItem>
       </Links>
    </Context>
    
@@ -370,7 +504,7 @@
          <KItem Name="AdotAqui.Migrations.CreateIdentitySchema" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000D4.html" LinkGroup="AdotAqui">CreateIdentitySchema Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A3.html" LinkGroup="AdotAqui">CreateIdentitySchema Class</LItem>
       </Links>
    </Context>
    
@@ -380,77 +514,67 @@
          <KItem Name="AdotAqui.Program.CreateWebHostBuilder" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000F6.html" LinkGroup="AdotAqui">CreateWebHostBuilder Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000DC.html" LinkGroup="AdotAqui">CreateWebHostBuilder Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.CurrentLogins" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.ManageLoginsViewModel.CurrentLogins" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000028.html" LinkGroup="AdotAqui">CurrentLogins Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000076.html" LinkGroup="AdotAqui">CurrentLogins Property</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages.DeletePersonalData" />
+         <KItem Name="AdotAqui.Data.DataSeeder" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000048.html" LinkGroup="AdotAqui">DeletePersonalData Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A0.html" LinkGroup="AdotAqui">DataSeeder Class</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel" />
+         <KItem Name="AdotAqui.Models.ViewModels.ErrorViewModel.Description" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000000B.html" LinkGroup="AdotAqui">DeletePersonalDataModel Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000CE.html" LinkGroup="AdotAqui">Description Property</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.DeletePersonalDataModel" />
+         <KItem Name="AdotAqui.Controllers.UsersController.Details" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000000C.html" LinkGroup="AdotAqui">DeletePersonalDataModel Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000008F.html" LinkGroup="AdotAqui">Details Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages.DeletePersonalDataNavClass" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.DisableTwoFactorAuthentication" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000004F.html" LinkGroup="AdotAqui">DeletePersonalDataNavClass Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000025.html" LinkGroup="AdotAqui">DisableTwoFactorAuthentication Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.Disable2faModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.DisplayRecoveryCodesViewModel" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000013.html" LinkGroup="AdotAqui">Disable2faModel Class</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.Disable2faModel.Disable2faModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000014.html" LinkGroup="AdotAqui">Disable2faModel Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000067.html" LinkGroup="AdotAqui">DisplayRecoveryCodesViewModel Class</LItem>
       </Links>
    </Context>
    
@@ -460,47 +584,35 @@
          <KItem Name="AdotAqui.Migrations.CreateIdentitySchema.Down" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000D6.html" LinkGroup="AdotAqui">Down Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A5.html" LinkGroup="AdotAqui">Down Method {AdotAqui.Migrations.CreateIdentitySchema}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages.DownloadPersonalData" />
+         <KItem Name="AdotAqui.Migrations.upd.Down" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000047.html" LinkGroup="AdotAqui">DownloadPersonalData Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A8.html" LinkGroup="AdotAqui">Down Method {AdotAqui.Migrations.upd}</LItem>
       </Links>
    </Context>
    
-
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.DownloadPersonalDataModel" />
+         <KItem Name="AdotAqui.Controllers.UsersController.Edit" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000018.html" LinkGroup="AdotAqui">DownloadPersonalDataModel Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000093_overloads--.html" LinkGroup="AdotAqui">Edit Method</LItem>
       </Links>
    </Context>
    
-
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.DownloadPersonalDataModel.DownloadPersonalDataModel" />
+         <KItem Name="AdotAqui.Controllers.UsersController.Edit" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000019.html" LinkGroup="AdotAqui">DownloadPersonalDataModel Constructor</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages.DownloadPersonalDataNavClass" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000004E.html" LinkGroup="AdotAqui">DownloadPersonalDataNavClass Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000092_overloads--.html" LinkGroup="AdotAqui">Edit Method</LItem>
       </Links>
    </Context>
    
@@ -510,7 +622,7 @@
          <KItem Name="AdotAqui.Models.Services.Email" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000DB.html" LinkGroup="AdotAqui">Email Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B8.html" LinkGroup="AdotAqui">Email Class</LItem>
       </Links>
    </Context>
    
@@ -520,57 +632,57 @@
          <KItem Name="AdotAqui.Models.Services.Email.Email" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000E1.html" LinkGroup="AdotAqui">Email Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000BE.html" LinkGroup="AdotAqui">Email Constructor</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel.InputModel.Email" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.ExternalLoginConfirmationViewModel.Email" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000007B.html" LinkGroup="AdotAqui">Email Property {AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000003C.html" LinkGroup="AdotAqui">Email Property {AdotAqui.Areas.Identity.Models.AccountViewModels.ExternalLoginConfirmationViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ForgotPasswordModel.InputModel.Email" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.ForgotPasswordViewModel.Email" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000084.html" LinkGroup="AdotAqui">Email Property {AdotAqui.Areas.Identity.Pages.Account.ForgotPasswordModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000003E.html" LinkGroup="AdotAqui">Email Property {AdotAqui.Areas.Identity.Models.AccountViewModels.ForgotPasswordViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginModel.InputModel.Email" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.LoginViewModel.Email" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000091.html" LinkGroup="AdotAqui">Email Property {AdotAqui.Areas.Identity.Pages.Account.LoginModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000040.html" LinkGroup="AdotAqui">Email Property {AdotAqui.Areas.Identity.Models.AccountViewModels.LoginViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel.Email" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.ResetPasswordViewModel.Email" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000003D.html" LinkGroup="AdotAqui">Email Property {AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000044.html" LinkGroup="AdotAqui">Email Property {AdotAqui.Areas.Identity.Models.AccountViewModels.ResetPasswordViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel.Email" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.InputModel.Email" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B8.html" LinkGroup="AdotAqui">Email Property {AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000071.html" LinkGroup="AdotAqui">Email Property {AdotAqui.Areas.Identity.Models.ManageViewModels.InputModel}</LItem>
       </Links>
    </Context>
    
@@ -580,7 +692,17 @@
          <KItem Name="AdotAqui.Models.User.Email" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000EE.html" LinkGroup="AdotAqui">Email Property {AdotAqui.Models.User}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000AE.html" LinkGroup="AdotAqui">Email Property {AdotAqui.Models.User}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.EmailSent" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000005.html" LinkGroup="AdotAqui">EmailSent Method</LItem>
       </Links>
    </Context>
    
@@ -590,7 +712,7 @@
          <KItem Name="AdotAqui.Models.Services.EmailService" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000E2.html" LinkGroup="AdotAqui">EmailService Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000BF.html" LinkGroup="AdotAqui">EmailService Class</LItem>
       </Links>
    </Context>
    
@@ -600,27 +722,17 @@
          <KItem Name="AdotAqui.Models.Services.EmailService.EmailService" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000E4.html" LinkGroup="AdotAqui">EmailService Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C0.html" LinkGroup="AdotAqui">EmailService Constructor</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.EnableTwoFactorAuthentication" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000001B.html" LinkGroup="AdotAqui">EnableAuthenticatorModel Class</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.EnableAuthenticatorModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000001C.html" LinkGroup="AdotAqui">EnableAuthenticatorModel Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000024.html" LinkGroup="AdotAqui">EnableTwoFactorAuthentication Method</LItem>
       </Links>
    </Context>
    
@@ -630,147 +742,115 @@
          <KItem Name="AdotAqui.Controllers.HomeController.Error" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000CE.html" LinkGroup="AdotAqui">Error Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000008A.html" LinkGroup="AdotAqui">Error Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel.ErrorMessage" />
+         <KItem Name="AdotAqui.Models.ViewModels.ErrorViewModel.ErrorId" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000079.html" LinkGroup="AdotAqui">ErrorMessage Property {AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000CD.html" LinkGroup="AdotAqui">ErrorId Property</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginModel.ErrorMessage" />
+         <KItem Name="AdotAqui.Models.ViewModels.ErrorViewModel" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000008F.html" LinkGroup="AdotAqui">ErrorMessage Property {AdotAqui.Areas.Identity.Pages.Account.LoginModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000CA.html" LinkGroup="AdotAqui">ErrorViewModel Class</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.ErrorModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.ExternalLogin" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C1.html" LinkGroup="AdotAqui">ErrorModel Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000009.html" LinkGroup="AdotAqui">ExternalLogin Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Models.ErrorViewModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.ExternalLoginCallback" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000EA.html" LinkGroup="AdotAqui">ErrorViewModel Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000000A.html" LinkGroup="AdotAqui">ExternalLoginCallback Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.ExternalLoginConfirmation" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000074.html" LinkGroup="AdotAqui">ExternalLoginModel Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000000B.html" LinkGroup="AdotAqui">ExternalLoginConfirmation Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel.ExternalLoginModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.ExternalLoginConfirmationViewModel" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000075.html" LinkGroup="AdotAqui">ExternalLoginModel Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000003B.html" LinkGroup="AdotAqui">ExternalLoginConfirmationViewModel Class</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginModel.ExternalLogins" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.FactorViewModel" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000008D.html" LinkGroup="AdotAqui">ExternalLogins Property {AdotAqui.Areas.Identity.Pages.Account.LoginModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000069.html" LinkGroup="AdotAqui">FactorViewModel Class</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.ForgotPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000000D_overloads--.html" LinkGroup="AdotAqui">ForgotPassword Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.ForgotPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000000E_overloads--.html" LinkGroup="AdotAqui">ForgotPassword Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages.ExternalLogins" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.ForgotPasswordConfirmation" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000049.html" LinkGroup="AdotAqui">ExternalLogins Property {AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000000F.html" LinkGroup="AdotAqui">ForgotPasswordConfirmation Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.ForgotPasswordViewModel" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000026.html" LinkGroup="AdotAqui">ExternalLoginsModel Class</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.ExternalLoginsModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000027.html" LinkGroup="AdotAqui">ExternalLoginsModel Constructor</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages.ExternalLoginsNavClass" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000050.html" LinkGroup="AdotAqui">ExternalLoginsNavClass Method</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ForgotPasswordConfirmation" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000086.html" LinkGroup="AdotAqui">ForgotPasswordConfirmation Class</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ForgotPasswordModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000080.html" LinkGroup="AdotAqui">ForgotPasswordModel Class</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ForgotPasswordModel.ForgotPasswordModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000081.html" LinkGroup="AdotAqui">ForgotPasswordModel Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000003D.html" LinkGroup="AdotAqui">ForgotPasswordViewModel Class</LItem>
       </Links>
    </Context>
    
@@ -780,37 +860,26 @@
          <KItem Name="AdotAqui.Models.Services.Email.From" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000DC.html" LinkGroup="AdotAqui">From Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B9.html" LinkGroup="AdotAqui">From Property</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.GenerateRecoveryCode" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000030.html" LinkGroup="AdotAqui">GenerateRecoveryCodesModel Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000023.html" LinkGroup="AdotAqui">GenerateRecoveryCode Method</LItem>
       </Links>
    </Context>
    
-
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel.GenerateRecoveryCodesModel" />
+         <KItem Name="AdotAqui.Models.Authorization.AnonymousOnly.HandleRequirementAsync" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000031.html" LinkGroup="AdotAqui">GenerateRecoveryCodesModel Constructor</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.HasAuthenticator" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000067.html" LinkGroup="AdotAqui">HasAuthenticator Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000AB_overloads--.html" LinkGroup="AdotAqui">HandleRequirementAsync Method</LItem>
       </Links>
    </Context>
    
@@ -820,7 +889,7 @@
          <KItem Name="AdotAqui.Controllers.HomeController" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C9.html" LinkGroup="AdotAqui">HomeController Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000085.html" LinkGroup="AdotAqui">HomeController Class</LItem>
       </Links>
    </Context>
    
@@ -830,7 +899,7 @@
          <KItem Name="AdotAqui.Models.Services.Email.HtmlBody" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000E0.html" LinkGroup="AdotAqui">HtmlBody Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000BD.html" LinkGroup="AdotAqui">HtmlBody Property</LItem>
       </Links>
    </Context>
    
@@ -840,7 +909,17 @@
          <KItem Name="AdotAqui.Models.Services.IEmailService" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000E7.html" LinkGroup="AdotAqui">IEmailService Interface</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C3.html" LinkGroup="AdotAqui">IEmailService Interface</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Models.Services.ISmsSender" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C5.html" LinkGroup="AdotAqui">ISmsSender Interface</LItem>
       </Links>
    </Context>
    
@@ -850,7 +929,25 @@
          <KItem Name="AdotAqui.Areas.Identity.IdentityHostingStartup" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C6.html" LinkGroup="AdotAqui">IdentityHostingStartup Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000082.html" LinkGroup="AdotAqui">IdentityHostingStartup Class</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.Index" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000001E_overloads--.html" LinkGroup="AdotAqui">Index Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.Index" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000001D_overloads--.html" LinkGroup="AdotAqui">Index Method</LItem>
       </Links>
    </Context>
    
@@ -860,417 +957,125 @@
          <KItem Name="AdotAqui.Controllers.HomeController.Index" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000CA.html" LinkGroup="AdotAqui">Index Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000086.html" LinkGroup="AdotAqui">Index Method {AdotAqui.Controllers.HomeController}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages.Index" />
+         <KItem Name="AdotAqui.Controllers.UsersController.Index" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000045.html" LinkGroup="AdotAqui">Index Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000008E.html" LinkGroup="AdotAqui">Index Method {AdotAqui.Controllers.UsersController}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.IndexViewModel" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000036.html" LinkGroup="AdotAqui">IndexModel Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000006B.html" LinkGroup="AdotAqui">IndexViewModel Class</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.IndexModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.IndexViewModel.Input" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000037.html" LinkGroup="AdotAqui">IndexModel Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000006F.html" LinkGroup="AdotAqui">Input Property</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages.IndexNavClass" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.InputModel" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000004C.html" LinkGroup="AdotAqui">IndexNavClass Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000070.html" LinkGroup="AdotAqui">InputModel Class</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel.Input" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.IndexViewModel.IsEmailConfirmed" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000076.html" LinkGroup="AdotAqui">Input Property {AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000006D.html" LinkGroup="AdotAqui">IsEmailConfirmed Property</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ForgotPasswordModel.Input" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.LinkLogin" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000082.html" LinkGroup="AdotAqui">Input Property {AdotAqui.Areas.Identity.Pages.Account.ForgotPasswordModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000002E.html" LinkGroup="AdotAqui">LinkLogin Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginModel.Input" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.LinkLoginCallback" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000008C.html" LinkGroup="AdotAqui">Input Property {AdotAqui.Areas.Identity.Pages.Account.LoginModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000002F.html" LinkGroup="AdotAqui">LinkLoginCallback Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWith2faModel.Input" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.LogOff" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000098.html" LinkGroup="AdotAqui">Input Property {AdotAqui.Areas.Identity.Pages.Account.LoginWith2faModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000008.html" LinkGroup="AdotAqui">LogOff Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.Login" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000004_overloads--.html" LinkGroup="AdotAqui">Login Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.Login" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000003_overloads--.html" LinkGroup="AdotAqui">Login Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.Input" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.RemoveLoginViewModel.LoginProvider" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A2.html" LinkGroup="AdotAqui">Input Property {AdotAqui.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000079.html" LinkGroup="AdotAqui">LoginProvider Property</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.Input" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.LoginViewModel" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000003.html" LinkGroup="AdotAqui">Input Property {AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.Input" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000000D.html" LinkGroup="AdotAqui">Input Property {AdotAqui.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.Input" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000021.html" LinkGroup="AdotAqui">Input Property {AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.Input" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000003B.html" LinkGroup="AdotAqui">Input Property {AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.SetPasswordModel.Input" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000005E.html" LinkGroup="AdotAqui">Input Property {AdotAqui.Areas.Identity.Pages.Account.Manage.SetPasswordModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.RegisterModel.Input" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000AE.html" LinkGroup="AdotAqui">Input Property {AdotAqui.Areas.Identity.Pages.Account.RegisterModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel.Input" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B6.html" LinkGroup="AdotAqui">Input Property {AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel.InputModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000007A.html" LinkGroup="AdotAqui">InputModel Class {AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ForgotPasswordModel.InputModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000083.html" LinkGroup="AdotAqui">InputModel Class {AdotAqui.Areas.Identity.Pages.Account.ForgotPasswordModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginModel.InputModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000090.html" LinkGroup="AdotAqui">InputModel Class {AdotAqui.Areas.Identity.Pages.Account.LoginModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWith2faModel.InputModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000009B.html" LinkGroup="AdotAqui">InputModel Class {AdotAqui.Areas.Identity.Pages.Account.LoginWith2faModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.InputModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A4.html" LinkGroup="AdotAqui">InputModel Class {AdotAqui.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.InputModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000005.html" LinkGroup="AdotAqui">InputModel Class {AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.InputModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000000E.html" LinkGroup="AdotAqui">InputModel Class {AdotAqui.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.InputModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000022.html" LinkGroup="AdotAqui">InputModel Class {AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000003C.html" LinkGroup="AdotAqui">InputModel Class {AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.SetPasswordModel.InputModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000060.html" LinkGroup="AdotAqui">InputModel Class {AdotAqui.Areas.Identity.Pages.Account.Manage.SetPasswordModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.RegisterModel.InputModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B0.html" LinkGroup="AdotAqui">InputModel Class {AdotAqui.Areas.Identity.Pages.Account.RegisterModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B7.html" LinkGroup="AdotAqui">InputModel Class {AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.Is2faEnabled" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000069.html" LinkGroup="AdotAqui">Is2faEnabled Property</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.IsEmailConfirmed" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000039.html" LinkGroup="AdotAqui">IsEmailConfirmed Property</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.IsMachineRemembered" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000006A.html" LinkGroup="AdotAqui">IsMachineRemembered Property</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LockoutModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000088.html" LinkGroup="AdotAqui">LockoutModel Class</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000008A.html" LinkGroup="AdotAqui">LoginModel Class</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginModel.LoginModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000008B.html" LinkGroup="AdotAqui">LoginModel Constructor</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel.LoginProvider" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000077.html" LinkGroup="AdotAqui">LoginProvider Property</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWith2faModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000096.html" LinkGroup="AdotAqui">LoginWith2faModel Class</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWith2faModel.LoginWith2faModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000097.html" LinkGroup="AdotAqui">LoginWith2faModel Constructor</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A0.html" LinkGroup="AdotAqui">LoginWithRecoveryCodeModel Class</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.LoginWithRecoveryCodeModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A1.html" LinkGroup="AdotAqui">LoginWithRecoveryCodeModel Constructor</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LogoutModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A8.html" LinkGroup="AdotAqui">LogoutModel Class</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LogoutModel.LogoutModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A9.html" LinkGroup="AdotAqui">LogoutModel Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000003F.html" LinkGroup="AdotAqui">LoginViewModel Class</LItem>
       </Links>
    </Context>
    
@@ -1280,27 +1085,77 @@
          <KItem Name="AdotAqui.Program.Main" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000F5.html" LinkGroup="AdotAqui">Main Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000DB.html" LinkGroup="AdotAqui">Main Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000044.html" LinkGroup="AdotAqui">ManageNavPages Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000001B.html" LinkGroup="AdotAqui">ManageController Class</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel.Name" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.ManageController" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000003F.html" LinkGroup="AdotAqui">Name Property {AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000001C.html" LinkGroup="AdotAqui">ManageController Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.ManageLogins" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000002D.html" LinkGroup="AdotAqui">ManageLogins Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.ManageLoginsViewModel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000075.html" LinkGroup="AdotAqui">ManageLoginsViewModel Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.ManageMessageId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000030.html" LinkGroup="AdotAqui">ManageMessageId Enumeration</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Models.ViewModels.MessageType" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000D3.html" LinkGroup="AdotAqui">MessageType Enumeration</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.InputModel.Name" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000073.html" LinkGroup="AdotAqui">Name Property {AdotAqui.Areas.Identity.Models.ManageViewModels.InputModel}</LItem>
       </Links>
    </Context>
    
@@ -1310,297 +1165,37 @@
          <KItem Name="AdotAqui.Models.User.Name" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000F0.html" LinkGroup="AdotAqui">Name Property {AdotAqui.Models.User}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B0.html" LinkGroup="AdotAqui">Name Property {AdotAqui.Models.User}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.InputModel.NewPassword" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.ChangePasswordViewModel.NewPassword" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000007.html" LinkGroup="AdotAqui">NewPassword Property {AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000062.html" LinkGroup="AdotAqui">NewPassword Property {AdotAqui.Areas.Identity.Models.ManageViewModels.ChangePasswordViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.SetPasswordModel.InputModel.NewPassword" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.SetPasswordViewModel.NewPassword" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000061.html" LinkGroup="AdotAqui">NewPassword Property {AdotAqui.Areas.Identity.Pages.Account.Manage.SetPasswordModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000007C.html" LinkGroup="AdotAqui">NewPassword Property {AdotAqui.Areas.Identity.Models.ManageViewModels.SetPasswordViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.InputModel.OldPassword" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.ChangePasswordViewModel.OldPassword" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000006.html" LinkGroup="AdotAqui">OldPassword Property</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.AccessDeniedModel.OnGet" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000070.html" LinkGroup="AdotAqui">OnGet Method {AdotAqui.Areas.Identity.Pages.Account.AccessDeniedModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ForgotPasswordConfirmation.OnGet" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000087.html" LinkGroup="AdotAqui">OnGet Method {AdotAqui.Areas.Identity.Pages.Account.ForgotPasswordConfirmation}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LockoutModel.OnGet" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000089.html" LinkGroup="AdotAqui">OnGet Method {AdotAqui.Areas.Identity.Pages.Account.LockoutModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LogoutModel.OnGet" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000AA.html" LinkGroup="AdotAqui">OnGet Method {AdotAqui.Areas.Identity.Pages.Account.LogoutModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.OnGet" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000011.html" LinkGroup="AdotAqui">OnGet Method {AdotAqui.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.Disable2faModel.OnGet" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000016.html" LinkGroup="AdotAqui">OnGet Method {AdotAqui.Areas.Identity.Pages.Account.Manage.Disable2faModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.PersonalDataModel.OnGet" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000056.html" LinkGroup="AdotAqui">OnGet Method {AdotAqui.Areas.Identity.Pages.Account.Manage.PersonalDataModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel.OnGet" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000005A.html" LinkGroup="AdotAqui">OnGet Method {AdotAqui.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.OnGet" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000006C.html" LinkGroup="AdotAqui">OnGet Method {AdotAqui.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.RegisterModel.OnGet" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B2.html" LinkGroup="AdotAqui">OnGet Method {AdotAqui.Areas.Identity.Pages.Account.RegisterModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ResetPasswordConfirmationModel.OnGet" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000BF.html" LinkGroup="AdotAqui">OnGet Method {AdotAqui.Areas.Identity.Pages.Account.ResetPasswordConfirmationModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel.OnGet" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000BC.html" LinkGroup="AdotAqui">OnGet Method {AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.ErrorModel.OnGet" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C4.html" LinkGroup="AdotAqui">OnGet Method {AdotAqui.Areas.Identity.Pages.ErrorModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ConfirmEmailModel.OnGetAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000073.html" LinkGroup="AdotAqui">OnGetAsync Method {AdotAqui.Areas.Identity.Pages.Account.ConfirmEmailModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel.OnGetAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000007C.html" LinkGroup="AdotAqui">OnGetAsync Method {AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginModel.OnGetAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000094.html" LinkGroup="AdotAqui">OnGetAsync Method {AdotAqui.Areas.Identity.Pages.Account.LoginModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWith2faModel.OnGetAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000009E.html" LinkGroup="AdotAqui">OnGetAsync Method {AdotAqui.Areas.Identity.Pages.Account.LoginWith2faModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.OnGetAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A6.html" LinkGroup="AdotAqui">OnGetAsync Method {AdotAqui.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.OnGetAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000009.html" LinkGroup="AdotAqui">OnGetAsync Method {AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.OnGetAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000024.html" LinkGroup="AdotAqui">OnGetAsync Method {AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.OnGetAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000002C.html" LinkGroup="AdotAqui">OnGetAsync Method {AdotAqui.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel.OnGetAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000034.html" LinkGroup="AdotAqui">OnGetAsync Method {AdotAqui.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.OnGetAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000041.html" LinkGroup="AdotAqui">OnGetAsync Method {AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.SetPasswordModel.OnGetAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000063.html" LinkGroup="AdotAqui">OnGetAsync Method {AdotAqui.Areas.Identity.Pages.Account.Manage.SetPasswordModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel.OnGetCallbackAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000007E.html" LinkGroup="AdotAqui">OnGetCallbackAsync Method</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.OnGetLinkLoginCallbackAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000002F.html" LinkGroup="AdotAqui">OnGetLinkLoginCallbackAsync Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000061.html" LinkGroup="AdotAqui">OldPassword Property</LItem>
       </Links>
    </Context>
    
@@ -1610,287 +1205,37 @@
          <KItem Name="AdotAqui.Data.AdotAquiDbContext.OnModelCreating" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000D2.html" LinkGroup="AdotAqui">OnModelCreating Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000099.html" LinkGroup="AdotAqui">OnModelCreating Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel.OnPost" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.ManageLoginsViewModel.OtherLogins" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000007D.html" LinkGroup="AdotAqui">OnPost Method {AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000077.html" LinkGroup="AdotAqui">OtherLogins Property</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LogoutModel.OnPost" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.LoginViewModel.Password" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000AB.html" LinkGroup="AdotAqui">OnPost Method {AdotAqui.Areas.Identity.Pages.Account.LogoutModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000041.html" LinkGroup="AdotAqui">Password Property {AdotAqui.Areas.Identity.Models.AccountViewModels.LoginViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.OnPost" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.ResetPasswordViewModel.Password" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000006D.html" LinkGroup="AdotAqui">OnPost Method {AdotAqui.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ForgotPasswordModel.OnPostAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000085.html" LinkGroup="AdotAqui">OnPostAsync Method {AdotAqui.Areas.Identity.Pages.Account.ForgotPasswordModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginModel.OnPostAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000095.html" LinkGroup="AdotAqui">OnPostAsync Method {AdotAqui.Areas.Identity.Pages.Account.LoginModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWith2faModel.OnPostAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000009F.html" LinkGroup="AdotAqui">OnPostAsync Method {AdotAqui.Areas.Identity.Pages.Account.LoginWith2faModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.OnPostAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A7.html" LinkGroup="AdotAqui">OnPostAsync Method {AdotAqui.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.OnPostAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000000A.html" LinkGroup="AdotAqui">OnPostAsync Method {AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.OnPostAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000012.html" LinkGroup="AdotAqui">OnPostAsync Method {AdotAqui.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.Disable2faModel.OnPostAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000017.html" LinkGroup="AdotAqui">OnPostAsync Method {AdotAqui.Areas.Identity.Pages.Account.Manage.Disable2faModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.DownloadPersonalDataModel.OnPostAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000001A.html" LinkGroup="AdotAqui">OnPostAsync Method {AdotAqui.Areas.Identity.Pages.Account.Manage.DownloadPersonalDataModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.OnPostAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000025.html" LinkGroup="AdotAqui">OnPostAsync Method {AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel.OnPostAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000035.html" LinkGroup="AdotAqui">OnPostAsync Method {AdotAqui.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.OnPostAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000042.html" LinkGroup="AdotAqui">OnPostAsync Method {AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel.OnPostAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000005B.html" LinkGroup="AdotAqui">OnPostAsync Method {AdotAqui.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.SetPasswordModel.OnPostAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000064.html" LinkGroup="AdotAqui">OnPostAsync Method {AdotAqui.Areas.Identity.Pages.Account.Manage.SetPasswordModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.RegisterModel.OnPostAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B3.html" LinkGroup="AdotAqui">OnPostAsync Method {AdotAqui.Areas.Identity.Pages.Account.RegisterModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel.OnPostAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000BD.html" LinkGroup="AdotAqui">OnPostAsync Method {AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel.OnPostConfirmationAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000007F.html" LinkGroup="AdotAqui">OnPostConfirmationAsync Method</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.OnPostLinkLoginAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000002E.html" LinkGroup="AdotAqui">OnPostLinkLoginAsync Method</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.OnPostRemoveLoginAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000002D.html" LinkGroup="AdotAqui">OnPostRemoveLoginAsync Method</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.OnPostSendVerificationEmailAsync" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000043.html" LinkGroup="AdotAqui">OnPostSendVerificationEmailAsync Method</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Models.Services.EmailService.Options" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000E3.html" LinkGroup="AdotAqui">Options Property</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.OtherLogins" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000029.html" LinkGroup="AdotAqui">OtherLogins Property</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages.PageNavClass" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000053.html" LinkGroup="AdotAqui">PageNavClass Method</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginModel.InputModel.Password" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000092.html" LinkGroup="AdotAqui">Password Property {AdotAqui.Areas.Identity.Pages.Account.LoginModel.InputModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.InputModel.Password" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000000F.html" LinkGroup="AdotAqui">Password Property {AdotAqui.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.InputModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel.Password" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B9.html" LinkGroup="AdotAqui">Password Property {AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000045.html" LinkGroup="AdotAqui">Password Property {AdotAqui.Areas.Identity.Models.AccountViewModels.ResetPasswordViewModel}</LItem>
       </Links>
    </Context>
    
@@ -1900,57 +1245,37 @@
          <KItem Name="AdotAqui.Models.User.PasswordHash" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000EF.html" LinkGroup="AdotAqui">PasswordHash Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000AF.html" LinkGroup="AdotAqui">PasswordHash Property</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages.PersonalData" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.AddPhoneNumberViewModel.PhoneNumber" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000004A.html" LinkGroup="AdotAqui">PersonalData Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000005F.html" LinkGroup="AdotAqui">PhoneNumber Property {AdotAqui.Areas.Identity.Models.ManageViewModels.AddPhoneNumberViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.PersonalDataModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.InputModel.PhoneNumber" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000054.html" LinkGroup="AdotAqui">PersonalDataModel Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000072.html" LinkGroup="AdotAqui">PhoneNumber Property {AdotAqui.Areas.Identity.Models.ManageViewModels.InputModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.PersonalDataModel.PersonalDataModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.VerifyPhoneNumberViewModel.PhoneNumber" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000055.html" LinkGroup="AdotAqui">PersonalDataModel Constructor</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages.PersonalDataNavClass" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000051.html" LinkGroup="AdotAqui">PersonalDataNavClass Method</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel.PhoneNumber" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000003E.html" LinkGroup="AdotAqui">PhoneNumber Property {AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000080.html" LinkGroup="AdotAqui">PhoneNumber Property {AdotAqui.Areas.Identity.Models.ManageViewModels.VerifyPhoneNumberViewModel}</LItem>
       </Links>
    </Context>
    
@@ -1960,7 +1285,7 @@
          <KItem Name="AdotAqui.Models.User.PhoneNumber" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000F2.html" LinkGroup="AdotAqui">PhoneNumber Property {AdotAqui.Models.User}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B2.html" LinkGroup="AdotAqui">PhoneNumber Property {AdotAqui.Models.User}</LItem>
       </Links>
    </Context>
    
@@ -1970,7 +1295,7 @@
          <KItem Name="AdotAqui.Models.Services.Email.PlainBody" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000DF.html" LinkGroup="AdotAqui">PlainBody Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000BC.html" LinkGroup="AdotAqui">PlainBody Property</LItem>
       </Links>
    </Context>
    
@@ -1980,7 +1305,7 @@
          <KItem Name="AdotAqui.Controllers.HomeController.Privacy" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000CD.html" LinkGroup="AdotAqui">Privacy Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000089.html" LinkGroup="AdotAqui">Privacy Method</LItem>
       </Links>
    </Context>
    
@@ -1990,227 +1315,303 @@
          <KItem Name="AdotAqui.Program" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000F4.html" LinkGroup="AdotAqui">Program Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000DA.html" LinkGroup="AdotAqui">Program Class</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.InputModel.RecoveryCode" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyCodeViewModel.Provider" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A5.html" LinkGroup="AdotAqui">RecoveryCode Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000058.html" LinkGroup="AdotAqui">Provider Property</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.RecoveryCodes" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.RemoveLoginViewModel.ProviderKey" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000001F.html" LinkGroup="AdotAqui">RecoveryCodes Property {AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000007A.html" LinkGroup="AdotAqui">ProviderKey Property</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel.RecoveryCodes" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.SendCodeViewModel.Providers" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000032.html" LinkGroup="AdotAqui">RecoveryCodes Property {AdotAqui.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000004A.html" LinkGroup="AdotAqui">Providers Property {AdotAqui.Areas.Identity.Models.AccountViewModels.SendCodeViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.RecoveryCodesLeft" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.ConfigureTwoFactorViewModel.Providers" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000068.html" LinkGroup="AdotAqui">RecoveryCodesLeft Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000066.html" LinkGroup="AdotAqui">Providers Property {AdotAqui.Areas.Identity.Models.ManageViewModels.ConfigureTwoFactorViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.RegisterModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.FactorViewModel.Purpose" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000AC.html" LinkGroup="AdotAqui">RegisterModel Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000006A.html" LinkGroup="AdotAqui">Purpose Property</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.Register" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000006_overloads--.html" LinkGroup="AdotAqui">Register Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.Register" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000007_overloads--.html" LinkGroup="AdotAqui">Register Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.RegisterModel.RegisterModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyAuthenticatorCodeViewModel.RememberBrowser" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000AD.html" LinkGroup="AdotAqui">RegisterModel Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000055.html" LinkGroup="AdotAqui">RememberBrowser Property {AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyAuthenticatorCodeViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWith2faModel.InputModel.RememberMachine" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyCodeViewModel.RememberBrowser" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000009D.html" LinkGroup="AdotAqui">RememberMachine Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000005B.html" LinkGroup="AdotAqui">RememberBrowser Property {AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyCodeViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginModel.InputModel.RememberMe" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.LoginViewModel.RememberMe" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000093.html" LinkGroup="AdotAqui">RememberMe Property {AdotAqui.Areas.Identity.Pages.Account.LoginModel.InputModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000042.html" LinkGroup="AdotAqui">RememberMe Property {AdotAqui.Areas.Identity.Models.AccountViewModels.LoginViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWith2faModel.RememberMe" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.SendCodeViewModel.RememberMe" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000099.html" LinkGroup="AdotAqui">RememberMe Property {AdotAqui.Areas.Identity.Pages.Account.LoginWith2faModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000004C.html" LinkGroup="AdotAqui">RememberMe Property {AdotAqui.Areas.Identity.Models.AccountViewModels.SendCodeViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.ErrorModel.RequestId" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyAuthenticatorCodeViewModel.RememberMe" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C2.html" LinkGroup="AdotAqui">RequestId Property {AdotAqui.Areas.Identity.Pages.ErrorModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000056.html" LinkGroup="AdotAqui">RememberMe Property {AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyAuthenticatorCodeViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Models.ErrorViewModel.RequestId" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyCodeViewModel.RememberMe" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000EB.html" LinkGroup="AdotAqui">RequestId Property {AdotAqui.Models.ErrorViewModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000005C.html" LinkGroup="AdotAqui">RememberMe Property {AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyCodeViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.RequirePassword" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.RemoveLogin" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000010.html" LinkGroup="AdotAqui">RequirePassword Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000001F.html" LinkGroup="AdotAqui">RemoveLogin Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.RemoveLoginViewModel" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000057.html" LinkGroup="AdotAqui">ResetAuthenticatorModel Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000078.html" LinkGroup="AdotAqui">RemoveLoginViewModel Class</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel.ResetAuthenticatorModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.RemovePhoneNumber" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000058.html" LinkGroup="AdotAqui">ResetAuthenticatorModel Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000028.html" LinkGroup="AdotAqui">RemovePhoneNumber Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ResetPasswordConfirmationModel" />
+         <KItem Name="AdotAqui.Models.ViewModels.ErrorViewModel.RequestId" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000BE.html" LinkGroup="AdotAqui">ResetPasswordConfirmationModel Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000CB.html" LinkGroup="AdotAqui">RequestId Property</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.ResetAuthenticatorKey" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B4.html" LinkGroup="AdotAqui">ResetPasswordModel Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000022.html" LinkGroup="AdotAqui">ResetAuthenticatorKey Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.ResetPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000011_overloads--.html" LinkGroup="AdotAqui">ResetPassword Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.ResetPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000010_overloads--.html" LinkGroup="AdotAqui">ResetPassword Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ResetPasswordModel.ResetPasswordModel" />
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.ResetPasswordConfirmation" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B5.html" LinkGroup="AdotAqui">ResetPasswordModel Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000012.html" LinkGroup="AdotAqui">ResetPasswordConfirmation Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel.ReturnUrl" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.ResetPasswordViewModel" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000078.html" LinkGroup="AdotAqui">ReturnUrl Property {AdotAqui.Areas.Identity.Pages.Account.ExternalLoginModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000043.html" LinkGroup="AdotAqui">ResetPasswordViewModel Class</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginModel.ReturnUrl" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.SendCodeViewModel.ReturnUrl" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000008E.html" LinkGroup="AdotAqui">ReturnUrl Property {AdotAqui.Areas.Identity.Pages.Account.LoginModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000004B.html" LinkGroup="AdotAqui">ReturnUrl Property {AdotAqui.Areas.Identity.Models.AccountViewModels.SendCodeViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWith2faModel.ReturnUrl" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.UseRecoveryCodeViewModel.ReturnUrl" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000009A.html" LinkGroup="AdotAqui">ReturnUrl Property {AdotAqui.Areas.Identity.Pages.Account.LoginWith2faModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000004F.html" LinkGroup="AdotAqui">ReturnUrl Property {AdotAqui.Areas.Identity.Models.AccountViewModels.UseRecoveryCodeViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.ReturnUrl" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyAuthenticatorCodeViewModel.ReturnUrl" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A3.html" LinkGroup="AdotAqui">ReturnUrl Property {AdotAqui.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000054.html" LinkGroup="AdotAqui">ReturnUrl Property {AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyAuthenticatorCodeViewModel}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.RegisterModel.ReturnUrl" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyCodeViewModel.ReturnUrl" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000AF.html" LinkGroup="AdotAqui">ReturnUrl Property {AdotAqui.Areas.Identity.Pages.Account.RegisterModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000005A.html" LinkGroup="AdotAqui">ReturnUrl Property {AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyCodeViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Data.Role" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000009B.html" LinkGroup="AdotAqui">Role Enumeration</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Data.DataSeeder.SeedDatabase" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A1.html" LinkGroup="AdotAqui">SeedDatabase Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.SendCodeViewModel.SelectedProvider" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000049.html" LinkGroup="AdotAqui">SelectedProvider Property {AdotAqui.Areas.Identity.Models.AccountViewModels.SendCodeViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.ConfigureTwoFactorViewModel.SelectedProvider" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000065.html" LinkGroup="AdotAqui">SelectedProvider Property {AdotAqui.Areas.Identity.Models.ManageViewModels.ConfigureTwoFactorViewModel}</LItem>
       </Links>
    </Context>
    
@@ -2220,7 +1621,7 @@
          <KItem Name="AdotAqui.Models.Services.EmailService.SendAsync" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000E5.html" LinkGroup="AdotAqui">SendAsync Method {AdotAqui.Models.Services.EmailService}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C1.html" LinkGroup="AdotAqui">SendAsync Method {AdotAqui.Models.Services.EmailService}</LItem>
       </Links>
    </Context>
    
@@ -2230,7 +1631,35 @@
          <KItem Name="AdotAqui.Models.Services.IEmailService.SendAsync" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000E8.html" LinkGroup="AdotAqui">SendAsync Method {AdotAqui.Models.Services.IEmailService}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C4.html" LinkGroup="AdotAqui">SendAsync Method {AdotAqui.Models.Services.IEmailService}</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.SendCode" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000014_overloads--.html" LinkGroup="AdotAqui">SendCode Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.SendCode" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000013_overloads--.html" LinkGroup="AdotAqui">SendCode Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.SendCodeViewModel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000048.html" LinkGroup="AdotAqui">SendCodeViewModel Class</LItem>
       </Links>
    </Context>
    
@@ -2240,7 +1669,7 @@
          <KItem Name="AdotAqui.Models.Services.EmailService.SendEmailAsync" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000E6.html" LinkGroup="AdotAqui">SendEmailAsync Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C2.html" LinkGroup="AdotAqui">SendEmailAsync Method</LItem>
       </Links>
    </Context>
    
@@ -2250,7 +1679,7 @@
          <KItem Name="AdotAqui.Models.Services.AuthMessageSenderOptions.SendGridKey" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000DA.html" LinkGroup="AdotAqui">SendGridKey Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B7.html" LinkGroup="AdotAqui">SendGridKey Property</LItem>
       </Links>
    </Context>
    
@@ -2260,67 +1689,105 @@
          <KItem Name="AdotAqui.Models.Services.AuthMessageSenderOptions.SendGridUser" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000D9.html" LinkGroup="AdotAqui">SendGridUser Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000B6.html" LinkGroup="AdotAqui">SendGridUser Property</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.SetPasswordModel" />
+         <KItem Name="AdotAqui.Models.Services.ISmsSender.SendSmsAsync" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000005C.html" LinkGroup="AdotAqui">SetPasswordModel Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C6.html" LinkGroup="AdotAqui">SendSmsAsync Method {AdotAqui.Models.Services.ISmsSender}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.SetPasswordModel.SetPasswordModel" />
+         <KItem Name="AdotAqui.Models.Services.SmsSender.SendSmsAsync" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000005D.html" LinkGroup="AdotAqui">SetPasswordModel Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C8.html" LinkGroup="AdotAqui">SendSmsAsync Method {AdotAqui.Models.Services.SmsSender}</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.SharedKey" />
+         <KItem Name="AdotAqui.Controllers.HomeController.SetLanguage" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000001D.html" LinkGroup="AdotAqui">SharedKey Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000008B.html" LinkGroup="AdotAqui">SetLanguage Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.SetPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000002B_overloads--.html" LinkGroup="AdotAqui">SetPassword Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.SetPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000002C_overloads--.html" LinkGroup="AdotAqui">SetPassword Method</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.ShowRemoveButton" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.SetPasswordViewModel" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000002A.html" LinkGroup="AdotAqui">ShowRemoveButton Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000007B.html" LinkGroup="AdotAqui">SetPasswordViewModel Class</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.ErrorModel.ShowRequestId" />
+         <KItem Name="AdotAqui.SharedResources" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C3.html" LinkGroup="AdotAqui">ShowRequestId Property {AdotAqui.Areas.Identity.Pages.ErrorModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000D9.html" LinkGroup="AdotAqui">SharedResources Class</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Models.ErrorViewModel.ShowRequestId" />
+         <KItem Name="AdotAqui.Models.ViewModels.ErrorViewModel.ShowDescription" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000EC.html" LinkGroup="AdotAqui">ShowRequestId Property {AdotAqui.Models.ErrorViewModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000CF.html" LinkGroup="AdotAqui">ShowDescription Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Models.ViewModels.ErrorViewModel.ShowRequestId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000CC.html" LinkGroup="AdotAqui">ShowRequestId Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Models.Services.SmsSender" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000C7.html" LinkGroup="AdotAqui">SmsSender Class</LItem>
       </Links>
    </Context>
    
@@ -2330,7 +1797,7 @@
          <KItem Name="AdotAqui.Startup" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000F7.html" LinkGroup="AdotAqui">Startup Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000DD.html" LinkGroup="AdotAqui">Startup Class</LItem>
       </Links>
    </Context>
    
@@ -2340,97 +1807,27 @@
          <KItem Name="AdotAqui.Startup.Startup" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000F8.html" LinkGroup="AdotAqui">Startup Constructor</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000DE.html" LinkGroup="AdotAqui">Startup Constructor</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.StatusMessage" />
+         <KItem Name="AdotAqui.Models.ViewModels.StatusMessage" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000004.html" LinkGroup="AdotAqui">StatusMessage Property {AdotAqui.Areas.Identity.Pages.Account.Manage.ChangePasswordModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000D0.html" LinkGroup="AdotAqui">StatusMessage Class</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.Disable2faModel.StatusMessage" />
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.IndexViewModel.StatusMessage" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000015.html" LinkGroup="AdotAqui">StatusMessage Property {AdotAqui.Areas.Identity.Pages.Account.Manage.Disable2faModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.StatusMessage" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000020.html" LinkGroup="AdotAqui">StatusMessage Property {AdotAqui.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.StatusMessage" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000002B.html" LinkGroup="AdotAqui">StatusMessage Property {AdotAqui.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel.StatusMessage" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000033.html" LinkGroup="AdotAqui">StatusMessage Property {AdotAqui.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.StatusMessage" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000003A.html" LinkGroup="AdotAqui">StatusMessage Property {AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel.StatusMessage" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000059.html" LinkGroup="AdotAqui">StatusMessage Property {AdotAqui.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.SetPasswordModel.StatusMessage" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000005F.html" LinkGroup="AdotAqui">StatusMessage Property {AdotAqui.Areas.Identity.Pages.Account.Manage.SetPasswordModel}</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.StatusMessage" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000006B.html" LinkGroup="AdotAqui">StatusMessage Property {AdotAqui.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel}</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000006E.html" LinkGroup="AdotAqui">StatusMessage Property</LItem>
       </Links>
    </Context>
    
@@ -2440,7 +1837,7 @@
          <KItem Name="AdotAqui.Models.Services.Email.Subject" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000DE.html" LinkGroup="AdotAqui">Subject Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000BB.html" LinkGroup="AdotAqui">Subject Property</LItem>
       </Links>
    </Context>
    
@@ -2450,57 +1847,17 @@
          <KItem Name="AdotAqui.Models.Services.Email.To" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000DD.html" LinkGroup="AdotAqui">To Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000BA.html" LinkGroup="AdotAqui">To Property</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages.TwoFactorAuthentication" />
+         <KItem Name="AdotAqui.Models.ViewModels.StatusMessage.Type" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000004B.html" LinkGroup="AdotAqui">TwoFactorAuthentication Property</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000065.html" LinkGroup="AdotAqui">TwoFactorAuthenticationModel Class</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.TwoFactorAuthenticationModel" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000066.html" LinkGroup="AdotAqui">TwoFactorAuthenticationModel Constructor</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.ManageNavPages.TwoFactorAuthenticationNavClass" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000052.html" LinkGroup="AdotAqui">TwoFactorAuthenticationNavClass Method</LItem>
-      </Links>
-   </Context>
-   
-
-   <Context>
-      <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.LoginWith2faModel.InputModel.TwoFactorCode" />
-      </Keywords>
-      <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000009C.html" LinkGroup="AdotAqui">TwoFactorCode Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000D1.html" LinkGroup="AdotAqui">Type Property</LItem>
       </Links>
    </Context>
    
@@ -2510,7 +1867,45 @@
          <KItem Name="AdotAqui.Migrations.CreateIdentitySchema.Up" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000D5.html" LinkGroup="AdotAqui">Up Method</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A4.html" LinkGroup="AdotAqui">Up Method {AdotAqui.Migrations.CreateIdentitySchema}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Migrations.upd.Up" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A7.html" LinkGroup="AdotAqui">Up Method {AdotAqui.Migrations.upd}</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.UseRecoveryCode" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000019_overloads--.html" LinkGroup="AdotAqui">UseRecoveryCode Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.UseRecoveryCode" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000001A_overloads--.html" LinkGroup="AdotAqui">UseRecoveryCode Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.UseRecoveryCodeViewModel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000004D.html" LinkGroup="AdotAqui">UseRecoveryCodeViewModel Class</LItem>
       </Links>
    </Context>
    
@@ -2520,17 +1915,161 @@
          <KItem Name="AdotAqui.Models.User" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000ED.html" LinkGroup="AdotAqui">User Class</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000AD.html" LinkGroup="AdotAqui">User Class</LItem>
       </Links>
    </Context>
    
 
    <Context>
       <Keywords>
-         <KItem Name="AdotAqui.Areas.Identity.Pages.Account.Manage.IndexModel.Username" />
+         <KItem Name="AdotAqui.Data.AdotAquiDbContext.User" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000038.html" LinkGroup="AdotAqui">Username Property</LItem>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000009A.html" LinkGroup="AdotAqui">User Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.UserViewModel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000050.html" LinkGroup="AdotAqui">UserViewModel Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.IndexViewModel.Username" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000006C.html" LinkGroup="AdotAqui">Username Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Controllers.UsersController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000008C.html" LinkGroup="AdotAqui">UsersController Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Controllers.UsersController.UsersController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000008D.html" LinkGroup="AdotAqui">UsersController Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Models.ViewModels.StatusMessage.Value" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000D2.html" LinkGroup="AdotAqui">Value Property</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.VerifyAuthenticatorCode" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000017_overloads--.html" LinkGroup="AdotAqui">VerifyAuthenticatorCode Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.VerifyAuthenticatorCode" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000018_overloads--.html" LinkGroup="AdotAqui">VerifyAuthenticatorCode Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyAuthenticatorCodeViewModel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000052.html" LinkGroup="AdotAqui">VerifyAuthenticatorCodeViewModel Class</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.VerifyCode" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000015_overloads--.html" LinkGroup="AdotAqui">VerifyCode Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.AccountController.VerifyCode" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000016_overloads--.html" LinkGroup="AdotAqui">VerifyCode Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Models.AccountViewModels.VerifyCodeViewModel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000057.html" LinkGroup="AdotAqui">VerifyCodeViewModel Class</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.VerifyPhoneNumber" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000026_overloads--.html" LinkGroup="AdotAqui">VerifyPhoneNumber Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Controllers.ManageController.VerifyPhoneNumber" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_0000000000000027_overloads--.html" LinkGroup="AdotAqui">VerifyPhoneNumber Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Areas.Identity.Models.ManageViewModels.VerifyPhoneNumberViewModel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_000000000000007E.html" LinkGroup="AdotAqui">VerifyPhoneNumberViewModel Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="AdotAqui.Migrations.upd" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:AdotAqui.chm::/topic_00000000000000A6.html" LinkGroup="AdotAqui">upd Class</LItem>
       </Links>
    </Context>
    
