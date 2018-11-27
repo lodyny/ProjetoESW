@@ -11,6 +11,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace AdotAqui.Controllers
 {
+    /// <summary>
+    /// Controller used to manage users accounts (ban/unban)
+    /// </summary>
     [Authorize(Roles = "Administrator")]
     public class UsersController : Controller
     {

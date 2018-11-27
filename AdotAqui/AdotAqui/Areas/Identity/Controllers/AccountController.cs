@@ -18,6 +18,9 @@ using Microsoft.Extensions.Logging;
 
 namespace AdotAqui.Areas.Identity.Controllers
 {
+    /// <summary>
+    /// Identity Controller responsable for Account CRUD Operations
+    /// </summary>
     [Area("Identity")]
     [Authorize]
     public class AccountController : Controller

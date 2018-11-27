@@ -244,10 +244,7 @@
     <value>Details</value>
   </data>
   <data name="Label_EmailValidated" xml:space="preserve">
-    <value>dasd
-asdf
-Error
-</value>
+    <value>Email Confirmed</value>
   </data>
   <data name="Label_Return" xml:space="preserve">
     <value>Return</value>
@@ -293,5 +290,8 @@ Error
   </data>
   <data name="Error_PasswordLengthInvalid" xml:space="preserve">
     <value>Password needs atleast 6 caracters is required.</value>
+  </data>
+  <data name="Label_Recover" xml:space="preserve">
+    <value>Recover</value>
   </data>
 </root>
