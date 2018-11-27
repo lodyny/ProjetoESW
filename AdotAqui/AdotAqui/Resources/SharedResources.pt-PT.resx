@@ -216,4 +216,7 @@
   <data name="Label_ForgotPassword" xml:space="preserve">
     <value>Esqueceu a sua palavra-chave?</value>
   </data>
+  <data name="Error_PhoneRequired" xml:space="preserve">
+    <value>O número de telefóne precisa de 9 digitos</value>
+  </data>
 </root>

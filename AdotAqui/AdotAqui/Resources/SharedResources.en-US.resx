@@ -130,7 +130,7 @@
     <value>Confirm password field required.</value>
   </data>
   <data name="Error_EmailInvalid" xml:space="preserve">
-    <value>Invalid e-mail format. Ex: mail@mail.com</value>
+    <value>Valid e-mail format necessary. Ex: mail@mail.com</value>
   </data>
   <data name="Error_EmailRequired" xml:space="preserve">
     <value>E-mail field required.</value>
@@ -215,5 +215,8 @@
   </data>
   <data name="Label_ForgotPassword" xml:space="preserve">
     <value>Forgot your password?</value>
+  </data>
+  <data name="Error_PhoneRequired" xml:space="preserve">
+    <value>A phone number is composed by 9 digits</value>
   </data>
 </root>
