@@ -258,4 +258,34 @@
   <data name="User_AccStatusUnban" xml:space="preserve">
     <value>Active</value>
   </data>
+  <data name="Email_ActivateAcc" xml:space="preserve">
+    <value>Activate Account</value>
+  </data>
+  <data name="Email_Farewell" xml:space="preserve">
+    <value>If you don't have acknowledge of this email please ignore it.</value>
+  </data>
+  <data name="Email_Greeting" xml:space="preserve">
+    <value>Hey</value>
+  </data>
+  <data name="Email_Header" xml:space="preserve">
+    <value>Account confirmation</value>
+  </data>
+  <data name="Email_Welcome" xml:space="preserve">
+    <value>Welcome to AdotAqui. To finish your account registration please access though the link available below:</value>
+  </data>
+  <data name="Label_ConfirmedEmailLogin" xml:space="preserve">
+    <value>You can login here.</value>
+  </data>
+  <data name="Label_ConfirmedEmailTitle" xml:space="preserve">
+    <value>Email Confirmation</value>
+  </data>
+  <data name="Label_ConfirmedEmailWelcome" xml:space="preserve">
+    <value>Welcome to AdotAqui!</value>
+  </data>
+  <data name="Label_EmailSent" xml:space="preserve">
+    <value>Confirmation Email Sent</value>
+  </data>
+  <data name="Label_EmailSentCheck" xml:space="preserve">
+    <value>Please check your email in a moment, there will be a email to activate your account!</value>
+  </data>
 </root>

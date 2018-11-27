@@ -1,0 +1,15 @@
+﻿@using Microsoft.Extensions.Localization;
+
+
+@inject IStringLocalizer<SharedResources> SharedLocalizer
+
+@{
+    ViewData["Title"] = SharedLocalizer["Label_EmailSent"];
+}
+
+<h1>@SharedLocalizer["Label_EmailSent"]</h1>
+<div>
+    <p>
+        @SharedLocalizer["Label_EmailSentCheck"]
+    </p>
+</div>
