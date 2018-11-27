@@ -147,8 +147,8 @@
   <data name="Error_NumberRequired" xml:space="preserve">
     <value>Atleast one number is required (0-9).</value>
   </data>
-  <data name="Error_PasswordLengthInvalid" xml:space="preserve">
-    <value>Password needs atleast 6 caracters is required.</value>
+  <data name="Error_PasswordInvalid" xml:space="preserve">
+    <value>Password does no meet the criteria. Ex: Password2!</value>
   </data>
   <data name="Error_PasswordMismatch" xml:space="preserve">
     <value>Password and Confirm password mismatch.</value>
@@ -216,8 +216,8 @@
   <data name="Label_ForgotPassword" xml:space="preserve">
     <value>Forgot your password?</value>
   </data>
-  <data name="Error_PhoneRequired" xml:space="preserve">
-    <value>A phone number is composed by 9 digits</value>
+  <data name="Error_PhoneInvalid" xml:space="preserve">
+    <value>A phone number is composed by 9 digits.</value>
   </data>
   <data name="User_Ban" xml:space="preserve">
     <value>Banned</value>
@@ -244,7 +244,10 @@
     <value>Details</value>
   </data>
   <data name="Label_EmailValidated" xml:space="preserve">
-    <value>Confirmed Email</value>
+    <value>dasd
+asdf
+Error
+</value>
   </data>
   <data name="Label_Return" xml:space="preserve">
     <value>Return</value>

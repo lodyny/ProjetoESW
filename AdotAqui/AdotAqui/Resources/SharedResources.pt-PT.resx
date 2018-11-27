@@ -147,8 +147,8 @@
   <data name="Error_NumberRequired" xml:space="preserve">
     <value>É necessário pelo menos um número (0-9).</value>
   </data>
-  <data name="Error_PasswordLengthInvalid" xml:space="preserve">
-    <value>A palavra-chave necessita de pelo menos 6 caracteres.</value>
+  <data name="Error_PasswordInvalid" xml:space="preserve">
+    <value>A password não cumpre os requisitos. Ex: Password2!  </value>
   </data>
   <data name="Error_PasswordMismatch" xml:space="preserve">
     <value>A password e a sua confirmação têm de ser idênticas.</value>
@@ -216,10 +216,10 @@
   <data name="Label_ForgotPassword" xml:space="preserve">
     <value>Esqueceu a sua palavra-chave?</value>
   </data>
-  <data name="Error_PhoneRequired" xml:space="preserve">
-    <value>O número de telefóne precisa de 9 digitos</value>
+  <data name="Error_PhoneInvalid" xml:space="preserve">
+    <value>O número de telefone precisa de 9 dígitos.</value>
   </data>
-   <data name="User_Ban" xml:space="preserve">
+  <data name="User_Ban" xml:space="preserve">
     <value>Bloqueado</value>
   </data>
   <data name="User_Birthday" xml:space="preserve">
