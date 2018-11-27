@@ -219,4 +219,43 @@
   <data name="Error_PhoneRequired" xml:space="preserve">
     <value>A phone number is composed by 9 digits</value>
   </data>
+  <data name="User_Ban" xml:space="preserve">
+    <value>Banned</value>
+  </data>
+  <data name="User_Birthday" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+  <data name="User_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="User_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="User_Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Label_AccStatus" xml:space="preserve">
+    <value>Account Status</value>
+  </data>
+  <data name="Label_Ban" xml:space="preserve">
+    <value>Ban</value>
+  </data>
+  <data name="Label_Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Label_EmailValidated" xml:space="preserve">
+    <value>Confirmed Email</value>
+  </data>
+  <data name="Label_Return" xml:space="preserve">
+    <value>Return</value>
+  </data>
+  <data name="Label_Unban" xml:space="preserve">
+    <value>Unban</value>
+  </data>
+  <data name="User_AccStatusBan" xml:space="preserve">
+    <value>Banned</value>
+  </data>
+  <data name="User_AccStatusUnban" xml:space="preserve">
+    <value>Active</value>
+  </data>
 </root>

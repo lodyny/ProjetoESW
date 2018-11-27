@@ -219,4 +219,43 @@
   <data name="Error_PhoneRequired" xml:space="preserve">
     <value>O número de telefóne precisa de 9 digitos</value>
   </data>
+   <data name="User_Ban" xml:space="preserve">
+    <value>Bloqueado</value>
+  </data>
+  <data name="User_Birthday" xml:space="preserve">
+    <value>Data Nascimento</value>
+  </data>
+  <data name="User_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="User_Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="User_Phone" xml:space="preserve">
+    <value>Telefone</value>
+  </data>
+  <data name="Label_AccStatus" xml:space="preserve">
+    <value>Estado Conta</value>
+  </data>
+  <data name="Label_Ban" xml:space="preserve">
+    <value>Bloquear</value>
+  </data>
+  <data name="Label_Details" xml:space="preserve">
+    <value>Detalhes</value>
+  </data>
+  <data name="Label_EmailValidated" xml:space="preserve">
+    <value>Email Confirmado</value>
+  </data>
+  <data name="Label_Return" xml:space="preserve">
+    <value>Voltar</value>
+  </data>
+  <data name="Label_Unban" xml:space="preserve">
+    <value>Desbloquear</value>
+  </data>
+  <data name="User_AccStatusBan" xml:space="preserve">
+    <value>Bloqueada</value>
+  </data>
+  <data name="User_AccStatusUnban" xml:space="preserve">
+    <value>Activa</value>
+  </data>
 </root>
