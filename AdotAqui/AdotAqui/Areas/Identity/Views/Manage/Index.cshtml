@@ -38,10 +38,6 @@ ToolTip_phone = "@SharedLocalizer["Error_PhoneRequired"]";
             <div class="form-group">
                 <label asp-for="Input.Email" class="label_text"></label>
                 <input asp-for="Input.Email" class="form-control" id="Email" />
-                @if (Model.IsEmailConfirmed)
-                {
-                    <button id="email-verification" type="submit" asp-page-handler="SendVerificationEmail" class="btn my-2 my-sm-0 navbutton">@SharedLocalizer["Label_ResendMail"]</button>
-                }
                 <div id="result_mail" class="result_mail helper"></div>
                 <span asp-validation-for="Input.Email" class="text-danger" style="display: block;"></span>
             </div>
