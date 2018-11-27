@@ -288,4 +288,7 @@
   <data name="Label_EmailSentCheck" xml:space="preserve">
     <value>Por favor confirme o seu email dentro de alguns instantes, haverá um email para ativar a sua conta!</value>
   </data>
+  <data name="Error_PasswordLengthInvalid" xml:space="preserve">
+    <value>A palavra-chave necessita de pelo menos 6 caracteres.</value>
+  </data>
 </root>

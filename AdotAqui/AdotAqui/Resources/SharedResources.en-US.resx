@@ -291,4 +291,7 @@ Error
   <data name="Label_EmailSentCheck" xml:space="preserve">
     <value>Please check your email in a moment, there will be a email to activate your account!</value>
   </data>
+  <data name="Error_PasswordLengthInvalid" xml:space="preserve">
+    <value>Password needs atleast 6 caracters is required.</value>
+  </data>
 </root>
