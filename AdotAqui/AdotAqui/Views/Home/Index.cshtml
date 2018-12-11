@@ -77,9 +77,9 @@
                         <p class="card-text">Espécie: @Html.DisplayFor(modelItem => animal.Breed.Specie.NamePt)</p>
                         <p class="card-text">Raça: @Html.DisplayFor(modelItem => animal.Breed.NamePt)</p>
                         <p class="card-text">Gênero: @Html.DisplayFor(modelItem => animal.Gender)</p>
-                        <p class="card-text">Altura: @Html.DisplayFor(modelItem => animal.Height)</p>
-                        <p class="card-text">Peso: @Html.DisplayFor(modelItem => animal.Weight)</p>
-                        <p class="card-text">Nascimento: @Html.DisplayFor(modelItem => animal.Birthday)</p>
+                        <p class="card-text">Altura: @Html.DisplayFor(modelItem => animal.Height) cm</p>
+                        <p class="card-text">Peso: @Html.DisplayFor(modelItem => animal.Weight) kg</p>
+                        <p class="card-text">Nascimento: @Html.ValueFor(modelItem => animal.Birthday, "{0:d}")</p>
                     </div>
                 </div>
                 if (counter % 2 == 0)
