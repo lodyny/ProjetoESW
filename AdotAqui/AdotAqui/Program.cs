@@ -1,5 +1,6 @@
 ﻿using AdotAqui.Data;
 using AdotAqui.Models;
+using AdotAqui.Models.Entities;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;

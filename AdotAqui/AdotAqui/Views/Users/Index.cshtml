@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AdotAqui.Models.User>
+﻿@model IEnumerable<AdotAqui.Models.Entities.User>
 @using Microsoft.AspNetCore.Builder
 @using Microsoft.AspNetCore.Localization
 @using Microsoft.Extensions.Options
@@ -56,11 +56,11 @@
                 <td>
                     @if (item.Banned)
                     {
-                    <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black">@SharedLocalizer["Label_Unban"]</a>
+                        <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black">@SharedLocalizer["Label_Unban"]</a>
                     }
                     else
                     {
-                    <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black">@SharedLocalizer["Label_Ban"]</a>
+                        <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black">@SharedLocalizer["Label_Ban"]</a>
                     }
                 </td>
             </tr>
@@ -70,25 +70,25 @@
 
 @if (requestCulture.RequestCulture.Culture.ToString().Equals("en-US"))
 {
-<script>
-    $(document).ready(function () {
-        $('#base').DataTable({
-            language: {
-                url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json'
-            }
+    <script>
+        $(document).ready(function () {
+            $('#base').DataTable({
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json'
+                }
+            });
         });
-    });
-</script>
+    </script>
 }
 else
 {
-<script>
-    $(document).ready(function () {
-        $('#base').DataTable({
-            language: {
-                url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese.json'
-            }
+    <script>
+        $(document).ready(function () {
+            $('#base').DataTable({
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese.json'
+                }
+            });
         });
-    });
-</script>
+    </script>
 }

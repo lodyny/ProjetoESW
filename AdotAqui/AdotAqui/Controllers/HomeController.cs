@@ -5,6 +5,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Http;
 using System;
+using System.Linq;
+using AdotAqui.Data;
+using System.Threading.Tasks;
+using AdotAqui.Models.Entities;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.ObjectModel;
 
 namespace AdotAqui.Controllers
 {
@@ -14,13 +20,39 @@ namespace AdotAqui.Controllers
     [AllowAnonymous]
     public class HomeController : Controller
     {
+
+        private readonly AdotAquiDbContext _context;
+
+        public HomeController(AdotAquiDbContext context)
+        {
+            _context = context;
+        }
         /// <summary>
         /// Method responsable for returning the view to the user
         /// </summary>
         /// <returns>Index View</returns>
         public IActionResult Index()
         {
-            return View();
+            var animals = _context.Animals.Include(a => a.Breed).Include(b=> b.Breed.Specie);
+            var species = _context.AnimalSpecies;
+            var breeds = Enumerable.Empty<AnimalBreed>();
+            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var culture = rqf.RequestCulture.Culture;
+            var animalsViewModel = new AnimalsViewModel (culture) {Animals = animals, Breeds = breeds, Species = species };
+            return View(animalsViewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Index(string name, string species, string breeds) {
+            var speciesSet = _context.AnimalSpecies;
+            var breedsSet = string.IsNullOrWhiteSpace(species) ? Enumerable.Empty<AnimalBreed>() : _context.AnimalBreeds.Include(b=>b.Animals).Where(s => s.SpecieId == int.Parse(species));
+            var animalsSet = breedsSet.Any() ? string.IsNullOrWhiteSpace(breeds) ? breedsSet.SelectMany(b=> b.Animals) : breedsSet.SelectMany(b => b.Animals).Where(b=>b.BreedId == int.Parse(breeds)) : _context.Animals;
+            animalsSet = string.IsNullOrWhiteSpace(name) ? animalsSet : animalsSet.Where(s => s.Name.Contains(name));
+            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var culture = rqf.RequestCulture.Culture;
+            var animalsViewModel = new AnimalsViewModel(culture) { Animals = animalsSet, Breeds = breedsSet, Species = speciesSet, AnimalName = name, SpecieId = int.Parse(species ?? "0"), BreedId = int.Parse(breeds ?? "0") };
+            return View(animalsViewModel);
         }
 
         /// <summary>

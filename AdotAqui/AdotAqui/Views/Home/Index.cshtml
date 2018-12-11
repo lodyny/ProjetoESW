@@ -1,4 +1,6 @@
-﻿@{
+﻿@model AdotAqui.Models.ViewModels.AnimalsViewModel
+
+@{
     ViewData["Title"] = "Animais";
 }
 
@@ -7,7 +9,97 @@
     <link rel="stylesheet" href="~/css/auth.css" />
 }
 
-<div class="text-center">
-    <img class="logo" src="~/images/iconblack.png" /><br />
-    <span class="logo-text">AdotAqui</span>
+@section DocumentReadyScripts {
+    $("#species-dropdown").select2({
+    theme: "bootstrap",
+    placeholder: "Escolha a espécie",
+    width: "170px"
+    });
+    $("#breed-dropdown").select2({
+    theme: "bootstrap",
+    placeholder: "Seleccione uma espécie",
+    width: "200px"
+    });
+}
+
+@section Scripts {
+    <script>
+        function checkDropdown($form) {
+            if ($("#breed-dropdown").prop('selectedIndex') != 0) {
+                $("#breed-dropdown").val($("#breed-dropdown option:first").val());
+            }
+            $form.submit();
+        }
+    </script>
+}
+
+<div class="container">
+
+    <form method="post" onsubmit="">
+        <div class="form-row align-items-center pt-2 pb-3">
+            <div class="col-auto">
+                <label for="inlineFormInput">Espécie:</label>
+            </div>
+            <div class="col-auto">
+                <select id="species-dropdown" name="species" asp-items="@Model.GetSpeciesDropDown()" onchange="checkDropdown(this.form)">
+                    <option></option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <label for="inlineFormInput">Raça:</label>
+            </div>
+            <div class="col-auto">
+                <select id="breed-dropdown" name="breeds" asp-items="@Model.GetBreedsDropDown()" onchange="this.form.submit()">
+                    <option></option>
+                </select>
+            </div>
+            <div class="col-auto ml-auto">
+                <label for="inlineFormInput">Nome:</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Nome do animal" value="@Model.AnimalName">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Pesquisar</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="card-deck">
+        @{
+            int counter = 1;
+            foreach (var animal in Model.Animals)
+            {
+                <div class="card mb-4">
+                    <img class="card-img-top img-fluid" src="//placehold.it/500x280" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">@Html.DisplayFor(modelItem => animal.Name)</h4>
+                        <p class="card-text">Espécie: @Html.DisplayFor(modelItem => animal.Breed.Specie.NamePt)</p>
+                        <p class="card-text">Raça: @Html.DisplayFor(modelItem => animal.Breed.NamePt)</p>
+                        <p class="card-text">Gênero: @Html.DisplayFor(modelItem => animal.Gender)</p>
+                        <p class="card-text">Altura: @Html.DisplayFor(modelItem => animal.Height)</p>
+                        <p class="card-text">Peso: @Html.DisplayFor(modelItem => animal.Weight)</p>
+                        <p class="card-text">Nascimento: @Html.DisplayFor(modelItem => animal.Birthday)</p>
+                    </div>
+                </div>
+                if (counter % 2 == 0)
+                {
+                    <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
+                }
+                if (counter % 3 == 0)
+                {
+                    <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
+                }
+                if (counter % 4 == 0)
+                {
+                    <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
+                }
+                if (counter % 5 == 0)
+                {
+                    <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
+                }
+                counter = counter + 1;
+            }
+        }
+    </div>
 </div>

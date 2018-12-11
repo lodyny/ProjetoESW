@@ -16,7 +16,7 @@ namespace AdotAqui.Areas.Identity.Models.AccountViewModels
         [Required(ErrorMessage = "Error_PasswordRequired")]
         [DataType(DataType.Password)]
         [Display(Prompt = "Label_Password")]
-        [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{6,100}$", ErrorMessage = "Error_PasswordInvalid")]
+        [RegularExpression(@"^(?=.*\W)(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\W]{6,}$", ErrorMessage = "Error_PasswordInvalid")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]

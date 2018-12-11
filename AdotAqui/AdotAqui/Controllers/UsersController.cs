@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using AdotAqui.Data;
 using AdotAqui.Models;
 using Microsoft.AspNetCore.Authorization;
+using AdotAqui.Models.Entities;
 
 namespace AdotAqui.Controllers
 {

@@ -12,13 +12,12 @@
         .ToList();
     var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}";
 }
-<div>
-    <form id="selectLanguage" asp-area="" asp-controller="Home"
-          asp-action="SetLanguage" asp-route-returnUrl="@returnUrl"
-          method="post" class="form-horizontal" role="form">
-        <label class="text-muted" asp-for="@requestCulture.RequestCulture.UICulture.Name">@SharedLocalizer["Label_Language"]:</label>
-        <select name="culture" class="form-control"
-                onchange="this.form.submit();"
-                asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems"></select>
-    </form>
-</div>
+
+<form id="selectLanguage" asp-area="" asp-controller="Home"
+      asp-action="SetLanguage" asp-route-returnUrl="@returnUrl"
+      method="post" class="form-inline" role="form">
+    <label class="text-muted pr-2 pl-2" asp-for="@requestCulture.RequestCulture.UICulture.Name">@SharedLocalizer["Label_Language"]:</label>
+    <select id="culture-dropdown" name="culture"
+            onchange="this.form.submit();"
+            asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems"></select>
+</form>

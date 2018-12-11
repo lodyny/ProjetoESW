@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using System.Collections.Generic;
+using AdotAqui.Models.Entities;
 
 namespace AdotAqui
 {
