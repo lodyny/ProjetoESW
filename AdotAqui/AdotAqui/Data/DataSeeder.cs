@@ -1,4 +1,5 @@
 ﻿using AdotAqui.Models;
+using AdotAqui.Models.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using System;

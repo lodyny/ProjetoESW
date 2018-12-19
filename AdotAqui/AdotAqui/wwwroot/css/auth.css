@@ -13,17 +13,12 @@
     line-height: 20px;
     margin: 20px;
 }
-
-.form {
+.auth-form {
     margin: 0 auto;
     width: 290px;
     text-align: center;
 }
 
-.form-control {
-	width: 290px !important;
-	display: inline !important;
-}
 
 .form-submit {
     border: 0;

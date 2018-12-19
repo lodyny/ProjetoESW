@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AdotAqui.Models
+namespace AdotAqui.Models.Entities
 {
     /// <summary>
     /// Class used to represent the User
@@ -20,7 +20,7 @@ namespace AdotAqui.Models
         [Required(ErrorMessage = "Error_PasswordRequired")]
         [DataType(DataType.Password)]
         [Display(Prompt = "Label_Password")]
-        [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{6,100}$", ErrorMessage = "Error_PasswordInvalid")]
+        [RegularExpression(@"^(?=.*\W)(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\W]{6,}$", ErrorMessage = "Error_PasswordInvalid")]
         public override string PasswordHash { get; set; }
 
         [Required(ErrorMessage = "Error_NameRequired")]

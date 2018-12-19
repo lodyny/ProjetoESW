@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AdotAqui.Areas.Identity.Models.ManageViewModels;
 using AdotAqui.Models;
+using AdotAqui.Models.Entities;
 using AdotAqui.Models.Services;
 using AdotAqui.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;

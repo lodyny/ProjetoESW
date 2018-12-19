@@ -21,4 +21,8 @@
     <PackageReference Include="Sendgrid" Version="9.10.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Animals\" />
+  </ItemGroup>
+
 </Project>

@@ -6,6 +6,7 @@ using AdotAqui.Areas.Identity.Models.AccountViewModels;
 using AdotAqui.Controllers;
 using AdotAqui.Data;
 using AdotAqui.Models;
+using AdotAqui.Models.Entities;
 using AdotAqui.Models.Services;
 using AdotAqui.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -68,8 +69,6 @@ namespace AdotAqui.Areas.Identity.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                // This doesn't count login failures towards account lockout
-                // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
@@ -99,7 +98,6 @@ namespace AdotAqui.Areas.Identity.Controllers
                 }
             }
 
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
 

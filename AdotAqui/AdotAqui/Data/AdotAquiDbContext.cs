@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using AdotAqui.Models;
+using AdotAqui.Models.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -35,8 +36,81 @@ namespace AdotAqui.Data
             builder.Entity<IdentityUserClaim<int>>().ToTable("UserClaims");
             builder.Entity<IdentityUserToken<int>>().ToTable("UserTokens");
             builder.Entity<IdentityUserLogin<int>>().ToTable("UserLogins");
+
+            builder.Entity<AnimalBreed>(entity =>
+            {
+                entity.HasKey(e => e.BreedId);
+
+                entity.Property(e => e.BreedId).HasColumnName("BreedID");
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.SpecieId).HasColumnName("SpecieID");
+
+                entity.HasOne(d => d.Specie)
+                    .WithMany(p => p.AnimalBreeds)
+                    .HasForeignKey(d => d.SpecieId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_AnimalBreeds_AnimalBreeds");
+
+                entity.Property(e => e.NamePt)
+                    .IsRequired()
+                    .HasColumnName("Name_PT")
+                    .HasMaxLength(50);});
+
+            builder.Entity<Animal>(entity =>
+            {
+                entity.HasKey(e => e.AnimalId);
+
+                entity.Property(e => e.AnimalId).HasColumnName("AnimalID");
+
+                entity.Property(e => e.Birthday).HasColumnType("date");
+
+                entity.Property(e => e.BreedId).HasColumnName("BreedID");
+
+                entity.Property(e => e.Details).HasColumnType("text");
+
+                entity.Property(e => e.Gender)
+                    .IsRequired()
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Image).HasColumnType("image");
+
+                entity.Property(e => e.Name).HasMaxLength(50);
+
+                entity.Property(e => e.UserId).HasColumnName("UserID");
+
+                entity.HasOne(d => d.Breed)
+                    .WithMany(p => p.Animals)
+                    .HasForeignKey(d => d.BreedId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Animals_AnimalBreeds");
+            });
+
+            builder.Entity<AnimalSpecie>(entity =>
+            {
+                entity.HasKey(e => e.SpecieId);
+
+                entity.Property(e => e.SpecieId).HasColumnName("SpecieID");
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.NamePt)
+                    .IsRequired()
+                    .HasColumnName("Name_PT")
+                    .HasMaxLength(50);
+            });
+
         }
 
-        public DbSet<AdotAqui.Models.User> User { get; set; }
+        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<AnimalBreed> AnimalBreeds { get; set; }
+        public virtual DbSet<Animal> Animals { get; set; }
+        public virtual DbSet<AnimalSpecie> AnimalSpecies { get; set; }
     }
 }
