@@ -48,7 +48,7 @@ namespace AdotAqui.Data
                 var email = "admin@adotaqui.com";
                 if (userManager.FindByNameAsync(email).Result == null)
                 {
-                    var user = new User { UserName = email, Email = email, Name = "Administrador", EmailConfirmed = true };
+                    var user = new User { UserName = email, Email = email, Name = "Administrador", EmailConfirmed = true, Birthday = DateTime.Now.ToString() };
                     userManager.CreateAsync(user, "projectESW!2018").Wait();
                     userManager.AddToRoleAsync(user, Role.Administrator.ToString()).Wait();
                 }

@@ -1,20 +1,4 @@
-#profile_photo{
-	float: left;
-	margin-top: 40px;
-}
 
-#profile-form{
-	margin-right: 30px;
-}
-
-#profile_group{
-	width:700px;
-	margin: auto;
-}
-
-.form-group{
-	text-align: left;
-}
 
 .helper{
 	position: relative;

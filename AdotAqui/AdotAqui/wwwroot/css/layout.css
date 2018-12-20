@@ -52,3 +52,42 @@
     margin-top: 25px;
     margin-bottom: 25px;
 }
+
+#animalSearchForm label {
+    margin-right: 10px;
+}
+
+#animalSearchForm .form-group {
+    margin-bottom: 15px;
+}
+
+#animalSearchForm .form-group:not(:last-of-type) {
+    margin-right: 20px;
+}
+
+#animalSearchForm .btn-primary {
+    background-color: #FC6600;
+    border-color: #FC6600;
+}
+
+#animalSearchForm .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(252,102,0, 0.5);
+}
+
+#animalSearchForm .btn-primary {
+    margin-left: 10px;
+}
+
+#image-form {
+    width: 100%;
+}
+
+#Birthday {
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+
+.v-center {
+    display: flex;
+    align-items: center;
+}

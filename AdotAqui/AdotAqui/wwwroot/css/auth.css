@@ -91,7 +91,4 @@
 .form-control:disabled, .form-control[readonly]{
 background-color: #fff!important;}
 
-#Birthday{
-	border-top-right-radius: 5px !important;	
-	border-bottom-right-radius: 5px !important;
 }
