@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AdotAqui.Migrations
 {
     [DbContext(typeof(AdotAquiDbContext))]
-    [Migration("20181124232420_upd")]
-    partial class upd
+    [Migration("20181220020255_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,95 @@ namespace AdotAqui.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("AdotAqui.Models.User", b =>
+            modelBuilder.Entity("AdotAqui.Models.Entities.Animal", b =>
+                {
+                    b.Property<int>("AnimalId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("AnimalID")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("Birthday")
+                        .HasColumnType("date");
+
+                    b.Property<int>("BreedId")
+                        .HasColumnName("BreedID");
+
+                    b.Property<string>("Details")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasMaxLength(1)
+                        .IsUnicode(false);
+
+                    b.Property<double>("Height");
+
+                    b.Property<string>("Image")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(50);
+
+                    b.Property<int?>("UserId")
+                        .HasColumnName("UserID");
+
+                    b.Property<double>("Weight");
+
+                    b.HasKey("AnimalId");
+
+                    b.HasIndex("BreedId");
+
+                    b.ToTable("Animals");
+                });
+
+            modelBuilder.Entity("AdotAqui.Models.Entities.AnimalBreed", b =>
+                {
+                    b.Property<int>("BreedId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("BreedID")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("NamePt")
+                        .IsRequired()
+                        .HasColumnName("Name_PT")
+                        .HasMaxLength(50);
+
+                    b.Property<int>("SpecieId")
+                        .HasColumnName("SpecieID");
+
+                    b.HasKey("BreedId");
+
+                    b.HasIndex("SpecieId");
+
+                    b.ToTable("AnimalBreeds");
+                });
+
+            modelBuilder.Entity("AdotAqui.Models.Entities.AnimalSpecie", b =>
+                {
+                    b.Property<int>("SpecieId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("SpecieID")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("NamePt")
+                        .IsRequired()
+                        .HasColumnName("Name_PT")
+                        .HasMaxLength(50);
+
+                    b.HasKey("SpecieId");
+
+                    b.ToTable("AnimalSpecies");
+                });
+
+            modelBuilder.Entity("AdotAqui.Models.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,7 +120,8 @@ namespace AdotAqui.Migrations
 
                     b.Property<bool>("Banned");
 
-                    b.Property<string>("Birthday");
+                    b.Property<string>("Birthday")
+                        .IsRequired();
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
@@ -194,6 +283,22 @@ namespace AdotAqui.Migrations
                     b.ToTable("UserTokens");
                 });
 
+            modelBuilder.Entity("AdotAqui.Models.Entities.Animal", b =>
+                {
+                    b.HasOne("AdotAqui.Models.Entities.AnimalBreed", "Breed")
+                        .WithMany("Animals")
+                        .HasForeignKey("BreedId")
+                        .HasConstraintName("FK_Animals_AnimalBreeds");
+                });
+
+            modelBuilder.Entity("AdotAqui.Models.Entities.AnimalBreed", b =>
+                {
+                    b.HasOne("AdotAqui.Models.Entities.AnimalSpecie", "Specie")
+                        .WithMany("AnimalBreeds")
+                        .HasForeignKey("SpecieId")
+                        .HasConstraintName("FK_AnimalBreeds_AnimalBreeds");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<int>")
@@ -204,7 +309,7 @@ namespace AdotAqui.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
                 {
-                    b.HasOne("AdotAqui.Models.User")
+                    b.HasOne("AdotAqui.Models.Entities.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -212,7 +317,7 @@ namespace AdotAqui.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
-                    b.HasOne("AdotAqui.Models.User")
+                    b.HasOne("AdotAqui.Models.Entities.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -225,7 +330,7 @@ namespace AdotAqui.Migrations
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("AdotAqui.Models.User")
+                    b.HasOne("AdotAqui.Models.Entities.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -233,7 +338,7 @@ namespace AdotAqui.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
                 {
-                    b.HasOne("AdotAqui.Models.User")
+                    b.HasOne("AdotAqui.Models.Entities.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);

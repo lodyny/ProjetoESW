@@ -14,7 +14,7 @@ namespace AdotAqui.Models.Entities
         public double Weight { get; set; }
         public DateTime? Birthday { get; set; }
         public string Details { get; set; }
-        public byte[] Image { get; set; }
+        public string Image { get; set; }
         public AnimalBreed Breed { get; set; }
     }
 }
