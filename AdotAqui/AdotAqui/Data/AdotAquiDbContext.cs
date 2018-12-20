@@ -77,7 +77,7 @@ namespace AdotAqui.Data
                     .HasMaxLength(1)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Image).HasColumnType("image");
+                entity.Property(e => e.Image).HasMaxLength(100);
 
                 entity.Property(e => e.Name).HasMaxLength(50);
 

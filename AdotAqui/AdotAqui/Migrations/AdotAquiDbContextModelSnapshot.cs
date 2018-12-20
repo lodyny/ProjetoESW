@@ -42,8 +42,8 @@ namespace AdotAqui.Migrations
 
                     b.Property<double>("Height");
 
-                    b.Property<byte[]>("Image")
-                        .HasColumnType("image");
+                    b.Property<string>("Image")
+                        .HasMaxLength(100);
 
                     b.Property<string>("Name")
                         .HasMaxLength(50);
