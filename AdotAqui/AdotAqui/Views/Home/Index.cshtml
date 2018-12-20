@@ -61,7 +61,14 @@
                 foreach (var animal in Model.Animals)
                 {
             <div class="card mb-4">
-                <img class="card-img-top img-fluid" src="@Html.DisplayFor(modelItem => animal.Image)" alt="Card image cap">
+                @if (animal.Image == null)
+                {
+                    <img class="card-img-top img-fluid" src="https://via.placeholder.com/500x500" alt="Card image cap">
+                }
+                else
+                {
+                    <img class="card-img-top img-fluid" src="@Html.DisplayFor(modelItem => animal.Image)" alt="Card image cap">
+                }
                 <div class="card-body">
                     <h4 class="card-title">@Html.DisplayFor(modelItem => animal.Name)</h4>
                     <p class="card-text">Espécie: @Html.DisplayFor(modelItem => animal.Breed.Specie.NamePt)</p>
