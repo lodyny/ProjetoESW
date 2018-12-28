@@ -52,6 +52,10 @@
                 <label for="name">Nome:</label>
                 <input type="text" class="form-control" name="name" id="name" placeholder="Nome do animal" value="@Model.AnimalName" required>
                 <button type="submit" class="btn btn-primary">Pesquisar</button>
+                @if (this.User.IsInRole("Administrator"))
+                {
+                    <a asp-controller="Animals" asp-action="Create" class="btn btn-success" style="margin-left:10px;">+</a>
+                }
             </div>
         </form>
 
@@ -69,16 +73,20 @@
                 {
                     <img class="card-img-top img-fluid" src="@Html.DisplayFor(modelItem => animal.Image)" alt="Card image cap">
                 }
-                <div class="card-body">
-                    <h4 class="card-title">@Html.DisplayFor(modelItem => animal.Name)</h4>
-                    <p class="card-text">Espécie: @Html.DisplayFor(modelItem => animal.Breed.Specie.NamePt)</p>
-                    <p class="card-text">Raça: @Html.DisplayFor(modelItem => animal.Breed.NamePt)</p>
-                    <p class="card-text">Gênero: @Html.DisplayFor(modelItem => animal.Gender)</p>
-                    <p class="card-text">Altura: @Html.DisplayFor(modelItem => animal.Height) cm</p>
-                    <p class="card-text">Peso: @Html.DisplayFor(modelItem => animal.Weight) kg</p>
-                    <p class="card-text">Nascimento: @Html.ValueFor(modelItem => animal.Birthday, "{0:d}")</p>
+                @if (this.User.IsInRole("Administrator"))
+                {
+                    <span style="position: absolute;right: 0;margin-right:2px;"><a asp-controller="Animals" asp-action="Edit" asp-route-id="@animal.AnimalId"><i class="fas fa-edit"></i></a></span>
+                }
+                    <div class="card-body">
+                        <h4 class="card-title">@Html.DisplayFor(modelItem => animal.Name)</h4>
+                        <p class="card-text">Espécie: @Html.DisplayFor(modelItem => animal.Breed.Specie.NamePt)</p>
+                        <p class="card-text">Raça: @Html.DisplayFor(modelItem => animal.Breed.NamePt)</p>
+                        <p class="card-text">Gênero: @Html.DisplayFor(modelItem => animal.Gender)</p>
+                        <p class="card-text">Altura: @Html.DisplayFor(modelItem => animal.Height) cm</p>
+                        <p class="card-text">Peso: @Html.DisplayFor(modelItem => animal.Weight) kg</p>
+                        <p class="card-text">Nascimento: @Html.ValueFor(modelItem => animal.Birthday, "{0:d}")</p>
+                    </div>
                 </div>
-            </div>
                     if (counter % 2 == 0)
                     {
                         <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>

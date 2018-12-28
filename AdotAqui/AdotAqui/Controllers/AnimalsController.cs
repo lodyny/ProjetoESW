@@ -11,14 +11,15 @@ using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Http;
 using System.IO;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AdotAqui.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class AnimalsController : Controller
     {
-
         private readonly AdotAquiDbContext _context;
-
 
         public AnimalsController(AdotAquiDbContext context)
         {
@@ -72,5 +73,67 @@ namespace AdotAqui.Controllers
             viewModel.StatusMessage = new StatusMessage { Type = MessageType.Error, Value = "Não foi possível criar o animal." };
             return View(viewModel);
         }
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            Animal animal = await _context.Animals.FindAsync(id);
+            if (animal == null)
+                return NotFound();
+
+            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var culture = rqf.RequestCulture.Culture;
+            var breedsSet = _context.AnimalBreeds;
+            var speciesSet = _context.AnimalSpecies;
+            var vs = new AnimalViewModel(animal, culture, speciesSet, breedsSet);
+            return View(vs);
+        }
+
+        // POST: Users/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("AnimalId,Name,Weight,Height,Details")] Animal animal)
+        {
+            if (id != animal.AnimalId)
+            {
+                return NotFound();
+            }
+
+            var curAnimal = await _context.Animals.FindAsync(id);
+            curAnimal.Name = animal.Name;
+            curAnimal.Weight = animal.Weight;
+            curAnimal.Height = animal.Height;
+            curAnimal.Details = animal.Details;
+
+                try
+                {
+                    _context.Update(curAnimal);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                   
+                }
+            return await Edit(id);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete([Bind("AnimalId")] Animal animal)
+        {
+            var curAnimal = await _context.Animals.FindAsync(animal.AnimalId);
+            if (curAnimal == null)
+                return NotFound();
+
+            _context.Remove(curAnimal);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "HomeController");
+        }
+
     }
+
 }

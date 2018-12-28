@@ -19,25 +19,43 @@ namespace AdotAqui.Models.ViewModels
         private CultureInfo cultureInfo;
 
         public Animal Animal { get; set; }
-        //public IEnumerable<AnimalSpecie> Species { get; set; }
+        public IEnumerable<AnimalSpecie> Species { get; set; }
         public IEnumerable<AnimalBreed> Breeds { get; set; }
+
+        public AnimalViewModel(Animal animal, CultureInfo culture, IEnumerable<AnimalSpecie> species, IEnumerable<AnimalBreed> breeds)
+        {
+            Animal = animal;
+            cultureInfo = culture;
+            Species = species;
+            Breeds = breeds;
+        }
+
+        public AnimalViewModel(Animal animal)
+        {
+            Animal = animal;
+        }
+
+        public AnimalViewModel()
+        {
+
+        }
 
         public AnimalViewModel(CultureInfo culture)
         {
             cultureInfo = culture;
         }
 
-        /*public IEnumerable<SelectListItem> GetSpeciesDropDown()
-        {
-            if (cultureInfo.Name == "pt-PT")
-            {
-                return Species.OrderBy(s => s.Name).Select(s => new SelectListItem { Value = s.SpecieId.ToString(), Text = s.NamePt, Selected = SpecieId == s.SpecieId });
-            }
-            else
-            {
-                return Species.OrderBy(s => s.Name).Select(s => new SelectListItem { Value = s.SpecieId.ToString(), Text = s.Name, Selected = SpecieId == s.SpecieId });
-            }
-        }*/
+        //public IEnumerable<SelectListItem> GetSpeciesDropDown()
+        //{
+        //    if (cultureInfo.Name == "pt-PT")
+        //    {
+        //        return Species.OrderBy(s => s.Name).Select(s => new SelectListItem { Value = s.SpecieId.ToString(), Text = s.NamePt, Selected = SpecieId == s.SpecieId });
+        //    }
+        //    else
+        //    {
+        //        return Species.OrderBy(s => s.Name).Select(s => new SelectListItem { Value = s.SpecieId.ToString(), Text = s.Name, Selected = SpecieId == s.SpecieId });
+        //    }
+        //}
 
         public IEnumerable<SelectListItem> GetBreedsDropDown()
         {

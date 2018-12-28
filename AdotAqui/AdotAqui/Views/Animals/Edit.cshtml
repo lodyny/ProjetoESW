@@ -1,0 +1,101 @@
+﻿@model AdotAqui.Models.ViewModels.AnimalViewModel
+@using Microsoft.Extensions.Localization;
+
+@inject IStringLocalizer<SharedResources> SharedLocalizer
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap-datepicker.css" />
+}
+
+
+@section DocumentReadyScripts {
+    $("#breed-dropdown").select2({
+    theme: "bootstrap",
+    placeholder: "Seleccione uma espécie",
+    width: "100%"
+    });
+
+    $("#gender-dropdown").select2({
+    theme: "bootstrap",
+    placeholder: "Seleccione um gênero",
+    width: "100%"
+    });
+
+    $('#animalImage').on('change', function () {
+    var fileName = $(this).val();
+    $(this).next('.custom-file-label').html(fileName.split("\\").pop());
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+    document.getElementById("image-form").src = e.target.result;
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+
+    })
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/lib/bootstrap/js/bootstrap-datepicker.js"></script>
+
+}
+
+@if (Model.StatusMessage != null)
+{
+    <partial name="_StatusMessage" model="Model.StatusMessage" />
+}
+
+<div class="row w-75 m-auto"><div class="col"><h2>Editar animal</h2></div></div>
+<form asp-action="Edit">
+    <div class="row w-75 m-auto">
+        <div class="col-md-7">
+                <input type="hidden" asp-for="Animal.AnimalId" class="form-control" id="AnimalId" />
+            <div class="form-group">
+                <label asp-for="Animal.Name" class="label_text"></label>
+                <input asp-for="Animal.Name" class="form-control" id="Name" />
+                <span asp-validation-for="Animal.Name" class="text-danger" style="display: block;"></span>
+            </div>
+            <div class="form-row">
+
+
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        <label asp-for="Animal.Weight" class="label_text"></label>
+                        <input asp-for="Animal.Weight" class="form-control" id="Weight" />
+                        <span asp-validation-for="Animal.Weight" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label asp-for="Animal.Height" class="label_text"></label>
+                        <input asp-for="Animal.Height" class="form-control" id="Height" />
+                        <span asp-validation-for="Animal.Height" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Animal.Details" class="label_text"></label>
+                    <textarea asp-for="Animal.Details" class="form-control" id="Details">
+                </textarea>
+                    <span asp-validation-for="Animal.Details" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="form-control form-submit btn btn-primary mb-2">@SharedLocalizer["Label_SaveChanges"]</button>
+            </div>
+        </div>
+
+</form>
+
+<form asp-action="Delete">
+    <div class="form-group">
+        <input type="hidden" asp-for="Animal.AnimalId" class="form-control" id="AnimalId" />
+        <button type="submit" class="form-control form-submit btn btn-primary mb-2">Deletee</button>
+    </div>
+</form>
+
