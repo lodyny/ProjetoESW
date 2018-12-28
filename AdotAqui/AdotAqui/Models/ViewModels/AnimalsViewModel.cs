@@ -25,6 +25,11 @@ namespace AdotAqui.Models.ViewModels
             cultureInfo = culture;
         }
 
+        public string GetCulture()
+        {
+            return cultureInfo.Name;
+        }
+
         public IEnumerable<SelectListItem> GetSpeciesDropDown()
         {
             if(cultureInfo.Name == "pt-PT") {

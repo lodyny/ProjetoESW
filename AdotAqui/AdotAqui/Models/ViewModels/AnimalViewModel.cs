@@ -17,7 +17,6 @@ namespace AdotAqui.Models.ViewModels
         public StatusMessage StatusMessage { get; set; }
 
         private CultureInfo cultureInfo;
-
         public Animal Animal { get; set; }
         public IEnumerable<AnimalSpecie> Species { get; set; }
         public IEnumerable<AnimalBreed> Breeds { get; set; }
@@ -45,17 +44,17 @@ namespace AdotAqui.Models.ViewModels
             cultureInfo = culture;
         }
 
-        //public IEnumerable<SelectListItem> GetSpeciesDropDown()
-        //{
-        //    if (cultureInfo.Name == "pt-PT")
-        //    {
-        //        return Species.OrderBy(s => s.Name).Select(s => new SelectListItem { Value = s.SpecieId.ToString(), Text = s.NamePt, Selected = SpecieId == s.SpecieId });
-        //    }
-        //    else
-        //    {
-        //        return Species.OrderBy(s => s.Name).Select(s => new SelectListItem { Value = s.SpecieId.ToString(), Text = s.Name, Selected = SpecieId == s.SpecieId });
-        //    }
-        //}
+       /* public IEnumerable<SelectListItem> GetSpeciesDropDown()
+        {
+            if (cultureInfo.Name == "pt-PT")
+            {
+                return Species.OrderBy(s => s.Name).Select(s => new SelectListItem { Value = s.SpecieId.ToString(), Text = s.NamePt, Selected = SpecieId == s.SpecieId });
+            }
+            else
+            {
+                return Species.OrderBy(s => s.Name).Select(s => new SelectListItem { Value = s.SpecieId.ToString(), Text = s.Name, Selected = SpecieId == s.SpecieId });
+            }
+        }*/
 
         public IEnumerable<SelectListItem> GetBreedsDropDown()
         {

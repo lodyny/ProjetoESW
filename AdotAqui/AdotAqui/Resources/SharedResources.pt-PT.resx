@@ -294,4 +294,34 @@
   <data name="Label_Recover" xml:space="preserve">
     <value>Recuperar</value>
   </data>
+  <data name="Label_Species" xml:space="preserve">
+    <value>Espécie</value>
+  </data>
+  <data name="Label_Breed" xml:space="preserve">
+    <value>Raça</value>
+  </data>
+  <data name="Label_Gender" xml:space="preserve">
+    <value>Gênero</value>
+  </data>
+  <data name="Label_Height" xml:space="preserve">
+    <value>Altura</value>
+  </data>
+  <data name="Label_Weight" xml:space="preserve">
+    <value>Peso</value>
+  </data>
+  <data name="Label_ChooseSpecies" xml:space="preserve">
+    <value>Escolha a espécie</value>
+  </data>
+  <data name="Label_ChooseBreed" xml:space="preserve">
+    <value>Escolha a raça</value>
+  </data>
+  <data name="Label_AnimalName" xml:space="preserve">
+    <value>Nome do animal</value>
+  </data>
+  <data name="Label_Search" xml:space="preserve">
+    <value>Pesquisar</value>
+  </data>
+  <data name="Label_ChooseFile" xml:space="preserve">
+    <value>Escolher Ficheiro</value>
+  </data>
 </root>
