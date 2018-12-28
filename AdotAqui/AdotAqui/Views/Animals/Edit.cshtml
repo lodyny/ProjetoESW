@@ -99,3 +99,9 @@
     </div>
 </form>
 
+@{ 
+    foreach (var commentary in Model.Comments)
+    {
+<div>@commentary.Commentary</div>
+    }
+}

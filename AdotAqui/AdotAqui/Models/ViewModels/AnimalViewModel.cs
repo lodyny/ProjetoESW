@@ -21,13 +21,11 @@ namespace AdotAqui.Models.ViewModels
         public Animal Animal { get; set; }
         public IEnumerable<AnimalSpecie> Species { get; set; }
         public IEnumerable<AnimalBreed> Breeds { get; set; }
+        public IEnumerable<AnimalComment> Comments { get; set; }
 
-        public AnimalViewModel(Animal animal, CultureInfo culture, IEnumerable<AnimalSpecie> species, IEnumerable<AnimalBreed> breeds)
+        public AnimalViewModel()
         {
-            Animal = animal;
-            cultureInfo = culture;
-            Species = species;
-            Breeds = breeds;
+
         }
 
         public AnimalViewModel(Animal animal)
@@ -35,9 +33,13 @@ namespace AdotAqui.Models.ViewModels
             Animal = animal;
         }
 
-        public AnimalViewModel()
+        public AnimalViewModel(Animal animal, CultureInfo culture, IEnumerable<AnimalSpecie> species, IEnumerable<AnimalBreed> breeds, IEnumerable<AnimalComment> comments)
         {
-
+            Animal = animal;
+            cultureInfo = culture;
+            Species = species;
+            Breeds = breeds;
+            Comments = comments;
         }
 
         public AnimalViewModel(CultureInfo culture)
