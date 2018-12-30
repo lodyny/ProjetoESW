@@ -1,0 +1,49 @@
+
+.helper{
+	position: relative;
+	margin-top : -32px;
+	margin-right : 5px;
+	color : red;
+	float : right;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.tooltip-inner {
+	text-align: left;
+	color: black;
+	background: GhostWhite;	
+	border: 1px solid #ccc !important;
+    max-width: 390px;
+    width: 390px; 
+	border-radius: 10px;
+}
+
+.tooltip.right  {
+  margin-left: 20px;
+}
+
+.center{
+	text-align:center !important;
+}
+
+.form-control:disabled, .form-control[readonly]{
+background-color: #fff!important;}
+
+
+.unit{
+	position: relative;
+	margin-top : -32px;
+	margin-right : 5px;
+	float : right;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

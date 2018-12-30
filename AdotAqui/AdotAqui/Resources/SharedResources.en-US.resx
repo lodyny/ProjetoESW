@@ -202,7 +202,7 @@
     <value>Confirm new password</value>
   </data>
   <data name="Error_NameLengthInvalid" xml:space="preserve">
-    <value>Name need atleast 3 characters.</value>
+    <value>Name needs atleast 3 characters.</value>
   </data>
   <data name="Label_SignIn" xml:space="preserve">
     <value>Sign In</value>
@@ -323,5 +323,8 @@
   </data>
   <data name="Label_ChooseFile" xml:space="preserve">
     <value>Choose File</value>
+  </data>
+  <data name="Error_NameLengthInvalid2" xml:space="preserve">
+    <value>Needs at least 2 characters.</value>
   </data>
 </root>

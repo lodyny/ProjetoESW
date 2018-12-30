@@ -324,4 +324,7 @@
   <data name="Label_ChooseFile" xml:space="preserve">
     <value>Escolher Ficheiro</value>
   </data>
+  <data name="Error_NameLengthInvalid2" xml:space="preserve">
+    <value>Mínimo de 2 caracteres.</value>
+  </data>
 </root>
