@@ -74,6 +74,11 @@ namespace AdotAqui.Controllers
             return View(viewModel);
         }
 
+        public async Task<IActionResult> Details(int? id)
+        {
+            return await Edit(id);
+        }
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -87,7 +92,11 @@ namespace AdotAqui.Controllers
             var culture = rqf.RequestCulture.Culture;
             var breedsSet = _context.AnimalBreeds;
             var speciesSet = _context.AnimalSpecies;
-            var vs = new AnimalViewModel(animal, culture, speciesSet, breedsSet);
+
+            var commentsSet = from c in _context.AnimalComment select c;
+            commentsSet = commentsSet.Where(s => s.AnimalId.Equals(id));
+
+            var vs = new AnimalViewModel(animal, culture, speciesSet, breedsSet, commentsSet);
             return View(vs);
         }
 
@@ -133,6 +142,38 @@ namespace AdotAqui.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction("Index", "HomeController");
         }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddComment(string Commentary, [Bind("AnimalId,Commentary")] AnimalComment animal)
+        {
+            User currentUser = (from u in _context.Users select u).Where(s => s.Email.Equals(User.Identity.Name)).First();
+
+            AnimalComment comment = new AnimalComment();
+            comment.AnimalId = animal.AnimalId;
+            comment.UserId = currentUser.Id;
+            comment.Commentary = Commentary;
+            comment.InsertDate = DateTime.Now;
+
+            _context.Add(comment);
+            await _context.SaveChangesAsync();
+
+            Animal fAnimal = await _context.Animals.FindAsync(animal.AnimalId);
+            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var culture = rqf.RequestCulture.Culture;
+            var breedsSet = _context.AnimalBreeds;
+            var speciesSet = _context.AnimalSpecies;
+
+            var commentsSet = from c in _context.AnimalComment select c;
+            commentsSet = commentsSet.Where(s => s.AnimalId.Equals(fAnimal.AnimalId));
+
+            var vs = new AnimalViewModel(fAnimal, culture, speciesSet, breedsSet, commentsSet);
+
+            return View("Details", vs);
+           // return View("~/Views/Animals/Details.cshtml", animal.AnimalId);
+        }
+
 
     }
 
