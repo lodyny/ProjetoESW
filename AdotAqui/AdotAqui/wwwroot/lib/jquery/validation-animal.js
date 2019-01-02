@@ -79,12 +79,14 @@ function setInputFilter(textbox, inputFilter) {
 
 $(document).ready(function() {		
 
-    setInputFilter(document.getElementById("animal-height"), function(value) {
-        return /^-?\d{0,3}[.,]?\d{0,2}$/.test(value); });
+    // setInputFilter(document.getElementById("animal-height"), function(value) {
+    //     return /^-?\d{0,3}[.,]?\d{0,2}$/.test(value); });
 
-    setInputFilter(document.getElementById("animal-weight"), function(value) {
-        return /^-?\d{0,3}[.,]?\d{0,2}$/.test(value); });
+    // setInputFilter(document.getElementById("animal-weight"), function(value) {
+    //     return /^-?\d{0,3}[.,]?\d{0,2}$/.test(value); });
 
+
+    $(":input").inputmask();
 	//DATE PICKER
 	$(function () {
 		

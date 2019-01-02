@@ -34,6 +34,9 @@
 .form-control:disabled, .form-control[readonly]{
 background-color: #fff!important;}
 
+.masksc{
+    color: gray;
+}
 
 .unit{
 	position: relative;
