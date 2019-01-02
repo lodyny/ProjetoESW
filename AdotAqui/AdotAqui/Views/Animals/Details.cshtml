@@ -1,5 +1,6 @@
 ﻿@model AdotAqui.Models.ViewModels.AnimalViewModel
 @using Microsoft.Extensions.Localization;
+@using System.Web;
 
 @inject IStringLocalizer<SharedResources> SharedLocalizer
 
@@ -49,10 +50,10 @@
 
 @if (Model.StatusMessage != null)
 {
-<partial name="_StatusMessage" model="Model.StatusMessage" />
+    <partial name="_StatusMessage" model="Model.StatusMessage" />
 }
 
-@{ 
+@{
     var breed = from b in Model.Breeds where b.BreedId == Model.Animal.BreedId select b.NamePt;
     var breedID = (from b in Model.Breeds where b.BreedId == Model.Animal.BreedId select b.SpecieId).First();
     var specie = from s in Model.Species where s.SpecieId == breedID select s.NamePt;
@@ -63,56 +64,66 @@
     <div class="col-md-7">
         <div class="form-row">
             <img class="card-img-top img-fluid" style="height: 15vw; object-fit: contain;" src="@Html.DisplayFor(modelItem => modelItem.Animal.Image)" alt="Card image cap">
-            </div>
-            <div class="form-row">Espécie: @specie.First()</div>
-            <div class="form-row">Raça: @breed.First()</div>
-            <div class="form-row">Genero: @Model.Animal.Gender</div>
-            <div class="form-row">Altura: @Model.Animal.Height</div>
-            <div class="form-row">Peso: @Model.Animal.Weight</div>
-            <div class="form-row">Data Nascimento: @Html.ValueFor(modelItem => Model.Animal.Birthday, "{0:d}")</div>
-
-            <div class="form-group">
-                Detalhes: @Model.Animal.Details
-            </div>
-
         </div>
+        <div class="form-row">Espécie: @specie.First()</div>
+        <div class="form-row">Raça: @breed.First()</div>
+        <div class="form-row">Genero: @Model.Animal.Gender</div>
+        <div class="form-row">Altura: @Model.Animal.Height</div>
+        <div class="form-row">Peso: @Model.Animal.Weight</div>
+        <div class="form-row">Data Nascimento: @Html.ValueFor(modelItem => Model.Animal.Birthday, "{0:d}")</div>
+
+        <div class="form-group">
+            Detalhes: @Model.Animal.Details
+        </div>
+
     </div>
-    <div class="detailBox">
-        <div class="titleBox">
-            <label>Comentários sobre animal</label>
-            <!--<button type="button" class="close" aria-hidden="true">&times;</button>-->
-        </div>
-        <div class="commentBox">
+</div>
+<div class="detailBox">
+    <div class="titleBox">
+        <label>Comentários sobre animal</label>
+        <!--<button type="button" class="close" aria-hidden="true">&times;</button>-->
+    </div>
+    <div class="commentBox">
 
-            <p class="taskDescription">Deixe aqui o seu comentário de forma a ajudar outros donos!</p>
-        </div>
-        <div class="actionBox">
-            <ul class="commentList">
-                @{
-                    foreach (var commentary in Model.Comments)
-                    {
-                        <li>
-                            <div class="commenterImage">
-                                <img src="https://via.placeholder.com/50x50" />
-                            </div>
-                            <div class="commentText">
-                                <p class="">@commentary.Commentary</p> <span class="date sub-text">on @commentary.InsertDate <!--by @commentary.UserId--></span>
-
-                            </div>
-                        </li>
-                    }
+        <p class="taskDescription">Deixe aqui o seu comentário de forma a ajudar outros donos!</p>
+    </div>
+    <div class="actionBox">
+        <ul class="commentList">
+            @{
+                foreach (var commentary in Model.Comments)
+                {
+                    <li>
+                        <div class="commenterImage">
+                            <img src="https://via.placeholder.com/50x50" />
+                        </div>
+                        <div class="commentText">
+                            <p class="">@commentary.Commentary</p>
+                            <span class="date sub-text">on @commentary.InsertDate by @commentary.GetUserName()</span>
+                            @{
+                                if (User.Identity.Name == commentary.GetEmail())
+                                {
+                            <form asp-action="RemoveComment">
+                                <input type="hidden" asp-for="Animal.AnimalId" class="form-control" id="AnimalId" />
+                                <input name="CommentId" id="CommentId" type="hidden" value="@commentary.CommentId" />
+                                <button class="date sub-text" type="submit">Remove Comment</button>
+                            </form>
+                                }
+                            }
+                        </div>
+                    </li>
                 }
-            </ul>
-            <form asp-action="AddComment" class="form-inline">
-                <div class="form-group">
-                    <input name="Commentary" id="Commentary" class="form-control" type="text" placeholder="Deixe aqui um comentário..." />
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-default">+</button>
-                </div>
-                <input type="hidden" asp-for="Animal.AnimalId" class="form-control" id="AnimalId" />
-            </form>
-        </div>
+            }
+        </ul>
+        <form asp-action="AddComment" class="form-inline">
+            <div class="form-group">
+                <input name="Commentary" id="Commentary" class="form-control" type="text" placeholder="Deixe aqui um comentário..." />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">+</button>
+            </div>
+            <input type="hidden" asp-for="Animal.AnimalId" class="form-control" id="AnimalId" />
+        </form>
     </div>
+</div>
 </div>
 

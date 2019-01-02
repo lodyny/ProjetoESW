@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Http;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace AdotAqui.Controllers
 {
@@ -95,6 +96,12 @@ namespace AdotAqui.Controllers
 
             var commentsSet = from c in _context.AnimalComment select c;
             commentsSet = commentsSet.Where(s => s.AnimalId.Equals(id));
+            foreach (AnimalComment com in commentsSet)
+            {
+                var user = _context.Users.Where(u => u.Id.Equals(com.UserId)).First();
+                com.SetEmail(user.Email);
+                com.SetUserName(user.Name);
+            }
 
             var vs = new AnimalViewModel(animal, culture, speciesSet, breedsSet, commentsSet);
             return View(vs);
@@ -140,7 +147,7 @@ namespace AdotAqui.Controllers
 
             _context.Remove(curAnimal);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index", "HomeController");
+            return Redirect(Url.Content("~/"));
         }
 
 
@@ -167,12 +174,45 @@ namespace AdotAqui.Controllers
 
             var commentsSet = from c in _context.AnimalComment select c;
             commentsSet = commentsSet.Where(s => s.AnimalId.Equals(fAnimal.AnimalId));
+            foreach (AnimalComment com in commentsSet)
+            {
+                var user = _context.Users.Where(u => u.Id.Equals(com.UserId)).First();
+                com.SetEmail(user.Email);
+                com.SetUserName(user.Name);
+            }
 
             var vs = new AnimalViewModel(fAnimal, culture, speciesSet, breedsSet, commentsSet);
 
             return View("Details", vs);
-           // return View("~/Views/Animals/Details.cshtml", animal.AnimalId);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RemoveComment(int CommentId, [Bind("AnimalId")] AnimalComment animal)
+        {
+            AnimalComment commentary = (from c in _context.AnimalComment select c).Where(c => c.CommentId.Equals(CommentId)).First();
+            _context.Remove(commentary);
+            await _context.SaveChangesAsync();
+
+            Animal fAnimal = await _context.Animals.FindAsync(animal.AnimalId);
+            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var culture = rqf.RequestCulture.Culture;
+            var breedsSet = _context.AnimalBreeds;
+            var speciesSet = _context.AnimalSpecies;
+
+            var commentsSet = from c in _context.AnimalComment select c;
+            commentsSet = commentsSet.Where(s => s.AnimalId.Equals(fAnimal.AnimalId));
+            foreach (AnimalComment com in commentsSet)
+            {
+                var user = _context.Users.Where(u => u.Id.Equals(com.UserId)).First();
+                com.SetEmail(user.Email);
+                com.SetUserName(user.Name);
+            }
+
+            var vs = new AnimalViewModel(fAnimal, culture, speciesSet, breedsSet, commentsSet);
+            return View("Details", vs);
+        }
+
 
 
     }

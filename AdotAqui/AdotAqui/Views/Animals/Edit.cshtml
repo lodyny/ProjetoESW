@@ -103,13 +103,6 @@
 <form asp-action="Delete">
     <div class="form-group">
         <input type="hidden" asp-for="Animal.AnimalId" class="form-control" id="AnimalId" />
-        <button type="submit" class="form-control form-submit btn btn-primary mb-2">Deletee</button>
+        <button type="submit" class="form-control form-submit btn btn-primary mb-2">Delete Animal</button>
     </div>
 </form>
-
-@{
-    foreach (var commentary in Model.Comments)
-    {
-        <div>@commentary.Commentary</div>
-    }
-}
