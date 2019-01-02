@@ -140,7 +140,7 @@ namespace AdotAqui.Controllers
 
             _context.Remove(curAnimal);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index", "HomeController");
+            return Redirect(Url.Content("~/"));
         }
 
 
