@@ -89,35 +89,39 @@
                 <div id="result_name" class="result_name helper"><font style="margin-right:5px; font-size: 18px; color: orange;"> <b>?</b> </font></div>
                 <span asp-validation-for="Animal.Name" class="text-danger" style="display: block;"></span>
             </div>
+
             <div class="form-row">
-
-
-                <div class="form-row">
-
-                    <div class="form-group col-md-6">
-                        <label asp-for="Animal.Weight" class="label_text">@SharedLocalizer["Label_Weight"]</label>
+                <div class="form-group col-md-6">
+                    <label asp-for="Animal.Weight" class="label_text">@SharedLocalizer["Label_Weight"]</label>
+                    <div class="input-group">
                         <input asp-for="Animal.Weight" input type="text" class="form-control text-left" data-inputmask="'alias': 'numeric' , 'groupSeparator': ',' , 'autoGroup': true , 'digits': 2, 'digitsOptional': true, 'min' : 0, 'max' : 100" />
-                        <div class="unit masksc">kg</div>
-                        <span asp-validation-for="Animal.Weight" class="text-danger"></span>
+                        <div class="input-group-append">
+                            <span class="input-group-text">kg</span>
+                        </div>
                     </div>
-
-                    <div class="form-group col-md-6">
-                        <label asp-for="Animal.Height" class="label_text">@SharedLocalizer["Label_Height"]</label>
+                    <span asp-validation-for="Animal.Weight" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Animal.Height" class="label_text">@SharedLocalizer["Label_Height"]</label>
+                    <div class="input-group">
                         <input asp-for="Animal.Height" input type="text" class="form-control text-left" data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'autoGroup': true, 'digits': 2, 'digitsOptional': true, 'min' : 0, 'max' : 300" />
-                        <div class="unit masksc">cm</div>
-                        <span asp-validation-for="Animal.Height" class="text-danger"></span>
+                        <div class="input-group-append">
+                            <span class="input-group-text">cm</span>
+                        </div>
                     </div>
+                    <span asp-validation-for="Animal.Height" class="text-danger"></span>
                 </div>
-
-                <div class="form-row" style="width:100%;">
-                    <label asp-for="Animal.Details" class="label_text">@SharedLocalizer["Label_Details"]</label>
-                    <textarea asp-for="Animal.Details" class="form-control" id="Details" style="height:150px;width:100%;">
-                </textarea>
-                    <span asp-validation-for="Animal.Details" class="text-danger"></span>
-                </div>
-                
-                    <button type="submit" class="form-control form-submit btn btn-success mb-2" style="margin-top:15px;"><i class="fas fa-edit"></i> @SharedLocalizer["Label_SaveChanges"]</button>
             </div>
+
+            <div class="form-group">
+                <label asp-for="Animal.Details" class="label_text">@SharedLocalizer["Label_Details"]</label>
+                <textarea asp-for="Animal.Details" class="form-control" id="Details" style="height:150px;width:100%;">
+                </textarea>
+                <span asp-validation-for="Animal.Details" class="text-danger"></span>
+            </div>
+            <button type="submit" class="form-control form-submit btn btn-success mb-2" style="margin-top:15px;"><i class="fas fa-edit"></i> @SharedLocalizer["Label_SaveChanges"]</button>
+        </div>
+    </div>
 </form>
 <form asp-action="Delete" style="text-align:right;margin-right:-5px;" onsubmit="return confirm('Do you really want to delete this animal?');">
     <input type="hidden" asp-for="Animal.AnimalId" class="form-control" id="AnimalId" />

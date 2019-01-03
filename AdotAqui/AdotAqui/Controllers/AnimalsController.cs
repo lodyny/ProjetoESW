@@ -27,25 +27,50 @@ namespace AdotAqui.Controllers
             _context = context;
         }
 
-        // GET: Users/Create
+        // GET: Animals/Create
         public IActionResult Create()
         {
-            var breedsSet = _context.AnimalBreeds;
+            var speciesSet = _context.AnimalSpecies;
             var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
             var culture = rqf.RequestCulture.Culture;
-            var viewModel = new AnimalViewModel(culture) { Breeds = breedsSet };
+            var viewModel = new AnimalViewModel(culture) { Species = speciesSet };
 
             return View(viewModel);
         }
+
+        public JsonResult GetAnimalBreeds([Bind(Prefix = "id")] int? specieId)
+        {
+            var breedsSet = specieId != null ? _context.AnimalBreeds.Where(b => b.SpecieId == specieId) : _context.AnimalBreeds;
+            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var culture = rqf.RequestCulture.Culture;
+            return Json(breedsSet.Select(b=> new {b.BreedId,  Name = culture.Name == "pt-PT" ? b.NamePt : b.Name }));
+        }
+
+        public JsonResult GetAnimalsByBreed([Bind(Prefix = "id")] int? breedId)
+        {
+            var animalsSet = breedId != null ? _context.Animals.Where(a => a.BreedId == breedId) : _context.Animals;
+            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var culture = rqf.RequestCulture.Culture;
+            return Json(animalsSet);
+        }
+
+        public JsonResult GetAnimalsBySpecie([Bind(Prefix = "id")] int? specieId)
+        {
+            var animalsSet = specieId != null ? _context.Animals.Where(a => a.Breed.SpecieId == specieId) : _context.Animals;
+            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var culture = rqf.RequestCulture.Culture;
+            return Json(animalsSet);
+        }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Animal animal, [Bind(Prefix = "Animal.Image")] IFormFile image)
         {
-            var breedsSet = _context.AnimalBreeds;
+            var speciesSet = _context.AnimalSpecies;
             var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
             var culture = rqf.RequestCulture.Culture;
-            var viewModel = new AnimalViewModel(culture) { Breeds = breedsSet };
+            var viewModel = new AnimalViewModel(culture) { Species = speciesSet };
             if (ModelState.IsValid)
             {
                 if (image != null)

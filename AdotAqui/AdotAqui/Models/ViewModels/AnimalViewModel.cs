@@ -24,7 +24,6 @@ namespace AdotAqui.Models.ViewModels
 
         public AnimalViewModel()
         {
-
         }
 
         public AnimalViewModel(Animal animal)
@@ -46,31 +45,22 @@ namespace AdotAqui.Models.ViewModels
             cultureInfo = culture;
         }
 
-        public string GetCulture()
+       public IEnumerable<SelectListItem> GetSpeciesDropDown()
         {
-            return cultureInfo.Name;
+            if (cultureInfo.Name == "pt-PT") {
+                return Species.OrderBy(s => s.Name).Select(s => new SelectListItem { Value = s.SpecieId.ToString(), Text = s.NamePt});
+            }
+            else {
+                return Species.OrderBy(s => s.Name).Select(s => new SelectListItem { Value = s.SpecieId.ToString(), Text = s.Name });
+            }
         }
-
-        /* public IEnumerable<SelectListItem> GetSpeciesDropDown()
-         {
-             if (cultureInfo.Name == "pt-PT")
-             {
-                 return Species.OrderBy(s => s.Name).Select(s => new SelectListItem { Value = s.SpecieId.ToString(), Text = s.NamePt, Selected = SpecieId == s.SpecieId });
-             }
-             else
-             {
-                 return Species.OrderBy(s => s.Name).Select(s => new SelectListItem { Value = s.SpecieId.ToString(), Text = s.Name, Selected = SpecieId == s.SpecieId });
-             }
-         }*/
 
         public IEnumerable<SelectListItem> GetBreedsDropDown()
         {
-            if (cultureInfo.Name == "pt-PT")
-            {
+            if (cultureInfo.Name == "pt-PT") {
                 return Breeds.OrderBy(b => b.Name).Select(b => new SelectListItem { Value = b.BreedId.ToString(), Text = b.NamePt});
             }
-            else
-            {
+            else {
                 return Breeds.OrderBy(b => b.Name).Select(b => new SelectListItem { Value = b.BreedId.ToString(), Text = b.Name});
             }
         }

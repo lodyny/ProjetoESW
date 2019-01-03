@@ -19,10 +19,7 @@ namespace AdotAqui.Models.Entities
         [StringLength(1, ErrorMessage = "Error_GenderLengthInvalid")]
         public string Gender { get; set; }
 
-        public string Species { get; }
-
         public int BreedId { get; set; }
-      //  public int SpecieId { get; set; }
 
         [Required(ErrorMessage = "Error_HeightRequired")]
         public double Height { get; set; }

@@ -90,11 +90,11 @@ $(document).ready(function() {
 	//DATE PICKER
 	$(function () {
 		
-		$("#datepicker").datepicker({ 
+        $("#datepicker .input-group.date").datepicker({ 
 			format: 'dd/mm/yyyy',
 			startDate: '-30y',
-			endDate: '1d',
-			autoclose: true
+			endDate: '0d',
+            autoclose: true
 		}).datepicker('setDate',  $( "#Input_Birthday" ).val());
 		
 

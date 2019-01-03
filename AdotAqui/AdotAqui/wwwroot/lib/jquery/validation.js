@@ -179,7 +179,7 @@ $(document).ready(function() {
 	//DATE PICKER
 	$(function () {
 		
-		$("#datepicker").datepicker({ 
+        $("#datepicker .input-group.date").datepicker({ 
 			format: 'dd/mm/yyyy',
 			startDate: '-90y',
 			endDate: '-16y',

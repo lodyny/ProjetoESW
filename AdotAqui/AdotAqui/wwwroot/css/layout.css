@@ -82,10 +82,6 @@
     width: 100%;
 }
 
-#Birthday {
-    border-top-right-radius: 5px !important;
-    border-bottom-right-radius: 5px !important;
-}
 
 .v-center {
     display: flex;
