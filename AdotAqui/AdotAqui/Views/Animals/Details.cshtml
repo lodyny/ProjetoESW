@@ -54,19 +54,33 @@
 }
 
 @{
-    var breed = from b in Model.Breeds where b.BreedId == Model.Animal.BreedId select b.NamePt;
+    var breed = from b in Model.Breeds where b.BreedId == Model.Animal.BreedId select b.Name;
     var breedID = (from b in Model.Breeds where b.BreedId == Model.Animal.BreedId select b.SpecieId).First();
-    var specie = from s in Model.Species where s.SpecieId == breedID select s.NamePt;
+    var specie = from s in Model.Species where s.SpecieId == breedID select s.Name;
+
+    if (Model.GetCulture() == "pt-PT") {
+        breed = from b in Model.Breeds where b.BreedId == Model.Animal.BreedId select b.NamePt;
+        breedID = (from b in Model.Breeds where b.BreedId == Model.Animal.BreedId select b.SpecieId).First();
+        specie = from s in Model.Species where s.SpecieId == breedID select s.NamePt;
+    }
 }
 
 
 <div class="row w-75 m-left pt-4">
     <div class="col">
         <h2>
-            Olá, eu sou @if (@Model.Animal.Gender == "M")
-            {<span>o</span> }
+            @if (Model.GetCulture() == "pt-PT")
+            {
+                <span> Olá! Eu sou</span> @if (@Model.Animal.Gender == "M")
+                {<span>o</span> }
+                else
+                {<span>a</span>} @Model.Animal.Name
+            }
             else
-            {<span>a</span>} @Model.Animal.Name
+            {
+                <span> Hey! My name is </span>
+            }
+            @Model.Animal.Name
             @if (Model.Animal.Gender.Equals("M"))
             {
                 <span style="color:dodgerblue;font-size:24px;"><i class="fas fa-mars"></i></span>
@@ -75,6 +89,8 @@
             {
                 <span style="color:#E75480;font-size:24px;"><i class="fas fa-venus"></i></span>
             }
+
+
         </h2>
     </div>
 </div>
@@ -88,40 +104,52 @@
 
     <div class="col-md-5">
         <div class="form-row m-3 pt-4">
-             Espécie: @specie.First()
+            @SharedLocalizer["Label_Gender"]: @specie.First()
         </div>
         <div class="form-row m-3">
-             Raça: @breed.First()</div>
-        <div class="form-row m-3">
-             Altura: @Model.Animal.Height cm
+            @SharedLocalizer["Label_Breed"]: @breed.First()
         </div>
         <div class="form-row m-3">
-             Peso: @Model.Animal.Weight kg</div>
+            @SharedLocalizer["Label_Height"]: @Model.Animal.Height cm
+        </div>
         <div class="form-row m-3">
-            Data Nascimento: @Html.ValueFor(modelItem => Model.Animal.Birthday, "{0:d}")
+            @SharedLocalizer["Label_Weight"]: @Model.Animal.Weight kg
+        </div>
+        <div class="form-row m-3">
+            @SharedLocalizer["Label_Birthday"]: @Html.ValueFor(modelItem => Model.Animal.Birthday, "{0:d}")
         </div>
     </div>
 </div>
 
 <div class="form-group pt-4">
-    <span id="about_me"><p>Sobre mim</p></span> @Model.Animal.Details
+    <span id="about_me">
+        <p>@SharedLocalizer["Label_AboutMe"]</p>
+    </span> @Model.Animal.Details
 </div>
 
 <div class="row w-100 m-auto pt-4">
     <div class="detailBox col-md-8 m-auto">
         <div class="titleBox">
             <label>
-                Comentários sobre @if (@Model.Animal.Gender == "M")
-                {<span>o</span> }
+                @if (Model.GetCulture() == "pt-PT")
+                {
+                    <span> Comentários sobre </span> @if (@Model.Animal.Gender == "M")
+                    {<span>o</span> }
+                    else
+                    {<span>a</span>} @Model.Animal.Name
+                }
                 else
-                {<span>a</span>} @Model.Animal.Name
+                {
+                    <span> Comments about </span>
+                }
+                @Model.Animal.Name
             </label>
 
             <!--<button type="button" class="close" aria-hidden="true">&times;</button>-->
         </div>
         <div class="commentBox">
 
-            <p class="taskDescription">Deixe aqui o seu comentário de forma a ajudar outros donos!</p>
+            <p class="taskDescription">@SharedLocalizer["Label_LeaveComment"]</p>
         </div>
         <div class="actionBox">
             <ul class="commentList">
@@ -134,14 +162,14 @@
                             </div>
                             <div class="commentText">
                                 <p class="">@commentary.Commentary</p>
-                                <span class="date sub-text">on @commentary.InsertDate by @commentary.GetUserName()</span>
+                                <span class="date sub-text">@SharedLocalizer["Label_On"] @commentary.InsertDate @SharedLocalizer["Label_By"] @commentary.GetUserName()</span>
                                 @{
                                     if (User.Identity.Name == commentary.GetEmail())
                                     {
                                         <form asp-action="RemoveComment">
                                             <input type="hidden" asp-for="Animal.AnimalId" class="form-control" id="AnimalId" />
                                             <input name="CommentId" id="CommentId" type="hidden" value="@commentary.CommentId" />
-                                            <button class="date sub-text" type="submit">Remove Comment</button>
+                                            <button class="date sub-text" type="submit">@SharedLocalizer["Label_RemoveComment"]</button>
                                         </form>
                                     }
                                 }
@@ -152,7 +180,7 @@
             </ul>
             <form asp-action="AddComment" class="form-inline">
                 <div class="form-group">
-                    <input name="Commentary" id="Commentary" class="form-control" type="text" placeholder="Deixe aqui um comentário..." />
+                    <input name="Commentary" id="Commentary" class="form-control" type="text" placeholder="@SharedLocalizer["Label_CommentHere"]" />
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-default">+</button>

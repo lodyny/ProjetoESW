@@ -65,12 +65,5 @@ namespace AdotAqui.Models.ViewModels
             }
         }
 
-        public int ReturnAgeFromBirthday(DateTime birthdate)
-        {
-            var today = DateTime.Today;
-            var age = today.Year - birthdate.Year;
-            if (birthdate > today.AddYears(-age)) age--;
-            return age;
-        }
     }
 }

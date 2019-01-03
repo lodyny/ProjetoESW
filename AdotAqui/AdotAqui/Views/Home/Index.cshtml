@@ -66,37 +66,51 @@ width: "170px"
             int counter = 1;
             foreach (var animal in Model.Animals)
             {
-        <div class="card mb-4">
-            @if (animal.Image == null)
-            {
-                <a href="/Animals/Details/@animal.AnimalId" style="color:black;text-decoration:none;">
-                    <img class="card-img-top img-fluid" src="https://via.placeholder.com/500x500" alt="Card image cap">
-                </a>
-            }
-            else
-            {
-                <a href="/Animals/Details/@animal.AnimalId" style="color:black;text-decoration:none;">
-                    <img class="card-img-top img-fluid" style="width: 100%; height: 15vw; object-fit: cover;" src="@Html.DisplayFor(modelItem => animal.Image)" alt="Card image cap">
-                </a>
-            }
-            @if (this.User.IsInRole("Administrator"))
-            {
-                <span style="position: absolute;right: 0;margin-right:2px;"><a asp-controller="Animals" asp-action="Edit" asp-route-id="@animal.AnimalId"><i class="fas fa-edit"></i></a></span>
-            }
-            @if (animal.Gender.Equals("M"))
-            {
-                <span style="position:absolute;right:0;bottom:0;margin-right:5px;color:dodgerblue;font-size:18px;"><i class="fas fa-mars"></i></span>
-            }
-            else
-            {
-                <span style="position:absolute;right:0;bottom:0;margin-right:5px;color:#E75480;font-size:18px;"><i class="fas fa-venus"></i></span>
-            }
-            <div>
-                <h5 class="card-title" style="text-align:center;margin-top:10px;">
-                    @Html.DisplayFor(modelItem => animal.Name)
-                </h5>
-            </div>
-        </div>
+                <div class="card mb-4">
+                    @if (animal.Image == null)
+                    {
+                        <a href="/Animals/Details/@animal.AnimalId" style="color:black;text-decoration:none;">
+                            <img class="card-img-top img-fluid" src="https://via.placeholder.com/500x500" alt="Card image cap">
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/Animals/Details/@animal.AnimalId" style="color:black;text-decoration:none;">
+                            <img class="card-img-top img-fluid" style="width: 100%; height: 15vw; object-fit: cover;" src="@Html.DisplayFor(modelItem => animal.Image)" alt="Card image cap">
+                        </a>
+                    }
+                    @if (this.User.IsInRole("Administrator"))
+                    {
+                        <span style="position: absolute;right: 0;margin-right:2px;"><a asp-controller="Animals" asp-action="Edit" asp-route-id="@animal.AnimalId"><i class="fas fa-edit"></i></a></span>
+                    }
+                    @if (animal.Gender.Equals("M"))
+                    {
+                        <span style="position:absolute;right:0;bottom:0;margin-right:5px;color:dodgerblue;font-size:18px;"><i class="fas fa-mars"></i></span>
+                    }
+                    else
+                    {
+                        <span style="position:absolute;right:0;bottom:0;margin-right:5px;color:#E75480;font-size:18px;"><i class="fas fa-venus"></i></span>
+                    }
+                    <div>
+                        <h5 class="card-title" style="text-align:center;margin-top:10px;">
+                            @Html.DisplayFor(modelItem => animal.Name)
+                        </h5>
+                        <!--@if (Model.GetCulture() == "pt-PT")
+                        {
+                            <p class="card-text">@SharedLocalizer["Label_Species"]: @Html.DisplayFor(modelItem => animal.Breed.Specie.NamePt)</p>
+                            <p class="card-text">@SharedLocalizer["Label_Breed"]: @Html.DisplayFor(modelItem => animal.Breed.NamePt)</p>
+                        }
+                        else
+                        {
+                            <p class="card-text">@SharedLocalizer["Label_Species"]: @Html.DisplayFor(modelItem => animal.Breed.Specie.Name)</p>
+                            <p class="card-text">@SharedLocalizer["Label_Breed"]: @Html.DisplayFor(modelItem => animal.Breed.Name)</p>
+                        }
+                        <p class="card-text">@SharedLocalizer["Label_Gender"]: @Html.DisplayFor(modelItem => animal.Gender)</p>
+                        <p class="card-text">@SharedLocalizer["Label_Height"]: @Html.DisplayFor(modelItem => animal.Height) cm</p>
+                        <p class="card-text">@SharedLocalizer["Label_Weight"]: @Html.DisplayFor(modelItem => animal.Weight) kg</p>
+                        <p class="card-text">@SharedLocalizer["Label_Birthday"]: @Html.ValueFor(modelItem => animal.Birthday, "{0:d}")</p>-->
+                    </div>
+                </div>
                 if (counter % 2 == 0)
                 {
                     <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
