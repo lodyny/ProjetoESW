@@ -327,4 +327,25 @@
   <data name="Error_NameLengthInvalid2" xml:space="preserve">
     <value>Needs at least 2 characters.</value>
   </data>
+  <data name="Label_AboutMe" xml:space="preserve">
+    <value>About me</value>
+  </data>
+  <data name="Label_LeaveComment" xml:space="preserve">
+    <value>Leave your comment here so you can help other owners!</value>
+  </data>
+  <data name="Label_CommentHere" xml:space="preserve">
+    <value>Leave a comment here...</value>
+  </data>
+  <data name="Label_RemoveComment" xml:space="preserve">
+    <value>Remove Comment</value>
+  </data>
+  <data name="Label_On" xml:space="preserve">
+    <value>on</value>
+  </data>
+  <data name="Label_By" xml:space="preserve">
+    <value>by</value>
+  </data>
+  <data name="Label_DeleteAnimal" xml:space="preserve">
+    <value>Delete Animal</value>
+  </data>
 </root>

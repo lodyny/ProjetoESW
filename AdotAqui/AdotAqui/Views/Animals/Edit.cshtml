@@ -125,7 +125,7 @@
 </form>
 <form asp-action="Delete" style="text-align:right;margin-right:-5px;" onsubmit="return confirm('Do you really want to delete this animal?');">
     <input type="hidden" asp-for="Animal.AnimalId" class="form-control" id="AnimalId" />
-    <button type="submit" class="form-control form-submit btn btn-danger mb-2" style="width:150px;"><i class="fas fa-trash-alt"></i> Delete Animal</button>
+    <button type="submit" class="form-control form-submit btn btn-danger mb-2" style="width:150px;"><i class="fas fa-trash-alt"></i> @SharedLocalizer["Label_DeleteAnimal"]</button>
 </form>
 
 
