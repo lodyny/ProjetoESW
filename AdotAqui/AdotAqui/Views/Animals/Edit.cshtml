@@ -58,9 +58,16 @@
 </script>
 
 <div class="row w-75 m-auto"><div class="col"><h2>Editar animal</h2></div></div>
-<form asp-action="Edit">
+<form asp-action="Edit" enctype="multipart/form-data">
     <div class="row w-75 m-auto">
         <div class="col-md-7">
+            <div>
+                <img id="image-form" src="@Html.DisplayFor(modelItem => modelItem.Animal.Image)" />
+                <div class="custom-file mt-2">
+                    <input type="file" class="custom-file-input" asp-for="Animal.Image" id="animalImage" accept="image/x-png,image/gif,image/jpeg">
+                    <label class="custom-file-label" style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;" asp-for="Animal.Image">@SharedLocalizer["Label_ChooseFile"]</label>
+                </div>
+            </div>
             <input type="hidden" asp-for="Animal.AnimalId" class="form-control" id="AnimalId" />
             <div class="form-group">
                 <label asp-for="Animal.Name" class="label_text">@SharedLocalizer["Label_Name"]</label>
@@ -95,7 +102,7 @@
                     <span asp-validation-for="Animal.Details" class="text-danger"></span>
                 </div>
 
-                <button type="submit" class="form-control form-submit btn btn-primary mb-2">@SharedLocalizer["Label_SaveChanges"]</button>
+                <button type="submit" class="form-control form-submit btn btn-success mb-2">@SharedLocalizer["Label_SaveChanges"]</button>
             </div>
         </div>
 
@@ -104,6 +111,6 @@
 <form asp-action="Delete">
     <div class="form-group">
         <input type="hidden" asp-for="Animal.AnimalId" class="form-control" id="AnimalId" />
-        <button type="submit" class="form-control form-submit btn btn-primary mb-2">Delete Animal</button>
+        <button type="submit" class="form-control form-submit btn btn-danger mb-2">Delete Animal</button>
     </div>
 </form>

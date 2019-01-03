@@ -45,7 +45,7 @@ namespace AdotAqui.Controllers
             var breedsSet = _context.AnimalBreeds;
             var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
             var culture = rqf.RequestCulture.Culture;
-            var viewModel = new AnimalViewModel(culture) { Breeds = breedsSet};
+            var viewModel = new AnimalViewModel(culture) { Breeds = breedsSet };
             if (ModelState.IsValid)
             {
                 if (image != null)
@@ -68,7 +68,7 @@ namespace AdotAqui.Controllers
                 }
                 _context.Add(animal);
                 await _context.SaveChangesAsync();
-                viewModel.StatusMessage = new StatusMessage { Type = MessageType.Success, Value = "O animal foi criado com sucesso."};
+                viewModel.StatusMessage = new StatusMessage { Type = MessageType.Success, Value = "O animal foi criado com sucesso." };
                 return View(viewModel);
             }
             viewModel.StatusMessage = new StatusMessage { Type = MessageType.Error, Value = "Não foi possível criar o animal." };
@@ -112,7 +112,7 @@ namespace AdotAqui.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AnimalId,Name,Weight,Height,Details")] Animal animal)
+        public async Task<IActionResult> Edit(int id, [Bind("AnimalId,Name,Weight,Height,Details")] Animal animal, [Bind(Prefix = "Animal.Image")] IFormFile image)
         {
             if (id != animal.AnimalId)
             {
@@ -125,15 +125,34 @@ namespace AdotAqui.Controllers
             curAnimal.Height = animal.Height;
             curAnimal.Details = animal.Details;
 
-                try
+            try
+            {
+                if (image != null)
                 {
-                    _context.Update(curAnimal);
-                    await _context.SaveChangesAsync();
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await image.CopyToAsync(memoryStream);
+                        memoryStream.Position = 0;
+                        Account account = new Account("adotaqui", "763436643874459", "G8jgeFUttCwjs-y-aJ0vjzLkUOA");
+                        Cloudinary cloudinary = new Cloudinary(account);
+                        Random random = new Random();
+                        var uploadParams = new ImageUploadParams()
+                        {
+                            Folder = "adotaqui",
+                            File = new FileDescription(random.Next(10000000, 99999999).ToString(), memoryStream)
+                        };
+                        var uploadResult = cloudinary.Upload(uploadParams);
+                        curAnimal.Image = uploadResult.SecureUri.ToString();
+                    }
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                   
-                }
+
+                _context.Update(curAnimal);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+
+            }
             return await Edit(id);
         }
 
