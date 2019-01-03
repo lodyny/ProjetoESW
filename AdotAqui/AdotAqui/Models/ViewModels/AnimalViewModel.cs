@@ -46,17 +46,22 @@ namespace AdotAqui.Models.ViewModels
             cultureInfo = culture;
         }
 
-       /* public IEnumerable<SelectListItem> GetSpeciesDropDown()
+        public string GetCulture()
         {
-            if (cultureInfo.Name == "pt-PT")
-            {
-                return Species.OrderBy(s => s.Name).Select(s => new SelectListItem { Value = s.SpecieId.ToString(), Text = s.NamePt, Selected = SpecieId == s.SpecieId });
-            }
-            else
-            {
-                return Species.OrderBy(s => s.Name).Select(s => new SelectListItem { Value = s.SpecieId.ToString(), Text = s.Name, Selected = SpecieId == s.SpecieId });
-            }
-        }*/
+            return cultureInfo.Name;
+        }
+
+        /* public IEnumerable<SelectListItem> GetSpeciesDropDown()
+         {
+             if (cultureInfo.Name == "pt-PT")
+             {
+                 return Species.OrderBy(s => s.Name).Select(s => new SelectListItem { Value = s.SpecieId.ToString(), Text = s.NamePt, Selected = SpecieId == s.SpecieId });
+             }
+             else
+             {
+                 return Species.OrderBy(s => s.Name).Select(s => new SelectListItem { Value = s.SpecieId.ToString(), Text = s.Name, Selected = SpecieId == s.SpecieId });
+             }
+         }*/
 
         public IEnumerable<SelectListItem> GetBreedsDropDown()
         {
@@ -70,12 +75,5 @@ namespace AdotAqui.Models.ViewModels
             }
         }
 
-        public int ReturnAgeFromBirthday(DateTime birthdate)
-        {
-            var today = DateTime.Today;
-            var age = today.Year - birthdate.Year;
-            if (birthdate > today.AddYears(-age)) age--;
-            return age;
-        }
     }
 }
