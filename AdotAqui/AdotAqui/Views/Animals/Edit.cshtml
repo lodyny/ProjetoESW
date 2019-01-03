@@ -58,6 +58,7 @@
 </script>
 
 
+<<<<<<< HEAD
 <div class="row w-75 m-auto">
     <div class="col" style="text-align:center;margin-bottom:15px;">
         <h2>
@@ -73,6 +74,22 @@
         </h2>
     </div>
 </div>
+=======
+<div class="row w-75 m-auto"><div class="col" style="text-align:center;margin-bottom:15px;"><h2>
+    Página @if (@Model.Animal.Gender == "M")
+    {<span>do</span> }
+    else
+    {<span>da</span>} @Model.Animal.Name
+    @if (Model.Animal.Gender.Equals("M"))
+    {
+        <span style="color:dodgerblue;font-size:18px;"><i class="fas fa-mars"></i></span>
+    }
+    else
+    {
+        <span style="color:#E75480;font-size:18px;"><i class="fas fa-venus"></i></span>
+    }
+</h2></div></div>
+>>>>>>> a3712cb63ac64aa3f5750aa1d76715262f20de33
 <form asp-action="Edit" enctype="multipart/form-data">
     <div class="row w-75 m-auto">
         <div class="col-md-5">

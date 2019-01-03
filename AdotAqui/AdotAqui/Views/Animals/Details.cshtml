@@ -60,10 +60,24 @@
 }
 
 
-<div class="row w-75 m-left pt-4"><div class="col"><h2>Olá, eu sou @if (@Model.Animal.Gender == "M")
-{ <span>o</span> }
-else
-{<span>a</span>} @Model.Animal.Name</h2></div></div>
+<div class="row w-75 m-left pt-4">
+    <div class="col">
+        <h2>
+            Olá, eu sou @if (@Model.Animal.Gender == "M")
+            {<span>o</span> }
+            else
+            {<span>a</span>} @Model.Animal.Name
+            @if (Model.Animal.Gender.Equals("M"))
+            {
+                <span style="color:dodgerblue;font-size:24px;"><i class="fas fa-mars"></i></span>
+            }
+            else
+            {
+                <span style="color:#E75480;font-size:24px;"><i class="fas fa-venus"></i></span>
+            }
+        </h2>
+    </div>
+</div>
 
 <div class="row w-100 m-auto pt-4">
     <div class="col-md-5">
@@ -71,15 +85,20 @@ else
             <img class="card-img-top img-fluid" id="pet-image" style="height: 25vw; object-fit: contain;" src="@Html.DisplayFor(modelItem => modelItem.Animal.Image)" alt="Card image cap">
         </div>
     </div>
-    
+
     <div class="col-md-5">
-        <div class="form-row m-3 pt-4">Espécie: @specie.First()</div>
-        <div class="form-row m-3">Raça: @breed.First()</div>
-        <div class="form-row m-3">Genero: @Model.Animal.Gender</div>
-        <div class="form-row m-3">Altura: @Model.Animal.Height cm</div>
-        <div class="form-row m-3">Peso: @Model.Animal.Weight kg</div>
+        <div class="form-row m-3 pt-4">
+             Espécie: @specie.First()
+        </div>
         <div class="form-row m-3">
-            Data Nascimento: @Html.ValueFor(modelItem => Model.Animal.Birthday, "{0:d}") 
+             Raça: @breed.First()</div>
+        <div class="form-row m-3">
+             Altura: @Model.Animal.Height cm
+        </div>
+        <div class="form-row m-3">
+             Peso: @Model.Animal.Weight kg</div>
+        <div class="form-row m-3">
+            Data Nascimento: @Html.ValueFor(modelItem => Model.Animal.Birthday, "{0:d}")
         </div>
     </div>
 </div>
@@ -93,12 +112,13 @@ else
         <div class="titleBox">
             <label>
                 Comentários sobre @if (@Model.Animal.Gender == "M")
-                { <span>o</span> }
+                {<span>o</span> }
                 else
-                {<span>a</span>} @Model.Animal.Name</label>
+                {<span>a</span>} @Model.Animal.Name
+            </label>
 
-    <!--<button type="button" class="close" aria-hidden="true">&times;</button>-->
-</div>
+            <!--<button type="button" class="close" aria-hidden="true">&times;</button>-->
+        </div>
         <div class="commentBox">
 
             <p class="taskDescription">Deixe aqui o seu comentário de forma a ajudar outros donos!</p>
