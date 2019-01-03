@@ -10,35 +10,6 @@
 @section Styles {
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap-datepicker.css" />
     <link rel="stylesheet" href="~/css/animalcu.css" />
-
-}
-
-@section DocumentReadyScripts {
-    $("#breed-dropdown").select2({
-    theme: "bootstrap",
-    placeholder: "Seleccione uma raça",
-    width: "100%"
-    });
-
-    $("#gender-dropdown").select2({
-    theme: "bootstrap",
-    placeholder: "Seleccione um gênero",
-    width: "100%"
-    });
-
-    $('#animalImage').on('change', function () {
-    var fileName = $(this).val();
-    $(this).next('.custom-file-label').html(fileName.split("\\").pop());
-    var reader = new FileReader();
-
-    reader.onload = function (e) {
-    document.getElementById("image-form").src = e.target.result;
-    };
-
-    // read the image file as a data URL.
-    reader.readAsDataURL(this.files[0]);
-
-    })
 }
 
 @section Scripts {
@@ -47,6 +18,52 @@
     <script src="~/lib/jquery/validation-animal.js"></script>
     <script src="~/lib/jquery/jquery.inputmask.bundle.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            $("#breed-dropdown").select2({
+                theme: "bootstrap",
+                placeholder: "Seleccione uma raça",
+                width: "100%"
+            });
+
+            $("#species-dropdown").select2({
+                theme: "bootstrap",
+                placeholder: "Seleccione uma espécie",
+                width: "100%"
+            });
+
+            $('#species-dropdown').on('select2:select', function (e) {
+                $.ajax({
+                    url: "GetAnimalBreeds/" + e.params.data.id,
+                    dataType: 'json',
+                    success: function (jsonData) {
+                        $('#breed-dropdown').empty().append(new Option());
+                        for (var i = 0, l = jsonData.length; i < l; i++) {
+                            var option = jsonData[i];
+                            $('#breed-dropdown').append(new Option(option.name, option.breedId));
+                        }
+                        $('#breed-dropdown').trigger('change');
+                    }
+                });
+            });
+
+            $("#gender-dropdown").select2({
+                theme: "bootstrap",
+                placeholder: "Seleccione um gênero",
+                width: "100%"
+            });
+
+            $('#animalImage').on('change', function () {
+                var fileName = $(this).val();
+                $(this).next('.custom-file-label').html(fileName.split("\\").pop());
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById("image-form").src = e.target.result;
+                };
+                reader.readAsDataURL(this.files[0]);
+            });
+        });
+    </script>
 }
 
 @if (Model.StatusMessage != null)
@@ -75,10 +92,27 @@
                 <label asp-for="Animal.Name" class="label_text">@SharedLocalizer["Label_Name"]</label>
                 <input asp-for="Animal.Name" class="form-control" id="Name" />
                 <div id="result_name" class="result_name helper"><font style="margin-right:5px; font-size: 18px; color: orange;"> <b>?</b> </font></div>
-                <span asp-validation-for="Animal.Name" class="text-danger" style="display: block;"></span>
+                <span asp-validation-for="Animal.Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Animal.Breed.SpecieId" class="label_text">@SharedLocalizer["Label_Species"]</label>
+                    <select id="species-dropdown" asp-items="@Model.GetSpeciesDropDown()" asp-for="Animal.Breed.SpecieId">
+                        <option></option>
+                    </select>
+                </div>
+
+
+                <div class="form-group col-md-6">
+                    <label asp-for="Animal.BreedId" class="label_text">@SharedLocalizer["Label_Breed"]</label>
+                    <select id="breed-dropdown" asp-for="Animal.BreedId">
+                        <option></option>
+                    </select>
+                    <span asp-validation-for="Animal.BreedId" class="text-danger"></span>
+                </div>
             </div>
             <div class="form-row">
-
                 <div class="form-group col-md-6">
                     <label asp-for="Animal.Gender" class="label_text">@SharedLocalizer["Label_Gender"]</label>
                     <select id="gender-dropdown" asp-for="Animal.Gender">
@@ -86,46 +120,41 @@
                         <option value="M">Masculino</option>
                         <option value="F">Feminino</option>
                     </select>
-                    <span asp-validation-for="Animal.Gender" class="text-danger" style="display: block;"></span>
+                    <span asp-validation-for="Animal.Gender" class="text-danger"></span>
                 </div>
-
-                <!-- <div class="form-group col-md-6">
-                <label asp-for="Animal.Species" class="label_text"></label>
-                <select id="species-dropdown" asp-items="" asp-for="Animal.SpecieId">
-                    <option></option>
-                </select>
-                 <span asp-validation-for="Animal.BreedId" class="text-danger" style="display: block;"></span>
-                   </div>-->
-
                 <div class="form-group col-md-6">
-                    <label asp-for="Animal.Breed" class="label_text">@SharedLocalizer["Label_Breed"]</label>
-                    <select id="breed-dropdown" asp-items="@Model.GetBreedsDropDown()" asp-for="Animal.BreedId">
-                        <option></option>
-                    </select>
-                    <span asp-validation-for="Animal.BreedId" class="text-danger" style="display: block;"></span>
+                    <label asp-for="Animal.Birthday" class="label_text">@SharedLocalizer["Label_Birthday"]</label>
+                    <div id="datepicker">
+                        <div class="input-group date">
+                            <input asp-for="Animal.Birthday" class="form-control input-group-addon" type="text" readonly>
+                            <div class="input-group-append">
+                                <span class="input-group-text input-group-addon"><i class="fas fa-calendar-alt"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <span asp-validation-for="Animal.Birthday" class="text-danger"></span>
                 </div>
+            </div>
 
-            </div>
-            <div class="form-group">
-                <label asp-for="Animal.Birthday" class="label_text">@SharedLocalizer["Label_Birthday"]</label>
-                <div id="datepicker" class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">
-                    <input asp-for="Animal.Birthday" id="Birthday" class="form-control" type="text" readonly />
-                    <span asp-validation-for="Animal.Birthday" class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                </div>
-            </div>
             <div class="form-row">
-
-                <div class="form-group col-md-6 input_wrapper">
+                <div class="form-group col-md-6">
                     <label asp-for="Animal.Weight" class="label_text">@SharedLocalizer["Label_Weight"]</label>
-                    <input asp-for="Animal.Weight" input type="text" class="form-control text-left" data-inputmask="'alias': 'numeric' , 'groupSeparator': ',' , 'autoGroup': true , 'digits': 2, 'digitsOptional': true, 'min' : 0, 'max' : 100"/>
-                    <div class="unit masksc">kg</div>
-                   <span asp-validation-for="Animal.Weight" class="text-danger"></span>
+                    <div class="input-group">
+                        <input asp-for="Animal.Weight" input type="text" class="form-control text-left" data-inputmask="'alias': 'numeric' , 'groupSeparator': ',' , 'autoGroup': true , 'digits': 2, 'digitsOptional': true, 'min' : 0, 'max' : 100" />
+                        <div class="input-group-append">
+                            <span class="input-group-text">kg</span>
+                        </div>
+                    </div>
+                    <span asp-validation-for="Animal.Weight" class="text-danger"></span>
                 </div>
-
                 <div class="form-group col-md-6">
                     <label asp-for="Animal.Height" class="label_text">@SharedLocalizer["Label_Height"]</label>
-                    <input asp-for="Animal.Height" input type="text" class="form-control text-left"  data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'autoGroup': true, 'digits': 2, 'digitsOptional': true, 'min' : 0, 'max' : 300" />
-                    <div class="unit masksc">cm</div>
+                    <div class="input-group">
+                        <input asp-for="Animal.Height" input type="text" class="form-control text-left" data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'autoGroup': true, 'digits': 2, 'digitsOptional': true, 'min' : 0, 'max' : 300" />
+                        <div class="input-group-append">
+                            <span class="input-group-text">cm</span>
+                        </div>
+                    </div>
                     <span asp-validation-for="Animal.Height" class="text-danger"></span>
                 </div>
             </div>

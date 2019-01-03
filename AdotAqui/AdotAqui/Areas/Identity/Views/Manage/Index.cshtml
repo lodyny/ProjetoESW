@@ -52,16 +52,21 @@ ToolTip_phone = "@SharedLocalizer["Error_PhoneRequired"]";
                 <input asp-for="Input.PhoneNumber" class="form-control" id="Phone" />
                 <div id="result_pn" class="result_pn helper"></div>
                 <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
-
             </div>
+
             <div class="form-group">
-                <label asp-for="Input.Birthday" class="label_text"></label>
-                <div id="datepicker" class="input-group date" data-provide="datepicker" data-date-format="dd-mm-yyyy">
-                    <input asp-for="Input.Birthday" class="form-control" type="text" readonly />
-                    <span asp-validation-for="Input.Birthday" class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-
+                <label asp-for="Input.Birthday" class="label_text">@SharedLocalizer["Label_Birthday"]</label>
+                <div id="datepicker">
+                    <div class="input-group date">
+                        <input asp-for="Input.Birthday" class="form-control input-group-addon" type="text" readonly>
+                        <div class="input-group-append">
+                            <span class="input-group-text input-group-addon"><i class="fas fa-calendar-alt"></i></span>
+                        </div>
+                    </div>
                 </div>
+                <span asp-validation-for="Input.Birthday" class="text-danger"></span>
             </div>
+
             <button type="submit" class="form-control form-submit btn btn-primary mb-2">@SharedLocalizer["Label_SaveChanges"]</button>
         </form>
 
