@@ -45,6 +45,7 @@
     <partial name="_ValidationScriptsPartial" />
     <script src="~/lib/bootstrap/js/bootstrap-datepicker.js"></script>
     <script src="~/lib/jquery/validation-animal.js"></script>
+    <script src="~/lib/jquery/jquery.inputmask.bundle.js"></script>
 
 }
 
@@ -116,15 +117,15 @@
 
                 <div class="form-group col-md-6 input_wrapper">
                     <label asp-for="Animal.Weight" class="label_text">@SharedLocalizer["Label_Weight"]</label>
-                    <input asp-for="Animal.Weight" class="form-control" id="animal-weight" />
-                    <div class="unit">KG</div>
-                    <span asp-validation-for="Animal.Weight" class="text-danger"></span>
+                    <input asp-for="Animal.Weight" input type="text" class="form-control text-left" data-inputmask="'alias': 'numeric' , 'groupSeparator': ',' , 'autoGroup': true , 'digits': 2, 'digitsOptional': true, 'min' : 0, 'max' : 100"/>
+                    <div class="unit masksc">kg</div>
+                   <span asp-validation-for="Animal.Weight" class="text-danger"></span>
                 </div>
 
                 <div class="form-group col-md-6">
                     <label asp-for="Animal.Height" class="label_text">@SharedLocalizer["Label_Height"]</label>
-                    <input asp-for="Animal.Height" class="form-control" id="animal-height" />
-                    <div class="unit">CM</div>
+                    <input asp-for="Animal.Height" input type="text" class="form-control text-left"  data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'autoGroup': true, 'digits': 2, 'digitsOptional': true, 'min' : 0, 'max' : 300" />
+                    <div class="unit masksc">cm</div>
                     <span asp-validation-for="Animal.Height" class="text-danger"></span>
                 </div>
             </div>
