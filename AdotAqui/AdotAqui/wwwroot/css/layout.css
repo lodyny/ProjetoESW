@@ -173,3 +173,8 @@
     border-top: 1px dotted #bbb;
     padding: 10px;
 }
+
+#about_me{
+    color: darkorange;
+    font-size: 16pt;
+}

@@ -69,5 +69,13 @@ namespace AdotAqui.Models.ViewModels
                 return Breeds.OrderBy(b => b.Name).Select(b => new SelectListItem { Value = b.BreedId.ToString(), Text = b.Name});
             }
         }
+
+        public int ReturnAgeFromBirthday(DateTime birthdate)
+        {
+            var today = DateTime.Today;
+            var age = today.Year - birthdate.Year;
+            if (birthdate > today.AddYears(-age)) age--;
+            return age;
+        }
     }
 }
