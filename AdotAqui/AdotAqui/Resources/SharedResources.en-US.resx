@@ -348,4 +348,22 @@
   <data name="Label_DeleteAnimal" xml:space="preserve">
     <value>Delete Animal</value>
   </data>
+  <data name="Label_ChooseGender" xml:space="preserve">
+    <value>Choose gender</value>
+  </data>
+  <data name="Error_HeightRequired" xml:space="preserve">
+    <value>Height field required</value>
+  </data>
+  <data name="Error_GenderRequired" xml:space="preserve">
+    <value>Gender field required</value>
+  </data>
+  <data name="Error_WeightRequired" xml:space="preserve">
+    <value>Weight field required</value>
+  </data>
+  <data name="Error_BreedRequired" xml:space="preserve">
+    <value>Breed field required</value>
+  </data>
+  <data name="Label_ConfirmDelete" xml:space="preserve">
+    <value>Do you really want to delete this animal?</value>
+  </data>
 </root>

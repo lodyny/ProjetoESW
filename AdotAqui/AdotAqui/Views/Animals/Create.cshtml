@@ -22,13 +22,13 @@
         $(document).ready(function () {
             $("#breed-dropdown").select2({
                 theme: "bootstrap",
-                placeholder: "Seleccione uma raça",
+                placeholder: "@Html.Raw(SharedLocalizer["Label_ChooseBreed"])",
                 width: "100%"
             });
 
             $("#species-dropdown").select2({
                 theme: "bootstrap",
-                placeholder: "Seleccione uma espécie",
+                placeholder: "@Html.Raw(SharedLocalizer["Label_ChooseSpecies"])",
                 width: "100%"
             });
 
@@ -49,7 +49,7 @@
 
             $("#gender-dropdown").select2({
                 theme: "bootstrap",
-                placeholder: "Seleccione um gênero",
+                placeholder: "@Html.Raw(SharedLocalizer["Label_ChooseGender"])",
                 width: "100%"
             });
 

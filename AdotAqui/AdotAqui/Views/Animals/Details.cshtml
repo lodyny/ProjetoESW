@@ -69,18 +69,6 @@
 <div class="row w-75 m-left pt-4">
     <div class="col">
         <h2>
-            @if (Model.GetCulture() == "pt-PT")
-            {
-                <span> Olá! Eu sou</span> @if (@Model.Animal.Gender == "M")
-                {<span>o</span> }
-                else
-                {<span>a</span>} @Model.Animal.Name
-            }
-            else
-            {
-                <span> Hey! My name is </span>
-            }
-            @Model.Animal.Name
             @if (Model.Animal.Gender.Equals("M"))
             {
                 <span style="color:dodgerblue;font-size:24px;"><i class="fas fa-mars"></i></span>
@@ -89,7 +77,18 @@
             {
                 <span style="color:#E75480;font-size:24px;"><i class="fas fa-venus"></i></span>
             }
-
+            @if (Model.GetCulture() == "pt-PT")
+            {
+                <span> Olá! Eu sou</span> @if (@Model.Animal.Gender == "M")
+                {<span>o</span> }
+                else
+                {<span>a</span>}
+            }
+            else
+            {
+                <span> Hey! My name is </span>
+            }
+            @Model.Animal.Name
 
         </h2>
     </div>
@@ -124,7 +123,7 @@
 <div class="form-group pt-4">
     <span id="about_me">
         <p>@SharedLocalizer["Label_AboutMe"]</p>
-    </span> @Model.Animal.Details
+    </span> @Html.Raw(Model.Animal.Details)
 </div>
 
 <div class="row w-100 m-auto pt-4">

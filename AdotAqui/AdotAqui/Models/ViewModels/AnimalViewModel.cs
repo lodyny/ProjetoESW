@@ -65,5 +65,9 @@ namespace AdotAqui.Models.ViewModels
             }
         }
 
+        public string GetCulture()
+        {
+            return cultureInfo.Name;
+        }
     }
 }
