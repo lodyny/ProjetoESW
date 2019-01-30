@@ -21,6 +21,7 @@ namespace AdotAqui.Models.ViewModels
         public IEnumerable<AnimalSpecie> Species { get; set; }
         public IEnumerable<AnimalBreed> Breeds { get; set; }
         public IEnumerable<AnimalComment> Comments { get; set; }
+        public IEnumerable<AdoptionRequests> Adoptions { get; set; }
 
         public AnimalViewModel()
         {
@@ -38,6 +39,16 @@ namespace AdotAqui.Models.ViewModels
             Species = species;
             Breeds = breeds;
             Comments = comments;
+        }
+
+        public AnimalViewModel(Animal animal, CultureInfo culture, IEnumerable<AnimalSpecie> species, IEnumerable<AnimalBreed> breeds, IEnumerable<AnimalComment> comments, IEnumerable<AdoptionRequests> adoptions)
+        {
+            Animal = animal;
+            cultureInfo = culture;
+            Species = species;
+            Breeds = breeds;
+            Comments = comments;
+            Adoptions = adoptions;
         }
 
         public AnimalViewModel(CultureInfo culture)

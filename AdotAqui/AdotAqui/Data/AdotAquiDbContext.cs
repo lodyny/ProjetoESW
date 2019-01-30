@@ -106,8 +106,91 @@ namespace AdotAqui.Data
                     .HasMaxLength(50);
             });
 
-        }
+            builder.Entity<AdoptionLogs>(entity =>
+            {
+                entity.HasKey(e => e.AdoptionLogId);
 
+                entity.Property(e => e.AdoptionLogId).HasColumnName("AdoptionLogID");
+
+                entity.Property(e => e.AdoptionRequestId).HasColumnName("AdoptionRequestID");
+
+                entity.Property(e => e.AdoptionStateId).HasColumnName("AdoptionStateID");
+
+                entity.Property(e => e.Date)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Details).HasColumnType("text");
+
+                entity.Property(e => e.UserId).HasColumnName("UserID");
+
+                entity.HasOne(d => d.AdoptionRequest)
+                    .WithMany(p => p.AdoptionLogs)
+                    .HasForeignKey(d => d.AdoptionRequestId)
+                    .HasConstraintName("FK_AdoptionLogs_AdoptionRequests");
+
+                entity.HasOne(d => d.AdoptionState)
+                    .WithMany(p => p.AdoptionLogs)
+                    .HasForeignKey(d => d.AdoptionStateId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_AdoptionLogs_AdoptionStates");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.AdoptionLogs)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_AdoptionLogs_Users");
+            });
+
+            builder.Entity<AdoptionRequests>(entity =>
+            {
+                entity.HasKey(e => e.AdoptionRequestId);
+
+                entity.Property(e => e.AdoptionRequestId).HasColumnName("AdoptionRequestID");
+
+                entity.Property(e => e.AnimalId).HasColumnName("AnimalID");
+
+                entity.Property(e => e.Details).HasColumnType("text");
+
+                entity.Property(e => e.ProposalDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.UserId).HasColumnName("UserID");
+
+                entity.HasOne(d => d.Animal)
+                    .WithMany(p => p.AdoptionRequests)
+                    .HasForeignKey(d => d.AnimalId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_AdoptionRequests_Animals");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.AdoptionRequests)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_AdoptionRequests_Users");
+            });
+
+            builder.Entity<AdoptionStates>(entity =>
+            {
+                entity.HasKey(e => e.AdoptionStateId);
+
+                entity.Property(e => e.AdoptionStateId).HasColumnName("AdoptionStateID");
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.NamePt)
+                    .IsRequired()
+                    .HasColumnName("Name_PT")
+                    .HasMaxLength(50);
+            });
+
+        }
+        public virtual DbSet<AdoptionLogs> AdoptionLogs { get; set; }
+        public virtual DbSet<AdoptionRequests> AdoptionRequests { get; set; }
+        public virtual DbSet<AdoptionStates> AdoptionStates { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<AnimalBreed> AnimalBreeds { get; set; }
         public virtual DbSet<Animal> Animals { get; set; }

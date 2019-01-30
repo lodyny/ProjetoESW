@@ -6,6 +6,11 @@ namespace AdotAqui.Models.Entities
 {
     public partial class Animal
     {
+        public Animal()
+        {
+            AdoptionRequests = new HashSet<AdoptionRequests>();
+        }
+
         public int AnimalId { get; set; }
 
         [Required(ErrorMessage = "Error_NameRequired")]
@@ -36,5 +41,7 @@ namespace AdotAqui.Models.Entities
         public string Details { get; set; }
         public string Image { get; set; }
         public AnimalBreed Breed { get; set; }
+        public ICollection<AdoptionRequests> AdoptionRequests { get; set; }
+
     }
 }

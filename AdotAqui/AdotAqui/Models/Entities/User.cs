@@ -12,6 +12,12 @@ namespace AdotAqui.Models.Entities
     /// </summary>
     public class User : IdentityUser<int>
     {
+        public User()
+        {
+            AdoptionLogs = new HashSet<AdoptionLogs>();
+            AdoptionRequests = new HashSet<AdoptionRequests>();
+        }
+
         [Required(ErrorMessage = "Error_EmailRequired")]
         [EmailAddress(ErrorMessage = "Error_EmailInvalid")]
         [Display(Prompt = "Label_Email")]
@@ -39,5 +45,8 @@ namespace AdotAqui.Models.Entities
         public override string PhoneNumber { get; set; }
 
         public bool Banned { get; set; }
+
+        public ICollection<AdoptionLogs> AdoptionLogs { get; set; }
+        public ICollection<AdoptionRequests> AdoptionRequests { get; set; }
     }
 }

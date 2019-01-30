@@ -13,7 +13,6 @@ using Microsoft.AspNetCore.Http;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 
 namespace AdotAqui.Controllers
 {
@@ -118,7 +117,10 @@ namespace AdotAqui.Controllers
             var culture = rqf.RequestCulture.Culture;
             var breedsSet = _context.AnimalBreeds;
             var speciesSet = _context.AnimalSpecies;
-
+            var adoptions = _context.AdoptionRequests.Include(a => a.User)
+                                                    .Include(a => a.Animal)
+                                                    .Include(a => a.AdoptionLogs)
+                                                    .ThenInclude(p => p.AdoptionState);
             var commentsSet = from c in _context.AnimalComment select c;
             commentsSet = commentsSet.Where(s => s.AnimalId.Equals(id));
             foreach (AnimalComment com in commentsSet)
@@ -128,7 +130,8 @@ namespace AdotAqui.Controllers
                 com.SetUserName(user.Name);
             }
 
-            var vs = new AnimalViewModel(animal, culture, speciesSet, breedsSet, commentsSet);
+
+            var vs = new AnimalViewModel(animal, culture, speciesSet, breedsSet, commentsSet, adoptions);
             return View(vs);
         }
 
@@ -149,7 +152,7 @@ namespace AdotAqui.Controllers
             curAnimal.Weight = animal.Weight;
             curAnimal.Height = animal.Height;
             curAnimal.Details = animal.Details;
-
+            
             try
             {
                 if (image != null)
