@@ -12,6 +12,7 @@
         {
         <a asp-area="" asp-controller="Users" asp-action="Index" class="btn my-2 my-sm-0 navbutton"><i class="fas fa-cogs"></i> @SharedLocalizer["Label_Admin"]</a>
         }
+        <a asp-controller="UserNotifications" asp-action="Index" class="btn my-2 my-sm-0 navbutton"><i class="fas fa-bell"></i> <span class="badge badge-pill badge-light">@((await UserManager.GetUserAsync(User)).UserNotifications.Count)</span></a>
         <a asp-area="Identity" asp-controller="Manage" asp-action="Index" class="btn my-2 my-sm-0 navbutton"><i class="fas fa-user"></i> @((await UserManager.GetUserAsync(User)).Name)</a>
         <button type="submit" class="btn my-2 my-sm-0 navbutton"><i class="fas fa-sign-out-alt"></i> @SharedLocalizer["Label_SignOut"]</button>
     </form>

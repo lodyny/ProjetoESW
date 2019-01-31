@@ -16,6 +16,7 @@ namespace AdotAqui.Models.Entities
         {
             AdoptionLogs = new HashSet<AdoptionLogs>();
             AdoptionRequests = new HashSet<AdoptionRequests>();
+            UserNotifications = new HashSet<UserNotification>();
         }
 
         [Required(ErrorMessage = "Error_EmailRequired")]
@@ -48,5 +49,6 @@ namespace AdotAqui.Models.Entities
 
         public ICollection<AdoptionLogs> AdoptionLogs { get; set; }
         public ICollection<AdoptionRequests> AdoptionRequests { get; set; }
+        public ICollection<UserNotification> UserNotifications { get; set; }
     }
 }

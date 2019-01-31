@@ -196,5 +196,6 @@ namespace AdotAqui.Data
         public virtual DbSet<Animal> Animals { get; set; }
         public virtual DbSet<AnimalSpecie> AnimalSpecies { get; set; }
         public virtual DbSet<AnimalComment> AnimalComment { get; set; }
+        public virtual DbSet<UserNotification> UserNotification { get; set; }
     }
 }
