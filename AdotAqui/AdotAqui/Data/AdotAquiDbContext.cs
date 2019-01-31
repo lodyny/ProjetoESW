@@ -187,6 +187,15 @@ namespace AdotAqui.Data
                     .HasMaxLength(50);
             });
 
+            builder.Entity<UserNotification>(entity =>
+            {
+                entity.HasIndex(e => e.UserId);
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.UserNotifications)
+                    .HasForeignKey(d => d.UserId);
+            });
+
         }
         public virtual DbSet<AdoptionLogs> AdoptionLogs { get; set; }
         public virtual DbSet<AdoptionRequests> AdoptionRequests { get; set; }
@@ -197,5 +206,6 @@ namespace AdotAqui.Data
         public virtual DbSet<AnimalSpecie> AnimalSpecies { get; set; }
         public virtual DbSet<AnimalComment> AnimalComment { get; set; }
         public virtual DbSet<UserNotification> UserNotification { get; set; }
+
     }
 }

@@ -10,7 +10,7 @@ namespace AdotAqui.Models.Entities
     /// <summary>
     /// Class used to represent the User
     /// </summary>
-    public class User : IdentityUser<int>
+    public partial class User : IdentityUser<int>
     {
         public User()
         {
@@ -47,8 +47,8 @@ namespace AdotAqui.Models.Entities
 
         public bool Banned { get; set; }
 
-        public ICollection<AdoptionLogs> AdoptionLogs { get; set; }
-        public ICollection<AdoptionRequests> AdoptionRequests { get; set; }
-        public ICollection<UserNotification> UserNotifications { get; set; }
+        public virtual ICollection<AdoptionLogs> AdoptionLogs { get; set; }
+        public virtual ICollection<AdoptionRequests> AdoptionRequests { get; set; }
+        public virtual ICollection<UserNotification> UserNotifications { get; set; }
     }
 }

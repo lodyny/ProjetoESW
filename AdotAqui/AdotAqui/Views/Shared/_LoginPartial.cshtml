@@ -1,18 +1,21 @@
 @using Microsoft.AspNetCore.Identity;
 @using Microsoft.Extensions.Localization;
+@using AdotAqui.Data;
+@using Microsoft.EntityFrameworkCore;
 
 @inject IStringLocalizer<SharedResources> SharedLocalizer
 
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
+@inject AdotAquiDbContext DbContext
 @if (SignInManager.IsSignedIn(User))
 {
     <form asp-area="Identity" asp-controller="Account" asp-action="LogOff" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm">
         @if (this.User.IsInRole("Administrator"))
         {
-        <a asp-area="" asp-controller="Users" asp-action="Index" class="btn my-2 my-sm-0 navbutton"><i class="fas fa-cogs"></i> @SharedLocalizer["Label_Admin"]</a>
+            <a asp-area="" asp-controller="Users" asp-action="Index" class="btn my-2 my-sm-0 navbutton"><i class="fas fa-cogs"></i> @SharedLocalizer["Label_Admin"]</a>
         }
-        <a asp-controller="UserNotifications" asp-action="Index" class="btn my-2 my-sm-0 navbutton"><i class="fas fa-bell"></i> <span class="badge badge-pill badge-light">@((await UserManager.GetUserAsync(User)).UserNotifications.Count)</span></a>
+        <a asp-controller="UserNotifications" asp-action="Index" class="btn my-2 my-sm-0 navbutton"><i class="fas fa-bell"></i> <span class="badge badge-pill badge-light">@(DbContext.User.Include(u => u.UserNotifications).Where(u => u.Id == int.Parse(UserManager.GetUserId(User))).First().UserNotifications.Count)</span></a>
         <a asp-area="Identity" asp-controller="Manage" asp-action="Index" class="btn my-2 my-sm-0 navbutton"><i class="fas fa-user"></i> @((await UserManager.GetUserAsync(User)).Name)</a>
         <button type="submit" class="btn my-2 my-sm-0 navbutton"><i class="fas fa-sign-out-alt"></i> @SharedLocalizer["Label_SignOut"]</button>
     </form>

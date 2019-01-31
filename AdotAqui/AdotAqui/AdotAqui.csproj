@@ -13,11 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20181220015913_InitialMigration.cs" />
-    <Compile Remove="Migrations\20181220015913_InitialMigration.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="CloudinaryDotNet" Version="1.6.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.AzureKeyVault.HostingStartup" Version="2.0.2" />

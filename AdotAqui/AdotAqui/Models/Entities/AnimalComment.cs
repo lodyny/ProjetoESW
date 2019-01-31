@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdotAqui.Models.Entities
 {
-    public class AnimalComment
+    public partial class AnimalComment
     {
         [Key]
         public int CommentId { get; set; }
