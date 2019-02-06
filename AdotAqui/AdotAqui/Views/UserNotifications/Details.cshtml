@@ -4,10 +4,10 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>@Html.DisplayFor(model => model.Title)</h2>
+<a asp-action="MyNotifications">Voltar</a>
 
 <div>
-    <h4>UserNotification</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -17,26 +17,10 @@
             @Html.DisplayFor(model => model.NotificationDate)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.HasRead)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.HasRead)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt>
             @Html.DisplayNameFor(model => model.Message)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Message)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.UserNotificationId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
 </div>

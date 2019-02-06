@@ -7,22 +7,31 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AdotAqui.Data;
 using AdotAqui.Models.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace AdotAqui.Controllers
 {
     public class UserNotificationsController : Controller
     {
         private readonly AdotAquiDbContext _context;
+        private readonly UserManager<User> _userManager;
 
-        public UserNotificationsController(AdotAquiDbContext context)
+        public UserNotificationsController(AdotAquiDbContext context, UserManager<User> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: UserNotifications
         public async Task<IActionResult> Index()
         {
             return View(await _context.UserNotification.ToListAsync());
+        }
+
+        public async Task<IActionResult> MyNotifications()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            return View(_context.UserNotification.Where(m => m.UserId == user.Id).OrderByDescending(m => m.NotificationDate));
         }
 
         // GET: UserNotifications/Details/5
@@ -38,6 +47,12 @@ namespace AdotAqui.Controllers
             if (userNotification == null)
             {
                 return NotFound();
+            }
+
+            if (!userNotification.HasRead)
+            {
+                userNotification.HasRead = true;
+                _context.SaveChanges();
             }
 
             return View(userNotification);
