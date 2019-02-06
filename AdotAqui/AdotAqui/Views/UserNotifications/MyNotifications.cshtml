@@ -5,38 +5,77 @@
 }
 
 <h2>Minhas Notificações</h2>
-<table class="table">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<table class="display compact" id="base">
     <thead>
         <tr>
+            <th class="no-sort"></th>
+
             <th>
                 @Html.DisplayNameFor(model => model.NotificationDate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
-            <th></th>
+            <th class="no-sort"></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NotificationDate)
-            </td>
-            <td>
-                @if(!item.HasRead){
-                <b><i class="fas fa-exclamation"></i>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </b>
-                                    }else{
-                @Html.DisplayFor(modelItem => item.Title)   
-                }
-
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.UserNotificationId">Abrir</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (!item.HasRead)
+                    {
+                        <b>
+                            <i class="fas fa-exclamation"></i>
+                        </b>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NotificationDate)
+                </td>
+                <td>
+                    
+                     @if (!item.HasRead)
+                    {
+                        <b>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </b>
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => item.Title)
+                    }
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.UserNotificationId">Abrir</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<script>
+    $(document).ready(function () {
+        $('#base').DataTable({
+            "columnDefs": [{
+                orderable: false,
+                targets: 0
+            },
+            {
+                width: "5%", targets: 0
+            },
+            {
+                width: "20%", targets: 1
+            },
+            {
+                width: "20%", targets: 2
+            }],
+            select: {
+                style: 'os',
+                selector: 'td:first-child'
+            }});
+    });
+</script>
