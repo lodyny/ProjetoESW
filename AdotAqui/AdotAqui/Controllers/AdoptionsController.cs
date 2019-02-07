@@ -94,14 +94,24 @@ namespace AdotAqui.Controllers
             AdoptionRequests adopt = new AdoptionRequests();
             adopt.Animal = _context.Animals.FirstOrDefault(a => a.AnimalId == id);
 
-            return View(adopt);
-        }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> NewRequest(int? id, [Bind("AnimalId,Name,Weight,Height,Details")] Animal animal)
+        public async Task<IActionResult> NewRequest(int? id, [Bind("UserId,AmimalId,AdoptionType,StartDate,EndDate,Details")] AdoptionRequests request)
         {
-            return View();
+            AdoptionRequests newRequest = new AdoptionRequests()
+            {
+                AnimalId = int.Parse(id.ToString()),
+                //UserId = request.UserId,
+                UserId = 3,
+                AdoptionType = request.AdoptionType,
+                StartDate = request.StartDate,
+                EndDate = request.EndDate,
+                Details = request.Details
+            };
+
+            _context.AdoptionRequests.Add(newRequest);
+            _context.SaveChanges();
+            return RedirectToAction("MyNotifications", "UserNotifications");
         }
     }
 }

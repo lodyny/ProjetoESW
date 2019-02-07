@@ -8,11 +8,14 @@ namespace AdotAqui.Models.Entities
         public AdoptionRequests()
         {
             AdoptionLogs = new HashSet<AdoptionLogs>();
+            AdoptionType = "Adoção";
         }
 
         public int AdoptionRequestId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+
+
         public string AdoptionType { get; set; }
         public int UserId { get; set; }
         public int AnimalId { get; set; }
