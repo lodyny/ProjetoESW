@@ -91,14 +91,17 @@ namespace AdotAqui.Controllers
 
         public async Task<IActionResult> NewRequest(int? id)
         {
-            return View();
+            AdoptionRequests adopt = new AdoptionRequests();
+            adopt.Animal = _context.Animals.FirstOrDefault(a => a.AnimalId == id);
+
+            return View(adopt);
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> NewRequest(int? id, [Bind("AnimalId,Name,Weight,Height,Details")] Animal animal)
-        //{
-
-        //}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> NewRequest(int? id, [Bind("AnimalId,Name,Weight,Height,Details")] Animal animal)
+        {
+            return View();
+        }
     }
 }

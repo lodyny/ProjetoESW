@@ -4,7 +4,7 @@
 $(document).ready(function(){
 
 
-	$('#endDate').hide();
+	$('.dates-vis').hide();
 	
     $("#datepicker_start").datepicker({
         todayBtn:  1,
@@ -33,9 +33,9 @@ $(document).ready(function(){
 
 $('#adopt-choice').change(function() {
   if ($('#adopt-choice').prop('selectedIndex') == 0){
-	  $('#endDate').hide();
+	  $('.dates-vis').hide();
   } else {
-	  $('#endDate').show();
+	  $('.dates-vis').show();
   };
 });
 });

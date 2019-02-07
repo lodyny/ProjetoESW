@@ -366,4 +366,7 @@
   <data name="Label_ConfirmDelete" xml:space="preserve">
     <value>Quer mesmo eliminar este animal?</value>
   </data>
+  <data name="Label_AdoptReqM" xml:space="preserve">
+    <value>Pedido de adoção do {0}</value>
+  </data>
 </root>

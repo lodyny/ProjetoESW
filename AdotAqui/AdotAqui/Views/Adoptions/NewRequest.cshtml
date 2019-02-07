@@ -1,4 +1,8 @@
 ﻿@model AdotAqui.Models.Entities.AdoptionRequests
+@using Microsoft.Extensions.Localization;
+@using System.Web;
+
+@inject IStringLocalizer<SharedResources> SharedLocalizer
 
 @{
     ViewData["Title"] = "Request";
@@ -8,64 +12,73 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap-datepicker.css" />
 }
-    
-        <h2>Pedido de Adoção</h2>
 
-        <hr />
-        <div class="container body-content">
-            <div class="row w-100 m-auto">
-                <div class="col-md-4 m-auto">
-                    <form asp-action="Request">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <input type="hidden" asp-for="UserId" class="form-control" asp-items="ViewBag.UserId" />
-                        <input type="hidden" asp-for="AnimalId" class="form-control" asp-items="ViewBag.AnimalId" />
-                        <div class="form-group">
-                            Tipo de adoção:
-                            <select class="form-control" asp-for="AdoptionType" id="adopt-choice">
-                                <option>Adoção</option>
-                                <option>Família de Acolhimento Temporario</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            Data inicio:
+<h2>@string.Format(SharedLocalizer["Label_AdoptReqM"], Model.Animal.Name.ToString())  </h2>
 
-                            <div class="input-group date" id="datepicker_start">
-                                <input asp-for="StartDate" class="form-control" type="text" readonly>
-                                <div class="input-group-append">
-                                    <span class="input-group-text input-group-addon"><i class="fas fa-calendar-alt"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group" id="endDate">
+<hr />
+<div class="container body-content">
+    <div class="row w-100 m-auto">
 
-                            Data fim:
-
-                            <div class="input-group date" id="datepicker_end">
-                                <input asp-for="EndDate" class="form-control" type="text" readonly>
-                                <div class="input-group-append">
-                                    <span class="input-group-text input-group-addon"><i class="fas fa-calendar-alt"></i></span>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="form-group">
-                            Detalhes da adoção:
-                            <textarea asp-for="Details" class="form-control"></textarea>
-                            <span asp-validation-for="Details" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Create" class="btn btn-default" />
-                        </div>
-                    </form>
-                </div>
-            </div>
+        <div class="col-md-5 h-center">
+            <img class="card-img-top img-fluid" id="pet-image" style="height: 25vw; object-fit: contain;" src="@Html.DisplayFor(modelItem => modelItem.Animal.Image)" alt="Card image cap">
         </div>
-        @section Scripts {
-            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-            <script src="~/lib/bootstrap/js/bootstrap-datepicker.js"></script>
-            <script src="~/lib/jquery/adopreq-validation.js"></script>
 
-        }
+        <div class="col-md-4">
+            <form asp-action="Request">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="UserId" class="form-control" asp-items="ViewBag.UserId" />
+                <input type="hidden" asp-for="AnimalId" class="form-control" asp-items="ViewBag.AnimalId" />
+
+
+
+                <div class="form-group">
+                    Tipo de adoção:
+                    <select class="form-control" asp-for="AdoptionType" id="adopt-choice">
+                        <option>Adoção</option>
+                        <option>Família de Acolhimento Temporario</option>
+                    </select>
+                </div>
+                <div class="form-group dates-vis">
+                    Data inicio:
+
+                    <div class="input-group date" id="datepicker_start">
+                        <input asp-for="StartDate" class="form-control" type="text" readonly>
+                        <div class="input-group-append">
+                            <span class="input-group-text input-group-addon"><i class="fas fa-calendar-alt"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group dates-vis">
+
+                    Data fim:
+
+                    <div class="input-group date" id="datepicker_end">
+                        <input asp-for="EndDate" class="form-control" type="text" readonly>
+                        <div class="input-group-append">
+                            <span class="input-group-text input-group-addon"><i class="fas fa-calendar-alt"></i></span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="form-group">
+                    Detalhes da adoção:
+                    <textarea asp-for="Details" class="form-control"></textarea>
+                    <span asp-validation-for="Details" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/lib/bootstrap/js/bootstrap-datepicker.js"></script>
+    <script src="~/lib/jquery/adopreq-validation.js"></script>
+
+}
 
 
