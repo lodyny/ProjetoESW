@@ -369,4 +369,7 @@
   <data name="Label_AdoptReqM" xml:space="preserve">
     <value>{0}'s adoption request</value>
   </data>
+  <data name="Label_AdoptReqF" xml:space="preserve">
+    <value>{0}'s adoption request</value>
+  </data>
 </root>
