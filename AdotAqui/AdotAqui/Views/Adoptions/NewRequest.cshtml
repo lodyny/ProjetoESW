@@ -13,17 +13,25 @@
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap-datepicker.css" />
 }
 
-<h2>@string.Format(SharedLocalizer["Label_AdoptReqM"], Model.Animal.Name.ToString())  </h2>
+@if (Model.Animal.Gender.Equals("M"))
+{
+    <h2>@string.Format(SharedLocalizer["Label_AdoptReqM"], Model.Animal.Name.ToString())  <span style="color:dodgerblue;font-size:24px;"><i class="fas fa-mars"></i></span></h2>
+}
+else
+{
+    <h2>@string.Format(SharedLocalizer["Label_AdoptReqF"], Model.Animal.Name.ToString())  <span style="color:#E75480;font-size:24px;"><i class="fas fa-venus"></i></span></h2>
+}
+
 
 <hr />
-<div class="container body-content">
+<div class="container">
     <div class="row w-100 m-auto">
 
-        <div class="col-md-5 h-center">
+        <div class="col-sm h-center">
             <img class="card-img-top img-fluid" id="pet-image" style="height: 25vw; object-fit: contain;" src="@Html.DisplayFor(modelItem => modelItem.Animal.Image)" alt="Card image cap">
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-5">
             <form asp-action="NewRequest">
 
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -62,7 +70,7 @@
 
                 </div>
                 <div class="form-group">
-                    Detalhes da adoção:
+                    Mensagem:
                     <textarea asp-for="Details" class="form-control"></textarea>
                     <span asp-validation-for="Details" class="text-danger"></span>
                 </div>
