@@ -16,7 +16,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace AdotAqui.Controllers
 {
-    [Authorize(Roles = "Administrator")]
     public class AnimalsController : Controller
     {
         private readonly AdotAquiDbContext _context;
@@ -26,7 +25,7 @@ namespace AdotAqui.Controllers
             _context = context;
         }
 
-        // GET: Animals/Create
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             var speciesSet = _context.AnimalSpecies;
@@ -61,7 +60,7 @@ namespace AdotAqui.Controllers
             return Json(animalsSet);
         }
 
-
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Animal animal, [Bind(Prefix = "Animal.Image")] IFormFile image)
@@ -99,11 +98,13 @@ namespace AdotAqui.Controllers
             return View(viewModel);
         }
 
+        [Authorize(Roles = "User,Administrator")]
         public async Task<IActionResult> Details(int? id)
         {
             return await Edit(id);
         }
 
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -135,6 +136,7 @@ namespace AdotAqui.Controllers
             return View(vs);
         }
 
+        [Authorize(Roles = "Administrator")]
         // POST: Users/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -184,6 +186,7 @@ namespace AdotAqui.Controllers
             return await Edit(id);
         }
 
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete([Bind("AnimalId")] Animal animal)
@@ -196,7 +199,6 @@ namespace AdotAqui.Controllers
             await _context.SaveChangesAsync();
             return Redirect(Url.Content("~/"));
         }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]

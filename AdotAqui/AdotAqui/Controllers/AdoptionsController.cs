@@ -78,7 +78,7 @@ namespace AdotAqui.Controllers
 
             return View(adoptions);
         }
-        
+
 
         /*[HttpPost]
         [ValidateAntiForgeryToken]
@@ -88,5 +88,10 @@ namespace AdotAqui.Controllers
 
 
         }*/
+
+        public async Task<IActionResult> NewRequest(int? id)
+        {
+            return View();
+        }
     }
 }

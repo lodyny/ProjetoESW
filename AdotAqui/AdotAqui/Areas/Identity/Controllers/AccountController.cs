@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
@@ -26,6 +27,7 @@ namespace AdotAqui.Areas.Identity.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        private readonly AdotAquiDbContext _context;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IEmailSender _emailSender;
@@ -34,6 +36,7 @@ namespace AdotAqui.Areas.Identity.Controllers
         private readonly IStringLocalizer _localizer;
 
         public AccountController(
+            AdotAquiDbContext context,
             UserManager<User> userManager,
             SignInManager<User> signInManager,
             IEmailSender emailSender,
@@ -41,6 +44,7 @@ namespace AdotAqui.Areas.Identity.Controllers
             ILoggerFactory loggerFactory,
             IStringLocalizer<SharedResources> sharedLocalizer)
         {
+            _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
@@ -66,6 +70,7 @@ namespace AdotAqui.Areas.Identity.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
+            Log log = new Log() { LogDate = DateTime.Now, LogType = "LOGIN" };
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
@@ -75,10 +80,16 @@ namespace AdotAqui.Areas.Identity.Controllers
                     var user = await _userManager.FindByEmailAsync(model.Email);
                     if (user.Banned)
                     {
+                        log.LogValue = "BANNED";
+                        _context.Add(log);
+                        _context.SaveChanges();
                         await _signInManager.SignOutAsync();
                         return Redirect("~/");
                     }
 
+                    log.LogValue = "SUCCESSFUL";
+                    _context.Add(log);
+                    _context.SaveChanges();
                     _logger.LogInformation(1, "User logged in.");
                     return Redirect("~/Identity/Manage");
                 }
@@ -88,11 +99,17 @@ namespace AdotAqui.Areas.Identity.Controllers
                 }
                 if (result.IsLockedOut)
                 {
+                    log.LogValue = "LOCKED";
+                    _context.Add(log);
+                    _context.SaveChanges();
                     _logger.LogWarning(2, "User account locked out.");
                     return View("Lockout");
                 }
                 else
                 {
+                    log.LogValue = "FAIL";
+                    _context.Add(log);
+                    _context.SaveChanges();
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                     return View(model);
                 }

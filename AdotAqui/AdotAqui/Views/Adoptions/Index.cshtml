@@ -38,6 +38,9 @@
                 <th>
                     Estado
                 </th>
+                <th>
+                    Tipo
+                </th>
                 <th class="no-sort">
                     Detalhes
                 </th>
@@ -50,6 +53,7 @@
                     <td>@Html.DisplayFor(modelItem => item.User.Name)</td>
                     <td>@Html.DisplayFor(modelItem => item.Animal.Name)</td>
                     <td>@Html.DisplayFor(modelItem => item.ProposalDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.AdoptionType)</td>
                     <td>@Html.DisplayFor(modelItem => item.Details)</td>
                     <td>@Html.DisplayFor(modelItem => item.AdoptionLogs.OrderByDescending(b => b.Date).First().AdoptionState.Name)</td>
                     <td>

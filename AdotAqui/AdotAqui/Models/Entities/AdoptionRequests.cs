@@ -11,6 +11,9 @@ namespace AdotAqui.Models.Entities
         }
 
         public int AdoptionRequestId { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public string AdoptionType { get; set; }
         public int UserId { get; set; }
         public int AnimalId { get; set; }
         public DateTime ProposalDate { get; set; }

@@ -1,0 +1,67 @@
+﻿@model AdotAqui.Models.Entities.AdoptionRequests
+
+@{
+    ViewData["Title"] = "Request";
+}
+
+@section Styles {
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap-datepicker.css" />
+}
+
+<h2>Pedido de Adoção</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Request">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></input>
+            <input type="hidden" asp-for="AnimalId" class="form-control" asp-items="ViewBag.AnimalId"></input>
+            <div class="form-group">
+                Tipo Adoção:
+                <select class="form-control" asp-for="AdoptionType">
+                    <option>Adoção</option>
+                    <option>Família de Acolhimento Temporario</option>
+                </select>
+            </div>
+            <div class="form-group">
+                Data inicio:
+                <div id="datepicker">
+                    <div class="input-group date">
+                        <input asp-for="StartDate" class="form-control input-group-addon" type="text" readonly>
+                        <div class="input-group-append">
+                            <span class="input-group-text input-group-addon"><i class="fas fa-calendar-alt"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                Data fim:
+                <div id="datepicker">
+                    <div class="input-group date">
+                        <input asp-for="EndDate" class="form-control input-group-addon" type="text" readonly>
+                        <div class="input-group-append">
+                            <span class="input-group-text input-group-addon"><i class="fas fa-calendar-alt"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                Detalhes da adoção:
+                <textarea asp-for="Details" class="form-control"></textarea>
+                <span asp-validation-for="Details" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/lib/bootstrap/js/bootstrap-datepicker.js"></script>
+    <script src="~/lib/jquery/validation.js"></script>
+}
+
+
