@@ -73,6 +73,7 @@ namespace AdotAqui
             services.AddAuthorization(options => { options.AddPolicy("AnonymousOnly", policy => policy.Requirements.Add(new AnonymousOnly())); });
             services.AddSingleton<IEmailSender, EmailService>();
             services.AddSingleton<ISmsSender, SmsSender>();
+            services.AddSingleton<INotificationService, NotificationService>();
 
             services.Configure<RequestLocalizationOptions>(options =>
             {
