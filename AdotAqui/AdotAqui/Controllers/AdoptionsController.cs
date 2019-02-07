@@ -93,5 +93,12 @@ namespace AdotAqui.Controllers
         {
             return View();
         }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> NewRequest(int? id, [Bind("AnimalId,Name,Weight,Height,Details")] Animal animal)
+        //{
+
+        //}
     }
 }
