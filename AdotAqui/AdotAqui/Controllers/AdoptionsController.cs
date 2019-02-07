@@ -93,6 +93,8 @@ namespace AdotAqui.Controllers
         {
             AdoptionRequests adopt = new AdoptionRequests();
             adopt.Animal = _context.Animals.FirstOrDefault(a => a.AnimalId == id);
+            return View(adopt);
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
