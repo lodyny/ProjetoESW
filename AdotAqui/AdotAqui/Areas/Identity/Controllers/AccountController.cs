@@ -623,10 +623,10 @@ namespace AdotAqui.Areas.Identity.Controllers
             public string Country { get; set; }
 
             [JsonProperty("latitude")]
-            public string Latitude { get; set; }
+            public decimal Latitude { get; set; }
 
             [JsonProperty("longitude")]
-            public string Longitude { get; set; }
+            public decimal Longitude { get; set; }
         }
 
         private void NewLocation()
@@ -648,8 +648,8 @@ namespace AdotAqui.Areas.Identity.Controllers
                 Locations location = new Locations()
                 {
                     country = ipInfo.Country,
-                    latitude = decimal.Parse(ipInfo.Latitude),
-                    longitude = decimal.Parse(ipInfo.Longitude)
+                    latitude = ipInfo.Latitude,
+                    longitude = ipInfo.Longitude
                 };
                 _context.Locations.Add(location);
                 _context.SaveChanges();
