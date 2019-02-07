@@ -1,6 +1,8 @@
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AdotAqui.Areas.Identity.Models.AccountViewModels;
@@ -11,12 +13,14 @@ using AdotAqui.Models.Entities;
 using AdotAqui.Models.Services;
 using AdotAqui.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace AdotAqui.Areas.Identity.Controllers
 {
@@ -34,6 +38,7 @@ namespace AdotAqui.Areas.Identity.Controllers
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
         private readonly IStringLocalizer _localizer;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
         public AccountController(
             AdotAquiDbContext context,
@@ -42,7 +47,8 @@ namespace AdotAqui.Areas.Identity.Controllers
             IEmailSender emailSender,
             ISmsSender smsSender,
             ILoggerFactory loggerFactory,
-            IStringLocalizer<SharedResources> sharedLocalizer)
+            IStringLocalizer<SharedResources> sharedLocalizer,
+            IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
             _userManager = userManager;
@@ -51,6 +57,7 @@ namespace AdotAqui.Areas.Identity.Controllers
             _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<AccountController>();
             _localizer = sharedLocalizer;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         //
@@ -91,6 +98,7 @@ namespace AdotAqui.Areas.Identity.Controllers
                     _context.Add(log);
                     _context.SaveChanges();
                     _logger.LogInformation(1, "User logged in.");
+                    NewLocation();
                     return Redirect("~/Identity/Manage");
                 }
                 if (result.RequiresTwoFactor)
@@ -122,7 +130,7 @@ namespace AdotAqui.Areas.Identity.Controllers
         // GET: /Account/EmailSent
         [HttpGet]
         [AllowAnonymous]
-        [Authorize(Policy ="AnonymousOnly")]
+        [Authorize(Policy = "AnonymousOnly")]
         public IActionResult EmailSent(string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
@@ -166,8 +174,10 @@ namespace AdotAqui.Areas.Identity.Controllers
                             _localizer["Email_Greeting"] + " " + model.Name + ",<br/>" + _localizer["Email_Welcome"] + "<br/><a href=\"" + callbackUrl + "\">" + _localizer["Email_ActivateAcc"] + " </a><br/><br/>" + _localizer["Email_Farewell"]);
                         //await _signInManager.SignInAsync(user, isPersistent: false);
                         return RedirectPermanent("EmailSent");
-                    } else { AddErrors(result2); }
-                } else { AddErrors(result); }
+                    }
+                    else { AddErrors(result2); }
+                }
+                else { AddErrors(result); }
             }
 
             return View(model);
@@ -257,7 +267,7 @@ namespace AdotAqui.Areas.Identity.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new User { UserName = model.Email, Email = model.Email};
+                var user = new User { UserName = model.Email, Email = model.Email };
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
@@ -296,7 +306,7 @@ namespace AdotAqui.Areas.Identity.Controllers
             }
             var result = await _userManager.ConfirmEmailAsync(user, code);
 
-            return result.Succeeded? View() : View("Error", new ErrorViewModel { Description= result.Errors.ToString() });
+            return result.Succeeded ? View() : View("Error", new ErrorViewModel { Description = result.Errors.ToString() });
         }
 
         //
@@ -606,5 +616,45 @@ namespace AdotAqui.Areas.Identity.Controllers
             }
         }
         #endregion
+
+        private class IpInfo
+        {
+            [JsonProperty("country_name")]
+            public string Country { get; set; }
+
+            [JsonProperty("latitude")]
+            public string Latitude { get; set; }
+
+            [JsonProperty("longitude")]
+            public string Longitude { get; set; }
+        }
+
+        private void NewLocation()
+        {
+            string ip = _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString();
+            IpInfo ipInfo = new IpInfo();
+            try
+            {
+                string info = new WebClient().DownloadString("http://api.ipstack.com/" + ip + "?access_key=a02a2f0d948b727250a7980b6750931d");
+                ipInfo = JsonConvert.DeserializeObject<IpInfo>(info);
+            }
+            catch (Exception)
+            {
+                ipInfo.Country = null;
+            }
+
+            if(ipInfo.Country != null)
+            {
+                Locations location = new Locations()
+                {
+                    country = ipInfo.Country,
+                    latitude = decimal.Parse(ipInfo.Latitude),
+                    longitude = decimal.Parse(ipInfo.Longitude)
+                };
+                _context.Locations.Add(location);
+                _context.SaveChanges();
+            }
+        
+        }
     }
 }
