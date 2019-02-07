@@ -94,11 +94,24 @@ namespace AdotAqui.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> NewRequest(int? id, [Bind("AnimalId,Name,Weight,Height,Details")] Animal animal)
-        //{
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> NewRequest(int? id, [Bind("UserId,AmimalId,AdoptionType,StartDate,EndDate,Details")] AdoptionRequests request)
+        {
+            AdoptionRequests newRequest = new AdoptionRequests()
+            {
+                AnimalId = int.Parse(id.ToString()),
+                //UserId = request.UserId,
+                UserId = 3,
+                AdoptionType = request.AdoptionType,
+                StartDate = request.StartDate,
+                EndDate = request.EndDate,
+                Details = request.Details
+            };
 
-        //}
+            _context.AdoptionRequests.Add(newRequest);
+            _context.SaveChanges();
+            return RedirectToAction("MyNotifications", "UserNotifications");
+        }
     }
 }
