@@ -184,7 +184,7 @@ $(document).ready(function() {
 			startDate: '-90y',
 			endDate: '-16y',
 			autoclose: true
-		}).datepicker('setDate',  $( "#Input_Birthday" ).val());
+		})..datepicker('setDate', 'now')datepicker('setDate',  $( "#Input_Birthday" ).val());
 		
 		if($("#Email").val().length > 0){
 			validatemail();
