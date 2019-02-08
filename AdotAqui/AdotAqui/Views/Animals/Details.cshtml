@@ -77,23 +77,18 @@
             {
                 <span style="color:#E75480;font-size:24px;"><i class="fas fa-venus"></i></span>
             }
-            @if (Model.GetCulture() == "pt-PT")
-            {
-                <span> Olá! Eu sou</span> @if (@Model.Animal.Gender == "M")
-                {<span>o</span> }
-                else
-                {<span>a</span>}
-            }
-            else
-            {
-                <span> Hey! My name is </span>
-            }
-            @Model.Animal.Name
 
+            @if (@Model.Animal.Gender == "M")
+            {<span>@SharedLocalizer["Label_MyNameM"]</span> }
+        else
+        {<span>@SharedLocalizer["Label_MyNameF"]</span>}
+
+            @Model.Animal.Name
+            
         </h2>
     </div>
 </div>
-<a href="../../Adoptions/NewRequest/@Model.Animal.AnimalId">Adota-me!</a>
+<a href="../../Adoptions/NewRequest/@Model.Animal.AnimalId">@SharedLocalizer["Label_AdoptMe"]!</a>
 <div class="row w-100 m-auto pt-4">
     <div class="col-md-5">
         <div class="form-row  w-100">
