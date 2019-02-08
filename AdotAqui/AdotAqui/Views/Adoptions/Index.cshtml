@@ -56,6 +56,11 @@
                     <a href="/Adoptions/Details/@item.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton" style="color:black">
                         Detalhes
                     </a>
+                    @if (item.AdoptionLogs.OrderByDescending(u => u.Date).First().AdoptionState.NamePt == "Pendente")
+                    {
+                        <a href="/Adoptions/Accept/@item.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton" style="color:black">Accept</a>
+                        <a href="/Adoptions/Decline/@item.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton" style="color:black">Decline</a>
+                    }
                 </td>
             </tr>
             }
