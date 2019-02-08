@@ -29,6 +29,7 @@ $(document).ready(function(){
 	};
 
 	$('.dates-vis').hide();
+	checkLanguage();
 	
     $("#datepicker_start").datepicker({
         todayBtn:  1,
@@ -62,20 +63,21 @@ $('#adopt-choice').change(function() {
   };
 });
 
-checkLanguage();
 
-$('#select2-culture-dropdown-container').change(function() {
+
+$('#culture-dropdown').on('select2:select', function (e) {
   checkLanguage();
 });
 
+
+function checkLanguage(){if ($('#culture-dropdown').select2().select2('data')[0].id  == "pt-PT"){
+	$('#datepicker_start').datepicker.defaults.language = 'pt';
+	console.log('here');
+  } else {
+		$('#datepicker_start').datepicker.defaults.language = 'en';
+	console.log('here2');
+  };}
+
 });
 
 
-
-function checkLanguage(){if ($('#culture-dropdown').select2('data')[0].id  == "pt-PT"){
-	$("#datepicker_start").datepicker({language: 'pt'});
-	console.log('here');
-  } else {
-	$("#datepicker_start").datepicker({language: 'en'});
-	console.log('here2');
-  };}
