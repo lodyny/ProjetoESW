@@ -102,7 +102,7 @@ namespace AdotAqui.Controllers
             _context.AdoptionLogs.Add(newLog);
             _context.SaveChanges();
 
-            _notificationService.RegisterAsync(_context, new UserNotification()
+            _notificationService.Register(_context, new UserNotification()
             {
                 Title = "Pedido de Adoção",
                 Message = "Seu pedido encontra-se para analise...",
@@ -128,15 +128,6 @@ namespace AdotAqui.Controllers
             _context.AdoptionLogs.Add(newLog);
             _context.SaveChanges();
 
-            var request = _context.AdoptionRequests.FindAsync(id);
-            _notificationService.RegisterAsync(_context, new UserNotification()
-            {
-                UserId = user.Id,
-                Message = "Caro utilizador (a), temos o prazer de informar que o seu pedido foi aceite..",
-                Title = "Resposta pedido de adoção",
-                NotificationDate = DateTime.Now,
-            });
-
             IQueryable<AdoptionRequests> adoptions = _context.AdoptionRequests.Include(a => a.User)
                                                                   .Include(a => a.Animal)
                                                                   .Include(a => a.AdoptionLogs)
@@ -146,7 +137,14 @@ namespace AdotAqui.Controllers
                 adoptions = adoptions.Where(a => a.UserId == user.Id);
             }
 
-
+            var request = await _context.AdoptionRequests.FindAsync(id);
+            _notificationService.Register(_context, new UserNotification()
+            {
+                UserId = request.UserId,
+                Message = "Caro utilizador (a), temos o prazer de informar que o seu pedido foi aceite.",
+                Title = "Resposta pedido de adoção",
+                NotificationDate = DateTime.Now,
+            });
             return View("Index", adoptions);
         }
 
@@ -165,17 +163,6 @@ namespace AdotAqui.Controllers
 
             _context.AdoptionLogs.Add(newLog);
             _context.SaveChanges();
-
-            var request = _context.AdoptionRequests.FindAsync(id);
-            _notificationService.RegisterAsync(_context, new UserNotification()
-            {
-                UserId = user.Id,
-                Message = "Caro utilizador (a), lamentamos informar que o seu pedido foi recusado..",
-                Title = "Resposta pedido de adoção",
-                NotificationDate = DateTime.Now,
-            });
-
-
             IQueryable<AdoptionRequests> adoptions = _context.AdoptionRequests.Include(a => a.User)
                                                                   .Include(a => a.Animal)
                                                                   .Include(a => a.AdoptionLogs)
@@ -185,6 +172,14 @@ namespace AdotAqui.Controllers
                 adoptions = adoptions.Where(a => a.UserId == user.Id);
             }
 
+            var request = await _context.AdoptionRequests.FindAsync(id);
+            _notificationService.Register(_context, new UserNotification()
+            {
+                UserId = request.UserId,
+                Message = "Caro utilizador (a), lamentamos informar que o seu pedido foi recusado.",
+                Title = "Resposta pedido de adoção",
+                NotificationDate = DateTime.Now,
+            });
 
             return View("Index", adoptions);
         }

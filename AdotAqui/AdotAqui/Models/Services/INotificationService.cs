@@ -9,6 +9,6 @@ namespace AdotAqui.Models.Services
 {
     public interface INotificationService
     {
-        void RegisterAsync(AdotAquiDbContext context, UserNotification notification);
+        void Register(AdotAquiDbContext context, UserNotification notification);
     }
 }

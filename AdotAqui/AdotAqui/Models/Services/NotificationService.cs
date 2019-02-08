@@ -9,11 +9,10 @@ namespace AdotAqui.Models.Services
 {
     public class NotificationService : INotificationService
     {
-        public void RegisterAsync(AdotAquiDbContext context, UserNotification notification)
+        public void Register(AdotAquiDbContext context, UserNotification notification)
         {
             context.UserNotification.Add(notification);
             context.SaveChanges();
-            
         }
     }
 }
