@@ -38,6 +38,9 @@
                 <th>
                     Estado
                 </th>
+                <th>
+                    Opções
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -51,7 +54,7 @@
                 <td>@Html.DisplayFor(modelItem => item.AdoptionLogs.OrderByDescending(u => u.Date).First().AdoptionState.Name)</td>
                 <td>
                     <a href="/Adoptions/Details/@item.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton" style="color:black">
-                        >
+                        Detalhes
                     </a>
                 </td>
             </tr>
