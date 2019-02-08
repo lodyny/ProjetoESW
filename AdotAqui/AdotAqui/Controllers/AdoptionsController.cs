@@ -8,6 +8,7 @@ using AdotAqui.Models.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,14 +23,14 @@ namespace AdotAqui.Controllers
         private readonly AdotAquiDbContext _context;
         private readonly UserManager<User> _userManager;
         private readonly INotificationService _notificationService;
-        private readonly IEmailService _emailService;
+        private readonly IEmailSender _emailSender;
 
-        public AdoptionsController(AdotAquiDbContext context, UserManager<User> userManager, INotificationService notificatonService, IEmailService emailService)
+        public AdoptionsController(AdotAquiDbContext context, UserManager<User> userManager, INotificationService notificatonService, IEmailSender emailSender)
         {
             _context = context;
             _userManager = userManager;
             _notificationService = notificatonService;
-            _emailService = emailService;
+            _emailSender = emailSender;
         }
 
 
@@ -111,7 +112,7 @@ namespace AdotAqui.Controllers
                 Message = "Seu pedido encontra-se para analise...",
                 NotificationDate = DateTime.Now,
                 UserId = newRequest.UserId
-            }, _emailService);
+            }, _emailSender);
             return RedirectToAction("MyNotifications", "UserNotifications");
         }
 
@@ -153,7 +154,7 @@ namespace AdotAqui.Controllers
                 "<a href='../../../Animals/Details/" + animal.AnimalId + "'>" + animal.Name + "</a> foi aceite.",
                 Title = "Resposta pedido de adoção",
                 NotificationDate = DateTime.Now,
-            }, _emailService);
+            }, _emailSender);
             return View("Index", adoptions);
         }
 
@@ -190,7 +191,7 @@ namespace AdotAqui.Controllers
                 "<a href='../../../Animals/Details/" + animal.AnimalId + "'>" + animal.Name + "</a> foi aceite.",
                 Title = "Resposta pedido de adoção",
                 NotificationDate = DateTime.Now,
-            }, _emailService);
+            }, _emailSender);
 
             return View("Index", adoptions);
         }

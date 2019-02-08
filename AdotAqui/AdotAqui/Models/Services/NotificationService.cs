@@ -4,12 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using AdotAqui.Data;
 using AdotAqui.Models.Entities;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace AdotAqui.Models.Services
 {
     public class NotificationService : INotificationService
     {
-        public void Register(AdotAquiDbContext context, UserNotification notification, IEmailService emailService = null)
+        public void Register(AdotAquiDbContext context, UserNotification notification, IEmailSender emailService = null)
         {
             context.UserNotification.Add(notification);
             context.SaveChanges();
