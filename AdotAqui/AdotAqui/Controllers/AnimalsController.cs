@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AdotAqui.Data;
+﻿using AdotAqui.Data;
 using AdotAqui.Models.Entities;
 using AdotAqui.Models.ViewModels;
-using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Mvc;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
-using Microsoft.AspNetCore.Http;
-using System.IO;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AdotAqui.Controllers
 {
@@ -41,7 +40,7 @@ namespace AdotAqui.Controllers
             var breedsSet = specieId != null ? _context.AnimalBreeds.Where(b => b.SpecieId == specieId) : _context.AnimalBreeds;
             var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
             var culture = rqf.RequestCulture.Culture;
-            return Json(breedsSet.Select(b=> new {b.BreedId,  Name = culture.Name == "pt-PT" ? b.NamePt : b.Name }));
+            return Json(breedsSet.Select(b => new { b.BreedId, Name = culture.Name == "pt-PT" ? b.NamePt : b.Name }));
         }
 
         public JsonResult GetAnimalsByBreed([Bind(Prefix = "id")] int? breedId)
@@ -153,7 +152,7 @@ namespace AdotAqui.Controllers
             curAnimal.Weight = animal.Weight;
             curAnimal.Height = animal.Height;
             curAnimal.Details = animal.Details;
-            
+
             try
             {
                 if (image != null)
