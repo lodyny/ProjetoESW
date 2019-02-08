@@ -99,7 +99,7 @@ namespace AdotAqui.Areas.Identity.Controllers
                     _context.SaveChanges();
                     _logger.LogInformation(1, "User logged in.");
                     NewLocation();
-                    return Redirect("~/Identity/Manage");
+                    return Redirect("~/");
                 }
                 if (result.RequiresTwoFactor)
                 {
