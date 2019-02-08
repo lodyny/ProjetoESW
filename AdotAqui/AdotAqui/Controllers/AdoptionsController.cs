@@ -21,12 +21,14 @@ namespace AdotAqui.Controllers
         private readonly AdotAquiDbContext _context;
         private readonly UserManager<User> _userManager;
         private readonly INotificationService _notificationService;
+        private readonly IEmailService _emailService;
 
-        public AdoptionsController(AdotAquiDbContext context, UserManager<User> userManager, INotificationService notificatonService)
+        public AdoptionsController(AdotAquiDbContext context, UserManager<User> userManager, INotificationService notificatonService, IEmailService emailService)
         {
             _context = context;
             _userManager = userManager;
             _notificationService = notificatonService;
+            _emailService = emailService;
         }
 
 
@@ -108,7 +110,7 @@ namespace AdotAqui.Controllers
                 Message = "Seu pedido encontra-se para analise...",
                 NotificationDate = DateTime.Now,
                 UserId = newRequest.UserId
-            });
+            }, _emailService);
             return RedirectToAction("MyNotifications", "UserNotifications");
         }
 
@@ -146,10 +148,11 @@ namespace AdotAqui.Controllers
             _notificationService.Register(_context, new UserNotification()
             {
                 UserId = request.UserId,
-                Message = "Caro utilizador (a), temos o prazer de informar que o seu pedido foi aceite.",
+                Message = "Caro utilizador (a), temos o prazer de informar que o seu pedido de adoção referente ao animal " +
+                "<a href='../../../Animals/Details/" + animal.AnimalId + "'>" + animal.Name + "</a> foi aceite.",
                 Title = "Resposta pedido de adoção",
                 NotificationDate = DateTime.Now,
-            });
+            }, _emailService);
             return View("Index", adoptions);
         }
 
@@ -178,13 +181,15 @@ namespace AdotAqui.Controllers
             }
 
             var request = await _context.AdoptionRequests.FindAsync(id);
+            var animal = await _context.Animals.FindAsync(request.AnimalId);
             _notificationService.Register(_context, new UserNotification()
             {
                 UserId = request.UserId,
-                Message = "Caro utilizador (a), lamentamos informar que o seu pedido foi recusado.",
+                Message = "Caro utilizador (a), lamentamos informar que o seu pedido de adoção referente ao animal " +
+                "<a href='../../../Animals/Details/" + animal.AnimalId + "'>" + animal.Name + "</a> foi aceite.",
                 Title = "Resposta pedido de adoção",
                 NotificationDate = DateTime.Now,
-            });
+            }, _emailService);
 
             return View("Index", adoptions);
         }
