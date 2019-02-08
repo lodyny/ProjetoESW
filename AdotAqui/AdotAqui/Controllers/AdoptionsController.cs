@@ -138,6 +138,11 @@ namespace AdotAqui.Controllers
             }
 
             var request = await _context.AdoptionRequests.FindAsync(id);
+
+            var animal = await _context.Animals.FindAsync(request.AnimalId);
+            animal.UserId = request.UserId;
+            _context.SaveChanges();
+
             _notificationService.Register(_context, new UserNotification()
             {
                 UserId = request.UserId,
