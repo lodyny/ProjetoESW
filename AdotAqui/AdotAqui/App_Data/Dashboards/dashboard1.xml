@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Logins" />
+  <DataSources>
+    <SqlDataSource Name="Log" ComponentName="sqlDataSource1">
+      <Connection Name="AzureConnection" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="Log">
+        <Tables>
+          <Table Name="Log" />
+        </Tables>
+        <Columns>
+          <Column Table="Log" Name="LogId" />
+          <Column Table="Log" Name="LogType" />
+          <Column Table="Log" Name="LogDate" />
+          <Column Table="Log" Name="LogValue" />
+        </Columns>
+        <Filter>[Log.LogType] = 'LOGIN'</Filter>
+      </Query>
+      <Query Type="SelectQuery" Name="Locations">
+        <Tables>
+          <Table Name="Locations" />
+        </Tables>
+        <Columns>
+          <Column Table="Locations" Name="LocationID" />
+          <Column Table="Locations" Name="longitude" />
+          <Column Table="Locations" Name="latitude" />
+          <Column Table="Locations" Name="country" />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+    <SqlDataSource Name="Animals" ComponentName="sqlDataSource2">
+      <Connection Name="AzureConnection" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="Animals">
+        <Tables>
+          <Table Name="Animals" />
+          <Table Name="AnimalSpecies" />
+          <Table Name="AnimalBreeds" />
+          <Relation Type="Inner" Parent="AnimalBreeds" Nested="AnimalSpecies">
+            <KeyColumn Parent="SpecieID" Nested="SpecieID" />
+          </Relation>
+          <Relation Type="Inner" Parent="Animals" Nested="AnimalBreeds">
+            <KeyColumn Parent="BreedID" Nested="BreedID" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="AnimalBreeds" Name="BreedID" />
+          <Column Table="AnimalBreeds" Name="Name" />
+          <Column Table="AnimalBreeds" Name="Name_PT" />
+          <Column Table="AnimalBreeds" Name="SpecieID" />
+          <Column Table="Animals" Name="AnimalID" />
+          <Column Table="Animals" Name="Name" Alias="Animals_Name" />
+          <Column Table="Animals" Name="UserID" />
+          <Column Table="Animals" Name="Gender" />
+          <Column Table="Animals" Name="BreedID" Alias="Animals_BreedID" />
+          <Column Table="Animals" Name="Height" />
+          <Column Table="Animals" Name="Weight" />
+          <Column Table="Animals" Name="Birthday" />
+          <Column Table="Animals" Name="Details" />
+          <Column Table="Animals" Name="Image" />
+          <Column Table="AnimalSpecies" Name="SpecieID" Alias="AnimalSpecies_SpecieID" />
+          <Column Table="AnimalSpecies" Name="Name" Alias="AnimalSpecies_Name" />
+          <Column Table="AnimalSpecies" Name="Name_PT" Alias="AnimalSpecies_Name_PT" />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Pie ComponentName="pieDashboardItem1" Name="Pies 1" ShowCaption="false" DataSource="sqlDataSource1" DataMember="Log">
+      <DataItems>
+        <Measure DataMember="LogId" Name="Logins" SummaryType="Count" DefaultId="DataItem0" />
+        <Dimension DataMember="LogValue" DefaultId="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem1" />
+      </Arguments>
+      <Values>
+        <Value DefaultId="DataItem0" />
+      </Values>
+    </Pie>
+    <ChoroplethMap ComponentName="choroplethMapDashboardItem1" Name="Logins por País" DataSource="sqlDataSource1" DataMember="Locations" AttributeName="NAME" IncludeSummaryValueToShapeTitle="true">
+      <DataItems>
+        <Dimension DataMember="country" DefaultId="DataItem0" />
+        <Measure DataMember="LocationID" SummaryType="Count" DefaultId="DataItem1" />
+      </DataItems>
+      <ViewArea TopLatitude="52.434935387185988" BottomLatitude="28.6958258155875" LeftLongitude="-23.259190207206696" RightLongitude="10.972046172969611" CenterPointLatitude="41.645810840293187" CenterPointLongitude="-6.1574308172724619" CreateViewerPaddings="false" />
+      <MapLegend />
+      <WeightedLegend />
+      <AttributeDimension DefaultId="DataItem0" />
+      <Maps>
+        <ValueMap ValueName="Nº de Logins">
+          <Value DefaultId="DataItem1" />
+          <UniformScale />
+        </ValueMap>
+      </Maps>
+    </ChoroplethMap>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutGroup>
+        <LayoutItem DashboardItem="pieDashboardItem1" />
+        <LayoutItem DashboardItem="choroplethMapDashboardItem1" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

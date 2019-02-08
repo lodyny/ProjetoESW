@@ -19,15 +19,21 @@ using System.Collections.Generic;
 using AdotAqui.Models.Entities;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.Extensions.FileProviders;
+using DevExpress.DashboardAspNetCore;
+using DevExpress.DashboardWeb;
+using DevExpress.AspNetCore;
 
 namespace AdotAqui
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment hostingEnvironment)
         {
             Configuration = configuration;
+            FileProvider = hostingEnvironment.ContentRootFileProvider;
         }
+        public IFileProvider FileProvider { get; }
 
         public IConfiguration Configuration { get; }
 
@@ -62,7 +68,11 @@ namespace AdotAqui
                 {
                     return factory.Create(typeof(SharedResources));
                 };
+            }).AddDefaultDashboardController(configurator => {
+                configurator.SetDashboardStorage(new DashboardFileStorage(FileProvider.GetFileInfo("App_Data/Dashboards").PhysicalPath));
+                configurator.SetConnectionStringsProvider(new DashboardConnectionStringsProvider(Configuration));
             });
+            services.AddDevExpressControls(settings => settings.Resources = ResourcesType.ThirdParty | ResourcesType.DevExtreme);
 
             services.ConfigureApplicationCookie(options =>
             {
@@ -111,7 +121,7 @@ namespace AdotAqui
                 new CultureInfo("pt-PT"),
                 new CultureInfo("en-US"),
             };
-
+            app.UseDevExpressControls();
             app.UseRequestLocalization(new RequestLocalizationOptions
             {
                 DefaultRequestCulture = new RequestCulture("pt-PT"),
@@ -128,10 +138,10 @@ namespace AdotAqui
 
             app.UseMvc(routes =>
             {
+                routes.MapDashboardRoute();
                 routes.MapRoute(
                     name: "areaRoute",
                     template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
