@@ -12,9 +12,10 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace AdotAqui.Controllers
 {
-
+    [Authorize]
     public class AdoptionsController : Controller
     {
 
