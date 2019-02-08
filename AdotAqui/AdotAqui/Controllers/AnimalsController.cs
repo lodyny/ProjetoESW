@@ -98,7 +98,6 @@ namespace AdotAqui.Controllers
             return View(viewModel);
         }
 
-        [Authorize(Roles = "User,Administrator")]
         public async Task<IActionResult> Details(int? id)
         {
             return await Edit(id);

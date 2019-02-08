@@ -24,44 +24,37 @@
         <thead>
             <tr>
                 <th>
-                    User
+                    Utilizador
                 </th>
                 <th>
                     Animal
                 </th>
                 <th>
-                    Data de inicio
-                </th>
-                <th>
-                    Detalhes
-                </th>
-                <th>
-                    Estado
+                    Data de proposta
                 </th>
                 <th>
                     Tipo
                 </th>
-                <th class="no-sort">
-                    Detalhes
+                <th>
+                    Estado
                 </th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => item.User.Name)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Animal.Name)</td>
-                    <td>@Html.DisplayFor(modelItem => item.ProposalDate)</td>
-                    <td>@Html.DisplayFor(modelItem => item.AdoptionType)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Details)</td>
-                    <td>@Html.DisplayFor(modelItem => item.AdoptionLogs.OrderByDescending(b => b.Date).First().AdoptionState.Name)</td>
-                    <td>
-                        <a href="/Adoptions/Details/@item.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton" style="color:black">
-                            >
-                        </a>
-                    </td>
-                </tr>
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.User.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Animal.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.ProposalDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.AdoptionType)</td>
+                <td>@Html.DisplayFor(modelItem => item.AdoptionLogs.OrderByDescending(u => u.Date).First().AdoptionState.Name)</td>
+                <td>
+                    <a href="/Adoptions/Details/@item.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton" style="color:black">
+                        >
+                    </a>
+                </td>
+            </tr>
             }
         </tbody>
     </table>

@@ -22,7 +22,6 @@ namespace AdotAqui.Controllers
         private readonly UserManager<User> _userManager;
         private readonly INotificationService _notificationService;
 
-
         public AdoptionsController(AdotAquiDbContext context, UserManager<User> userManager, INotificationService notificatonService)
         {
             _context = context;
@@ -54,44 +53,18 @@ namespace AdotAqui.Controllers
             if (id == null)
                 return NotFound();
 
-            AdoptionRequests adoptionRequests = await _context.AdoptionRequests.FindAsync(id);
+            AdoptionRequests adoptionRequests = _context.AdoptionRequests.Include(a => a.User)
+                                                    .Include(a => a.Animal)
+                                                    .Include(a => a.AdoptionLogs)
+                                                    .ThenInclude(p => p.AdoptionState)
+                                                    .FirstOrDefault(a => a.AdoptionRequestId == id);
+            
 
             if (adoptionRequests == null)
                 return NotFound();
 
-            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
-            var culture = rqf.RequestCulture.Culture;
-
-            var adoptions = _context.AdoptionRequests.Include(a => a.User)
-                                                    .Include(a => a.Animal)
-                                                    .Include(a => a.AdoptionLogs)
-                                                    .ThenInclude(p => p.AdoptionState);
-            /*     var statesHistory = from c in _context.AdoptionLogs select c;
-                 statesHistory = statesHistory.Where(s => s.AdoptionRequestId.Equals(id));
-                 /* foreach (AdoptionLogs com in statesHistory)
-                  {
-                      var user = _context.Users.Where(u => u.Id.Equals(com.UserId)).First();
-                      com.SetEmail(user.Email);
-                      com.SetUserName(user.Name);
-                  }
-
-                 IQueryable<AdoptionRequests> vs = _context.AdoptionRequests.Include(a => a.User)
-                                                                       .Include(a => a.Animal)
-                                                                       .Include(a => a.AdoptionLogs)
-                                                                         .ThenInclude(p => p.AdoptionState);*/
-
-            return View(adoptions);
+            return View(adoptionRequests);
         }
-
-
-        /*[HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(AdoptionRequests adoptionRequests)
-        {
-            
-
-
-        }*/
 
         public async Task<IActionResult> NewRequest(int? id)
         {
@@ -110,13 +83,25 @@ namespace AdotAqui.Controllers
                 AnimalId = int.Parse(id.ToString()),
                 UserId = (await _userManager.GetUserAsync(User)).Id,
                 AdoptionType = request.AdoptionType,
+                ProposalDate = DateTime.Now,
                 StartDate = request.StartDate,
                 EndDate = request.EndDate,
                 Details = request.Details
             };
-
             _context.AdoptionRequests.Add(newRequest);
             _context.SaveChanges();
+
+            AdoptionLogs newLog = new AdoptionLogs()
+            {
+                AdoptionRequestId = newRequest.AdoptionRequestId,
+                AdoptionStateId = 1,
+                Date = newRequest.ProposalDate,
+                Details = newRequest.Details,
+                UserId = newRequest.UserId
+            };
+            _context.AdoptionLogs.Add(newLog);
+            _context.SaveChanges();
+
             _notificationService.RegisterAsync(_context, new UserNotification()
             {
                 Title = "Pedido de Adoção",
@@ -125,6 +110,83 @@ namespace AdotAqui.Controllers
                 UserId = newRequest.UserId
             });
             return RedirectToAction("MyNotifications", "UserNotifications");
+        }
+
+        public async Task<IActionResult> Accept(int? id)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var roles = await _userManager.GetRolesAsync(user);
+
+            AdoptionLogs newLog = new AdoptionLogs()
+            {
+                Date = DateTime.Now,
+                UserId = user.Id,
+                AdoptionStateId = 3, // Accepted
+                AdoptionRequestId = id
+            };
+
+            _context.AdoptionLogs.Add(newLog);
+            _context.SaveChanges();
+
+            var request = _context.AdoptionRequests.FindAsync(id);
+            _notificationService.RegisterAsync(_context, new UserNotification()
+            {
+                UserId = user.Id,
+                Message = "Caro utilizador (a), temos o prazer de informar que o seu pedido foi aceite..",
+                Title = "Resposta pedido de adoção",
+                NotificationDate = DateTime.Now,
+            });
+
+            IQueryable<AdoptionRequests> adoptions = _context.AdoptionRequests.Include(a => a.User)
+                                                                  .Include(a => a.Animal)
+                                                                  .Include(a => a.AdoptionLogs)
+                                                                    .ThenInclude(p => p.AdoptionState);
+            if (roles.Contains(Role.User.ToString()) || roles.Contains(Role.Veterinary.ToString()))
+            {
+                adoptions = adoptions.Where(a => a.UserId == user.Id);
+            }
+
+
+            return View("Index", adoptions);
+        }
+
+        public async Task<IActionResult> Decline(int? id)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var roles = await _userManager.GetRolesAsync(user);
+
+            AdoptionLogs newLog = new AdoptionLogs()
+            {
+                Date = DateTime.Now,
+                UserId = user.Id,
+                AdoptionStateId = 2, // Refused
+                AdoptionRequestId = id
+            };
+
+            _context.AdoptionLogs.Add(newLog);
+            _context.SaveChanges();
+
+            var request = _context.AdoptionRequests.FindAsync(id);
+            _notificationService.RegisterAsync(_context, new UserNotification()
+            {
+                UserId = user.Id,
+                Message = "Caro utilizador (a), lamentamos informar que o seu pedido foi recusado..",
+                Title = "Resposta pedido de adoção",
+                NotificationDate = DateTime.Now,
+            });
+
+
+            IQueryable<AdoptionRequests> adoptions = _context.AdoptionRequests.Include(a => a.User)
+                                                                  .Include(a => a.Animal)
+                                                                  .Include(a => a.AdoptionLogs)
+                                                                    .ThenInclude(p => p.AdoptionState);
+            if (roles.Contains(Role.User.ToString()) || roles.Contains(Role.Veterinary.ToString()))
+            {
+                adoptions = adoptions.Where(a => a.UserId == user.Id);
+            }
+
+
+            return View("Index", adoptions);
         }
     }
 }

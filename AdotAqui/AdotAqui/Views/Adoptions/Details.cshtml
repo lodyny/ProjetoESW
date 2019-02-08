@@ -1,6 +1,25 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model AdotAqui.Models.Entities.AdoptionRequests
+
 @{
+    ViewData["Title"] = "Details";
 }
-test
+
+<h2>Details</h2>
+
+<div>
+    <h4>Log</h4>
+    <hr />
+    <dl class="dl-horizontal">
+            <dt>
+                @Model.Animal.Name
+            </dt>
+            <dd>
+                @Model.AdoptionLogs.OrderByDescending(u => u.Date).First().AdoptionState.Name
+            </dd>
+        </dl>
+</div>
+<div>
+    <a href="../Decline/@Model.AdoptionRequestId">Decline</a> | 
+    <a href="../Accept/@Model.AdoptionRequestId">Accept</a><br /><br/>
+    <a asp-action="Index">Voltar</a>
+</div>

@@ -199,6 +199,31 @@ namespace AdotAqui.Migrations
                     b.ToTable("AnimalComment");
                 });
 
+            modelBuilder.Entity("AdotAqui.Models.Entities.AnimalIntervention", b =>
+                {
+                    b.Property<int>("InterventionId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AnimalId");
+
+                    b.Property<bool>("Completed");
+
+                    b.Property<int>("Date");
+
+                    b.Property<string>("Details");
+
+                    b.Property<int>("UserID");
+
+                    b.HasKey("InterventionId");
+
+                    b.HasIndex("AnimalId");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("AnimalIntervention");
+                });
+
             modelBuilder.Entity("AdotAqui.Models.Entities.AnimalSpecie", b =>
                 {
                     b.Property<int>("SpecieId")
@@ -498,6 +523,19 @@ namespace AdotAqui.Migrations
                         .WithMany("AnimalBreeds")
                         .HasForeignKey("SpecieId")
                         .HasConstraintName("FK_AnimalBreeds_AnimalBreeds");
+                });
+
+            modelBuilder.Entity("AdotAqui.Models.Entities.AnimalIntervention", b =>
+                {
+                    b.HasOne("AdotAqui.Models.Entities.Animal", "Animal")
+                        .WithMany()
+                        .HasForeignKey("AnimalId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("AdotAqui.Models.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("AdotAqui.Models.Entities.UserNotification", b =>

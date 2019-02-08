@@ -33,7 +33,7 @@ namespace AdotAqui.Controllers
         /// <returns>Index View</returns>
         public IActionResult Index()
         {
-            var animals = _context.Animals.Include(a => a.Breed).Include(b=> b.Breed.Specie);
+            var animals = _context.Animals.Where(u => u.UserId == null).Include(a => a.Breed).Include(b=> b.Breed.Specie);
             var species = _context.AnimalSpecies;
             var breeds = Enumerable.Empty<AnimalBreed>();
             var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
