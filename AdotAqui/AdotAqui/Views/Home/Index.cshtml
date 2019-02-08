@@ -1,7 +1,9 @@
 ﻿@model AdotAqui.Models.ViewModels.AnimalsViewModel
 @using Microsoft.Extensions.Localization;
+@using Microsoft.AspNetCore.Identity;
 
 @inject IStringLocalizer<SharedResources> SharedLocalizer
+@inject UserManager<User> UserManager
 
 @{
     ViewData["Title"] = "Animais";
@@ -10,65 +12,68 @@
 @section Styles {
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap-datepicker.css" />
     <link rel="stylesheet" href="~/css/auth.css" />
+    @if (!this.User.IsInRole("Administrator"))
+        {
     <style>
-        .card:hover{
-            -ms-transform:scale(1.3);
-            -webkit-transform:scale(1.3);
-            transform:scale(1.3);
-            z-index:9999;
+        .card:hover {
+            -ms-transform: scale(1.3);
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+            z-index: 9999;
         }
     </style>
+        }
 
-}
+    }
 
 @section DocumentReadyScripts {
     $("#species-dropdown").select2({
     theme: "bootstrap",
     placeholder: "@Html.Raw(SharedLocalizer["Label_ChooseSpecies"])",
-width: "170px"
-});
+    width: "170px"
+    });
     $("#breed-dropdown").select2({
     theme: "bootstrap",
     placeholder: "@Html.Raw(SharedLocalizer["Label_ChooseBreed"])",
     width: "200px"
     });
-    }
+}
 
-    @section Scripts {
-        <script>
-            function checkDropdown($form) {
-                if ($("#breed-dropdown").prop('selectedIndex') != 0) {
-                    $("#breed-dropdown").val($("#breed-dropdown option:first").val());
-                }
-                $form.submit();
+@section Scripts {
+    <script>
+        function checkDropdown($form) {
+            if ($("#breed-dropdown").prop('selectedIndex') != 0) {
+                $("#breed-dropdown").val($("#breed-dropdown option:first").val());
             }
-        </script>
-    }
+            $form.submit();
+        }
+    </script>
+}
 
-    <div class="container">
-        <form id="animalSearchForm" method="post" class="form-inline">
-            <div class="form-group">
-                <label for="species-dropdown">@SharedLocalizer["Label_Species"]:</label>
-                <select id="species-dropdown" name="species" asp-items="@Model.GetSpeciesDropDown()" onchange="checkDropdown(this.form)">
-                    <option></option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="breed-dropdown">@SharedLocalizer["Label_Breed"]:</label>
-                <select id="breed-dropdown" name="breeds" asp-items="@Model.GetBreedsDropDown()" onchange="this.form.submit()">
-                    <option></option>
-                </select>
-            </div>
-            <div class="form-group ml-auto">
-                <label for="name">@SharedLocalizer["Label_Name"]:</label>
-                <input type="text" class="form-control" name="name" id="name" placeholder="@SharedLocalizer["Label_AnimalName"]" value="@Model.AnimalName" >
-                <button type="submit" class="btn btn-primary">@SharedLocalizer["Label_Search"]</button>
-                @if (this.User.IsInRole("Administrator"))
-                            {
-                            <a asp-controller="Animals" asp-action="Create" class="btn btn-success" style="margin-left:10px;">+</a>
-                             }
-            </div>
-        </form>
+<div class="container">
+    <form id="animalSearchForm" method="post" class="form-inline">
+        <div class="form-group">
+            <label for="species-dropdown">@SharedLocalizer["Label_Species"]:</label>
+            <select id="species-dropdown" name="species" asp-items="@Model.GetSpeciesDropDown()" onchange="checkDropdown(this.form)">
+                <option></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="breed-dropdown">@SharedLocalizer["Label_Breed"]:</label>
+            <select id="breed-dropdown" name="breeds" asp-items="@Model.GetBreedsDropDown()" onchange="this.form.submit()">
+                <option></option>
+            </select>
+        </div>
+        <div class="form-group ml-auto">
+            <label for="name">@SharedLocalizer["Label_Name"]:</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="@SharedLocalizer["Label_AnimalName"]" value="@Model.AnimalName">
+            <button type="submit" class="btn btn-primary">@SharedLocalizer["Label_Search"]</button>
+            @if (this.User.IsInRole("Administrator"))
+            {
+                <a asp-controller="Animals" asp-action="Create" class="btn btn-success" style="margin-left:10px;">+</a>
+            }
+        </div>
+    </form>
 
     <div class="card-deck">
         @{
@@ -123,21 +128,21 @@ width: "170px"
                 if (counter % 2 == 0)
                 {
                     <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-}
-                                if (counter % 3 == 0)
-                                {
+                }
+                if (counter % 3 == 0)
+                {
                     <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-}
-                                if (counter % 4 == 0)
-                                {
+                }
+                if (counter % 4 == 0)
+                {
                     <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-}
-                                if (counter % 5 == 0)
-                                {
+                }
+                if (counter % 5 == 0)
+                {
                     <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-}
-counter = counter + 1;
-}
+                }
+                counter = counter + 1;
             }
-        </div>
+        }
     </div>
+</div>

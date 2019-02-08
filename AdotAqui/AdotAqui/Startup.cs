@@ -32,6 +32,7 @@ namespace AdotAqui
         {
             Configuration = configuration;
             FileProvider = hostingEnvironment.ContentRootFileProvider;
+            DevExpress.Utils.AzureCompatibility.Enable = true;
         }
         public IFileProvider FileProvider { get; }
 
