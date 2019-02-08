@@ -1,0 +1,17 @@
+[type="search"] {
+padding: 0.25rem 0.5rem !important;
+font-size: 0.875rem !important;
+line-height: 1.5 !important;
+border-radius: 0.25rem !important;
+transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+
+border-left-width: 1px !important;
+border-left-style: solid;
+border-top-width: 1px !important;
+border-top-style: solid !important;
+border-right-width: 1px !important;
+border-right-style: solid !important;
+border-bottom-width: 1px !important;
+border-bottom-style: solid !important;
+}
+

@@ -372,4 +372,34 @@
   <data name="Label_AdoptReqF" xml:space="preserve">
     <value>Pedido de adoção da {0}</value>
   </data>
+  <data name="Label_AdoptMe" xml:space="preserve">
+    <value>Adota-me</value>
+  </data>
+  <data name="Label_MyNameM" xml:space="preserve">
+    <value>Olá! Eu sou o</value>
+  </data>
+  <data name="Label_MyNameF" xml:space="preserve">
+    <value>Olá! Eu sou a</value>
+  </data>
+  <data name="Label_Adoption" xml:space="preserve">
+    <value>Adoção</value>
+  </data>
+  <data name="Label_Fat" xml:space="preserve">
+    <value>Família de Acolhimento Temporário</value>
+  </data>
+  <data name="Label_AdoptionType" xml:space="preserve">
+    <value>Tipo de adoção</value>
+  </data>
+  <data name="Label_StartDate" xml:space="preserve">
+    <value>Data inicio</value>
+  </data>
+  <data name="Label_EndDate" xml:space="preserve">
+    <value>Data fim</value>
+  </data>
+  <data name="Label_Message" xml:space="preserve">
+    <value>Mensagem</value>
+  </data>
+  <data name="Label_Create" xml:space="preserve">
+    <value>Criar</value>
+  </data>
 </root>
