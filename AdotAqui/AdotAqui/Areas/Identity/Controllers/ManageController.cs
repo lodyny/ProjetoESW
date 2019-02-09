@@ -116,12 +116,6 @@ namespace AdotAqui.Areas.Identity.Controllers
             {
                 user.Birthday = input.Birthday;
                 user.Name = input.Name;
-                var result = await _userManager.UpdateAsync(user);
-                if (!result.Succeeded)
-                {
-                    var userId = await _userManager.GetUserIdAsync(user);
-                    throw new InvalidOperationException($"Unexpected error occurred setting phone number for user with ID '{userId}'.");
-                }
             }
 
             if (image != null)
@@ -141,6 +135,13 @@ namespace AdotAqui.Areas.Identity.Controllers
                     var uploadResult = cloudinary.Upload(uploadParams);
                     user.ImageURL = uploadResult.SecureUri.ToString();
                 }
+            }
+
+            var result = await _userManager.UpdateAsync(user);
+            if (!result.Succeeded)
+            {
+                var userId = await _userManager.GetUserIdAsync(user);
+                throw new InvalidOperationException($"Unexpected error occurred setting phone number for user with ID '{userId}'.");
             }
 
             await _signInManager.RefreshSignInAsync(user);
