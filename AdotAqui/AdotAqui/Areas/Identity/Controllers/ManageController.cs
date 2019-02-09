@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using AdotAqui.Areas.Identity.Models.ManageViewModels;
@@ -7,7 +8,10 @@ using AdotAqui.Models;
 using AdotAqui.Models.Entities;
 using AdotAqui.Models.Services;
 using AdotAqui.Models.ViewModels;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -63,7 +67,8 @@ namespace AdotAqui.Areas.Identity.Controllers
                     Birthday = user.Birthday,
                     Email = user.Email,
                     PhoneNumber = user.PhoneNumber,
-                    Name = user.Name
+                    Name = user.Name,
+                    ImageURL = user.ImageURL
                 }
             };
 
@@ -72,7 +77,7 @@ namespace AdotAqui.Areas.Identity.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Index(InputModel input)
+        public async Task<IActionResult> Index(InputModel input, [Bind(Prefix = "Input.ImageURL")] IFormFile image)
         {
             if (!ModelState.IsValid)
             {
@@ -119,9 +124,43 @@ namespace AdotAqui.Areas.Identity.Controllers
                 }
             }
 
+            if (image != null)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await image.CopyToAsync(memoryStream);
+                    memoryStream.Position = 0;
+                    Account account = new Account("adotaqui", "763436643874459", "G8jgeFUttCwjs-y-aJ0vjzLkUOA");
+                    Cloudinary cloudinary = new Cloudinary(account);
+                    Random random = new Random();
+                    var uploadParams = new ImageUploadParams()
+                    {
+                        Folder = "adotaquiusers",
+                        File = new FileDescription(random.Next(10000000, 99999999).ToString(), memoryStream)
+                    };
+                    var uploadResult = cloudinary.Upload(uploadParams);
+                    user.ImageURL = uploadResult.SecureUri.ToString();
+                }
+            }
+
             await _signInManager.RefreshSignInAsync(user);
-            StatusMessage message = new StatusMessage {Type= MessageType.Success, Value = "Perfil foi actualizado com sucesso!" };
-            return View(new IndexViewModel {StatusMessage = message });
+
+            var model = new IndexViewModel
+            {
+                IsEmailConfirmed = user.EmailConfirmed,
+                Username = user.UserName,
+                StatusMessage = new StatusMessage { Type = MessageType.Success, Value = "Perfil foi actualizado com sucesso!" },
+                Input = new InputModel
+                {
+                    Birthday = user.Birthday,
+                    Email = user.Email,
+                    PhoneNumber = user.PhoneNumber,
+                    Name = user.Name,
+                    ImageURL = user.ImageURL
+                }
+            };
+
+            return View(model);
         }
 
         //

@@ -45,6 +45,8 @@ namespace AdotAqui.Models.Entities
         [RegularExpression("^\\d{9}$", ErrorMessage = "Error_PhoneInvalid")]
         public override string PhoneNumber { get; set; }
 
+        public string ImageURL { get; set; }
+
         public bool Banned { get; set; }
 
         public virtual ICollection<AdoptionLogs> AdoptionLogs { get; set; }

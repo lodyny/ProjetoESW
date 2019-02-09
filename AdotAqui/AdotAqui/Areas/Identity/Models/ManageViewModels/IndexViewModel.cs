@@ -13,7 +13,6 @@ namespace AdotAqui.Areas.Identity.Models.ManageViewModels
         [TempData]
         public StatusMessage StatusMessage { get; set; }
 
-        [BindProperty]
         public InputModel Input { get; set; }
     }
     public class InputModel
@@ -36,5 +35,7 @@ namespace AdotAqui.Areas.Identity.Models.ManageViewModels
         [DataType(DataType.DateTime)]
         [Display(Name = "Label_Birthday")]
         public string Birthday { get; set; }
+
+        public string ImageURL { get; set;}
     }
 }

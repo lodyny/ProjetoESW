@@ -52,7 +52,7 @@ namespace AdotAqui.Controllers
         }
 
         [Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
             if (id == null)
                 return NotFound();
@@ -72,15 +72,17 @@ namespace AdotAqui.Controllers
 
         public async Task<IActionResult> NewRequest(int? id)
         {
-            AdoptionRequests adopt = new AdoptionRequests();
-            adopt.Animal = _context.Animals.FirstOrDefault(a => a.AnimalId == id);
-            adopt.User = await _userManager.GetUserAsync(User);
+            AdoptionRequests adopt = new AdoptionRequests
+            {
+                Animal = _context.Animals.FirstOrDefault(a => a.AnimalId == id),
+                User = await _userManager.GetUserAsync(User)
+            };
             return View(adopt);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> NewRequest(int? id, [Bind("AmimalId,AdoptionType,StartDate,EndDate,Details")] AdoptionRequests request)
+        public async Task<IActionResult> NewRequest(int? id, [Bind("AnimalId,AdoptionType,StartDate,EndDate,Details")] AdoptionRequests request)
         {
             AdoptionRequests newRequest = new AdoptionRequests()
             {
