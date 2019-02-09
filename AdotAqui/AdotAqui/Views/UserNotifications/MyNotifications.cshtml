@@ -33,7 +33,7 @@
                         </b>
                     }
                 </td>
-                <td>
+                <td data-sort="@((new DateTimeOffset(item.NotificationDate)).ToUnixTimeSeconds())">
                     @Html.DisplayFor(modelItem => item.NotificationDate)
                 </td>
                 <td>
@@ -62,7 +62,7 @@
         $('#base').DataTable({
             "columnDefs": [{
                 orderable: false,
-                targets: 0
+                targets: [0, 3]
             },
             {
                 width: "5%", targets: 0
@@ -72,10 +72,7 @@
             },
             {
                 width: "20%", targets: 2
-            }],
-            select: {
-                style: 'os',
-                selector: 'td:first-child'
-            }});
+                }],
+            order: [[1, 'desc']]});
     });
 </script>

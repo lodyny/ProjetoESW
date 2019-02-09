@@ -88,6 +88,7 @@ namespace AdotAqui.Controllers
                         animal.Image = uploadResult.SecureUri.ToString();
                     }
                 }
+                animal.Breed = _context.AnimalBreeds.FirstOrDefault(a => a.BreedId == animal.Breed.BreedId);
                 _context.Add(animal);
                 await _context.SaveChangesAsync();
                 viewModel.StatusMessage = new StatusMessage { Type = MessageType.Success, Value = "O animal foi criado com sucesso." };

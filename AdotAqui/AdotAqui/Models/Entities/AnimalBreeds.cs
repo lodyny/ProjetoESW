@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace AdotAqui.Models.Entities
 {
@@ -10,6 +11,7 @@ namespace AdotAqui.Models.Entities
             Animals = new HashSet<Animal>();
         }
 
+        [Required(ErrorMessage = "Error_BreedRequired")]
         public int BreedId { get; set; }
         public string Name { get; set; }
         public string NamePt { get; set; }
