@@ -105,11 +105,11 @@
 
 
                 <div class="form-group col-md-6">
-                    <label asp-for="Animal.BreedId" class="label_text">@SharedLocalizer["Label_Breed"]</label>
-                    <select id="breed-dropdown" asp-for="Animal.BreedId">
+                    <label asp-for="Animal.Breed.BreedId" class="label_text">@SharedLocalizer["Label_Breed"]</label>
+                    <select id="breed-dropdown" asp-for="Animal.Breed.BreedId">
                         <option></option>
                     </select>
-                    <span asp-validation-for="Animal.BreedId" class="text-danger"></span>
+                    <span asp-validation-for="Animal.Breed.BreedId" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-row">
