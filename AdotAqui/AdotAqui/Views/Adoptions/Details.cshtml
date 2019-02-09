@@ -1,25 +1,114 @@
 ﻿@model AdotAqui.Models.Entities.AdoptionRequests
+@using Microsoft.Extensions.Localization;
+@using Microsoft.AspNetCore.Localization
 
 @{
     ViewData["Title"] = "Details";
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
 }
+@inject IStringLocalizer<SharedResources> SharedLocalizer
 
-<h2>Details</h2>
+
 
 <div>
-    <h4>Log</h4>
+    <h2>
+        @if (Model.Animal.Gender.Equals("M"))
+        {
+            @string.Format(SharedLocalizer["Label_AdoptReqM"], Model.Animal.Name.ToString()) <span style="color:dodgerblue;font-size:24px;"><i class="fas fa-mars"></i></span>
+        }
+        else
+        {
+            @string.Format(SharedLocalizer["Label_AdoptReqF"], Model.Animal.Name.ToString()) <span style="color:#E75480;font-size:24px;"><i class="fas fa-venus"></i></span>
+        }
+    </h2>
     <hr />
     <dl class="dl-horizontal">
-            <dt>
-                @Model.Animal.Name
-            </dt>
-            <dd>
-                @Model.AdoptionLogs.OrderByDescending(u => u.Date).First().AdoptionState.Name
-            </dd>
-        </dl>
+        <dt>
+
+        </dt>
+        <dd>
+            @if (requestCulture.RequestCulture.Culture.ToString().Equals("en-US"))
+            {
+                @string.Format(SharedLocalizer["Label_XState"], Model.AdoptionLogs.OrderByDescending(u => u.Date).First().AdoptionState.Name.ToString())
+            }
+            else
+            {
+                @string.Format(SharedLocalizer["Label_XState"], Model.AdoptionLogs.OrderByDescending(u => u.Date).First().AdoptionState.NamePt.ToString())
+            }
+
+        </dd>
+    </dl>
 </div>
 <div>
-    <a href="../Decline/@Model.AdoptionRequestId">Decline</a> | 
-    <a href="../Accept/@Model.AdoptionRequestId">Accept</a><br /><br/>
-    <a asp-action="Index">Voltar</a>
+    <div class="row w-100 m-auto pt-4 ">
+        <div class="col">
+            <div class="form-row  w-100">
+                @if (Model.User.ImageURL == null)
+                {
+                    <img class="card-img-top img-fluid" id="pet-image" style="height: 25vw; object-fit: contain;" src="https://via.placeholder.com/250x250" alt="Card image cap">
+                }
+                else
+                {
+                    <img class="card-img-top img-fluid" id="pet-image" style="height: 25vw; object-fit: contain;" src="@Html.DisplayFor(modelItem => modelItem.Animal.Image)" alt="Card image cap">
+                }
+
+            </div>
+
+            <div class="form-row  w-100" style="border-left: #212529;border-left-style: solid;border-left-width: thin;">
+                <div class="form-row m-3 w-100">
+                    @SharedLocalizer["Label_Gender"]: specieAQUI
+                </div>
+                <div class="form-row m-3 w-100">
+                    @SharedLocalizer["Label_Breed"]: racaAQUI
+                </div>
+                <div class="form-row m-3 w-100">
+                    @SharedLocalizer["Label_Height"]: @Model.Animal.Height cm
+                </div>
+                <div class="form-row m-3 w-100">
+                    @SharedLocalizer["Label_Weight"]: @Model.Animal.Weight kg
+                </div>
+                <div class="form-row m-3 w-100">
+                    @SharedLocalizer["Label_Birthday"]: @Html.ValueFor(modelItem => Model.Animal.Birthday, "{0:d}")
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-row  w-100">
+                @if (Model.User.ImageURL == null)
+                {
+                    <img class="card-img-top img-fluid" id="user-image" style="height: 25vw; object-fit: contain;" src="https://via.placeholder.com/250x250" alt="Card image cap">
+                }
+                else
+                {
+                    <img class="card-img-top img-fluid" id="user-image" style="height: 25vw; object-fit: contain;" src="@Html.DisplayFor(modelItem => modelItem.User.ImageURL)" alt="Card image cap">
+                }
+
+            </div>
+
+            <div class="form-row  w-100" style="border-left: #212529;border-left-style: solid;border-left-width: thin;">
+                <div class="form-row m-3 w-100">
+                    @SharedLocalizer["User_Email"]: @Model.User.Email
+                </div>
+                <div class="form-row m-3 w-100">
+                    @SharedLocalizer["User_Name"]: @Model.User.Name
+                </div>
+                <div class="form-row m-3 w-100">
+                    @SharedLocalizer["User_Phone"]: @Model.User.PhoneNumber
+                </div>
+                <div class="form-row m-3 w-100">
+                    @SharedLocalizer["Label_Birthday"]: @Html.ValueFor(modelItem => Model.User.Birthday, "{0:d}")
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group pt-4">
+        <span style="color: darkorange; font-size: 16pt;">
+            <p>@SharedLocalizer["Label_Details"]</p>
+        </span> @Html.Raw(Model.Details)
+    </div>
+</div>
+<a href="../Decline/@Model.AdoptionRequestId">@SharedLocalizer["Label_Decline"]</a> |
+<a href="../Accept/@Model.AdoptionRequestId">@SharedLocalizer["Label_Accept"]</a><br /><br />
+<a asp-action="Index">Voltar</a>
 </div>

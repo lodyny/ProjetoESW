@@ -89,31 +89,33 @@
     </div>
 </div>
 <a href="../../Adoptions/NewRequest/@Model.Animal.AnimalId">@SharedLocalizer["Label_AdoptMe"]!</a>
-<div class="row w-100 m-auto pt-4">
-    <div class="col-md-5">
+<div class="row w-100 m-auto pt-4 ">
+    <div class="col">
         <div class="form-row  w-100">
             <img class="card-img-top img-fluid" id="pet-image" style="height: 25vw; object-fit: contain;" src="@Html.DisplayFor(modelItem => modelItem.Animal.Image)" alt="Card image cap">
         </div>
     </div>
 
-    <div class="col-md-5">
-        <div class="form-row m-3 pt-4">
-            @SharedLocalizer["Label_Gender"]: @specie.First()
+    <div class="col">
+        <div class="form-row  w-100 h-100" style="border-left: #212529;border-left-style: solid;border-left-width: thin;">
+            <div class="form-row m-3 w-100">
+                @SharedLocalizer["Label_Gender"]: @specie.First()
+            </div>
+            <div class="form-row m-3 w-100">
+                @SharedLocalizer["Label_Breed"]: @breed.First()
+            </div>
+            <div class="form-row m-3 w-100">
+                @SharedLocalizer["Label_Height"]: @Model.Animal.Height cm
+            </div>
+            <div class="form-row m-3 w-100">
+                @SharedLocalizer["Label_Weight"]: @Model.Animal.Weight kg
+            </div>
+            <div class="form-row m-3 w-100">
+                @SharedLocalizer["Label_Birthday"]: @Html.ValueFor(modelItem => Model.Animal.Birthday, "{0:d}")
+            </div>
         </div>
-        <div class="form-row m-3">
-            @SharedLocalizer["Label_Breed"]: @breed.First()
-        </div>
-        <div class="form-row m-3">
-            @SharedLocalizer["Label_Height"]: @Model.Animal.Height cm
-        </div>
-        <div class="form-row m-3">
-            @SharedLocalizer["Label_Weight"]: @Model.Animal.Weight kg
-        </div>
-        <div class="form-row m-3">
-            @SharedLocalizer["Label_Birthday"]: @Html.ValueFor(modelItem => Model.Animal.Birthday, "{0:d}")
         </div>
     </div>
-</div>
 
 <div class="form-group pt-4">
     <span id="about_me">
@@ -125,17 +127,10 @@
     <div class="detailBox col-md-8 m-auto">
         <div class="titleBox">
             <label>
-                @if (Model.GetCulture() == "pt-PT")
-                {
-                    <span> Comentários sobre </span> @if (@Model.Animal.Gender == "M")
-                    {<span>o</span> }
+                @if (@Model.Animal.Gender == "M")
+                    {<span>@SharedLocalizer["Label_CommentsAboutM"]</span> }
                     else
-                    {<span>a</span>} @Model.Animal.Name
-                }
-                else
-                {
-                    <span> Comments about </span>
-                }
+                    {<span>@SharedLocalizer["Label_CommentsAboutF"]</span>}
                 @Model.Animal.Name
             </label>
 

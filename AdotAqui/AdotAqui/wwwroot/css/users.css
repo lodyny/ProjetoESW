@@ -1,0 +1,26 @@
+.enabledbutton {
+    background-color: #FC6600;
+    margin-right: 5px;
+    color: white;
+    border: 1px solid #FC6600;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.disabledbutton {
+    background-color: transparent;
+    margin-right: 5px;
+    color: #FC6600;
+    border: 1px solid #FC6600;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.enabledbutton:hover , .enabledbutton:focus {
+    color: white !important;
+}
+
+.disabledbutton:hover , .disabledbutton:focus {
+    background-color: #FC6600;
+    color: white !important;
+}

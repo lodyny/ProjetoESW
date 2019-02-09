@@ -1,0 +1,1 @@
+.dataTable > thead > tr > th[class*="no-sort"]::after{display: none}

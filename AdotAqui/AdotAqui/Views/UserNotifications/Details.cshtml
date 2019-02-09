@@ -1,23 +1,25 @@
 ﻿@model AdotAqui.Models.Entities.UserNotification
+@using Microsoft.Extensions.Localization;
 
 @{
     ViewData["Title"] = "Details";
 }
+@inject IStringLocalizer<SharedResources> SharedLocalizer
 
 <h2>@Html.DisplayFor(model => model.Title)</h2>
-<a asp-action="MyNotifications">Voltar</a>
+<a asp-action="MyNotifications">@SharedLocalizer["Label_Back"]</a>
 
 <div>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.NotificationDate)
+            @SharedLocalizer["Label_NotificationDate"]
         </dt>
         <dd>
             @Html.DisplayFor(model => model.NotificationDate)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Message)
+            @SharedLocalizer["Label_Message"]
         </dt>
         <dd>
             @Html.Raw(Model.Message)

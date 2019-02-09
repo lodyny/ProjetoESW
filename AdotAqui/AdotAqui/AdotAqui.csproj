@@ -18,6 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="StyleSheet.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CloudinaryDotNet" Version="1.6.0" />
     <PackageReference Include="DevExpress.AspNetCore.Dashboard" Version="18.2.5" />
     <PackageReference Include="Microsoft.AspNetCore.App" />

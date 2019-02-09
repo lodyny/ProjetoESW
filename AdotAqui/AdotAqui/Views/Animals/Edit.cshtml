@@ -117,9 +117,18 @@
         </div>
     </div>
 </form>
-<form asp-action="Delete" style="text-align:right;margin-right:-5px;" onsubmit="return confirm('@SharedLocalizer["Label_ConfirmDelete"]');">
-    <input type="hidden" asp-for="Animal.AnimalId" class="form-control" id="AnimalId" />
-    <button type="submit" class="form-control form-submit btn btn-danger mb-2" style="width:150px;"><i class="fas fa-trash-alt"></i> @SharedLocalizer["Label_DeleteAnimal"]</button>
+
+    
+    <form asp-action="Delete" onsubmit="return confirm('@SharedLocalizer["Label_ConfirmDelete"]');">
+        <div class="row w-75 m-auto">
+            <div class="col-md-5">
+
+            </div>
+            <div class="col">
+                <input type="hidden" asp-for="Animal.AnimalId" class="form-control" id="AnimalId" />
+                <button type="submit" class="form-control form-submit btn btn-danger mb-2" style="width:100%;"><i class="fas fa-trash-alt"></i> @SharedLocalizer["Label_DeleteAnimal"]</button>
+            </div>
+     </div>
 </form>
 
 

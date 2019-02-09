@@ -14,32 +14,43 @@
 
 
 <link rel="stylesheet" type="text/css" href="~/css/adopt.css" />
+<link rel="stylesheet" href="~/css/admin.css" />
+<link rel="stylesheet" href="~/css/users.css" />
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 
 @if (Model.Count() > 0)
 {
-    <h4>Adoption requests</h4>
+
+    <div class="row w-100 m-auto pt-4 " style="margin-bottom: 30px !important;">
+        <div class="col">
+            <a asp-area="" asp-controller="Users" asp-action="Index" class="btn my-2 my-sm-0 w-100 disabledbutton">@SharedLocalizer["Label_Users"]</a>
+        </div>
+        <div class="col">
+            <a asp-area="" asp-controller="Adoptions" asp-action="Index" class="btn my-2 my-sm-0 w-100 enabledbutton">@SharedLocalizer["Label_AdoptionRequests"]</a>
+        </div>
+    </div>
+
     <table class="display compact" id="base">
         <thead>
             <tr>
                 <th>
-                    Utilizador
+                    @SharedLocalizer["Label_User"]
                 </th>
                 <th>
-                    Animal
+                    @SharedLocalizer["Label_User"]
                 </th>
                 <th>
-                    Data de proposta
+                    @SharedLocalizer["Label_PropositionDate"]
                 </th>
                 <th>
-                    Tipo
+                    @SharedLocalizer["Label_Type"]
                 </th>
                 <th>
-                    Estado
+                    @SharedLocalizer["Label_State"]
                 </th>
                 <th>
-                    Opções
+                    @SharedLocalizer["Label_Options"]
                 </th>
             </tr>
         </thead>
@@ -49,67 +60,52 @@
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.User.Name)</td>
                 <td>@Html.DisplayFor(modelItem => item.Animal.Name)</td>
-                <td>@Html.DisplayFor(modelItem => item.ProposalDate)</td>
+                <td data-sort="@((new DateTimeOffset(item.ProposalDate)).ToUnixTimeSeconds())">
+                    @Html.DisplayFor(modelItem => item.ProposalDate)
+                </td>
                 <td>@Html.DisplayFor(modelItem => item.AdoptionType)</td>
-                <td>@Html.DisplayFor(modelItem => item.AdoptionLogs.OrderByDescending(u => u.Date).First().AdoptionState.Name)</td>
+                @if (requestCulture.RequestCulture.Culture.ToString().Equals("en-US"))
+                {
+                    <td>@Html.DisplayFor(modelItem => item.AdoptionLogs.OrderByDescending(u => u.Date).First().AdoptionState.Name)</td>
+                }
+                else {
+                    <td>@Html.DisplayFor(modelItem => item.AdoptionLogs.OrderByDescending(u => u.Date).First().AdoptionState.NamePt)</td>
+                }
+
                 <td>
                     <a href="/Adoptions/Details/@item.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton" style="color:black">
-                        Detalhes
+                        @SharedLocalizer["Label_Details"]
                     </a>
                     @if (item.AdoptionLogs.OrderByDescending(u => u.Date).First().AdoptionState.NamePt == "Pendente")
                     {
-                        <a href="/Adoptions/Accept/@item.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton" style="color:black">Accept</a>
-                        <a href="/Adoptions/Decline/@item.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton" style="color:black">Decline</a>
+                        <a href="/Adoptions/Accept/@item.AdoptionRequestId" class="btn my-2 my-sm-0 disabledbutton" style="color:black; float:right" data-toggle="tooltip" data-placement="top" title="@SharedLocalizer["Label_Accept"]">✔</a>
+                        <a href="/Adoptions/Decline/@item.AdoptionRequestId" class="btn my-2 my-sm-0 disabledbutton" style="color:black ; margin-left :5px;float:right" data-toggle="tooltip" data-placement="top" title="@SharedLocalizer["Label_Decline"]">✘</a>
                     }
                 </td>
             </tr>
             }
         </tbody>
     </table>
-    @if (requestCulture.RequestCulture.Culture.ToString().Equals("en-US"))
-    {
-        <script>
-            $(document).ready(function () {
-                $('#base').DataTable({
-                    language: {
-                        url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json'
-                    },
-                    columnDefs: [{
-                        orderable: false,
-                        className: 'select-checkbox',
-                        targets: 5
-                    }],
-                    select: {
-                        style: 'os',
-                        selector: 'td:first-child'
-                    },
-                    order: [[0, 'asc']]
-                });
+
+    <script>
+        $(document).ready(function () {
+            $('#base').DataTable({
+                language: {
+                    url: '@SharedLocalizer["DataTables_Language"]'
+                },
+                columnDefs: [{
+                    orderable: false,
+                    targets: 5
+                }],
+                order: [[2, 'desc']]
             });
-        </script>
-    }
-    else
-    {
-        <script>
-            $(document).ready(function () {
-                $('#base').DataTable({
-                    language: {
-                        url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese.json'
-                    },
-                    columnDefs: [{
-                        orderable: false,
-                        className: 'select-checkbox',
-                        targets: 5
-                    }],
-                    select: {
-                        style: 'os',
-                        selector: 'td:first-child'
-                    },
-                    order: [[0, 'asc']]
-                });
-            });
-        </script>
-    }
+
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+        });
+    </script>
+
 }
 else
 {

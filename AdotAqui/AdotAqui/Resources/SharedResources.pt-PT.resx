@@ -402,4 +402,55 @@
   <data name="Label_Create" xml:space="preserve">
     <value>Criar</value>
   </data>
+  <data name="Label_CommentsAboutM" xml:space="preserve">
+    <value>Comentários sobre o</value>
+  </data>
+  <data name="Label_CommentsAboutF" xml:space="preserve">
+    <value>Comentários sobre a</value>
+  </data>
+  <data name="Label_MyNotifications" xml:space="preserve">
+    <value>Minhas notificações</value>
+  </data>
+  <data name="Label_Open" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="DataTables_Language" xml:space="preserve">
+    <value>https://cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese.json</value>
+  </data>
+  <data name="Label_Back" xml:space="preserve">
+    <value>Voltar</value>
+  </data>
+  <data name="Label_NotificationDate" xml:space="preserve">
+    <value>Data da notificação</value>
+  </data>
+  <data name="Label_Accept" xml:space="preserve">
+    <value>Aceitar</value>
+  </data>
+  <data name="Label_Decline" xml:space="preserve">
+    <value>Recusar</value>
+  </data>
+  <data name="Label_User" xml:space="preserve">
+    <value>Utilizador</value>
+  </data>
+  <data name="Label_PropositionDate" xml:space="preserve">
+    <value>Data de proposta</value>
+  </data>
+  <data name="Label_Type" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="Label_State" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="Label_Options" xml:space="preserve">
+    <value>Opções</value>
+  </data>
+  <data name="Label_Users" xml:space="preserve">
+    <value>Utilizadores</value>
+  </data>
+  <data name="Label_AdoptionRequests" xml:space="preserve">
+    <value>Pedidos de Adoções</value>
+  </data>
+  <data name="Label_XState" xml:space="preserve">
+    <value>Estado {0}</value>
+  </data>
 </root>

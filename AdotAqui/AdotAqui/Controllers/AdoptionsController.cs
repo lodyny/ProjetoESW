@@ -108,10 +108,24 @@ namespace AdotAqui.Controllers
             _context.AdoptionLogs.Add(newLog);
             _context.SaveChanges();
 
+            Animal animal = _context.Animals.FirstOrDefault(a => a.AnimalId == id);
+            String preSex;
+
+            if (animal.Gender[0] == 'M')
+            {
+                preSex = "ao";
+            } else
+            {
+                preSex = "à";
+            }
+
+            String message = "<p>O seu pedido de adoção " + preSex + " " + animal.Name + " encontra-se para analise. Quando tivermos uma resposta" +
+                " será notificado.<p/> <img class='card - img - top img - fluid' id='pet - image' style='margin:auto; height: 25vw; object-fit: contain; ' src='" + newRequest.Animal.Image + "' alt='Card image cap'>";
+
             _notificationService.Register(_context, new UserNotification()
             {
                 Title = "Pedido de Adoção",
-                Message = "Seu pedido encontra-se para analise...",
+                Message = message,
                 NotificationDate = DateTime.Now,
                 UserId = newRequest.UserId
             }, _emailSender);

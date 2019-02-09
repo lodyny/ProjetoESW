@@ -1,16 +1,19 @@
 ﻿@model IEnumerable<AdotAqui.Models.Entities.UserNotification>
+@using Microsoft.Extensions.Localization;
 
 @{
     ViewData["Title"] = "Index";
 }
+@inject IStringLocalizer<SharedResources> SharedLocalizer
 
-<h2>Minhas Notificações</h2>
+<h2>@SharedLocalizer["Label_MyNotifications"]</h2>
+<link rel="stylesheet" href="~/css/admin.css" />
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 <table class="display compact" id="base">
     <thead>
         <tr>
-            <th class="no-sort"></th>
+            <th></th>
 
             <th>
                 @Html.DisplayNameFor(model => model.NotificationDate)
@@ -18,7 +21,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
-            <th class="no-sort"></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -33,12 +36,21 @@
                         </b>
                     }
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NotificationDate)
+                <td data-sort="@((new DateTimeOffset(item.NotificationDate)).ToUnixTimeSeconds())">
+                    @if (!item.HasRead)
+                    {
+                        <b>
+                            @Html.DisplayFor(modelItem => item.NotificationDate)
+                        </b>
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => item.NotificationDate)
+                    }
                 </td>
                 <td>
-                    
-                     @if (!item.HasRead)
+
+                    @if (!item.HasRead)
                     {
                         <b>
                             @Html.DisplayFor(modelItem => item.Title)
@@ -50,7 +62,7 @@
                     }
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.UserNotificationId">Abrir</a>
+                    <a asp-action="Details" asp-route-id="@item.UserNotificationId" class="btn my-2 my-sm-0 navbutton" style="color:black">@SharedLocalizer["Label_Open"]</a>
                 </td>
             </tr>
         }
@@ -62,7 +74,7 @@
         $('#base').DataTable({
             "columnDefs": [{
                 orderable: false,
-                targets: 0
+                targets: [0, 3]
             },
             {
                 width: "5%", targets: 0
@@ -71,11 +83,14 @@
                 width: "20%", targets: 1
             },
             {
-                width: "20%", targets: 2
+                width: "5%", targets: 3
             }],
-            select: {
-                style: 'os',
-                selector: 'td:first-child'
-            }});
+            order: [[1, "desc"]],
+            language: {
+            url: '@SharedLocalizer["DataTables_Language"]'
+        }
+        });
+        
     });
+    
 </script>
