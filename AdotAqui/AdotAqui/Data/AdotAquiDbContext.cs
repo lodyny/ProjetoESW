@@ -208,6 +208,6 @@ namespace AdotAqui.Data
         public virtual DbSet<UserNotification> UserNotification { get; set; }
         public virtual DbSet<Log> Log { get; set; }
         public virtual DbSet<Locations> Locations { get; set; }
-        public DbSet<AdotAqui.Models.Entities.AnimalIntervention> AnimalIntervention { get; set; }
+        public virtual DbSet<AnimalIntervention> AnimalIntervention { get; set; }
     }
 }

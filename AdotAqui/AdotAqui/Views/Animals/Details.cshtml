@@ -151,7 +151,14 @@
                     {
                         <li>
                             <div class="commenterImage">
-                                <img src="https://via.placeholder.com/50x50" />
+                                @if (commentary.GetUserImage() != null)
+                                {
+                                    <img src="@commentary.GetUserImage()" style="height:30px;width:30px;object-fit:cover;" />
+                                }
+                                else
+                                {
+                                    <img src="https://via.placeholder.com/30x30" style="height:30px;width:30px;object-fit:cover;" />
+                                }
                             </div>
                             <div class="commentText">
                                 <p class="">@commentary.Commentary</p>

@@ -18,6 +18,7 @@ namespace AdotAqui.Models.Entities
 
         private string UserEmail { get; set; }
         private string UserName { get; set; }
+        private string UserImage { get; set; }
 
         public void SetEmail(string email)
         {
@@ -37,6 +38,16 @@ namespace AdotAqui.Models.Entities
         public string GetUserName()
         {
             return UserName;
+        }
+
+        public void SetUserImage(string image)
+        {
+            this.UserImage = image;
+        }
+
+        public string GetUserImage()
+        {
+            return UserImage;
         }
 
     }

@@ -128,6 +128,7 @@ namespace AdotAqui.Controllers
                 var user = _context.Users.Where(u => u.Id.Equals(com.UserId)).First();
                 com.SetEmail(user.Email);
                 com.SetUserName(user.Name);
+                com.SetUserImage(user.ImageURL);
             }
 
 
@@ -227,6 +228,7 @@ namespace AdotAqui.Controllers
                 var user = _context.Users.Where(u => u.Id.Equals(com.UserId)).First();
                 com.SetEmail(user.Email);
                 com.SetUserName(user.Name);
+                com.SetUserImage(user.ImageURL);
             }
 
             var vs = new AnimalViewModel(fAnimal, culture, speciesSet, breedsSet, commentsSet);
@@ -255,6 +257,7 @@ namespace AdotAqui.Controllers
                 var user = _context.Users.Where(u => u.Id.Equals(com.UserId)).First();
                 com.SetEmail(user.Email);
                 com.SetUserName(user.Name);
+                com.SetUserImage(user.ImageURL);
             }
 
             var vs = new AnimalViewModel(fAnimal, culture, speciesSet, breedsSet, commentsSet);
