@@ -174,3 +174,7 @@
     color: darkorange;
     font-size: 16pt;
 }
+
+#select2-culture-dropdown-container {
+    text-align: left;
+}
