@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Notificações" />
+  <DataSources>
+    <SqlDataSource Name="UserNotification" ComponentName="sqlDataSource1">
+      <Connection Name="AzureConnection" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="UserNotification">
+        <Tables>
+          <Table Name="UserNotification" />
+        </Tables>
+        <Columns>
+          <Column Table="UserNotification" Name="UserNotificationId" />
+          <Column Table="UserNotification" Name="NotificationDate" />
+          <Column Table="UserNotification" Name="HasRead" />
+          <Column Table="UserNotification" Name="Title" />
+          <Column Table="UserNotification" Name="Message" />
+          <Column Table="UserNotification" Name="UserId" />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+</Dashboard>

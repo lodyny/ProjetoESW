@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Pedidos de Adoções" />
+  <DataSources>
+    <SqlDataSource Name="AnimalBreeds" ComponentName="sqlDataSource1">
+      <Connection Name="AzureConnection" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="AnimalBreeds">
+        <Tables>
+          <Table Name="AnimalBreeds" />
+          <Table Name="AdoptionStates" />
+          <Table Name="AdoptionRequests" />
+          <Table Name="AdoptionLogs" />
+          <Table Name="Animals" />
+          <Table Name="AnimalSpecies" />
+          <Table Name="Users" />
+          <Relation Type="Inner" Parent="AdoptionLogs" Nested="AdoptionStates">
+            <KeyColumn Parent="AdoptionStateID" Nested="AdoptionStateID" />
+          </Relation>
+          <Relation Type="Inner" Parent="AdoptionLogs" Nested="AdoptionRequests">
+            <KeyColumn Parent="AdoptionRequestID" Nested="AdoptionRequestID" />
+          </Relation>
+          <Relation Type="Inner" Parent="Animals" Nested="AnimalBreeds">
+            <KeyColumn Parent="BreedID" Nested="BreedID" />
+          </Relation>
+          <Relation Type="Inner" Parent="AdoptionRequests" Nested="Animals">
+            <KeyColumn Parent="AnimalID" Nested="AnimalID" />
+          </Relation>
+          <Relation Type="Inner" Parent="AnimalBreeds" Nested="AnimalSpecies">
+            <KeyColumn Parent="SpecieID" Nested="SpecieID" />
+          </Relation>
+          <Relation Type="Inner" Parent="AdoptionRequests" Nested="Users">
+            <KeyColumn Parent="UserID" Nested="UserID" />
+          </Relation>
+          <Relation Type="Inner" Parent="AdoptionLogs" Nested="Users">
+            <KeyColumn Parent="UserID" Nested="UserID" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="Users" Name="UserID" />
+          <Column Table="Users" Name="UserName" />
+          <Column Table="Users" Name="NormalizedUserName" />
+          <Column Table="Users" Name="NormalizedEmail" />
+          <Column Table="Users" Name="EmailConfirmed" />
+          <Column Table="Users" Name="SecurityStamp" />
+          <Column Table="Users" Name="ConcurrencyStamp" />
+          <Column Table="Users" Name="PhoneNumberConfirmed" />
+          <Column Table="Users" Name="TwoFactorEnabled" />
+          <Column Table="Users" Name="LockoutEnd" />
+          <Column Table="Users" Name="LockoutEnabled" />
+          <Column Table="Users" Name="AccessFailedCount" />
+          <Column Table="Users" Name="Email" />
+          <Column Table="Users" Name="PasswordHash" />
+          <Column Table="Users" Name="Name" />
+          <Column Table="Users" Name="Birthday" />
+          <Column Table="Users" Name="PhoneNumber" />
+          <Column Table="Users" Name="Banned" />
+          <Column Table="Users" Name="ImageURL" />
+          <Column Table="AnimalBreeds" Name="BreedID" />
+          <Column Table="AnimalBreeds" Name="Name" Alias="AnimalBreeds_Name" />
+          <Column Table="AnimalBreeds" Name="Name_PT" />
+          <Column Table="AnimalBreeds" Name="SpecieID" />
+          <Column Table="AdoptionRequests" Name="AdoptionRequestID" />
+          <Column Table="AdoptionRequests" Name="UserID" Alias="AdoptionRequests_UserID" />
+          <Column Table="AdoptionRequests" Name="AnimalID" />
+          <Column Table="AdoptionRequests" Name="ProposalDate" />
+          <Column Table="AdoptionRequests" Name="Details" />
+          <Column Table="AdoptionRequests" Name="AdoptionType" />
+          <Column Table="AdoptionRequests" Name="EndDate" />
+          <Column Table="AdoptionRequests" Name="StartDate" />
+          <Column Table="Animals" Name="AnimalID" Alias="Animals_AnimalID" />
+          <Column Table="Animals" Name="Name" Alias="Animals_Name" />
+          <Column Table="Animals" Name="UserID" Alias="Animals_UserID" />
+          <Column Table="Animals" Name="Gender" />
+          <Column Table="Animals" Name="BreedID" Alias="Animals_BreedID" />
+          <Column Table="Animals" Name="Height" />
+          <Column Table="Animals" Name="Weight" />
+          <Column Table="Animals" Name="Birthday" Alias="Animals_Birthday" />
+          <Column Table="Animals" Name="Details" Alias="Animals_Details" />
+          <Column Table="Animals" Name="Image" />
+          <Column Table="AdoptionStates" Name="AdoptionStateID" />
+          <Column Table="AdoptionStates" Name="Name" Alias="AdoptionStates_Name" />
+          <Column Table="AdoptionStates" Name="Name_PT" Alias="AdoptionStates_Name_PT" />
+          <Column Table="AdoptionLogs" Name="AdoptionLogID" />
+          <Column Table="AdoptionLogs" Name="AdoptionStateID" Alias="AdoptionLogs_AdoptionStateID" />
+          <Column Table="AdoptionLogs" Name="AdoptionRequestID" Alias="AdoptionLogs_AdoptionRequestID" />
+          <Column Table="AdoptionLogs" Name="UserID" Alias="AdoptionLogs_UserID" />
+          <Column Table="AdoptionLogs" Name="Date" />
+          <Column Table="AdoptionLogs" Name="Details" Alias="AdoptionLogs_Details" />
+          <Column Table="AnimalSpecies" Name="SpecieID" Alias="AnimalSpecies_SpecieID" />
+          <Column Table="AnimalSpecies" Name="Name" Alias="AnimalSpecies_Name" />
+          <Column Table="AnimalSpecies" Name="Name_PT" Alias="AnimalSpecies_Name_PT" />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+</Dashboard>
