@@ -5,10 +5,12 @@
 @using DevExpress.AspNetCore
 @using DevExpress.DashboardWeb
 @using DevExpress.DashboardAspNetCore
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <script>
         function getDashboardControl() {
             return ASPNETCoreDashboard;
@@ -20,7 +22,7 @@
     </script>
     <script src="~/dashboard-extension/dashboard-panel.min.js"></script>
     <link rel="stylesheet" type="text/css" href="~/dashboard-extension/dashboard-panel.css" />
-
+    <link href="~/lib/fontawesome/css/all.css" rel="stylesheet" />
     <!-- Attach the Dashboard's stylesheets. -->
     @Html.DevExpress().StyleSheets(config => config.AddDashboard(cssSettings => cssSettings.ColorScheme("light")))
 </head>
@@ -29,7 +31,11 @@
         <div class="dx-dashboard-toolbox-extension dx-dashboard-custom-panel-extension dx-dashboard-typography" data-bind="style: { width: panelWidth() + 'px', left: left() + 'px'  },
                                                                                                                 css: { 'dx-dashboard-card-view-panel': isMobile() }">
             <div class="dx-dashboard-title-panel">
-                <div class="dx-dashboard-title-text" data-bind="text: DevExpress.Designer.getLocalization('DashboardWebStringId.Dashboards')"></div>
+                <div class="dx-dashboard-title-text" data-bind="text: DevExpress.Designer.getLocalization('DashboardWebStringId.Dashboards')">
+
+
+                </div>
+                <a asp-area="" asp-controller="Users" asp-action="Index" style="margin-right:5px"><i class="fas fa-home mr-3"></i>Voltar</a>
                 <!-- ko if: isMobile -->
                 <!-- ko template: 'dx-dashboard-custom-panel-close-icon' -->
                 <!-- /ko -->
