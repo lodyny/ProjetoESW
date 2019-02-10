@@ -69,11 +69,11 @@
                     <td>
                         @if (item.Banned)
                         {
-                            <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black; ">@SharedLocalizer["Label_Unban"]</a>
+                            <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black; width:100%">@SharedLocalizer["Label_Unban"]</a>
                         }
                         else
                         {
-                            <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black; ">@SharedLocalizer["Label_Ban"]</a>
+                            <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black; width:100%">@SharedLocalizer["Label_Ban"]</a>
                         }
                     </td>
                 </tr>

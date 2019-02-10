@@ -1,7 +1,10 @@
 ﻿@model AdotAqui.Models.Entities.AnimalIntervention
+@using Microsoft.Extensions.Localization;
+
+@inject IStringLocalizer<SharedResources> SharedLocalizer
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = @SharedLocalizer["Label_Details"];
 }
 
 <h2>Detalhes da Intervenção</h2>
@@ -10,29 +13,33 @@
     <hr />
     <dl class="dl-horizontal">
         <dd>
-            Data a realizar: @Html.DisplayFor(model => model.Date)
+            @SharedLocalizer["Label_Date"]: @Html.DisplayFor(model => model.Date)
         </dd>
         <dd>
             Estado: @if (Model.Completed)
             {
-                <span>Terminada</span>
+            <span>@SharedLocalizer["Label_Finished"]</span>
             }
             else
             {
-                <span>Por Realizar</span>
+            <span>@SharedLocalizer["Label_ToDo"]</span>
             }
         </dd>
         <dd>
-            Detalhes: @Html.DisplayFor(model => model.Details)
+            @SharedLocalizer["Label_Details"]: @Html.DisplayFor(model => model.Details)
         </dd>
         <dd>
-            Veterinario(a): @Model.User.Name
+            @SharedLocalizer["Label_Vet"]: @Model.User.Name
         </dd>
         <dd>
-            Animal: @Model.Animal.Name
+            Animal: <a href="/Animals/Details/@Model.Animal.AnimalId" style="text-decoration:none;">@Model.Animal.Name</a>
+            
         </dd>
     </dl>
 </div>
+<div class="col-sm h-center">
+    <img class="card-img-top img-fluid" id="pet-image" style="height: 25vw; object-fit: contain;" src="@Html.DisplayFor(modelItem => modelItem.Animal.Image)" alt="Card image cap">
+</div>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@SharedLocalizer["Label_Back"]</a>
 </div>

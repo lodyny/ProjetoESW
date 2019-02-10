@@ -3,7 +3,7 @@
 @inject IStringLocalizer<SharedResources> SharedLocalizer
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = @SharedLocalizer["Label_Create"];
 }
 
 @section DocumentReadyScripts {
@@ -199,5 +199,5 @@
 
 </div>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@SharedLocalizer["Label_Back"]</a>
 </div>

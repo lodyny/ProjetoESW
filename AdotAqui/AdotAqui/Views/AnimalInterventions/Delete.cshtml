@@ -1,4 +1,6 @@
 ﻿@model AdotAqui.Models.Entities.AnimalIntervention
+@using Microsoft.Extensions.Localization;
+@inject IStringLocalizer<SharedResources> SharedLocalizer
 
 @{
     ViewData["Title"] = "Delete";
@@ -8,10 +10,9 @@
 
     Deseja realmente cancelar a intervenção ao @Model.Animal.Name?<br />
     Esta intervenção irá ser realizada com @Model.User.Name
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="InterventionId" />
-        <input type="submit" value="Cancelar" class="btn btn-default" /> |
-        <a asp-action="Index">Voltar</a>
+        <input type="submit" value="@SharedLocalizer["Label_Confirm"]" class="btn btn-default" /> <br/><br />
+        <a asp-action="Index">@SharedLocalizer["Label_Cancel"]</a>
     </form>
-</div>

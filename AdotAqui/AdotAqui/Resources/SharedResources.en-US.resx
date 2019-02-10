@@ -498,4 +498,19 @@
   <data name="Label_CreateTask" xml:space="preserve">
     <value>New Intervention</value>
   </data>
+  <data name="Label_Reschedule" xml:space="preserve">
+    <value>Reschedule</value>
+  </data>
+  <data name="Label_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Label_Change" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="Label_Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Label_FinishTask" xml:space="preserve">
+    <value>Finish Intervention</value>
+  </data>
 </root>
