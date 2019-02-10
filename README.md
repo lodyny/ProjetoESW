@@ -1,12 +1,19 @@
 # Índice do projeto
 
-## Source Code
+### Source Code
 ```
 https://github.com/lodyny/ProjectoESW
 ```
 
-•	Especificação do Sistema Alto Nível - https://lodyny.github.io/ProjectoESW/documentos/geral/
-•	Calenderização – https://trello.com/b/fPI3094j/projecto-esw/calendar/2018/10
+### Especificação do Sistema Alto Nível
+```
+https://lodyny.github.io/ProjectoESW/documentos/geral/
+```
+
+### Calenderização
+```
+https://trello.com/b/fPI3094j/projecto-esw/calendar/2018/10
+```
 
 •	Manual de Utilizador – https://lodyny.github.io/ProjectoESW/documentos/manual_utilizador/
 •	Manual Técnico – https://lodyny.github.io/ProjectoESW/
