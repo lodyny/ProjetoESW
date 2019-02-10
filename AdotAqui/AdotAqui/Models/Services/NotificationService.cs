@@ -18,7 +18,7 @@ namespace AdotAqui.Models.Services
             if(emailService != null)
             {
                 var user = context.Users.Find(notification.UserId);
-                emailService.SendEmailAsync(user.Email, "Nova Notificação", "Tem uma nova notificação!");
+                emailService.SendEmailAsync(user.Email, "Nova Notificação", "Olá, <p>Gostariamos de informar que tem uma nova notificação!</p><p>Visite <a href='http://eswapp.azurewebsites.net/'>Adotaqui</a> para mais detalhes</p>");
             }
         }
     }

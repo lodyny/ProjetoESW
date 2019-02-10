@@ -1,7 +1,9 @@
 ﻿@model AdotAqui.Models.Entities.UserNotification
+@using Microsoft.Extensions.Localization;
+@inject IStringLocalizer<SharedResources> SharedLocalizer
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = @SharedLocalizer["Label_Delete"];
 }
 
 <h2>Delete</h2>
@@ -36,7 +38,7 @@
             @Html.DisplayFor(model => model.Message)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="UserNotificationId" />
         <input type="submit" value="Delete" class="btn btn-default" /> |

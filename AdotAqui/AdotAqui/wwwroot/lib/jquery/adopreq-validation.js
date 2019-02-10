@@ -72,10 +72,8 @@ $('#culture-dropdown').on('select2:select', function (e) {
 
 function checkLanguage(){if ($('#culture-dropdown').select2().select2('data')[0].id  == "pt-PT"){
 	$('#datepicker_start').datepicker.defaults.language = 'pt';
-	console.log('here');
   } else {
-		$('#datepicker_start').datepicker.defaults.language = 'en';
-	console.log('here2');
+	$('#datepicker_start').datepicker.defaults.language = 'en';
   };}
 
 });

@@ -453,4 +453,28 @@
   <data name="Label_XState" xml:space="preserve">
     <value>{0} state</value>
   </data>
+  <data name="Label_LinkForM" xml:space="preserve">
+    <value>{0}'s details page</value>
+  </data>
+  <data name="Label_LinkForF" xml:space="preserve">
+    <value>{0}'s details page</value>
+  </data>
+  <data name="Label_CreateAnimal" xml:space="preserve">
+    <value>Create animal</value>
+  </data>
+  <data name="Label_Administration" xml:space="preserve">
+    <value>Administration</value>
+  </data>
+  <data name="Label_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Label_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Label_Request" xml:space="preserve">
+    <value>Request</value>
+  </data>
+  <data name="Label_HasOwner" xml:space="preserve">
+    <value>If the state is pending but only the decline option is available, the pet already has a owner.</value>
+  </data>
 </root>

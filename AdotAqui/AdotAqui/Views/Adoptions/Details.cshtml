@@ -3,8 +3,8 @@
 @using Microsoft.AspNetCore.Localization
 
 @{
-    ViewData["Title"] = "Details";
     var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    ViewData["Title"] = ViewData["Title"] = @SharedLocalizer["Label_Details"];
 }
 @inject IStringLocalizer<SharedResources> SharedLocalizer
 
@@ -35,8 +35,25 @@
             {
                 @string.Format(SharedLocalizer["Label_XState"], Model.AdoptionLogs.OrderByDescending(u => u.Date).First().AdoptionState.NamePt.ToString())
             }
+            <p>@SharedLocalizer["Label_Type"]: @Model.AdoptionType</p>
 
-        </dd>
+            @if (Model.AdoptionType == "Adoption" || Model.AdoptionType == "Adoção")
+            {
+                <p>
+                    @SharedLocalizer["Label_StartDate"]: @Model.StartDate.ToString("dd/MM/yyyy")
+                </p>
+            }
+            else
+            {
+                <p>
+                    @SharedLocalizer["Label_StartDate"]: @Model.StartDate.ToString("dd/MM/yyyy")
+                </p>
+                <p>
+                    @SharedLocalizer["Label_EndDate"]: @Model.EndDate.ToString("dd/MM/yyyy")
+                </p>
+                }
+
+            </dd>
     </dl>
 </div>
 <div>
@@ -56,19 +73,16 @@
 
             <div class="form-row  w-100" style="border-left: #212529;border-left-style: solid;border-left-width: thin;">
                 <div class="form-row m-3 w-100">
-                    @SharedLocalizer["Label_Gender"]: specieAQUI
-                </div>
-                <div class="form-row m-3 w-100">
-                    @SharedLocalizer["Label_Breed"]: racaAQUI
-                </div>
-                <div class="form-row m-3 w-100">
-                    @SharedLocalizer["Label_Height"]: @Model.Animal.Height cm
-                </div>
-                <div class="form-row m-3 w-100">
-                    @SharedLocalizer["Label_Weight"]: @Model.Animal.Weight kg
-                </div>
-                <div class="form-row m-3 w-100">
-                    @SharedLocalizer["Label_Birthday"]: @Html.ValueFor(modelItem => Model.Animal.Birthday, "{0:d}")
+                    @if (Model.Animal.Gender.Equals("M"))
+                    {
+                        <a href="../../../Animals/Details/@Html.Raw(@Model.Animal.AnimalId).ToString()"> @string.Format(SharedLocalizer["Label_LinkForM"], @Model.Animal.Name.ToString())  </a>
+                    }
+                    else
+                    {
+
+                        <a href="../../../Animals/Details/@Html.Raw(@Model.Animal.AnimalId).ToString()"> @string.Format(SharedLocalizer["Label_LinkForF"], @Model.Animal.Name.ToString())  </a>
+                    }
+
                 </div>
             </div>
         </div>
@@ -108,7 +122,11 @@
         </span> @Html.Raw(Model.Details)
     </div>
 </div>
-<a href="../Decline/@Model.AdoptionRequestId">@SharedLocalizer["Label_Decline"]</a> |
-<a href="../Accept/@Model.AdoptionRequestId">@SharedLocalizer["Label_Accept"]</a><br /><br />
+@if (Model.Animal.UserId == null)
+{
+<a href="../Decline/@Model.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton " style="color:black">@SharedLocalizer["Label_Decline"] ✘</a> 
+    <a href="../Accept/@Model.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton" style="color:black">@SharedLocalizer["Label_Accept"] ✔</a><br /><br />
+}
+
 <a asp-action="Index">Voltar</a>
 </div>

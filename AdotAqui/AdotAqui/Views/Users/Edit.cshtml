@@ -1,7 +1,11 @@
 ﻿@model AdotAqui.Models.Entities.User
+@using Microsoft.Extensions.Localization;
+
+@inject IStringLocalizer<SharedResources> SharedLocalizer
+
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = @SharedLocalizer["Label_Edit"];
 }
 
 <h2>Edit</h2>

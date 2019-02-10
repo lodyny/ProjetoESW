@@ -119,7 +119,7 @@ namespace AdotAqui.Controllers
                 preSex = "à";
             }
 
-            String message = "<p>O seu pedido de adoção " + preSex + " " + animal.Name + " encontra-se para analise. Quando tivermos uma resposta" +
+            String message = "<p>O seu pedido de adoção " + preSex + " " + animal.Name + " encontra-se para análise. Quando tivermos uma resposta" +
                 " será notificado.<p/> <img class='card - img - top img - fluid' id='pet - image' style='margin:auto; height: 25vw; object-fit: contain; ' src='" + newRequest.Animal.Image + "' alt='Card image cap'>";
 
             _notificationService.Register(_context, new UserNotification()
@@ -166,7 +166,7 @@ namespace AdotAqui.Controllers
             _notificationService.Register(_context, new UserNotification()
             {
                 UserId = request.UserId,
-                Message = "Caro utilizador (a), temos o prazer de informar que o seu pedido de adoção referente ao animal " +
+                Message = "<img class='card - img - top img - fluid' id='pet - image' style='margin:auto; height: 25vw; object-fit: contain; ' src='" + animal.Image + "' alt='Card image cap'>Caro utilizador (a), temos o prazer de informar que o seu pedido de adoção referente ao animal " +
                 "<a href='../../../Animals/Details/" + animal.AnimalId + "'>" + animal.Name + "</a> foi aceite.",
                 Title = "Resposta pedido de adoção",
                 NotificationDate = DateTime.Now,
@@ -203,8 +203,8 @@ namespace AdotAqui.Controllers
             _notificationService.Register(_context, new UserNotification()
             {
                 UserId = request.UserId,
-                Message = "Caro utilizador (a), lamentamos informar que o seu pedido de adoção referente ao animal " +
-                "<a href='../../../Animals/Details/" + animal.AnimalId + "'>" + animal.Name + "</a> foi aceite.",
+                Message = "<img class='card - img - top img - fluid' id='pet - image' style='margin:auto; height: 25vw; object-fit: contain; ' src='" + animal.Image + "' alt='Card image cap'>Caro utilizador (a), gostariamos de informar que o seu pedido de adoção referente ao animal " +
+                "<a href='../../../Animals/Details/" + animal.AnimalId + "'>" + animal.Name + "</a> foi negado.",
                 Title = "Resposta pedido de adoção",
                 NotificationDate = DateTime.Now,
             }, _emailSender);

@@ -453,4 +453,28 @@
   <data name="Label_XState" xml:space="preserve">
     <value>Estado {0}</value>
   </data>
+  <data name="Label_LinkForM" xml:space="preserve">
+    <value>Página do {0}</value>
+  </data>
+  <data name="Label_LinkForF" xml:space="preserve">
+    <value>Página da {0}</value>
+  </data>
+  <data name="Label_CreateAnimal" xml:space="preserve">
+    <value>Criar animal</value>
+  </data>
+  <data name="Label_Administration" xml:space="preserve">
+    <value>Administração</value>
+  </data>
+  <data name="Label_Edit" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="Label_Delete" xml:space="preserve">
+    <value>Apagar</value>
+  </data>
+  <data name="Label_Request" xml:space="preserve">
+    <value>Pedido</value>
+  </data>
+  <data name="Label_HasOwner" xml:space="preserve">
+    <value>Se o estado está pendente mas apenas a opção de recusar está disponível, o animal já está atribuído a um dono.</value>
+  </data>
 </root>

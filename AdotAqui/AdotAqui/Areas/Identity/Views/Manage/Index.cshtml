@@ -4,7 +4,7 @@
 @inject IStringLocalizer<SharedResources> SharedLocalizer
 @model IndexViewModel
 @{
-    ViewData["Title"] = "Profile";
+    ViewData["Title"] = @SharedLocalizer["Label_Profile"];
 }
 
 @section DocumentReadyScripts {
@@ -47,7 +47,7 @@ ToolTip_name = "@SharedLocalizer["Error_NameLengthInvalid"]";
 ToolTip_phone = "@SharedLocalizer["Error_PhoneRequired"]";
 </script>
 
-<div class="row w-75 m-auto"><div class="col"><h2>Editar Conta</h2></div></div>
+<div class="row w-75 m-auto"><div class="col"><h2>@SharedLocalizer["Label_Profile"]</h2></div></div>
 <form id="profile-form" method="post" class="form" enctype="multipart/form-data">
     <div class="row w-75 m-auto">
         <div class="col-md-5 v-center">
@@ -108,5 +108,6 @@ ToolTip_phone = "@SharedLocalizer["Error_PhoneRequired"]";
     <partial name="_ValidationScriptsPartial" />
     <script src="~/lib/bootstrap/js/bootstrap-datepicker.js"></script>
     <script src="~/lib/jquery/validation.js"></script>
+    <script src="~/lib/jquery/adopreq-validation.js"></script>
 }
 
