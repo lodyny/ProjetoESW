@@ -11,21 +11,12 @@
 @section Styles {
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap-datepicker.css" />
     <link rel="stylesheet" href="~/css/layout.css" />
+    <link rel="stylesheet" href="~/css/users.css" />
 }
 
 
 @section DocumentReadyScripts {
-    $("#breed-dropdown").select2({
-    theme: "bootstrap",
-    placeholder: "Seleccione uma espécie",
-    width: "100%"
-    });
 
-    $("#gender-dropdown").select2({
-    theme: "bootstrap",
-    placeholder: "Seleccione um gênero",
-    width: "100%"
-    });
 
     $('#animalImage').on('change', function () {
     var fileName = $(this).val();
@@ -45,6 +36,9 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
     <script src="~/lib/bootstrap/js/bootstrap-datepicker.js"></script>
+
+
+
 
 }
 
@@ -91,7 +85,7 @@
 </div>
 @if (Model.Animal.UserId == null)
 {
-    <a href="../../Adoptions/NewRequest/@Model.Animal.AnimalId">@SharedLocalizer["Label_AdoptMe"]!</a>
+    <a href="../../Adoptions/NewRequest/@Model.Animal.AnimalId" class="disabledbutton btn" style="border: 1px solid #FC6600; color:black" id="adoptme"><i class="fas fa-paw"></i>  @SharedLocalizer["Label_AdoptMe"]!</a>
 }
 <div class="row w-100 m-auto pt-4 ">
     <div class="col">
