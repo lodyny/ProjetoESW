@@ -8,7 +8,7 @@
 }
 @inject IStringLocalizer<SharedResources> SharedLocalizer
 
-
+<link rel="stylesheet" href="~/css/petdetails.css" />
 
 <div>
     <h2>
@@ -51,16 +51,16 @@
                 <p>
                     @SharedLocalizer["Label_EndDate"]: @Model.EndDate.ToString("dd/MM/yyyy")
                 </p>
-                }
+            }
 
-            </dd>
+        </dd>
     </dl>
 </div>
 <div>
     <div class="row w-100 m-auto pt-4 ">
         <div class="col">
             <div class="form-row  w-100">
-                @if (Model.User.ImageURL == null)
+                @if (Model.Animal.Image == null)
                 {
                     <img class="card-img-top img-fluid" id="pet-image" style="height: 25vw; object-fit: contain;" src="https://via.placeholder.com/250x250" alt="Card image cap">
                 }
@@ -122,11 +122,23 @@
         </span> @Html.Raw(Model.Details)
     </div>
 </div>
-@if (Model.Animal.UserId == null)
+
+@if (ViewBag.Animals.Count > 0)
 {
-<a href="../Decline/@Model.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton " style="color:black">@SharedLocalizer["Label_Decline"] ✘</a> 
-    <a href="../Accept/@Model.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton" style="color:black">@SharedLocalizer["Label_Accept"] ✔</a><br /><br />
+<span style="color: darkorange; font-size: 16pt;">@SharedLocalizer["Label_MyPets"]:</span><br /><br />
+    foreach (Animal animal in ViewBag.Animals)
+    {
+        <div class="item">
+            <img id="petimg" src="@Html.DisplayFor(model => animal.Image)" />
+            <span class="caption">@animal.Name</span>
+        </div>
+  }
 }
 
-<a asp-action="Index">Voltar</a>
-</div>
+
+@if (Model.Animal.UserId == null)
+{
+    <a href="../Decline/@Model.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton " style="color:black">@SharedLocalizer["Label_Decline"] ✘</a>
+    <a href="../Accept/@Model.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton" style="color:black">@SharedLocalizer["Label_Accept"] ✔</a><br /><br />
+}
+<p><a asp-action="Index">@SharedLocalizer["Label_Back"]</a></p>

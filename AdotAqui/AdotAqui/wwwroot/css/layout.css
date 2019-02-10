@@ -178,3 +178,8 @@
 #select2-culture-dropdown-container {
     text-align: left;
 }
+
+.footline{
+    margin-top: 150px;
+    border-top: 1px solid #ccc !important;
+}

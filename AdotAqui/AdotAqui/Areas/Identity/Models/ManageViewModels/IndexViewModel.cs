@@ -14,7 +14,9 @@ namespace AdotAqui.Areas.Identity.Models.ManageViewModels
         public StatusMessage StatusMessage { get; set; }
 
         public InputModel Input { get; set; }
+
     }
+
     public class InputModel
     {
         [Required(ErrorMessage = "Error_EmailRequired")]

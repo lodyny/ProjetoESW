@@ -477,4 +477,7 @@
   <data name="Label_HasOwner" xml:space="preserve">
     <value>Se o estado está pendente mas apenas a opção de recusar está disponível, o animal já está atribuído a um dono.</value>
   </data>
+  <data name="Label_MyPets" xml:space="preserve">
+    <value>Meus animais</value>
+  </data>
 </root>

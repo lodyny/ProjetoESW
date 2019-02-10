@@ -62,7 +62,8 @@ namespace AdotAqui.Controllers
                                                     .Include(a => a.AdoptionLogs)
                                                     .ThenInclude(p => p.AdoptionState)
                                                     .FirstOrDefault(a => a.AdoptionRequestId == id);
-            
+
+            ViewBag.Animals = _context.Animals.Where(u => u.UserId == adoptionRequests.UserId).ToList();
 
             if (adoptionRequests == null)
                 return NotFound();
@@ -152,6 +153,8 @@ namespace AdotAqui.Controllers
                                                                   .Include(a => a.Animal)
                                                                   .Include(a => a.AdoptionLogs)
                                                                     .ThenInclude(p => p.AdoptionState);
+
+
             if (roles.Contains(Role.User.ToString()) || roles.Contains(Role.Veterinary.ToString()))
             {
                 adoptions = adoptions.Where(a => a.UserId == user.Id);
@@ -162,7 +165,7 @@ namespace AdotAqui.Controllers
             var animal = await _context.Animals.FindAsync(request.AnimalId);
             animal.UserId = request.UserId;
             _context.SaveChanges();
-
+            
             _notificationService.Register(_context, new UserNotification()
             {
                 UserId = request.UserId,

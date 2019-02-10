@@ -477,4 +477,7 @@
   <data name="Label_HasOwner" xml:space="preserve">
     <value>If the state is pending but only the decline option is available, the pet already has a owner.</value>
   </data>
+  <data name="Label_MyPets" xml:space="preserve">
+    <value>My pets</value>
+  </data>
 </root>
