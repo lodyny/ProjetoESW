@@ -483,4 +483,19 @@
   <data name="Label_Interventions" xml:space="preserve">
     <value>Medical Interventions</value>
   </data>
+  <data name="Label_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Label_Vet" xml:space="preserve">
+    <value>Veterinary</value>
+  </data>
+  <data name="Label_Finished" xml:space="preserve">
+    <value>Finished</value>
+  </data>
+  <data name="Label_ToDo" xml:space="preserve">
+    <value>To Do</value>
+  </data>
+  <data name="Label_CreateTask" xml:space="preserve">
+    <value>New Intervention</value>
+  </data>
 </root>

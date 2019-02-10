@@ -17,6 +17,10 @@ namespace AdotAqui.Views
         private readonly AdotAquiDbContext _context;
         private readonly INotificationService _notificationService;
         private readonly IEmailSender _emailSender;
+        public IEnumerable<AnimalSpecie> Species { get; set; }
+        public IEnumerable<AnimalBreed> Breeds { get; set; }
+
+
 
         public AnimalInterventionsController(AdotAquiDbContext context, INotificationService notificationService, IEmailSender emailSender)
         {
@@ -24,6 +28,7 @@ namespace AdotAqui.Views
             _notificationService = notificationService;
             _emailSender = emailSender;
         }
+
 
         // GET: AnimalInterventions
         public async Task<IActionResult> Index()
@@ -52,10 +57,12 @@ namespace AdotAqui.Views
         // GET: AnimalInterventions/Create
         public IActionResult Create()
         {
-            ViewBag.Users = _context.Users.ToList();
-            ViewBag.Animals = _context.Animals.Where(u => u.UserId != null).ToList();
+            ViewBag.Users = _context.Users.ToList(); // <- role = vet
+            ViewBag.Animals = _context.Animals.ToList(); //Where(u => u.UserId != null).
             return View();
         }
+
+
 
         // POST: AnimalInterventions/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
