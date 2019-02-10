@@ -30,61 +30,80 @@
         <a asp-area="" asp-controller="AnimalInterventions" asp-action="Index" class="btn my-2 my-sm-0 w-100 enabledbutton">@SharedLocalizer["Label_Interventions"]</a>
     </div>
 </div>
+    <p style="text-align:right; ">
+        <a asp-action="Create" class="btn btn-success" style="margin-right:15px;" data-toggle="tooltip" data-placement="top" title="" data-original-title="@SharedLocalizer["Label_CreateTask"]">@SharedLocalizer["Label_CreateTask"]</a>
+    </p>
 
-<p style="text-align:right;">
-    <a asp-action="Create" class="btn btn-success" style="margin-left:10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Criar animal">+</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Animal
-            </th>
-            <th>
-                Veterinário(a)
-            </th>
-            <th>
-                Data
-            </th>
-            <th>
-                Estado
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <table class="display compact" id="base">
+        <thead>
             <tr>
-                <td>
-                    @item.Animal.Name
-                </td>
-                <td>
-                    @item.User.Name
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Date)
-                </td>
-                <td>
-                    @if (item.Completed)
-                    {
-                        <span>Terminada</span>
-                    }
-                    else
-                    {
-                        <span>Por Realizar</span>
-                    }
-                </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.InterventionId" style="margin-right:10px;"><i class="fas fa-info"></i></a>
-                    @if (!item.Completed)
-                    {
-                        <a asp-action="Edit" asp-route-id="@item.InterventionId" style="margin-right:10px;"><i class="far fa-clock"></i></a>
-                        <a asp-action="Delete" asp-route-id="@item.InterventionId" style="margin-right:10px;"><i class="far fa-trash-alt"></i></a>
-                        <a asp-action="Finish" asp-route-id="@item.InterventionId" style="margin-right:10px;"><i class="fas fa-check"></i></a>
-                    }
-                </td>
+                <th>
+                    Animal
+                </th>
+                <th>
+                    @SharedLocalizer["Label_Vet"]
+                </th>
+                <th>
+                    @SharedLocalizer["Label_Date"]
+                </th>
+                <th>
+                    @SharedLocalizer["Label_State"]
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Animal.Name
+                    </td>
+                    <td>
+                        @item.User.Name
+                    </td>
+                    <td data-sort="@((new DateTimeOffset(item.Date)).ToUnixTimeSeconds())">
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @if (item.Completed)
+                        {
+                            <span>@SharedLocalizer["Label_Finished"]</span>
+                        }
+                        else
+                        {
+                            <span>@SharedLocalizer["Label_ToDo"]</span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.InterventionId" style="margin-right:10px;" data-toggle="tooltip" data-placement="top" title="@SharedLocalizer["Label_Details"]"><i class="fas fa-info"></i></a>
+                        @if (!item.Completed)
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.InterventionId" style="margin-right:10px;" data-toggle="tooltip" data-placement="top" title="@SharedLocalizer["Label_Edit"]"><i class="far fa-clock"></i></a>
+                            <a asp-action="Delete" asp-route-id="@item.InterventionId" style="margin-right:10px;" data-toggle="tooltip" data-placement="top" title="@SharedLocalizer["Label_Delete"]"><i class="far fa-trash-alt"></i></a>
+                            <a asp-action="Finish" asp-route-id="@item.InterventionId" style="margin-right:10px;" data-toggle="tooltip" data-placement="top" title="@SharedLocalizer["Label_Finished"]"><i class="fas fa-check"></i></a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function () {
+            $('#base').DataTable({
+                language: {
+                    url: '@SharedLocalizer["DataTables_Language"]'
+                },
+                columnDefs: [{
+                    orderable: false,
+                    targets: 4
+                }],
+                order: [[2, 'desc']]
+            });
+
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+        });
+    </script>

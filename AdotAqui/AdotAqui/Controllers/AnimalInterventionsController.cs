@@ -9,21 +9,29 @@ using AdotAqui.Data;
 using AdotAqui.Models.Entities;
 using AdotAqui.Models.Services;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Identity;
 
 namespace AdotAqui.Views
 {
     public class AnimalInterventionsController : Controller
     {
         private readonly AdotAquiDbContext _context;
+        private readonly UserManager<User> _userManager;
         private readonly INotificationService _notificationService;
         private readonly IEmailSender _emailSender;
+        public IEnumerable<AnimalSpecie> Species { get; set; }
+        public IEnumerable<AnimalBreed> Breeds { get; set; }
 
-        public AnimalInterventionsController(AdotAquiDbContext context, INotificationService notificationService, IEmailSender emailSender)
+
+
+        public AnimalInterventionsController(AdotAquiDbContext context, INotificationService notificationService, IEmailSender emailSender, UserManager<User> userManager)
         {
             _context = context;
             _notificationService = notificationService;
             _emailSender = emailSender;
+            _userManager = userManager;
         }
+
 
         // GET: AnimalInterventions
         public async Task<IActionResult> Index()
@@ -50,12 +58,22 @@ namespace AdotAqui.Views
         }
 
         // GET: AnimalInterventions/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            ViewBag.Users = _context.Users.ToList();
-            ViewBag.Animals = _context.Animals.Where(u => u.UserId != null).ToList();
+            ViewBag.Animals = _context.Animals.ToList(); //Where(u => u.UserId != null).
+            List<User> vets = new List<User>();
+            foreach(User user in _context.Users.ToList())
+            {
+                var role = await _userManager.GetRolesAsync(user);
+                if (role[0].Equals("Veterinary"))
+                    vets.Add(user);
+            }
+            ViewBag.Users = vets;
+
             return View();
         }
+
+
 
         // POST: AnimalInterventions/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
