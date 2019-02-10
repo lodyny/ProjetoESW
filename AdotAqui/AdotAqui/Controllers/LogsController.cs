@@ -6,7 +6,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AdotAqui.Views
+namespace AdotAqui.Controllers
 {
     public class LogsController : Controller
     {

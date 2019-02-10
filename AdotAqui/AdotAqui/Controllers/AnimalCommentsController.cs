@@ -8,24 +8,41 @@ using Microsoft.EntityFrameworkCore;
 using AdotAqui.Data;
 using AdotAqui.Models.Entities;
 
-namespace AdotAqui.Views
+/// <summary>
+/// Application Controllers
+/// </summary>
+namespace AdotAqui.Controllers
 {
+    /// <summary>
+    /// Controller used to manage all commentary in animal pages
+    /// </summary>
     public class AnimalCommentsController : Controller
     {
         private readonly AdotAquiDbContext _context;
 
+        /// <summary>
+        /// AnimalComments Constructor
+        /// </summary>
+        /// <param name="context">AdotAquiDbContext</param>
         public AnimalCommentsController(AdotAquiDbContext context)
         {
             _context = context;
         }
 
-        // GET: AnimalComments
+        /// <summary>
+        /// Used to access the index page where is possible to see all commentary in animal page
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Index()
         {
             return View(await _context.AnimalComment.ToListAsync());
         }
 
-        // GET: AnimalComments/Details/5
+        /// <summary>
+        /// Used to see the details of a commentary
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,15 +60,20 @@ namespace AdotAqui.Views
             return View(animalComment);
         }
 
-        // GET: AnimalComments/Create
+        /// <summary>
+        /// Used to create a new commentary
+        /// </summary>
+        /// <returns>Create form</returns>
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: AnimalComments/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Used to register a new commentary in context
+        /// </summary>
+        /// <param name="animalComment">Animal Commentary</param>
+        /// <returns>View with Animal Commentary</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("CommentId,AnimalId,UserId,Commentary")] AnimalComment animalComment)
@@ -65,7 +87,11 @@ namespace AdotAqui.Views
             return View(animalComment);
         }
 
-        // GET: AnimalComments/Edit/5
+        /// <summary>
+        /// Used to receive the commentary details to edit
+        /// </summary>
+        /// <param name="id">Commentary ID</param>
+        /// <returns>Commentary View</returns>
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,9 +107,12 @@ namespace AdotAqui.Views
             return View(animalComment);
         }
 
-        // POST: AnimalComments/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Used to edit the commentary and save at the context
+        /// </summary>
+        /// <param name="id">Commentary ID</param>
+        /// <param name="animalComment">Animal Commentary</param>
+        /// <returns>View with commentary edited</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("CommentId,AnimalId,UserId,Commentary")] AnimalComment animalComment)
@@ -116,7 +145,11 @@ namespace AdotAqui.Views
             return View(animalComment);
         }
 
-        // GET: AnimalComments/Delete/5
+        /// <summary>
+        /// Used to display a confirmation to delete the commentary
+        /// </summary>
+        /// <param name="id">Commentary ID</param>
+        /// <returns>View form</returns>
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,7 +167,11 @@ namespace AdotAqui.Views
             return View(animalComment);
         }
 
-        // POST: AnimalComments/Delete/5
+        /// <summary>
+        /// Used to delete a commentary
+        /// </summary>
+        /// <param name="id">Commentary ID</param>
+        /// <returns>Index View</returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

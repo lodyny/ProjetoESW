@@ -11,8 +11,14 @@ using AdotAqui.Models.Services;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Identity;
 
-namespace AdotAqui.Views
+/// <summary>
+/// Application Controllers
+/// </summary>
+namespace AdotAqui.Controllers
 {
+    /// <summary>
+    /// Controller used to manage all animal interventions
+    /// </summary>
     public class AnimalInterventionsController : Controller
     {
         private readonly AdotAquiDbContext _context;
@@ -23,7 +29,13 @@ namespace AdotAqui.Views
         public IEnumerable<AnimalBreed> Breeds { get; set; }
 
 
-
+        /// <summary>
+        /// AnimalInterventions Constructor
+        /// </summary>
+        /// <param name="context">AdotAquiDbContext</param>
+        /// <param name="notificationService">NotificationService</param>
+        /// <param name="emailSender">EmailSender</param>
+        /// <param name="userManager">UserManager</param>
         public AnimalInterventionsController(AdotAquiDbContext context, INotificationService notificationService, IEmailSender emailSender, UserManager<User> userManager)
         {
             _context = context;
@@ -32,14 +44,20 @@ namespace AdotAqui.Views
             _userManager = userManager;
         }
 
-
-        // GET: AnimalInterventions
+        /// <summary>
+        /// Used to access the index page where is possible to see all interventions
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Index()
         {
             return View(await _context.AnimalIntervention.Include(a => a.User).Include(a => a.Animal).ToListAsync());
         }
 
-        // GET: AnimalInterventions/Details/5
+        /// <summary>
+        /// Used to see the details of a intervention
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
