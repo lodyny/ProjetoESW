@@ -6,7 +6,8 @@
 }
 @inject IStringLocalizer<SharedResources> SharedLocalizer
 
-<h2>@SharedLocalizer["Label_MyNotifications"]</h2>
+<h2>@SharedLocalizer["Label_MyNotifications"]<h6><a asp-action="Clean"><i class="fas fa-trash-alt"></i> Limpar Notificações</a></h6></h2>
+<hr />
 <link rel="stylesheet" href="~/css/admin.css" />
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
@@ -90,7 +91,7 @@
             url: '@SharedLocalizer["DataTables_Language"]'
         }
         });
-        
+
     });
-    
+
 </script>
