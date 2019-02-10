@@ -98,7 +98,7 @@
                     }
                     @if (this.User.IsInRole("Administrator"))
                     {
-                        <span style="position: absolute;right: 0;margin-right:2px;" id="editTool"><a asp-controller="Animals" asp-action="Edit" asp-route-id="@animal.AnimalId"><i class="fas fa-edit"></i></a></span>
+                        <span style="position: absolute;right: 0;margin-right:2px;" id="editTool" data-toggle="tooltip" data-placement="top" title="@SharedLocalizer["Label_Edit"]"><a asp-controller="Animals" asp-action="Edit" asp-route-id="@animal.AnimalId"><i class="fas fa-edit"></i></a></span>
                     }
                     @if (animal.Gender.Equals("M"))
                     {
