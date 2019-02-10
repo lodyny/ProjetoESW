@@ -39,7 +39,7 @@ namespace AdotAqui.Views
                 return NotFound();
             }
 
-            var animalIntervention = await _context.AnimalIntervention
+            var animalIntervention = await _context.AnimalIntervention.Include(u => u.User).Include(a => a.Animal)
                 .FirstOrDefaultAsync(m => m.InterventionId == id);
             if (animalIntervention == null)
             {
@@ -109,34 +109,62 @@ namespace AdotAqui.Views
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("InterventionId,Date,Completed,Details")] AnimalIntervention animalIntervention)
+        public async Task<IActionResult> Edit(int id, [Bind("Date")] AnimalIntervention animalIntervention)
         {
-            if (id != animalIntervention.InterventionId)
+            var intervention = _context.AnimalIntervention.Include(u => u.User).Include(a => a.Animal).Where(i => i.InterventionId == id).FirstOrDefault();
+            intervention.Date = animalIntervention.Date;
+            _context.SaveChanges();
+
+            var animal = _context.Animals.Find(intervention.Animal.AnimalId);
+            var owner = _context.Users.Find(animal.UserId);
+
+            _notificationService.Register(_context, new UserNotification()
+            {
+                UserId = owner.Id,
+                Title = "Intervenção Médica Reagendada",
+                Message = "A intervenção médica do " + intervention.Animal.Name + " foi reagendada para " + intervention.Date + " com o veterinario(a) " + intervention.User.Name,
+                NotificationDate = DateTime.Now
+            }, _emailSender);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        // GET: AnimalInterventions/Edit/5
+        public async Task<IActionResult> Finish(int? id)
+        {
+            if (id == null)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            var animalIntervention = await _context.AnimalIntervention.FindAsync(id);
+            if (animalIntervention == null)
             {
-                try
-                {
-                    _context.Update(animalIntervention);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!AnimalInterventionExists(animalIntervention.InterventionId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
             return View(animalIntervention);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Finish(int id, [Bind("Details")] AnimalIntervention animalIntervention)
+        {
+            var intervention = _context.AnimalIntervention.Include(u => u.User).Include(a => a.Animal).Where(i => i.InterventionId == id).FirstOrDefault();
+            intervention.Completed = true;
+            _context.SaveChanges();
+
+            var animal = _context.Animals.Find(intervention.Animal.AnimalId);
+            var owner = _context.Users.Find(animal.UserId);
+
+            _notificationService.Register(_context, new UserNotification()
+            {
+                UserId = owner.Id,
+                Title = "Intervenção Médica Terminada",
+                Message = "A intervenção médica do " + intervention.Animal.Name + " foi realizada com sucesso.",
+                NotificationDate = DateTime.Now
+            }, _emailSender);
+
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: AnimalInterventions/Delete/5
@@ -147,7 +175,7 @@ namespace AdotAqui.Views
                 return NotFound();
             }
 
-            var animalIntervention = await _context.AnimalIntervention
+            var animalIntervention = await _context.AnimalIntervention.Include(u => u.User).Include(a => a.Animal)
                 .FirstOrDefaultAsync(m => m.InterventionId == id);
             if (animalIntervention == null)
             {
@@ -162,9 +190,21 @@ namespace AdotAqui.Views
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var animalIntervention = await _context.AnimalIntervention.FindAsync(id);
-            _context.AnimalIntervention.Remove(animalIntervention);
+            var intervention = _context.AnimalIntervention.Include(u => u.User).Include(a => a.Animal)
+                .Where(i => i.InterventionId == id).FirstOrDefault();
+            var animal = _context.Animals.Find(intervention.Animal.AnimalId);
+            var owner = _context.Users.Find(animal.UserId);
+            _context.AnimalIntervention.Remove(intervention);
             await _context.SaveChangesAsync();
+
+            _notificationService.Register(_context, new UserNotification()
+            {
+                UserId = owner.Id,
+                Title = "Intervenção Médica Cancelada",
+                Message = "A intervenção médica do " + intervention.Animal.Name + " foi cancelada.",
+                NotificationDate = DateTime.Now
+            }, _emailSender);
+
             return RedirectToAction(nameof(Index));
         }
 
@@ -172,5 +212,7 @@ namespace AdotAqui.Views
         {
             return _context.AnimalIntervention.Any(e => e.InterventionId == id);
         }
+
+
     }
 }

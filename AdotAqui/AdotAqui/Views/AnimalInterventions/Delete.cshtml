@@ -4,36 +4,14 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Cancelar Intervenção</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>AnimalIntervention</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Date)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Completed)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Completed)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Details)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Details)
-        </dd>
-    </dl>
+    Deseja realmente cancelar a intervenção ao @Model.Animal.Name?<br />
+    Esta intervenção irá ser realizada com @Model.User.Name
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="InterventionId" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Cancelar" class="btn btn-default" /> |
+        <a asp-action="Index">Voltar</a>
     </form>
 </div>

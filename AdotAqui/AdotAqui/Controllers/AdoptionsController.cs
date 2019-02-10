@@ -174,6 +174,17 @@ namespace AdotAqui.Controllers
                 Title = "Resposta pedido de adoção",
                 NotificationDate = DateTime.Now,
             }, _emailSender);
+
+
+            var otherAdoptions = _context.AdoptionRequests.Include(a => a.User)
+                                                                  .Include(a => a.Animal)
+                                                                  .Include(a => a.AdoptionLogs)
+                                                                  .ThenInclude(p => p.AdoptionState)
+                                                                  .Where(r => r.AnimalId == request.AnimalId).Where(r => r.AdoptionLogs.OrderByDescending(l => l.Date).FirstOrDefault().AdoptionStateId == 1);
+
+            foreach(AdoptionRequests adp in otherAdoptions)
+                await Decline(adp.AdoptionRequestId);
+
             return View("Index", adoptions);
         }
 

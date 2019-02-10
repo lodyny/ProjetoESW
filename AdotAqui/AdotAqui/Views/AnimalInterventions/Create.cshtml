@@ -4,9 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
-
-<h4>AnimalIntervention</h4>
+<h2>Nova Intervenção</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -20,7 +18,7 @@
             <div class="form-group">
                 <div class="checkbox">
                     <label>
-                        <input asp-for="Completed" /> @Html.DisplayNameFor(model => model.Completed)
+                        <input asp-for="Completed" type="hidden" />
                     </label>
                 </div>
             </div>
