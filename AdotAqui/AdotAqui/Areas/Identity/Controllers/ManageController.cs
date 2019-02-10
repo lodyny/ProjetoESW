@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using AdotAqui.Areas.Identity.Models.ManageViewModels;
+using AdotAqui.Data;
 using AdotAqui.Models;
 using AdotAqui.Models.Entities;
 using AdotAqui.Models.Services;
@@ -26,6 +27,7 @@ namespace AdotAqui.Areas.Identity.Controllers
     [Authorize]
     public class ManageController : Controller
     {
+        private readonly AdotAquiDbContext _context;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IEmailSender _emailSender;
@@ -33,12 +35,14 @@ namespace AdotAqui.Areas.Identity.Controllers
         private readonly ILogger _logger;
 
         public ManageController(
+        AdotAquiDbContext context,
         UserManager<User> userManager,
         SignInManager<User> signInManager,
         IEmailSender emailSender,
         ISmsSender smsSender,
         ILoggerFactory loggerFactory)
         {
+            _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
@@ -52,6 +56,7 @@ namespace AdotAqui.Areas.Identity.Controllers
         public async Task<IActionResult> Index(ManageMessageId? message = null)
         {
             var user = await _userManager.GetUserAsync(User);
+            ViewBag.Animals = _context.Animals.Where(u => u.UserId == user.Id).ToList();
 
             if (user == null)
             {

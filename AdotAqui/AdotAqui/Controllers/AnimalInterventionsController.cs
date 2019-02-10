@@ -28,7 +28,7 @@ namespace AdotAqui.Views
         // GET: AnimalInterventions
         public async Task<IActionResult> Index()
         {
-            return View(await _context.AnimalIntervention.ToListAsync());
+            return View(await _context.AnimalIntervention.Include(a => a.User).Include(a => a.Animal).ToListAsync());
         }
 
         // GET: AnimalInterventions/Details/5
