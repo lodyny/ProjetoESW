@@ -4,22 +4,22 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Reagendar</h2>
+<h2>Terminar</h2>
 
 <h4>Intervenção Médica</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Finish">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="InterventionId" />
             <div class="form-group">
-                Nova data:
-                <input asp-for="Date" class="form-control" />
-                <span asp-validation-for="Date" class="text-danger"></span>
+                Detalhes:
+                <textarea asp-for="Details" class="form-control"></textarea>
+                <span asp-validation-for="Details" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Alterar" class="btn btn-default" />
+                <input type="submit" value="Terminar" class="btn btn-default" />
             </div>
         </form>
     </div>

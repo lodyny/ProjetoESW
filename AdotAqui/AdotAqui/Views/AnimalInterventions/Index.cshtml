@@ -31,20 +31,23 @@
     </div>
 </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
+<p style="text-align:right;">
+    <a asp-action="Create" class="btn btn-success" style="margin-left:10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Criar animal">+</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Date)
+                Animal
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Completed)
+                Veterinário(a)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Details)
+                Data
+            </th>
+            <th>
+                Estado
             </th>
             <th></th>
         </tr>
@@ -54,18 +57,32 @@
         {
             <tr>
                 <td>
+                    @item.Animal.Name
+                </td>
+                <td>
+                    @item.User.Name
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Date)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Completed)
+                    @if (item.Completed)
+                    {
+                        <span>Terminada</span>
+                    }
+                    else
+                    {
+                        <span>Por Realizar</span>
+                    }
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Details)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.InterventionId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.InterventionId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.InterventionId">Delete</a>
+                    <a asp-action="Details" asp-route-id="@item.InterventionId" style="margin-right:10px;"><i class="fas fa-info"></i></a>
+                    @if (!item.Completed)
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.InterventionId" style="margin-right:10px;"><i class="far fa-clock"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.InterventionId" style="margin-right:10px;"><i class="far fa-trash-alt"></i></a>
+                        <a asp-action="Finish" asp-route-id="@item.InterventionId" style="margin-right:10px;"><i class="fas fa-check"></i></a>
+                    }
                 </td>
             </tr>
         }

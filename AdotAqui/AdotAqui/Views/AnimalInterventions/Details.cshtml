@@ -4,33 +4,35 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalhes da Intervenção</h2>
 
 <div>
-    <h4>AnimalIntervention</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
         <dd>
-            @Html.DisplayFor(model => model.Date)
+            Data a realizar: @Html.DisplayFor(model => model.Date)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Completed)
-        </dt>
         <dd>
-            @Html.DisplayFor(model => model.Completed)
+            Estado: @if (Model.Completed)
+            {
+                <span>Terminada</span>
+            }
+            else
+            {
+                <span>Por Realizar</span>
+            }
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Details)
-        </dt>
         <dd>
-            @Html.DisplayFor(model => model.Details)
+            Detalhes: @Html.DisplayFor(model => model.Details)
+        </dd>
+        <dd>
+            Veterinario(a): @Model.User.Name
+        </dd>
+        <dd>
+            Animal: @Model.Animal.Name
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.InterventionId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
