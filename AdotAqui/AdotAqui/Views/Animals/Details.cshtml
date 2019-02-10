@@ -174,10 +174,21 @@
             </ul>
             <form asp-action="AddComment" class="form-inline">
                 <div class="form-group">
-                    <input name="Commentary" id="Commentary" class="form-control" type="text" placeholder="@SharedLocalizer["Label_CommentHere"]" />
+                    @{
+                        if (User.Identity.Name != null)
+                        {
+                            <input name="Commentary" id="Commentary" class="form-control" type="text" placeholder="@SharedLocalizer["Label_CommentHere"]" />
+                        }
+                    }
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-default">+</button>
+                    @{
+                        if (User.Identity.Name != null)
+                        {
+                            <button type="submit" class="btn btn-default">+</button>
+                        }
+                    }
+
                 </div>
                 <input type="hidden" asp-for="Animal.AnimalId" class="form-control" id="AnimalId" />
             </form>

@@ -13,9 +13,14 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-
+/// <summary>
+/// Application Controllers
+/// </summary>
 namespace AdotAqui.Controllers
 {
+    /// <summary>
+    /// Controller used to manage adoptions requests
+    /// </summary>
     [Authorize]
     public class AdoptionsController : Controller
     {
@@ -25,6 +30,13 @@ namespace AdotAqui.Controllers
         private readonly INotificationService _notificationService;
         private readonly IEmailSender _emailSender;
 
+        /// <summary>
+        /// Adoptions Controller Constructor 
+        /// </summary>
+        /// <param name="context">AdotAquiDbContext</param>
+        /// <param name="userManager">UserManager</param>
+        /// <param name="notificatonService">NotificationService</param>
+        /// <param name="emailSender">EmailSender</param>
         public AdoptionsController(AdotAquiDbContext context, UserManager<User> userManager, INotificationService notificatonService, IEmailSender emailSender)
         {
             _context = context;
@@ -34,7 +46,10 @@ namespace AdotAqui.Controllers
         }
 
 
-        // GET: Adoptions
+        /// <summary>
+        /// Used to access the index view where is possible to see all adoptions
+        /// </summary>
+        /// <returns>All Adoptions</returns>
         [Authorize(Roles = "Administrator")]
         public async Task<ActionResult> Index()
         {
@@ -51,6 +66,11 @@ namespace AdotAqui.Controllers
             return View(adoptions);
         }
 
+        /// <summary>
+        /// Used to access the details of a adoption, where is possible to check all detailed information about a single adoption
+        /// </summary>
+        /// <param name="id">Adoption ID</param>
+        /// <returns>Details of the adoption</returns>
         [Authorize(Roles = "Administrator")]
         public IActionResult Details(int? id)
         {
@@ -71,6 +91,11 @@ namespace AdotAqui.Controllers
             return View(adoptionRequests);
         }
 
+        /// <summary>
+        /// Used to access the form where is possible to register a new adoption request
+        /// </summary>
+        /// <param name="id">Animal ID</param>
+        /// <returns>Adoption Form</returns>
         public async Task<IActionResult> NewRequest(int? id)
         {
             AdoptionRequests adopt = new AdoptionRequests
@@ -81,6 +106,12 @@ namespace AdotAqui.Controllers
             return View(adopt);
         }
 
+        /// <summary>
+        /// Used to register the new adoption request in the context
+        /// </summary>
+        /// <param name="id">Animal ID</param>
+        /// <param name="request">AnimalRequest form data</param>
+        /// <returns>User Notifications View</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> NewRequest(int? id, [Bind("AnimalId,AdoptionType,StartDate,EndDate,Details")] AdoptionRequests request)
@@ -133,6 +164,11 @@ namespace AdotAqui.Controllers
             return RedirectToAction("MyNotifications", "UserNotifications");
         }
 
+        /// <summary>
+        /// Used to accept a adoption request
+        /// </summary>
+        /// <param name="id">Adoption Request ID</param>
+        /// <returns>Index View</returns>
         public async Task<IActionResult> Accept(int? id)
         {
             var user = await _userManager.GetUserAsync(User);
@@ -188,6 +224,11 @@ namespace AdotAqui.Controllers
             return View("Index", adoptions);
         }
 
+        /// <summary>
+        /// Used to decline a adoption request
+        /// </summary>
+        /// <param name="id">Adoption Request ID</param>
+        /// <returns>Index View</returns>
         public async Task<IActionResult> Decline(int? id)
         {
             var user = await _userManager.GetUserAsync(User);
