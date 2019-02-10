@@ -16,8 +16,7 @@
 ***
 ##### [Testes Unitários](https://lodyny.github.io/ProjectoESW/documentos/testes_unitarios/)
 ##### [Testes de Integração](https://lodyny.github.io/ProjectoESW/documentos/testes_integracao/)
-##### [Testes de Desempenho](https://lodyny.github.io/ProjectoESW/documentos/testes_desempenho/)
+##### [Testes de Carga & Desempenho](https://lodyny.github.io/ProjectoESW/documentos/testes_cargdesm/)
 ##### [Testes de Sistema](https://lodyny.github.io/ProjectoESW/documentos/testes_sistema/)
-##### [Testes de Carga](https://lodyny.github.io/ProjectoESW/documentos/testes_carga/)
 ##### [Testes de Aceitação](https://lodyny.github.io/ProjectoESW/documentos/testes_aceitacao/)
 ##### [Testes de Usabilidade](https://lodyny.github.io/ProjectoESW/documentos/testes_usabilidade/)
