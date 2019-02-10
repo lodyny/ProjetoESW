@@ -126,8 +126,8 @@ namespace AdotAqui.Views
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Date")] AnimalIntervention animalIntervention)
+        [ValidateAntiForgeryToken]  
+        public IActionResult Edit(int id, [Bind("Date")] AnimalIntervention animalIntervention)
         {
             var intervention = _context.AnimalIntervention.Include(u => u.User).Include(a => a.Animal).Where(i => i.InterventionId == id).FirstOrDefault();
             intervention.Date = animalIntervention.Date;
@@ -165,7 +165,7 @@ namespace AdotAqui.Views
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Finish(int id, [Bind("Details")] AnimalIntervention animalIntervention)
+        public IActionResult Finish(int id, [Bind("Details")] AnimalIntervention animalIntervention)
         {
             var intervention = _context.AnimalIntervention.Include(u => u.User).Include(a => a.Animal).Where(i => i.InterventionId == id).FirstOrDefault();
             intervention.Completed = true;
