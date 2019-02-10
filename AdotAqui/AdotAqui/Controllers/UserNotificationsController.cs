@@ -172,5 +172,15 @@ namespace AdotAqui.Controllers
         {
             return _context.UserNotification.Any(e => e.UserNotificationId == id);
         }
+
+        public async Task<IActionResult> Clean()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var userNotifications = _context.UserNotification.Where(n => n.UserId == user.Id);
+            _context.RemoveRange(userNotifications);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(MyNotifications));
+        }
     }
 }
