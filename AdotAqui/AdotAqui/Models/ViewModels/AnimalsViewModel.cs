@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 using AdotAqui.Models.Entities;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
+/// <summary>
+/// Application ViewModels
+/// </summary>
 namespace AdotAqui.Models.ViewModels
 {
+    /// <summary>
+    /// Animals ViewModel used to join all the animals, Specie and Breeds
+    /// </summary>
     public class AnimalsViewModel
     {
         private CultureInfo cultureInfo;

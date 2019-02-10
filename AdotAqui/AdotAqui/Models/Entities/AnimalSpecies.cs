@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace AdotAqui.Models.Entities
 {
+    /// <summary>
+    /// Represents a animal specie
+    /// </summary>
     public partial class AnimalSpecie
     {
         public AnimalSpecie()

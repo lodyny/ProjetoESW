@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace AdotAqui.Models.ViewModels
 {
+    /// <summary>
+    /// StatusMessage ViewModel used to represent a message current status
+    /// </summary>
     public class StatusMessage
     {
         public MessageType Type { get; set; }

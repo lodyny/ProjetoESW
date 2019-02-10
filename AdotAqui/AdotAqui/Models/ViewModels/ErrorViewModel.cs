@@ -2,6 +2,9 @@ using System;
 
 namespace AdotAqui.Models.ViewModels
 {
+    /// <summary>
+    /// Error ViewModel used to represent a error
+    /// </summary>
     public class ErrorViewModel
     {
         public string RequestId { get; set; }

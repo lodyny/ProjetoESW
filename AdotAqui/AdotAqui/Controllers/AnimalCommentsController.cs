@@ -41,8 +41,8 @@ namespace AdotAqui.Controllers
         /// <summary>
         /// Used to see the details of a commentary
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">Commentary ID</param>
+        /// <returns>View with commentary details</returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

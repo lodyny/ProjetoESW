@@ -136,7 +136,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Sub New( _&nbsp;<br />   ByVal <i>userManager</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.usermanager`1.aspx">UserManager</a>(Of <a target="_top" href="topic_00000000000000AD.html" onclick="this.target='';return true;">User</a>), _&nbsp;<br />   ByVal <i>signInManager</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.signinmanager`1.aspx">SignInManager</a>(Of <a target="_top" href="topic_00000000000000AD.html" onclick="this.target='';return true;">User</a>), _&nbsp;<br />   ByVal <i>emailSender</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.ui.services.iemailsender.aspx">IEmailSender</a>, _&nbsp;<br />   ByVal <i>smsSender</i> As <a target="_top" href="topic_00000000000000C5.html" onclick="this.target='';return true;">ISmsSender</a>, _&nbsp;<br />   ByVal <i>loggerFactory</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.logging.iloggerfactory.aspx">ILoggerFactory</a>, _&nbsp;<br />   ByVal <i>sharedLocalizer</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.localization.istringlocalizer`1.aspx">IStringLocalizer</a>(Of <a target="_top" href="topic_00000000000000D9.html" onclick="this.target='';return true;">SharedResources</a>) _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Sub New( _&nbsp;<br />   ByVal <i>context</i> As <a target="_top" href="topic_00000000000000E0.html" onclick="this.target='';return true;">AdotAquiDbContext</a>, _&nbsp;<br />   ByVal <i>userManager</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.usermanager`1.aspx">UserManager</a>(Of <a target="_top" href="topic_0000000000000178.html" onclick="this.target='';return true;">User</a>), _&nbsp;<br />   ByVal <i>signInManager</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.signinmanager`1.aspx">SignInManager</a>(Of <a target="_top" href="topic_0000000000000178.html" onclick="this.target='';return true;">User</a>), _&nbsp;<br />   ByVal <i>emailSender</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.ui.services.iemailsender.aspx">IEmailSender</a>, _&nbsp;<br />   ByVal <i>smsSender</i> As <a target="_top" href="topic_000000000000019F.html" onclick="this.target='';return true;">ISmsSender</a>, _&nbsp;<br />   ByVal <i>loggerFactory</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.logging.iloggerfactory.aspx">ILoggerFactory</a>, _&nbsp;<br />   ByVal <i>sharedLocalizer</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.localization.istringlocalizer`1.aspx">IStringLocalizer</a>(Of <a target="_top" href="topic_00000000000001CF.html" onclick="this.target='';return true;">SharedResources</a>), _&nbsp;<br />   ByVal <i>httpContextAccessor</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.http.ihttpcontextaccessor.aspx">IHttpContextAccessor</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public AccountController(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.usermanager`1.aspx">UserManager</a>&lt;<a target="_top" href="topic_00000000000000AD.html" onclick="this.target='';return true;">User</a>&gt; <i>userManager</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.signinmanager`1.aspx">SignInManager</a>&lt;<a target="_top" href="topic_00000000000000AD.html" onclick="this.target='';return true;">User</a>&gt; <i>signInManager</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.ui.services.iemailsender.aspx">IEmailSender</a> <i>emailSender</i>,&nbsp;<br />   <a target="_top" href="topic_00000000000000C5.html" onclick="this.target='';return true;">ISmsSender</a> <i>smsSender</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.logging.iloggerfactory.aspx">ILoggerFactory</a> <i>loggerFactory</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.localization.istringlocalizer`1.aspx">IStringLocalizer</a>&lt;<a target="_top" href="topic_00000000000000D9.html" onclick="this.target='';return true;">SharedResources</a>&gt; <i>sharedLocalizer</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public AccountController(&nbsp;<br />   <a target="_top" href="topic_00000000000000E0.html" onclick="this.target='';return true;">AdotAquiDbContext</a> <i>context</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.usermanager`1.aspx">UserManager</a>&lt;<a target="_top" href="topic_0000000000000178.html" onclick="this.target='';return true;">User</a>&gt; <i>userManager</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.signinmanager`1.aspx">SignInManager</a>&lt;<a target="_top" href="topic_0000000000000178.html" onclick="this.target='';return true;">User</a>&gt; <i>signInManager</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.ui.services.iemailsender.aspx">IEmailSender</a> <i>emailSender</i>,&nbsp;<br />   <a target="_top" href="topic_000000000000019F.html" onclick="this.target='';return true;">ISmsSender</a> <i>smsSender</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.logging.iloggerfactory.aspx">ILoggerFactory</a> <i>loggerFactory</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.localization.istringlocalizer`1.aspx">IStringLocalizer</a>&lt;<a target="_top" href="topic_00000000000001CF.html" onclick="this.target='';return true;">SharedResources</a>&gt; <i>sharedLocalizer</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.http.ihttpcontextaccessor.aspx">IHttpContextAccessor</a> <i>httpContextAccessor</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -215,7 +215,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCpp">
-					<pre xml:space="preserve" class="brush: cpp">public: &nbsp;<br />AccountController(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.usermanager`1.aspx">UserManager</a>&lt;<a target="_top" href="topic_00000000000000AD.html" onclick="this.target='';return true;">User</a>^&gt;^ <i>userManager</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.signinmanager`1.aspx">SignInManager</a>&lt;<a target="_top" href="topic_00000000000000AD.html" onclick="this.target='';return true;">User</a>^&gt;^ <i>signInManager</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.ui.services.iemailsender.aspx">IEmailSender</a>^ <i>emailSender</i>,&nbsp;<br />   <a target="_top" href="topic_00000000000000C5.html" onclick="this.target='';return true;">ISmsSender</a>^ <i>smsSender</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.logging.iloggerfactory.aspx">ILoggerFactory</a>^ <i>loggerFactory</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.localization.istringlocalizer`1.aspx">IStringLocalizer</a>&lt;<a target="_top" href="topic_00000000000000D9.html" onclick="this.target='';return true;">SharedResources</a>^&gt;^ <i>sharedLocalizer</i>&nbsp;<br />) </pre>			
+					<pre xml:space="preserve" class="brush: cpp">public: &nbsp;<br />AccountController(&nbsp;<br />   <a target="_top" href="topic_00000000000000E0.html" onclick="this.target='';return true;">AdotAquiDbContext</a>^ <i>context</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.usermanager`1.aspx">UserManager</a>&lt;<a target="_top" href="topic_0000000000000178.html" onclick="this.target='';return true;">User</a>^&gt;^ <i>userManager</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.signinmanager`1.aspx">SignInManager</a>&lt;<a target="_top" href="topic_0000000000000178.html" onclick="this.target='';return true;">User</a>^&gt;^ <i>signInManager</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.ui.services.iemailsender.aspx">IEmailSender</a>^ <i>emailSender</i>,&nbsp;<br />   <a target="_top" href="topic_000000000000019F.html" onclick="this.target='';return true;">ISmsSender</a>^ <i>smsSender</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.logging.iloggerfactory.aspx">ILoggerFactory</a>^ <i>loggerFactory</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.localization.istringlocalizer`1.aspx">IStringLocalizer</a>&lt;<a target="_top" href="topic_00000000000001CF.html" onclick="this.target='';return true;">SharedResources</a>^&gt;^ <i>sharedLocalizer</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.http.ihttpcontextaccessor.aspx">IHttpContextAccessor</a>^ <i>httpContextAccessor</i>&nbsp;<br />) </pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -266,14 +266,27 @@ function replaceTitleAndUrl(win, title, url) {
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="userManager">
+	Parameters</h4><dl paramName="context">
+	<dt>
+		<span class="parameter">
+			context
+		</span>
+	</dt>
+	<dd>
+		Type: <a target="_top" href="topic_00000000000000E0.html" onclick="this.target='';return true;">AdotAquiDbContext</a> 
+		<p>
+			 
+		</p>
+	</dd>
+</dl>
+<dl paramName="userManager">
 	<dt>
 		<span class="parameter">
 			userManager
 		</span>
 	</dt>
 	<dd>
-		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.usermanager`1.aspx">UserManager</a>&lt;<a target="_top" href="topic_00000000000000AD.html" onclick="this.target='';return true;">User</a>&gt; 
+		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.usermanager`1.aspx">UserManager</a>&lt;<a target="_top" href="topic_0000000000000178.html" onclick="this.target='';return true;">User</a>&gt; 
 		<p>
 			 
 		</p>
@@ -286,7 +299,7 @@ function replaceTitleAndUrl(win, title, url) {
 		</span>
 	</dt>
 	<dd>
-		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.signinmanager`1.aspx">SignInManager</a>&lt;<a target="_top" href="topic_00000000000000AD.html" onclick="this.target='';return true;">User</a>&gt; 
+		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.signinmanager`1.aspx">SignInManager</a>&lt;<a target="_top" href="topic_0000000000000178.html" onclick="this.target='';return true;">User</a>&gt; 
 		<p>
 			 
 		</p>
@@ -312,7 +325,7 @@ function replaceTitleAndUrl(win, title, url) {
 		</span>
 	</dt>
 	<dd>
-		Type: <a target="_top" href="topic_00000000000000C5.html" onclick="this.target='';return true;">ISmsSender</a> 
+		Type: <a target="_top" href="topic_000000000000019F.html" onclick="this.target='';return true;">ISmsSender</a> 
 		<p>
 			 
 		</p>
@@ -338,7 +351,20 @@ function replaceTitleAndUrl(win, title, url) {
 		</span>
 	</dt>
 	<dd>
-		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.localization.istringlocalizer`1.aspx">IStringLocalizer</a>&lt;<a target="_top" href="topic_00000000000000D9.html" onclick="this.target='';return true;">SharedResources</a>&gt; 
+		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.localization.istringlocalizer`1.aspx">IStringLocalizer</a>&lt;<a target="_top" href="topic_00000000000001CF.html" onclick="this.target='';return true;">SharedResources</a>&gt; 
+		<p>
+			 
+		</p>
+	</dd>
+</dl>
+<dl paramName="httpContextAccessor">
+	<dt>
+		<span class="parameter">
+			httpContextAccessor
+		</span>
+	</dt>
+	<dd>
+		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.http.ihttpcontextaccessor.aspx">IHttpContextAccessor</a> 
 		<p>
 			 
 		</p>

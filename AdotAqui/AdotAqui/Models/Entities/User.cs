@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace AdotAqui.Models.Entities
 {
     /// <summary>
-    /// Class used to represent the User
+    /// Represents a user
     /// </summary>
     public partial class User : IdentityUser<int>
     {

@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AdotAqui.Models.Entities
 {
+    /// <summary>
+    /// Represents animal breed
+    /// </summary>
     public partial class AnimalBreed
     {
         public AnimalBreed()

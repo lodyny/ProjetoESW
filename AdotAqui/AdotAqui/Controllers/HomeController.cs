@@ -12,6 +12,9 @@ using AdotAqui.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
 
+/// <summary>
+/// Application Controllers
+/// </summary>
 namespace AdotAqui.Controllers
 {
     /// <summary>

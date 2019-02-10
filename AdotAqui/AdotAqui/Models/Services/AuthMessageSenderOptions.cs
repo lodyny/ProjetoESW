@@ -4,7 +4,7 @@ using System.Linq;
 namespace AdotAqui.Models.Services
 {
     /// <summary>
-    /// Class used to represent the authentication of sendgrid
+    /// Represents the authentication of sendgrid
     /// </summary>
     public class AuthMessageSenderOptions
     {

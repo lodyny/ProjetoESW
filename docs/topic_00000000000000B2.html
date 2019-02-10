@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com" />
-	<title>User.PhoneNumber Property</title>
+	<title>AnimalsController.Edit (Int32, Animal, IFormFile) Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2017/msdn2017.css"></link>
 	<script src="msdn2017/msdn2017.js" type="text/javascript"></script>
@@ -60,7 +60,7 @@ function replaceTitleAndUrl(win, title, url) {
 <!--HEADER START-->
   <div id="header">
   	<div id="runningHeaderText">AdotAqui Reference</div>
-  	<h1 class="title">User.PhoneNumber Property</h1>
+  	<h1 class="title">AnimalsController.Edit (Int32, Animal, IFormFile) Method</h1>
   	<div id="headerLinks">
 
 	<a href="#seeAlsoSection">See Also</a>
@@ -74,10 +74,11 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
+        Used to edit the animal details
 
 
         <p /><strong>Namespace:</strong>
-<a href="topic_00000000000000AC.html">AdotAqui.Models</a>
+<a href="topic_0000000000000088.html">AdotAqui.Controllers</a>
 
 
 
@@ -136,7 +137,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">&lt;DataType(DataType.PhoneNumber)&gt; _&nbsp;<br />&lt;Display(Prompt = &quot;Label_Phone&quot;)&gt; _&nbsp;<br />&lt;RegularExpression(&quot;^\\d{9}$&quot;, ErrorMessage = &quot;Error_PhoneInvalid&quot;)&gt; _&nbsp;<br />Public Overrides Property PhoneNumber() As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">&lt;Authorize(Roles = &quot;Administrator&quot;)&gt; _&nbsp;<br />&lt;HttpPost()&gt; _&nbsp;<br />&lt;ValidateAntiForgeryToken()&gt; _&nbsp;<br />Public Function Edit( _&nbsp;<br />   ByVal <i>id</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">Integer</a>, _&nbsp;<br />   &lt;Bind(&quot;AnimalId,Name,Weight,Height,Details&quot;)&gt; _&nbsp;<br />   ByVal <i>animal</i> As <a target="_top" href="topic_000000000000015A.html" onclick="this.target='';return true;">Animal</a>, _&nbsp;<br />   &lt;Bind(Prefix = &quot;Animal.Image&quot;)&gt; _&nbsp;<br />   ByVal <i>image</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.http.iformfile.aspx">IFormFile</a> _&nbsp;<br />) As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/dd321424.aspx">Task</a>(Of <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a>)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DataType(DataType.PhoneNumber)]&nbsp;<br />[Display(Prompt = &quot;Label_Phone&quot;)]&nbsp;<br />[RegularExpression(&quot;^\\d{9}$&quot;, ErrorMessage = &quot;Error_PhoneInvalid&quot;)]&nbsp;<br />public override <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> PhoneNumber {get; set;}</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[Authorize(Roles = &quot;Administrator&quot;)]&nbsp;<br />[HttpPost()]&nbsp;<br />[ValidateAntiForgeryToken()]&nbsp;<br />public <a target="_top" href="http://msdn2.microsoft.com/en-us/library/dd321424.aspx">Task</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a>&gt; Edit(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>id</i>,&nbsp;<br />   [Bind(&quot;AnimalId,Name,Weight,Height,Details&quot;)]&nbsp;<br />   <a target="_top" href="topic_000000000000015A.html" onclick="this.target='';return true;">Animal</a> <i>animal</i>,&nbsp;<br />   [Bind(Prefix = &quot;Animal.Image&quot;)]&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.http.iformfile.aspx">IFormFile</a> <i>image</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -215,7 +216,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCpp">
-					<pre xml:space="preserve" class="brush: cpp">[DataType(DataType.PhoneNumber)]&nbsp;<br />[Display(Prompt = &quot;Label_Phone&quot;)]&nbsp;<br />[RegularExpression(&quot;^\\d{9}$&quot;, ErrorMessage = &quot;Error_PhoneInvalid&quot;)]&nbsp;<br />public: &nbsp;<br />property <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>^ PhoneNumber {&nbsp;<br /> <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>^ get( );&nbsp;<br /> void set(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>^ value&nbsp;<br /> );&nbsp;<br />}</pre>			
+					<pre xml:space="preserve" class="brush: cpp">[Authorize(Roles = &quot;Administrator&quot;)]&nbsp;<br />[HttpPost()]&nbsp;<br />[ValidateAntiForgeryToken()]&nbsp;<br />public: &nbsp;<br /><a target="_top" href="http://msdn2.microsoft.com/en-us/library/dd321424.aspx">Task</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a>^&gt;^ Edit(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>id</i>,&nbsp;<br />   [Bind(&quot;AnimalId,Name,Weight,Height,Details&quot;)]&nbsp;<br />   <a target="_top" href="topic_000000000000015A.html" onclick="this.target='';return true;">Animal</a>^ <i>animal</i>,&nbsp;<br />   [Bind(Prefix = &quot;Animal.Image&quot;)]&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.http.iformfile.aspx">IFormFile</a>^ <i>image</i>&nbsp;<br />) </pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -254,7 +255,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeJScript">
-					<pre xml:space="preserve" class="brush: js">public &nbsp;<br />   DataType(DataType.PhoneNumber)&nbsp;<br />   Display(Prompt = &quot;Label_Phone&quot;)&nbsp;<br />   RegularExpression(&quot;^\\d{9}$&quot;, ErrorMessage = &quot;Error_PhoneInvalid&quot;)&nbsp;<br />function get PhoneNumber() : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>;&nbsp;<br />public &nbsp;<br />   DataType(DataType.PhoneNumber)&nbsp;<br />   Display(Prompt = &quot;Label_Phone&quot;)&nbsp;<br />   RegularExpression(&quot;^\\d{9}$&quot;, ErrorMessage = &quot;Error_PhoneInvalid&quot;)&nbsp;<br />function set PhoneNumber(value : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>);</pre>			
+					<pre xml:space="preserve" class="brush: js">JScript does not support generic types and methods.</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -265,10 +266,55 @@ function replaceTitleAndUrl(win, title, url) {
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="id">
+	<dt>
+		<span class="parameter">
+			id
+		</span>
+	</dt>
+	<dd>
+		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> 
+		<p>
+			Animal ID 
+		</p>
+	</dd>
+</dl>
+<dl paramName="animal">
+	<dt>
+		<span class="parameter">
+			animal
+		</span>
+	</dt>
+	<dd>
+		Type: <a target="_top" href="topic_000000000000015A.html" onclick="this.target='';return true;">Animal</a> 
+		<p>
+			New Animal Details 
+		</p>
+	</dd>
+</dl>
+<dl paramName="image">
+	<dt>
+		<span class="parameter">
+			image
+		</span>
+	</dt>
+	<dd>
+		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.http.iformfile.aspx">IFormFile</a> 
+		<p>
+			New Animal Image Data 
+		</p>
+	</dd>
+</dl>
+
+<p />
 
 	<h4 class="subHeading">
-		Property Value</h4>
-	Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> 
+		Return Value</h4>
+	Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/dd321424.aspx">Task</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a>&gt; 
+		<p>
+		Index View 
+	</p>
 	
 
 
@@ -357,11 +403,11 @@ function replaceTitleAndUrl(win, title, url) {
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000AD.html">User Class</a><br />
+			<a href="topic_00000000000000A9.html">AnimalsController Class</a><br />
 
 
 
-<a href="topic_00000000000000AC.html">AdotAqui.Models Namespace</a><br />
+<a href="topic_0000000000000088.html">AdotAqui.Controllers Namespace</a><br />
 
 
 			

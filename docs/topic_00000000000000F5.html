@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com" />
-	<title>Program.Main Method</title>
+	<title>DataSeeder.SeedDatabase Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2017/msdn2017.css"></link>
 	<script src="msdn2017/msdn2017.js" type="text/javascript"></script>
@@ -60,7 +60,7 @@ function replaceTitleAndUrl(win, title, url) {
 <!--HEADER START-->
   <div id="header">
   	<div id="runningHeaderText">AdotAqui Reference</div>
-  	<h1 class="title">Program.Main Method</h1>
+  	<h1 class="title">DataSeeder.SeedDatabase Method</h1>
   	<div id="headerLinks">
 
 	<a href="#seeAlsoSection">See Also</a>
@@ -77,7 +77,7 @@ function replaceTitleAndUrl(win, title, url) {
 
 
         <p /><strong>Namespace:</strong>
-<a href="topic_00000000000000F3.html">AdotAqui</a>
+<a href="topic_00000000000000DF.html">AdotAqui.Data</a>
 
 
 
@@ -136,7 +136,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Sub Main( _&nbsp;<br />   ByVal <i>args</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>() _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Sub SeedDatabase( _&nbsp;<br />   ByVal <i>userManager</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.usermanager`1.aspx">UserManager</a>(Of <a target="_top" href="topic_0000000000000178.html" onclick="this.target='';return true;">User</a>), _&nbsp;<br />   ByVal <i>roleManager</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.rolemanager`1.aspx">RoleManager</a>(Of <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.identityrole`1.aspx">IdentityRole</a>(Of <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">Integer</a>)) _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.void.aspx">void</a> Main(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a>[] <i>args</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.void.aspx">void</a> SeedDatabase(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.usermanager`1.aspx">UserManager</a>&lt;<a target="_top" href="topic_0000000000000178.html" onclick="this.target='';return true;">User</a>&gt; <i>userManager</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.rolemanager`1.aspx">RoleManager</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.identityrole`1.aspx">IdentityRole</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a>&gt;&gt; <i>roleManager</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -215,7 +215,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCpp">
-					<pre xml:space="preserve" class="brush: cpp">public: &nbsp;<br />static <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.void.aspx">void</a> Main(&nbsp;<br />   array&lt; <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>^ &gt;^ <i>args</i>&nbsp;<br />) </pre>			
+					<pre xml:space="preserve" class="brush: cpp">public: &nbsp;<br />static <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.void.aspx">void</a> SeedDatabase(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.usermanager`1.aspx">UserManager</a>&lt;<a target="_top" href="topic_0000000000000178.html" onclick="this.target='';return true;">User</a>^&gt;^ <i>userManager</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.rolemanager`1.aspx">RoleManager</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.identityrole`1.aspx">IdentityRole</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a>&gt;^&gt;^ <i>roleManager</i>&nbsp;<br />) </pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -254,7 +254,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeJScript">
-					<pre xml:space="preserve" class="brush: js">public static function Main(&nbsp;<br />    <i>args</i> : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>[]&nbsp;<br />);</pre>			
+					<pre xml:space="preserve" class="brush: js">JScript does not support generic types and methods.</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -266,14 +266,27 @@ function replaceTitleAndUrl(win, title, url) {
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="args">
+	Parameters</h4><dl paramName="userManager">
 	<dt>
 		<span class="parameter">
-			args
+			userManager
 		</span>
 	</dt>
 	<dd>
-		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a>[] 
+		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.usermanager`1.aspx">UserManager</a>&lt;<a target="_top" href="topic_0000000000000178.html" onclick="this.target='';return true;">User</a>&gt; 
+		<p>
+			 
+		</p>
+	</dd>
+</dl>
+<dl paramName="roleManager">
+	<dt>
+		<span class="parameter">
+			roleManager
+		</span>
+	</dt>
+	<dd>
+		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.rolemanager`1.aspx">RoleManager</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.identityrole`1.aspx">IdentityRole</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a>&gt;&gt; 
 		<p>
 			 
 		</p>
@@ -369,11 +382,11 @@ function replaceTitleAndUrl(win, title, url) {
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000F4.html">Program Class</a><br />
+			<a href="topic_00000000000000F4.html">DataSeeder Class</a><br />
 
 
 
-<a href="topic_00000000000000F3.html">AdotAqui Namespace</a><br />
+<a href="topic_00000000000000DF.html">AdotAqui.Data Namespace</a><br />
 
 
 			

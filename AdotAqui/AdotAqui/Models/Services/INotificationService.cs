@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace AdotAqui.Models.Services
 {
+    /// <summary>
+    /// Interface used to representate the notification service
+    /// </summary>
     public interface INotificationService
     {
         void Register(AdotAquiDbContext context, UserNotification notification, IEmailSender emailService = null);

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace AdotAqui.Models.Entities
 {
+    /// <summary>
+    /// Represents a user location
+    /// </summary>
     public class Locations
     {
         [Key]

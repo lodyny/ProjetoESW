@@ -13,17 +13,31 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
+/// <summary>
+/// Application Controllers
+/// </summary>
 namespace AdotAqui.Controllers
 {
+    /// <summary>
+    /// Controller used to manage all the animals
+    /// </summary>
     public class AnimalsController : Controller
     {
         private readonly AdotAquiDbContext _context;
 
+        /// <summary>
+        /// Animals Constructor
+        /// </summary>
+        /// <param name="context">AdotAquiDbContext</param>
         public AnimalsController(AdotAquiDbContext context)
         {
             _context = context;
         }
 
+        /// <summary>
+        /// Used to obtain the form to create a new animal
+        /// </summary>
+        /// <returns>Create View</returns>
         [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
@@ -35,6 +49,11 @@ namespace AdotAqui.Controllers
             return View(viewModel);
         }
 
+        /// <summary>
+        /// Used to obtain all the animal breeds in the context
+        /// </summary>
+        /// <param name="specieId">Specie ID</param>
+        /// <returns>Collection with all animal breeds</returns>
         public JsonResult GetAnimalBreeds([Bind(Prefix = "id")] int? specieId)
         {
             var breedsSet = specieId != null ? _context.AnimalBreeds.Where(b => b.SpecieId == specieId) : _context.AnimalBreeds;
@@ -43,6 +62,11 @@ namespace AdotAqui.Controllers
             return Json(breedsSet.Select(b => new { b.BreedId, Name = culture.Name == "pt-PT" ? b.NamePt : b.Name }));
         }
 
+        /// <summary>
+        /// Used to obtain all animals by breed
+        /// </summary>
+        /// <param name="breedId">Breed ID</param>
+        /// <returns>Collection of Animals</returns>
         public JsonResult GetAnimalsByBreed([Bind(Prefix = "id")] int? breedId)
         {
             var animalsSet = breedId != null ? _context.Animals.Where(a => a.BreedId == breedId) : _context.Animals;
@@ -51,6 +75,11 @@ namespace AdotAqui.Controllers
             return Json(animalsSet);
         }
 
+        /// <summary>
+        /// Used to obtain all animals by specie
+        /// </summary>
+        /// <param name="specieId">Specie ID</param>
+        /// <returns>Collection of Animals</returns>
         public JsonResult GetAnimalsBySpecie([Bind(Prefix = "id")] int? specieId)
         {
             var animalsSet = specieId != null ? _context.Animals.Where(a => a.Breed.SpecieId == specieId) : _context.Animals;
@@ -59,6 +88,12 @@ namespace AdotAqui.Controllers
             return Json(animalsSet);
         }
 
+        /// <summary>
+        /// Used to create a new animal in the context
+        /// </summary>
+        /// <param name="animal">Animal Details</param>
+        /// <param name="image">Image Data</param>
+        /// <returns>View Model</returns>
         [Authorize(Roles = "Administrator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -98,11 +133,21 @@ namespace AdotAqui.Controllers
             return View(viewModel);
         }
 
+        /// <summary>
+        /// Used to see the details of animal
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Details(int? id)
         {
             return await Edit(id);
         }
 
+        /// <summary>
+        /// Used to obtain the form to edit the details of animal
+        /// </summary>
+        /// <param name="id">Animal ID</param>
+        /// <returns>Edit View</returns>
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
@@ -136,6 +181,13 @@ namespace AdotAqui.Controllers
             return View(vs);
         }
 
+        /// <summary>
+        /// Used to edit the animal details
+        /// </summary>
+        /// <param name="id">Animal ID</param>
+        /// <param name="animal">New Animal Details</param>
+        /// <param name="image">New Animal Image Data</param>
+        /// <returns>Index View</returns>
         [Authorize(Roles = "Administrator")]
         // POST: Users/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -186,6 +238,11 @@ namespace AdotAqui.Controllers
             return await Edit(id);
         }
 
+        /// <summary>
+        /// Used to delete animal
+        /// </summary>
+        /// <param name="animal">Animal ID</param>
+        /// <returns>Index View</returns>
         [Authorize(Roles = "Administrator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -200,6 +257,12 @@ namespace AdotAqui.Controllers
             return Redirect(Url.Content("~/"));
         }
 
+        /// <summary>
+        /// Used to Add new commentary on animal page
+        /// </summary>
+        /// <param name="Commentary">Commentary</param>
+        /// <param name="animal">Animal ID</param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddComment(string Commentary, [Bind("AnimalId,Commentary")] AnimalComment animal)
@@ -236,6 +299,12 @@ namespace AdotAqui.Controllers
             return View("Details", vs);
         }
 
+        /// <summary>
+        /// Used to remove own commentary from animal page
+        /// </summary>
+        /// <param name="CommentId">Commentary ID</param>
+        /// <param name="animal">Animal ID</param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> RemoveComment(int CommentId, [Bind("AnimalId")] AnimalComment animal)

@@ -1,8 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Application Entities
+/// </summary>
 namespace AdotAqui.Models.Entities
 {
+    /// <summary>
+    /// Represents a adoption log
+    /// </summary>
     public partial class AdoptionLogs
     {
         public int AdoptionLogId { get; set; }

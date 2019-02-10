@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace AdotAqui.Models.Entities
 {
+    /// <summary>
+    /// Represents a adoption request
+    /// </summary>
     public partial class AdoptionRequests
     {
         public AdoptionRequests()

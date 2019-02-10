@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace AdotAqui.Models.ViewModels
 {
+    /// <summary>
+    /// Animal ViewModel used to join a single animal, Specie and Breed
+    /// </summary>
     public class AnimalViewModel
     {
 

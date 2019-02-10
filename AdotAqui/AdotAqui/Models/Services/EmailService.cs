@@ -5,20 +5,42 @@ using System.Threading.Tasks;
 
 namespace AdotAqui.Models.Services
 {
+    /// <summary>
+    /// Service used to send emails
+    /// </summary>
     public class EmailService : IEmailService
     {
+        /// <summary>
+        /// Sendgrid API Key
+        /// </summary>
         private string SendGridKey { get; set; }
 
+        /// <summary>
+        /// EmailService Constructor
+        /// </summary>
+        /// <param name="iConfig">Configurations</param>
         public EmailService(IConfiguration iConfig)
         {
             SendGridKey = iConfig["SendGridKey"];
         }
 
+        /// <summary>
+        /// Sends the email async
+        /// </summary>
+        /// <param name="email">Email Class</param>
+        /// <returns>Task</returns>
         public async Task SendAsync(Email email)
         {
             await ConfigSendGridAsync(email);
         }
 
+        /// <summary>
+        /// Sends the email async
+        /// </summary>
+        /// <param name="emailaddress">Email Address</param>
+        /// <param name="subject">Subject</param>
+        /// <param name="message">Message</param>
+        /// <returns>Task</returns>
         public Task SendEmailAsync(string emailaddress, string subject, string message)
         {
             
@@ -28,6 +50,11 @@ namespace AdotAqui.Models.Services
             return ConfigSendGridAsync(email);
         }
 
+        /// <summary>
+        /// Configs the sendgrid to send async
+        /// </summary>
+        /// <param name="email">Email Address</param>
+        /// <returns>Task</returns>
         private async Task ConfigSendGridAsync(Email email)
         {
             var client = new SendGridClient(SendGridKey);

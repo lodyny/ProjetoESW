@@ -9,32 +9,54 @@ using AdotAqui.Data;
 using AdotAqui.Models.Entities;
 using Microsoft.AspNetCore.Identity;
 
+/// <summary>
+/// Application Controllers
+/// </summary>
 namespace AdotAqui.Controllers
 {
+    /// <summary>
+    /// Controller used to manage all user notifications
+    /// </summary>
     public class UserNotificationsController : Controller
     {
         private readonly AdotAquiDbContext _context;
         private readonly UserManager<User> _userManager;
 
+        /// <summary>
+        /// UserNotifications Constructor
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="userManager"></param>
         public UserNotificationsController(AdotAquiDbContext context, UserManager<User> userManager)
         {
             _context = context;
             _userManager = userManager;
         }
 
-        // GET: UserNotifications
+        /// <summary>
+        /// Used to access the index page where is possible to see all user notifications
+        /// </summary>
+        /// <returns>Index View</returns>
         public async Task<IActionResult> Index()
         {
             return View(await _context.UserNotification.ToListAsync());
         }
 
+        /// <summary>
+        /// Used to access the page where shows the current logged in user notifications
+        /// </summary>
+        /// <returns>MyNotifications View</returns>
         public async Task<IActionResult> MyNotifications()
         {
             var user = await _userManager.GetUserAsync(User);
             return View(_context.UserNotification.Where(m => m.UserId == user.Id).OrderByDescending(m => m.NotificationDate));
         }
 
-        // GET: UserNotifications/Details/5
+        /// <summary>
+        /// Used to see the details of a notication
+        /// </summary>
+        /// <param name="id">Notification ID</param>
+        /// <returns>Details View</returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -58,7 +80,10 @@ namespace AdotAqui.Controllers
             return View(userNotification);
         }
 
-        // GET: UserNotifications/Create
+        /// <summary>
+        /// Used to obtain the form to create a new notification
+        /// </summary>
+        /// <returns>Create View</returns>
         public IActionResult Create()
         {
             List<SelectListItem> usersIDs = new List<SelectListItem>();
@@ -72,9 +97,11 @@ namespace AdotAqui.Controllers
             return View();
         }
 
-        // POST: UserNotifications/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Used to create a new notification in the context
+        /// </summary>
+        /// <param name="userNotification">Notifications Details</param>
+        /// <returns>Index View</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("UserNotificationId,NotificationDate,HasRead,Title,Message,UserId")] UserNotification userNotification)
@@ -88,7 +115,11 @@ namespace AdotAqui.Controllers
             return View(userNotification);
         }
 
-        // GET: UserNotifications/Edit/5
+        /// <summary>
+        /// used to obtain edit form
+        /// </summary>
+        /// <param name="id">Notification ID</param>
+        /// <returns>Edit View</returns>
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -104,9 +135,12 @@ namespace AdotAqui.Controllers
             return View(userNotification);
         }
 
-        // POST: UserNotifications/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Used to edit a notification
+        /// </summary>
+        /// <param name="id">Notification ID</param>
+        /// <param name="userNotification">New Notification Details</param>
+        /// <returns>Index View</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("UserNotificationId,NotificationDate,HasRead,Title,Message,UserId")] UserNotification userNotification)
@@ -139,7 +173,11 @@ namespace AdotAqui.Controllers
             return View(userNotification);
         }
 
-        // GET: UserNotifications/Delete/5
+        /// <summary>
+        /// Used to obtain delete confirmation form
+        /// </summary>
+        /// <param name="id">Notification ID</param>
+        /// <returns>Delete View</returns>
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -157,7 +195,11 @@ namespace AdotAqui.Controllers
             return View(userNotification);
         }
 
-        // POST: UserNotifications/Delete/5
+        /// <summary>
+        /// Used to delete notification from the system
+        /// </summary>
+        /// <param name="id">Notification ID</param>
+        /// <returns>Index View</returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -173,6 +215,10 @@ namespace AdotAqui.Controllers
             return _context.UserNotification.Any(e => e.UserNotificationId == id);
         }
 
+        /// <summary>
+        /// Used to clean all user notifications from the system
+        /// </summary>
+        /// <returns>MyNotifications View</returns>
         public async Task<IActionResult> Clean()
         {
             var user = await _userManager.GetUserAsync(User);

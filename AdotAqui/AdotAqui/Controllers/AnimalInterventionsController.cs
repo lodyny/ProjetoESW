@@ -47,7 +47,7 @@ namespace AdotAqui.Controllers
         /// <summary>
         /// Used to access the index page where is possible to see all interventions
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Index View</returns>
         public async Task<IActionResult> Index()
         {
             return View(await _context.AnimalIntervention.Include(a => a.User).Include(a => a.Animal).ToListAsync());
@@ -56,8 +56,8 @@ namespace AdotAqui.Controllers
         /// <summary>
         /// Used to see the details of a intervention
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">Intervention ID</param>
+        /// <returns>Details View</returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -75,7 +75,10 @@ namespace AdotAqui.Controllers
             return View(animalIntervention);
         }
 
-        // GET: AnimalInterventions/Create
+        /// <summary>
+        /// Used to get the form to create new intervention
+        /// </summary>
+        /// <returns>Create View Form</returns>
         public async Task<IActionResult> Create()
         {
             ViewBag.Animals = _context.Animals.ToList(); //Where(u => u.UserId != null).
@@ -93,9 +96,13 @@ namespace AdotAqui.Controllers
 
 
 
-        // POST: AnimalInterventions/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Used to create a new intervention and send a notification to the user
+        /// </summary>
+        /// <param name="animalIntervention">Intervention Details</param>
+        /// <param name="animalID">Animal ID</param>
+        /// <param name="userID">Veterinary ID</param>
+        /// <returns>Index View</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("InterventionId,Date,Completed,Details")] AnimalIntervention animalIntervention, int animalID, int userID)
@@ -124,7 +131,11 @@ namespace AdotAqui.Controllers
             return View(animalIntervention);
         }
 
-        // GET: AnimalInterventions/Edit/5
+        /// <summary>
+        /// Used to get the details of intervention
+        /// </summary>
+        /// <param name="id">Intervention ID</param>
+        /// <returns>Edit View</returns>
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -140,9 +151,12 @@ namespace AdotAqui.Controllers
             return View(animalIntervention);
         }
 
-        // POST: AnimalInterventions/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Used to edit a intervention and notificate the user about it
+        /// </summary>
+        /// <param name="id">Intervention ID</param>
+        /// <param name="animalIntervention">New Intervention Details</param>
+        /// <returns>Intervention View</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]  
         public IActionResult Edit(int id, [Bind("Date")] AnimalIntervention animalIntervention)
@@ -165,7 +179,11 @@ namespace AdotAqui.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: AnimalInterventions/Edit/5
+        /// <summary>
+        /// Used to obtain the form for intervention completion
+        /// </summary>
+        /// <param name="id">Intervention ID</param>
+        /// <returns>Index View</returns>
         public async Task<IActionResult> Finish(int? id)
         {
             if (id == null)
@@ -181,6 +199,12 @@ namespace AdotAqui.Controllers
             return View(animalIntervention);
         }
 
+        /// <summary>
+        /// Used to complete a intervention and notificate the user
+        /// </summary>
+        /// <param name="id">Intervention ID</param>
+        /// <param name="animalIntervention">Intervention Details</param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Finish(int id, [Bind("Details")] AnimalIntervention animalIntervention)
@@ -203,7 +227,11 @@ namespace AdotAqui.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: AnimalInterventions/Delete/5
+        /// <summary>
+        /// Used to obtain the form confirming about the delete
+        /// </summary>
+        /// <param name="id">Notification ID</param>
+        /// <returns>Index View</returns>
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -221,7 +249,11 @@ namespace AdotAqui.Controllers
             return View(animalIntervention);
         }
 
-        // POST: AnimalInterventions/Delete/5
+        /// <summary>
+        /// Used to delete a intervention and notificate the user
+        /// </summary>
+        /// <param name="id">Notification ID</param>
+        /// <returns>Index View</returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

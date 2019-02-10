@@ -6,24 +6,41 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
+/// <summary>
+/// Application Controllers
+/// </summary>
 namespace AdotAqui.Controllers
 {
+    /// <summary>
+    /// Controller used to manage all application Logs used for statistics
+    /// </summary>
     public class LogsController : Controller
     {
         private readonly AdotAquiDbContext _context;
 
+        /// <summary>
+        /// Log Constructor
+        /// </summary>
+        /// <param name="context">AdotAquiDbContext</param>
         public LogsController(AdotAquiDbContext context)
         {
             _context = context;
         }
 
-        // GET: Logs
+        /// <summary>
+        /// Used to see all logs generated
+        /// </summary>
+        /// <returns>Collection Logs</returns>
         public async Task<IActionResult> Index()
         {
             return View(await _context.Log.ToListAsync());
         }
 
-        // GET: Logs/Details/5
+        /// <summary>
+        /// Used to see details of single log
+        /// </summary>
+        /// <param name="id">Log ID</param>
+        /// <returns>Log Details View</returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -41,15 +58,20 @@ namespace AdotAqui.Controllers
             return View(log);
         }
 
-        // GET: Logs/Create
+        /// <summary>
+        /// Used to get the view to create new log
+        /// </summary>
+        /// <returns>Create View</returns>
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Logs/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Used to create new log
+        /// </summary>
+        /// <param name="log">Log Details</param>
+        /// <returns>Index View</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("LogId,LogType,LogValue,LogDate")] Log log)
@@ -63,7 +85,11 @@ namespace AdotAqui.Controllers
             return View(log);
         }
 
-        // GET: Logs/Edit/5
+        /// <summary>
+        /// Used to obtain the form for edit log
+        /// </summary>
+        /// <param name="id">Log ID</param>
+        /// <returns>Edit View</returns>
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,9 +105,12 @@ namespace AdotAqui.Controllers
             return View(log);
         }
 
-        // POST: Logs/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Used to edit log
+        /// </summary>
+        /// <param name="id">Log ID</param>
+        /// <param name="log">New Log Details</param>
+        /// <returns>Index View</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("LogId,LogType,LogValue,LogDate")] Log log)
@@ -114,7 +143,11 @@ namespace AdotAqui.Controllers
             return View(log);
         }
 
-        // GET: Logs/Delete/5
+        /// <summary>
+        /// Used to delete a log
+        /// </summary>
+        /// <param name="id">Log ID</param>
+        /// <returns>Delete View</returns>
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -132,7 +165,11 @@ namespace AdotAqui.Controllers
             return View(log);
         }
 
-        // POST: Logs/Delete/5
+        /// <summary>
+        /// Used to delete a log
+        /// </summary>
+        /// <param name="id">Log ID</param>
+        /// <returns>Index View</returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

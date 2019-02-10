@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AdotAqui.Models.Entities
 {
+    /// <summary>
+    /// Represents a animal commentary
+    /// </summary>
     public partial class AnimalComment
     {
         [Key]

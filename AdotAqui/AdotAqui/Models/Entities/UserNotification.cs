@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AdotAqui.Models.Entities
 {
+    /// <summary>
+    /// Represents a user notification
+    /// </summary>
     public partial class UserNotification
     {
         public int UserNotificationId { get; set; }
