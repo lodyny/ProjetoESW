@@ -4,14 +4,16 @@ using AdotAqui.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AdotAqui.Migrations
 {
     [DbContext(typeof(AdotAquiDbContext))]
-    partial class AdotAquiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190209225621_Standard")]
+    partial class Standard
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -197,31 +199,6 @@ namespace AdotAqui.Migrations
                     b.HasKey("CommentId");
 
                     b.ToTable("AnimalComment");
-                });
-
-            modelBuilder.Entity("AdotAqui.Models.Entities.AnimalIntervention", b =>
-                {
-                    b.Property<int>("InterventionId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AnimalId");
-
-                    b.Property<bool>("Completed");
-
-                    b.Property<DateTime>("Date");
-
-                    b.Property<string>("Details");
-
-                    b.Property<int>("UserId");
-
-                    b.HasKey("InterventionId");
-
-                    b.HasIndex("AnimalId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("AnimalIntervention");
                 });
 
             modelBuilder.Entity("AdotAqui.Models.Entities.AnimalSpecie", b =>
@@ -525,19 +502,6 @@ namespace AdotAqui.Migrations
                         .WithMany("AnimalBreeds")
                         .HasForeignKey("SpecieId")
                         .HasConstraintName("FK_AnimalBreeds_AnimalBreeds");
-                });
-
-            modelBuilder.Entity("AdotAqui.Models.Entities.AnimalIntervention", b =>
-                {
-                    b.HasOne("AdotAqui.Models.Entities.Animal", "Animal")
-                        .WithMany()
-                        .HasForeignKey("AnimalId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("AdotAqui.Models.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("AdotAqui.Models.Entities.UserNotification", b =>

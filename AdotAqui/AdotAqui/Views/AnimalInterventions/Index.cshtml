@@ -1,0 +1,73 @@
+﻿@model IEnumerable<AdotAqui.Models.Entities.AnimalIntervention>
+@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@using Microsoft.Extensions.Localization;
+@inject IStringLocalizer<SharedResources> SharedLocalizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+    ViewData["Title"] = "Intervenções Médicas";
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+}
+
+
+
+<link rel="stylesheet" type="text/css" href="~/css/adopt.css" />
+<link rel="stylesheet" href="~/css/admin.css" />
+<link rel="stylesheet" href="~/css/users.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+<div class="row w-100 m-auto pt-4 " style="margin-bottom: 30px !important;">
+    <div class="col">
+        <a asp-area="" asp-controller="Users" asp-action="Index" class="btn my-2 my-sm-0 w-100 disabledbutton">@SharedLocalizer["Label_Users"]</a>
+    </div>
+    <div class="col">
+        <a asp-area="" asp-controller="Adoptions" asp-action="Index" class="btn my-2 my-sm-0 w-100 disabledbutton">@SharedLocalizer["Label_AdoptionRequests"]</a>
+    </div>
+    <div class="col">
+        <a asp-area="" asp-controller="AnimalInterventions" asp-action="Index" class="btn my-2 my-sm-0 w-100 enabledbutton">Intervenções Médicas</a>
+    </div>
+</div>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Completed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Details)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Completed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Details)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.InterventionId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.InterventionId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.InterventionId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

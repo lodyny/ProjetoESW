@@ -1,0 +1,61 @@
+﻿@model AdotAqui.Models.Entities.AnimalIntervention
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>AnimalIntervention</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Completed" /> @Html.DisplayNameFor(model => model.Completed)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Details" class="control-label"></label>
+                <input asp-for="Details" class="form-control" />
+                <span asp-validation-for="Details" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <select id="animalID" name="animalID" class="form-control">
+                    @foreach (Animal animal in ViewBag.Animals)
+                    {
+                    <option value="@animal.AnimalId">@Html.DisplayFor(modelItem => animal.Name)</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <select id="userID" name="userID" class="form-control">
+                    @foreach (User user in ViewBag.Users)
+                    {
+                        <option value="@user.Id">@Html.DisplayFor(modelItem => user.Email)</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

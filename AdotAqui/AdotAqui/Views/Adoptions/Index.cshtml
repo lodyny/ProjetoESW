@@ -22,14 +22,17 @@
 @if (Model.Count() > 0)
 {
 
-    <div class="row w-100 m-auto pt-4 " style="margin-bottom: 30px !important;">
-        <div class="col">
-            <a asp-area="" asp-controller="Users" asp-action="Index" class="btn my-2 my-sm-0 w-100 disabledbutton">@SharedLocalizer["Label_Users"]</a>
-        </div>
-        <div class="col">
-            <a asp-area="" asp-controller="Adoptions" asp-action="Index" class="btn my-2 my-sm-0 w-100 enabledbutton">@SharedLocalizer["Label_AdoptionRequests"]</a>
-        </div>
+<div class="row w-100 m-auto pt-4 " style="margin-bottom: 30px !important;">
+    <div class="col">
+        <a asp-area="" asp-controller="Users" asp-action="Index" class="btn my-2 my-sm-0 w-100 disabledbutton">@SharedLocalizer["Label_Users"]</a>
     </div>
+    <div class="col">
+        <a asp-area="" asp-controller="Adoptions" asp-action="Index" class="btn my-2 my-sm-0 w-100 enabledbutton">@SharedLocalizer["Label_AdoptionRequests"]</a>
+    </div>
+    <div class="col">
+        <a asp-area="" asp-controller="AnimalInterventions" asp-action="Index" class="btn my-2 my-sm-0 w-100 disabledbutton">Intervenções Médicas</a>
+    </div>
+</div>
 
     <table class="display compact" id="base">
         <thead>

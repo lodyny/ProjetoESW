@@ -4,14 +4,16 @@ using AdotAqui.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AdotAqui.Migrations
 {
     [DbContext(typeof(AdotAquiDbContext))]
-    partial class AdotAquiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190209232340_Interventions2")]
+    partial class Interventions2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -209,7 +211,7 @@ namespace AdotAqui.Migrations
 
                     b.Property<bool>("Completed");
 
-                    b.Property<DateTime>("Date");
+                    b.Property<int>("Date");
 
                     b.Property<string>("Details");
 

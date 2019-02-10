@@ -4,14 +4,16 @@ using AdotAqui.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AdotAqui.Migrations
 {
     [DbContext(typeof(AdotAquiDbContext))]
-    partial class AdotAquiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190209230814_Interventions")]
+    partial class Interventions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -205,15 +207,15 @@ namespace AdotAqui.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AnimalId");
+                    b.Property<int?>("AnimalId");
 
                     b.Property<bool>("Completed");
 
-                    b.Property<DateTime>("Date");
+                    b.Property<int>("Date");
 
                     b.Property<string>("Details");
 
-                    b.Property<int>("UserId");
+                    b.Property<int?>("UserId");
 
                     b.HasKey("InterventionId");
 
@@ -531,13 +533,11 @@ namespace AdotAqui.Migrations
                 {
                     b.HasOne("AdotAqui.Models.Entities.Animal", "Animal")
                         .WithMany()
-                        .HasForeignKey("AnimalId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("AnimalId");
 
                     b.HasOne("AdotAqui.Models.Entities.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("AdotAqui.Models.Entities.UserNotification", b =>
