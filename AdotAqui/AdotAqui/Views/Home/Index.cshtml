@@ -6,27 +6,30 @@
 @inject UserManager<User> UserManager
 
 @{
-    ViewData["Title"] = "Animais";
+    ViewData["Title"] = "Home";
 }
 
 @section Styles {
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap-datepicker.css" />
     <link rel="stylesheet" href="~/css/auth.css" />
     @if (!this.User.IsInRole("Administrator"))
-        {
-    <style>
-        .card:hover {
-            -ms-transform: scale(1.3);
-            -webkit-transform: scale(1.3);
-            transform: scale(1.3);
-            z-index: 9999;
-        }
-    </style>
-        }
-
+    {
+        <style>
+            .card:hover {
+                -ms-transform: scale(1.3);
+                -webkit-transform: scale(1.3);
+                transform: scale(1.3);
+                z-index: 9999;
+            }
+        </style>
     }
 
+}
+
 @section DocumentReadyScripts {
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
     $("#species-dropdown").select2({
     theme: "bootstrap",
     placeholder: "@Html.Raw(SharedLocalizer["Label_ChooseSpecies"])",
@@ -70,7 +73,7 @@
             <button type="submit" class="btn btn-primary">@SharedLocalizer["Label_Search"]</button>
             @if (this.User.IsInRole("Administrator"))
             {
-                <a asp-controller="Animals" asp-action="Create" class="btn btn-success" style="margin-left:10px;">+</a>
+                <a asp-controller="Animals" asp-action="Create" class="btn btn-success" style="margin-left:10px;" data-toggle="tooltip" data-placement="bottom" title="@SharedLocalizer["Label_CreateAnimal"]">+</a>
             }
         </div>
     </form>

@@ -2,7 +2,7 @@
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<SharedResources> SharedLocalizer
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = @SharedLocalizer["Label_Ban"];
 }
 
 <h2>Detalhes de @Html.DisplayFor(model => model.Name)</h2>

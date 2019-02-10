@@ -5,7 +5,7 @@
 @inject IStringLocalizer<SharedResources> SharedLocalizer
 
 @{
-    ViewData["Title"] = "Detalhes";
+    ViewData["Title"] = @SharedLocalizer["Label_Details"];
 }
 
 @section Styles {
@@ -89,7 +89,7 @@
         </h2>
     </div>
 </div>
-@if (Model.Animal.UserId != null)
+@if (Model.Animal.UserId == null)
 {
     <a href="../../Adoptions/NewRequest/@Model.Animal.AnimalId">@SharedLocalizer["Label_AdoptMe"]!</a>
 }

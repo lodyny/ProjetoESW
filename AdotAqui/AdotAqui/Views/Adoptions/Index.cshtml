@@ -7,8 +7,8 @@
 @inject IOptions<RequestLocalizationOptions> LocOptions
 
 @{
-    ViewData["Title"] = "Adoções";
     var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    ViewData["Title"] = @SharedLocalizer["Label_Adoption"];
 }
 
 
@@ -41,7 +41,7 @@
                     @SharedLocalizer["Label_User"]
                 </th>
                 <th>
-                    @SharedLocalizer["Label_Animal"]
+                    Animal
                 </th>
                 <th>
                     @SharedLocalizer["Label_PropositionDate"]
@@ -75,21 +75,24 @@
                     <td>@Html.DisplayFor(modelItem => item.AdoptionLogs.OrderByDescending(u => u.Date).First().AdoptionState.NamePt)</td>
                 }
 
-                <td>
-                    <a href="/Adoptions/Details/@item.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton" style="color:black">
-                        @SharedLocalizer["Label_Details"]
-                    </a>
-                    @if (item.AdoptionLogs.OrderByDescending(u => u.Date).First().AdoptionState.NamePt == "Pendente")
-                    {
-                        <a href="/Adoptions/Accept/@item.AdoptionRequestId" class="btn my-2 my-sm-0 disabledbutton" style="color:black; float:right" data-toggle="tooltip" data-placement="top" title="@SharedLocalizer["Label_Accept"]">✔</a>
-                        <a href="/Adoptions/Decline/@item.AdoptionRequestId" class="btn my-2 my-sm-0 disabledbutton" style="color:black ; margin-left :5px;float:right" data-toggle="tooltip" data-placement="top" title="@SharedLocalizer["Label_Decline"]">✘</a>
-                    }
-                </td>
+                    <td>
+                        <a href="/Adoptions/Details/@item.AdoptionRequestId" class="btn my-2 my-sm-0 navbutton" style="color:black">
+                            @SharedLocalizer["Label_Details"]
+                        </a>
+                        @if (item.AdoptionLogs.OrderByDescending(u => u.Date).First().AdoptionState.NamePt == "Pendente")
+                        {
+                            @if (item.Animal.UserId == null)
+                            {
+                                <a href="/Adoptions/Accept/@item.AdoptionRequestId" class="btn my-2 my-sm-0 disabledbutton" style="color:black; float:right" data-toggle="tooltip" data-placement="top" title="@SharedLocalizer["Label_Accept"]">✔</a>
+                            }
+                            <a href="/Adoptions/Decline/@item.AdoptionRequestId" class="btn my-2 my-sm-0 disabledbutton" style="color:black ; margin-left :5px;float:right" data-toggle="tooltip" data-placement="top" title="@SharedLocalizer["Label_Decline"]">✘</a>
+                        }
+                    </td>
             </tr>
             }
         </tbody>
     </table>
-
+    <p style="color:gray;">*@SharedLocalizer["Label_HasOwner"]</p>
     <script>
         $(document).ready(function () {
             $('#base').DataTable({

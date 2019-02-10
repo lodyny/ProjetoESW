@@ -7,8 +7,8 @@
 @inject IStringLocalizer<SharedResources> SharedLocalizer
 @inject IOptions<RequestLocalizationOptions> LocOptions
 @{
-    ViewData["Title"] = "Administração";
     var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    ViewData["Title"] = @SharedLocalizer["Label_Administration"];
 }
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
@@ -19,10 +19,10 @@
 
 <div class="row w-100 m-auto pt-4 " style="margin-bottom: 30px !important;">
     <div class="col">
-        <a asp-area="" asp-controller="Users" asp-action="Index" class="btn my-2 my-sm-0 w-100 enabledbutton">Utilizadores</a>
+        <a asp-area="" asp-controller="Users" asp-action="Index" class="btn my-2 my-sm-0 w-100 enabledbutton">@SharedLocalizer["Label_Users"]</a>
     </div>
     <div class="col">
-        <a asp-area="" asp-controller="Adoptions" asp-action="Index" class="btn my-2 my-sm-0 w-100 disabledbutton">Pedidos de Adoções</a>
+        <a asp-area="" asp-controller="Adoptions" asp-action="Index" class="btn my-2 my-sm-0 w-100 disabledbutton">@SharedLocalizer["Label_AdoptionRequests"]</a>
     </div>
     <div class="col">
         <a asp-area="" asp-controller="AnimalInterventions" asp-action="Index" class="btn my-2 my-sm-0 w-100 disabledbutton">Intervenções Médicas</a>
@@ -69,11 +69,11 @@
                     <td>
                         @if (item.Banned)
                         {
-                            <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black">@SharedLocalizer["Label_Unban"]</a>
+                            <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black; ">@SharedLocalizer["Label_Unban"]</a>
                         }
                         else
                         {
-                            <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black">@SharedLocalizer["Label_Ban"]</a>
+                            <a asp-action="Ban" asp-route-id="@item.Id" class="btn my-2 my-sm-0 navbutton" style="color:black; ">@SharedLocalizer["Label_Ban"]</a>
                         }
                     </td>
                 </tr>
