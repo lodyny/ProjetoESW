@@ -75,15 +75,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Date" class="control-label">@SharedLocalizer["Label_Date"]</label>
-
-
-                <div class="input-group date" id="datepicker_start">
-                    <input asp-for="Date" class="form-control" type="text" readonly>
-                    <div class="input-group-append">
-                        <span class="input-group-text input-group-addon"><i class="fas fa-calendar-alt"></i></span>
-                    </div>
-                </div>
-
+                <input asp-for="Date" class="form-control"/>
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
             <div class="form-group">
