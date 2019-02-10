@@ -480,4 +480,7 @@
   <data name="Label_MyPets" xml:space="preserve">
     <value>My pets</value>
   </data>
+  <data name="Label_Interventions" xml:space="preserve">
+    <value>Medical Interventions</value>
+  </data>
 </root>
