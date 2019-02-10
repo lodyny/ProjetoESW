@@ -7,9 +7,17 @@
 
   <ItemGroup>
     <Compile Remove="Areas\Identity\Services\**" />
+    <Compile Remove="Areas\Statistics\Data\**" />
+    <Compile Remove="Areas\Statistics\Models\**" />
     <Content Remove="Areas\Identity\Services\**" />
+    <Content Remove="Areas\Statistics\Data\**" />
+    <Content Remove="Areas\Statistics\Models\**" />
     <EmbeddedResource Remove="Areas\Identity\Services\**" />
+    <EmbeddedResource Remove="Areas\Statistics\Data\**" />
+    <EmbeddedResource Remove="Areas\Statistics\Models\**" />
     <None Remove="Areas\Identity\Services\**" />
+    <None Remove="Areas\Statistics\Data\**" />
+    <None Remove="Areas\Statistics\Models\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,11 +54,6 @@
     <Content Update="Views\UserNotifications\MyNotifications.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Statistics\Data\" />
-    <Folder Include="Areas\Statistics\Models\" />
   </ItemGroup>
 
 </Project>

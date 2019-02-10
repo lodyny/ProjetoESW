@@ -74,7 +74,7 @@
     <Pie ComponentName="pieDashboardItem2" Name="Pies 1" ShowCaption="false" DataSource="sqlDataSource1" DataMember="Animals" PieType="Donut" LabelContentType="ArgumentAndValue">
       <DataItems>
         <Dimension DataMember="AnimalSpecies_Name_PT" DefaultId="DataItem0" />
-        <Measure DataMember="AnimalID" Name="Animais por Raça" SummaryType="Count" DefaultId="DataItem1" />
+        <Measure DataMember="AnimalID" Name="Animais por Espécie" SummaryType="Count" DefaultId="DataItem1" />
       </DataItems>
       <Arguments>
         <Argument DefaultId="DataItem0" />
