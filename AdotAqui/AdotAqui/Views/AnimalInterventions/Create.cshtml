@@ -10,33 +10,43 @@
     $(function () {
     $('[data-toggle="tooltip"]').tooltip()
     })
-    $("#species-dropdown").select2({
-    theme: "bootstrap",
-    placeholder: "@Html.Raw(SharedLocalizer["Label_ChooseSpecies"])",
-    width: "170px"
+
+    imgid = $("#animalID").val();
+    previousTarget = $("#img_" + imgid).parent().parent();
+    $("#img_" + imgid).parent().parent().css({
+    'border': '2px solid rgb(0, 0, 0)'
     });
-    $("#breed-dropdown").select2({
-    theme: "bootstrap",
-    placeholder: "@Html.Raw(SharedLocalizer["Label_ChooseBreed"])",
-    width: "200px"
-    });
+
+
+
 }
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script>
-        function checkDropdown($form) {
-            if ($("#breed-dropdown").prop('selectedIndex') != 0) {
-                $("#breed-dropdown").val($("#breed-dropdown option:first").val());
+
+        function animalChange() {
+            console.log($("#animalID").val());
+            imgid = $("#animalID").val();
+
+
+            if (previousTarget) {
+                previousTarget.css({
+                    'border': '1px solid rgba(0, 0, 0, .125)'
+                });
             }
-            $form.submit();
-        }
+            previousTarget = $("#img_" + imgid).parent().parent();
+
+            $("#img_" + imgid).parent().parent().css({
+                'border': '2px solid rgb(0, 0, 0)'
+            });
+        };
 
         var previousTarget;
 
         function getAnimal(e, id) {
             $("#animalID").val(id);
-            console.log(e.target);
+
             if (previousTarget) {
                 previousTarget.css({
                     'border': '1px solid rgba(0, 0, 0, .125)'
@@ -50,9 +60,12 @@
         }
     </script>
 }
+
 <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap-datepicker.css" />
 <script src="~/lib/bootstrap/js/bootstrap-datepicker.js"></script>
 <script src="~/lib/jquery/adopreq-validation.js"></script>
+
+
 
 <h2>@SharedLocalizer["Label_CreateTask"]</h2>
 <hr />
@@ -62,12 +75,15 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Date" class="control-label">@SharedLocalizer["Label_Date"]</label>
+
+
                 <div class="input-group date" id="datepicker_start">
                     <input asp-for="Date" class="form-control" type="text" readonly>
                     <div class="input-group-append">
                         <span class="input-group-text input-group-addon"><i class="fas fa-calendar-alt"></i></span>
                     </div>
                 </div>
+
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -84,7 +100,7 @@
             </div>
             <div class="form-group">
                 Animal
-                <select id="animalID" name="animalID" class="form-control">
+                <select id="animalID" name="animalID" class="form-control" onchange="animalChange()">
                     @foreach (Animal animal in ViewBag.Animals)
                     {
                         <option value="@animal.AnimalId">@Html.DisplayFor(modelItem => animal.Name)</option>
@@ -101,7 +117,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <input type="submit" value="@SharedLocalizer["Label_Create"]" class="btn btn-default" >
+                <input type="submit" value="@SharedLocalizer["Label_Create"]" class="btn btn-default">
             </div>
         </form>
     </div>
@@ -112,25 +128,6 @@
 
 
         <div class="container">
-            <form id="animalSearchForm" method="post" class="form-inline">
-                <div class="form-group">
-                    <label for="species-dropdown">@SharedLocalizer["Label_Species"]:</label>
-                    test
-                </div>
-                <div class="form-group">
-                    <label for="breed-dropdown">@SharedLocalizer["Label_Breed"]:</label>
-                    test
-                </div>
-                <div class="form-group ml-auto">
-                    <label for="name">@SharedLocalizer["Label_Name"]:</label>
-                    test
-                    <button type="submit" class="btn btn-primary">@SharedLocalizer["Label_Search"]</button>
-                    @if (this.User.IsInRole("Administrator"))
-                    {
-                        <a asp-controller="Animals" asp-action="Create" class="btn btn-success" style="margin-left:10px;" data-toggle="tooltip" data-placement="bottom" title="@SharedLocalizer["Label_CreateAnimal"]">+</a>
-                    }
-                </div>
-            </form>
 
             <div class="card-deck">
                 @{
@@ -141,13 +138,13 @@
                             @if (animal.Image == null)
                             {
                                 <a href="#" onclick="getAnimal(event, @animal.AnimalId)" style="color:black;text-decoration:none;">
-                                    <img class="card-img-top img-fluid" src="https://via.placeholder.com/500x500" alt="Card image cap">
+                                    <img id="img_@animal.AnimalId" class="card-img-top img-fluid" src="https://via.placeholder.com/500x500" alt="Card image cap">
                                 </a>
                             }
                             else
                             {
                                 <a href="#" onclick="getAnimal(event, @animal.AnimalId)" style="color:black;text-decoration:none;">
-                                    <img class="card-img-top img-fluid" style="width: 100%; height: 15vw; object-fit: cover;" src="@animal.Image" alt="Card image cap">
+                                    <img id="img_@animal.AnimalId" class="card-img-top img-fluid" style="width: 100%; height: 15vw; object-fit: cover;" src="@animal.Image" alt="Card image cap">
                                 </a>
                             }
                             @if (this.User.IsInRole("Administrator"))
