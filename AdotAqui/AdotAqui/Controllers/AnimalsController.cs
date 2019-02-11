@@ -24,14 +24,16 @@ namespace AdotAqui.Controllers
     public class AnimalsController : Controller
     {
         private readonly AdotAquiDbContext _context;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
         /// <summary>
         /// Animals Constructor
         /// </summary>
         /// <param name="context">AdotAquiDbContext</param>
-        public AnimalsController(AdotAquiDbContext context)
+        public AnimalsController(AdotAquiDbContext context, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         /// <summary>
@@ -42,7 +44,7 @@ namespace AdotAqui.Controllers
         public IActionResult Create()
         {
             var speciesSet = _context.AnimalSpecies;
-            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var rqf = _httpContextAccessor.HttpContext.Features.Get<IRequestCultureFeature>();
             var culture = rqf.RequestCulture.Culture;
             var viewModel = new AnimalViewModel(culture) { Species = speciesSet };
 
@@ -57,7 +59,7 @@ namespace AdotAqui.Controllers
         public JsonResult GetAnimalBreeds([Bind(Prefix = "id")] int? specieId)
         {
             var breedsSet = specieId != null ? _context.AnimalBreeds.Where(b => b.SpecieId == specieId) : _context.AnimalBreeds;
-            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var rqf = _httpContextAccessor.HttpContext.Features.Get<IRequestCultureFeature>();
             var culture = rqf.RequestCulture.Culture;
             return Json(breedsSet.Select(b => new { b.BreedId, Name = culture.Name == "pt-PT" ? b.NamePt : b.Name }));
         }
@@ -70,7 +72,7 @@ namespace AdotAqui.Controllers
         public JsonResult GetAnimalsByBreed([Bind(Prefix = "id")] int? breedId)
         {
             var animalsSet = breedId != null ? _context.Animals.Where(a => a.BreedId == breedId) : _context.Animals;
-            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var rqf = _httpContextAccessor.HttpContext.Features.Get<IRequestCultureFeature>();
             var culture = rqf.RequestCulture.Culture;
             return Json(animalsSet);
         }
@@ -83,7 +85,7 @@ namespace AdotAqui.Controllers
         public JsonResult GetAnimalsBySpecie([Bind(Prefix = "id")] int? specieId)
         {
             var animalsSet = specieId != null ? _context.Animals.Where(a => a.Breed.SpecieId == specieId) : _context.Animals;
-            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var rqf = _httpContextAccessor.HttpContext.Features.Get<IRequestCultureFeature>();
             var culture = rqf.RequestCulture.Culture;
             return Json(animalsSet);
         }
@@ -100,7 +102,7 @@ namespace AdotAqui.Controllers
         public async Task<IActionResult> Create(Animal animal, [Bind(Prefix = "Animal.Image")] IFormFile image)
         {
             var speciesSet = _context.AnimalSpecies;
-            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var rqf = _httpContextAccessor.HttpContext.Features.Get<IRequestCultureFeature>();
             var culture = rqf.RequestCulture.Culture;
             var viewModel = new AnimalViewModel(culture) { Species = speciesSet };
             if (ModelState.IsValid)
@@ -157,8 +159,7 @@ namespace AdotAqui.Controllers
             Animal animal = await _context.Animals.FindAsync(id);
             if (animal == null)
                 return NotFound();
-
-            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var rqf = _httpContextAccessor.HttpContext.Features.Get<IRequestCultureFeature>();
             var culture = rqf.RequestCulture.Culture;
             var breedsSet = _context.AnimalBreeds;
             var speciesSet = _context.AnimalSpecies;
@@ -279,7 +280,7 @@ namespace AdotAqui.Controllers
             await _context.SaveChangesAsync();
 
             Animal fAnimal = await _context.Animals.FindAsync(animal.AnimalId);
-            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var rqf = _httpContextAccessor.HttpContext.Features.Get<IRequestCultureFeature>();
             var culture = rqf.RequestCulture.Culture;
             var breedsSet = _context.AnimalBreeds;
             var speciesSet = _context.AnimalSpecies;
@@ -314,7 +315,7 @@ namespace AdotAqui.Controllers
             await _context.SaveChangesAsync();
 
             Animal fAnimal = await _context.Animals.FindAsync(animal.AnimalId);
-            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var rqf = _httpContextAccessor.HttpContext.Features.Get<IRequestCultureFeature>();
             var culture = rqf.RequestCulture.Culture;
             var breedsSet = _context.AnimalBreeds;
             var speciesSet = _context.AnimalSpecies;

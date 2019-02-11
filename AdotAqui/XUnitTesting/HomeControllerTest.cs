@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using System.Reflection;
+using Microsoft.AspNetCore.Http;
+using System.Threading.Tasks;
 
 namespace XUnitTesting
 {
@@ -19,10 +22,11 @@ namespace XUnitTesting
         public HomeControllerTestXUnit()
         {
             var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json");
+                .AddJsonFile("appsettings.json")
+                .AddEnvironmentVariables();
 
             _configuration = builder.Build();
+            var teste = _configuration.GetConnectionString("AzureConnection");
             _options = new DbContextOptionsBuilder<AdotAquiDbContext>()
                 .UseSqlServer(_configuration.GetConnectionString("AzureConnection"))
                 .Options;
@@ -38,11 +42,18 @@ namespace XUnitTesting
         [Fact]
         public void Index_ReturnsViewResult()
         {
-            HomeController controller = new HomeController(_context);
+            var ctxAccessor = new HttpContextAccessor();
+            var httpContext = new DefaultHttpContext();
+
+            ctxAccessor.HttpContext = httpContext;
+
+            HomeController controller = new HomeController(_context, ctxAccessor);
 
             var result = controller.Index();
 
             var viewResult = Assert.IsType<ViewResult>(result);
         }
+
+
     }
 }
