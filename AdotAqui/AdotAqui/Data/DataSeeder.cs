@@ -6,8 +6,14 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
+/// <summary>
+/// Application Data
+/// </summary>
 namespace AdotAqui.Data
 {
+    /// <summary>
+    /// Types of Roles
+    /// </summary>
     public enum Role
     {
         Administrator,
@@ -16,14 +22,27 @@ namespace AdotAqui.Data
         User
     }
 
+    /// <summary>
+    /// Class used to seed database when no data found.
+    /// It seeds the roles and the default administrator
+    /// </summary>
     public static class DataSeeder
     {
+        /// <summary>
+        /// Constructor responsable for seed the roles and users
+        /// </summary>
+        /// <param name="userManager">UserManager</param>
+        /// <param name="roleManager">RoleManager</param>
         public static void SeedDatabase(UserManager<User> userManager, RoleManager<IdentityRole<int>> roleManager)
         {
             SeedRoles(roleManager);
             SeedUsers(userManager);
         }
 
+        /// <summary>
+        /// Used to seed the roles
+        /// </summary>
+        /// <param name="roleManager">RoleManager</param>
         private static void SeedRoles(RoleManager<IdentityRole<int>> roleManager)
         {
             //Adicionar Roles que se encontram no enum Roles
@@ -38,7 +57,10 @@ namespace AdotAqui.Data
             }
         }
 
-
+        /// <summary>
+        /// Seed the administrator user
+        /// </summary>
+        /// <param name="userManager">UserManager</param>
         private static void SeedUsers(UserManager<User> userManager)
         {
             //Adicionar Admin se não existir

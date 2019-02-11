@@ -118,5 +118,6 @@
       <add key="VBdocman_fileNamingConvention"><![CDATA[1]]></add>
     </SettingsGroup>
     <add key="VBdocman_AdotAqui"><![CDATA[default]]></add>
+    <add key="VBdocman_XUnitTesting"><![CDATA[default]]></add>
   </appSettings>
 </configuration>
