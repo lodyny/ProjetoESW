@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DevExpress.Xpo" Version="18.2.5" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
     <PackageReference Include="Moq" Version="4.10.1" />
     <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.23.0" />
@@ -33,6 +34,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AdotAqui\AdotAqui.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="WebHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

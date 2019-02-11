@@ -8,7 +8,7 @@ using Xunit;
 
 namespace SeleniumTests
 {
-    public class UntitledTestCase
+    public class LoginTestCase
     {
         private IWebDriver driver;
         [Fact]

@@ -513,4 +513,16 @@
   <data name="Label_FinishTask" xml:space="preserve">
     <value>Finish Intervention</value>
   </data>
+  <data name="Error_InvalidLoginAt" xml:space="preserve">
+    <value>Invalid login attempt.</value>
+  </data>
+  <data name="Error_BannedUser" xml:space="preserve">
+    <value>User account locked out.</value>
+  </data>
+  <data name="Label_UserLogged" xml:space="preserve">
+    <value>User logged in.</value>
+  </data>
+  <data name="Label_NewUserCreated" xml:space="preserve">
+    <value>User created a new account with password.</value>
+  </data>
 </root>

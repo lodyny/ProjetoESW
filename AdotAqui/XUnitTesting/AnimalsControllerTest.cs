@@ -5,25 +5,17 @@ using AdotAqui.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System.IO;
-using System.Reflection;
-using Microsoft.AspNetCore.Http;
-using System.Threading.Tasks;
-using Moq;
 using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Http.Features;
-using System.Globalization;
 
 namespace XUnitTesting
 {
-
-    public class HomeControllerTestXUnit
+    public class AnimalsControllerTestXUnit
     {
         private IConfigurationRoot _configuration;
         private DbContextOptions<AdotAquiDbContext> _options;
         private AdotAquiDbContext _context;
 
-        public HomeControllerTestXUnit()
+        public AnimalsControllerTestXUnit()
         {
             var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
@@ -51,16 +43,5 @@ namespace XUnitTesting
             var result = controller.Index();
             var viewResult = Assert.IsType<ViewResult>(result);
         }
-        /*
-        public HttpContextAccessor buildFakeHttpContextAccesor(RequestCulture requestCulture)
-        {
-            var ctxAccessor = new HttpContextAccessor();
-            var httpContext = new DefaultHttpContext();
-            httpContext.Features.Set<IRequestCultureFeature>(new RequestCultureFeature(requestCulture, new AcceptLanguageHeaderRequestCultureProvider()));
-            ctxAccessor.HttpContext = httpContext;
-            return ctxAccessor;
-        }*/
-
-
     }
 }

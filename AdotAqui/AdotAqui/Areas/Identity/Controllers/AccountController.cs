@@ -97,7 +97,7 @@ namespace AdotAqui.Areas.Identity.Controllers
                     log.LogValue = "SUCCESSFUL";
                     _context.Add(log);
                     _context.SaveChanges();
-                    _logger.LogInformation(1, "User logged in.");
+                    _logger.LogInformation(1, _localizer["Label_UserLogged"]);
                     NewLocation();
                     return Redirect("~/");
                 }
@@ -110,15 +110,16 @@ namespace AdotAqui.Areas.Identity.Controllers
                     log.LogValue = "LOCKED";
                     _context.Add(log);
                     _context.SaveChanges();
-                    _logger.LogWarning(2, "User account locked out.");
+                    _logger.LogWarning(2, _localizer["Error_BannedUser"]);
                     return View("Lockout");
                 }
+                
                 else
                 {
                     log.LogValue = "FAIL";
                     _context.Add(log);
                     _context.SaveChanges();
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, _localizer["Error_InvalidLoginAt"]);
                     return View(model);
                 }
             }
@@ -167,7 +168,7 @@ namespace AdotAqui.Areas.Identity.Controllers
                     var result2 = await _userManager.AddToRoleAsync(user, Role.User.ToString());
                     if (result2.Succeeded)
                     {
-                        _logger.LogInformation(3, "User created a new account with password.");
+                        _logger.LogInformation(3, _localizer["Label_NewUserCreated"]);
                         var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                         var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
                         await _emailSender.SendEmailAsync(model.Email, _localizer["Email_Header"],
