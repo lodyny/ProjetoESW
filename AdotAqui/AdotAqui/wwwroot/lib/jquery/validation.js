@@ -179,12 +179,17 @@ $(document).ready(function() {
 	//DATE PICKER
 	$(function () {
 		
-        $("#datepicker .input-group.date").datepicker({ 
+
+		$("#datepicker .input-group.date").datepicker({ 
 			format: 'dd/mm/yyyy',
 			startDate: '-90y',
 			endDate: '-16y',
 			autoclose: true
 		}).datepicker('setDate',  $( "#Input_Birthday" ).val());
+
+
+		$('#datepicker .input-group.date').datepicker('update');
+		$('#datepicker .input-group.date').val('');
 		
 		if($("#Email").val().length > 0){
 			validatemail();

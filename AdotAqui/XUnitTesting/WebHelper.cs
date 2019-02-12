@@ -24,15 +24,13 @@ namespace XUnitTesting
         }
 
         private IWebDriver driver;
-        [Fact]
-        public void LogIn()
+        public static void LogIn(IWebDriver driver)
         {
-            driver = new FirefoxDriver(Path.GetDirectoryName
-                               (Assembly.GetExecutingAssembly().Location));
+#pragma warning restore xUnit1013 // Public method should be marked as test
             driver.Navigate().GoToUrl
                    (@"https://eswapp.azurewebsites.net/Identity/Account/Login?ReturnUrl=%2FIdentity%2FAccount%2FLogOff%3FreturnUrl%3D%252F");
             var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("Email")));
+
 
             driver.FindElement(By.Id("Email")).Click();
             driver.FindElement(By.Id("Email")).Clear();
@@ -41,10 +39,6 @@ namespace XUnitTesting
             driver.FindElement(By.Id("Password")).Clear();
             driver.FindElement(By.Id("Password")).SendKeys("Password1!");
             driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='AdotAqui'])[2]/following::button[1]")).Click();
-
-
-            wait.Until(ExpectedConditions.TextToBePresentInElement(driver.FindElement(By.LinkText("David")), "David"));
-
         }
     }
 

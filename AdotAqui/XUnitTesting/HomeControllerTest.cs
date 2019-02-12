@@ -51,15 +51,6 @@ namespace XUnitTesting
             var result = controller.Index();
             var viewResult = Assert.IsType<ViewResult>(result);
         }
-        /*
-        public HttpContextAccessor buildFakeHttpContextAccesor(RequestCulture requestCulture)
-        {
-            var ctxAccessor = new HttpContextAccessor();
-            var httpContext = new DefaultHttpContext();
-            httpContext.Features.Set<IRequestCultureFeature>(new RequestCultureFeature(requestCulture, new AcceptLanguageHeaderRequestCultureProvider()));
-            ctxAccessor.HttpContext = httpContext;
-            return ctxAccessor;
-        }*/
 
 
     }

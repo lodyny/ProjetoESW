@@ -525,4 +525,16 @@
   <data name="Label_NewUserCreated" xml:space="preserve">
     <value>User created a new account with password.</value>
   </data>
+  <data name="Label_Title" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="Label_CleanNotifications" xml:space="preserve">
+    <value>Clean notifications</value>
+  </data>
+  <data name="Label_RecoverAccount" xml:space="preserve">
+    <value>Recover account</value>
+  </data>
+  <data name="Label_CheckEmail" xml:space="preserve">
+    <value>Check your email to get a new password!</value>
+  </data>
 </root>

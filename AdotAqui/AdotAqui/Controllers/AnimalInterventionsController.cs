@@ -110,11 +110,11 @@ namespace AdotAqui.Controllers
             animalIntervention.User = _context.Users.Find(userID);
             animalIntervention.Animal = _context.Animals.Find(animalID);
             var owner = _context.Users.Find(animalIntervention.Animal.UserId);
-            if (animalIntervention.User != null && animalIntervention.Animal != null)
+            if (animalIntervention.User != null && animalIntervention.Animal != null && owner != null)
             {
                 _context.Add(animalIntervention);
                 await _context.SaveChangesAsync();
-
+                
                 _notificationService.Register(_context, new UserNotification()
                 {
                     UserId = owner.Id,
@@ -127,7 +127,7 @@ namespace AdotAqui.Controllers
             }
 
             ViewBag.Users = _context.Users.ToList();
-            ViewBag.Animals = _context.Animals.Where(u => u.UserId != null).ToList();
+            ViewBag.Animals = _context.Animals.ToList();
             return View(animalIntervention);
         }
 

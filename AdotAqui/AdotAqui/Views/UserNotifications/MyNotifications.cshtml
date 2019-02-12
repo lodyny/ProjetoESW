@@ -6,7 +6,7 @@
 }
 @inject IStringLocalizer<SharedResources> SharedLocalizer
 
-<h2>@SharedLocalizer["Label_MyNotifications"]<h6><a asp-action="Clean"><i class="fas fa-trash-alt"></i> Limpar Notificações</a></h6></h2>
+<h2>@SharedLocalizer["Label_MyNotifications"]<h6><a asp-action="Clean"><i class="fas fa-trash-alt"></i>@SharedLocalizer["Label_CleanNotifications"]</a></h6></h2>
 <hr />
 <link rel="stylesheet" href="~/css/admin.css" />
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
@@ -17,10 +17,10 @@
             <th></th>
 
             <th>
-                @Html.DisplayNameFor(model => model.NotificationDate)
+                @SharedLocalizer["Label_NotificationDate"]
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Title)
+                @SharedLocalizer["Label_Title"]
             </th>
             <th></th>
         </tr>
